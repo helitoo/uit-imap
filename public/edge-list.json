@@ -1,0 +1,19 @@
+[
+  { "start_id": "gate1", "end_id": "sp_nav1" },
+  { "start_id": "sp_nav1", "end_id": "bldA" },
+  { "start_id": "sp_nav1", "end_id": "bldB" },
+  { "start_id": "sp_nav1", "end_id": "bldC" },
+  { "start_id": "bldA", "end_id": "A101" },
+  { "start_id": "bldA", "end_id": "elev_A" },
+  { "start_id": "elev_A", "end_id": "elev_A_2" },
+  { "start_id": "elev_A_2", "end_id": "elev_A_3" },
+  { "start_id": "elev_A_2", "end_id": "A201" },
+  { "start_id": "elev_A_3", "end_id": "A301" },
+  { "start_id": "A101", "end_id": "wc_A1" },
+  { "start_id": "bldB", "end_id": "B101" },
+  { "start_id": "bldB", "end_id": "B201" },
+  { "start_id": "sp_nav1", "end_id": "canteen1" },
+  { "start_id": "sp_nav1", "end_id": "parking1" },
+  { "start_id": "gate1", "end_id": "sp_nav2" },
+  { "start_id": "sp_nav2", "end_id": "canteen1" }
+]

@@ -1,0 +1,189 @@
+[
+  {
+    "id": "bldA",
+    "name": "Tòa A",
+    "categories": ["building"],
+    "floor": 1,
+    "belongs_to": "",
+    "description": ["Tòa nhà A – khối giảng dạy chính của UIT, gồm 5 tầng với các phòng học lý thuyết và phòng máy tính."],
+    "capacity": 0,
+    "real_position": [10.870157, 106.803154],
+    "model_position": [-2.5, 0, 0]
+  },
+  {
+    "id": "bldB",
+    "name": "Tòa B",
+    "categories": ["building"],
+    "floor": 1,
+    "belongs_to": "",
+    "description": ["Tòa nhà B – trung tâm nghiên cứu và phòng lab chuyên ngành."],
+    "capacity": 0,
+    "real_position": [10.870357, 106.803254],
+    "model_position": [2.5, 0, 0]
+  },
+  {
+    "id": "bldC",
+    "name": "Tòa C (Hội trường)",
+    "categories": ["building"],
+    "floor": 1,
+    "belongs_to": "",
+    "description": ["Hội trường lớn dùng cho các sự kiện, hội thảo và lễ tốt nghiệp của trường."],
+    "capacity": 800,
+    "real_position": [10.870257, 106.803354],
+    "model_position": [0, 0, 4]
+  },
+  {
+    "id": "gate1",
+    "name": "Cổng chính",
+    "categories": ["gate"],
+    "floor": 0,
+    "belongs_to": "",
+    "description": ["Cổng vào chính của Trường Đại học Công nghệ Thông tin – ĐHQG TP.HCM."],
+    "capacity": 0,
+    "real_position": [10.869957, 106.803054],
+    "model_position": [0, 0, -6]
+  },
+  {
+    "id": "A101",
+    "name": "Phòng A.101",
+    "categories": ["classroom"],
+    "floor": 1,
+    "belongs_to": "bldA",
+    "description": ["Phòng học lý thuyết 40 chỗ ngồi, trang bị máy chiếu và bảng trắng."],
+    "capacity": 40,
+    "real_position": [10.870120, 106.803100],
+    "model_position": [-3.0, 0, 0.5]
+  },
+  {
+    "id": "A201",
+    "name": "Phòng A.201",
+    "categories": ["classroom"],
+    "floor": 2,
+    "belongs_to": "bldA",
+    "description": ["Phòng học lý thuyết tầng 2, sức chứa 45 chỗ."],
+    "capacity": 45,
+    "real_position": [10.870125, 106.803105],
+    "model_position": [-3.0, 0.5, 0.5]
+  },
+  {
+    "id": "A301",
+    "name": "Phòng máy A.301",
+    "categories": ["computer_room"],
+    "floor": 3,
+    "belongs_to": "bldA",
+    "description": ["Phòng máy tính tầng 3 với 40 máy tính hiệu năng cao."],
+    "capacity": 40,
+    "real_position": [10.870130, 106.803110],
+    "model_position": [-3.0, 1.0, 0.5]
+  },
+  {
+    "id": "B101",
+    "name": "Phòng Lab B.101",
+    "categories": ["lab"],
+    "floor": 1,
+    "belongs_to": "bldB",
+    "description": ["Phòng lab nghiên cứu AI và Machine Learning."],
+    "capacity": 20,
+    "real_position": [10.870320, 106.803220],
+    "model_position": [2.0, 0, 0.5]
+  },
+  {
+    "id": "B201",
+    "name": "Văn phòng Khoa B.201",
+    "categories": ["office"],
+    "floor": 2,
+    "belongs_to": "bldB",
+    "description": ["Văn phòng Khoa Hệ thống Thông tin."],
+    "capacity": 10,
+    "real_position": [10.870325, 106.803225],
+    "model_position": [2.0, 0.5, 0.5]
+  },
+  {
+    "id": "canteen1",
+    "name": "Căng tin",
+    "categories": ["canteen"],
+    "floor": 0,
+    "belongs_to": "",
+    "description": ["Khu căng tin phục vụ ăn uống cho sinh viên và giảng viên."],
+    "capacity": 200,
+    "real_position": [10.870200, 106.803400],
+    "model_position": [0, 0, 6]
+  },
+  {
+    "id": "parking1",
+    "name": "Bãi xe sinh viên",
+    "categories": ["parking"],
+    "floor": 0,
+    "belongs_to": "",
+    "description": ["Bãi đỗ xe dành cho sinh viên, sức chứa khoảng 500 xe máy."],
+    "capacity": 500,
+    "real_position": [10.870050, 106.803450],
+    "model_position": [-4, 0, 6]
+  },
+  {
+    "id": "wc_A1",
+    "name": "WC Tầng 1 – Tòa A",
+    "categories": ["wc"],
+    "floor": 1,
+    "belongs_to": "bldA",
+    "description": ["Nhà vệ sinh tầng 1 tòa A, nam bên phải, nữ bên trái."],
+    "capacity": 0,
+    "real_position": [10.870140, 106.803160],
+    "model_position": [-2.2, 0, 1.0]
+  },
+  {
+    "id": "elev_A",
+    "name": "Thang máy Tòa A – Tầng 1",
+    "categories": ["elevator"],
+    "floor": 1,
+    "belongs_to": "bldA",
+    "description": ["Thang máy phục vụ tầng 1 đến tầng 5 của Tòa A."],
+    "capacity": 8,
+    "real_position": [10.870150, 106.803150],
+    "model_position": [-2.5, 0, -0.5]
+  },
+  {
+    "id": "elev_A_2",
+    "name": "Thang máy Tòa A – Tầng 2",
+    "categories": ["elevator"],
+    "floor": 2,
+    "belongs_to": "bldA",
+    "description": ["Thang máy phục vụ tầng 1 đến tầng 5 của Tòa A."],
+    "capacity": 8,
+    "real_position": [10.870150, 106.803150],
+    "model_position": [-2.5, 0.5, -0.5]
+  },
+  {
+    "id": "elev_A_3",
+    "name": "Thang máy Tòa A – Tầng 3",
+    "categories": ["elevator"],
+    "floor": 3,
+    "belongs_to": "bldA",
+    "description": ["Thang máy phục vụ tầng 1 đến tầng 5 của Tòa A."],
+    "capacity": 8,
+    "real_position": [10.870150, 106.803150],
+    "model_position": [-2.5, 1.0, -0.5]
+  },
+  {
+    "id": "sp_nav1",
+    "name": "Điểm kết nối A-B tầng 1",
+    "categories": ["supporting"],
+    "floor": 1,
+    "belongs_to": "",
+    "description": ["Nút kết nối nội bộ giữa tòa A và tòa B."],
+    "capacity": 0,
+    "real_position": [10.870257, 106.803154],
+    "model_position": [0, 0, 0]
+  },
+  {
+    "id": "sp_nav2",
+    "name": "Điểm kết nối cổng – canteen",
+    "categories": ["supporting"],
+    "floor": 0,
+    "belongs_to": "",
+    "description": ["Nút kết nối từ cổng chính đến căng tin."],
+    "capacity": 0,
+    "real_position": [10.870100, 106.803200],
+    "model_position": [0, 0, 0]
+  }
+]
