@@ -53,9 +53,9 @@ export default function HotspotButton({
                 "relative flex items-center justify-center size-6 rounded-full border-2 font-bold text-[7px] shadow-lg transition-all duration-200",
                 "hover:scale-110 hover:shadow-xl",
                 isOnPath
-                  ? "bg-red-500 text-white border-white scale-110 shadow-red-300"
+                  ? "bg-red-500 text-white scale-110 shadow-red-300"
                   : isSelected
-                    ? "bg-main text-white border-white scale-110"
+                    ? "bg-main text-white scale-110"
                     : cn(colorClass, "border-white/70"),
                 "outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1",
               )}

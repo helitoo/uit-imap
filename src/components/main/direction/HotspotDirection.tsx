@@ -11,20 +11,27 @@ interface CanvasPos {
   y: number;
 }
 
-export default function HotspotDirection({ path, modelViewerRef }: HotspotDirectionProps) {
+export default function HotspotDirection({
+  path,
+  modelViewerRef,
+}: HotspotDirectionProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const rafRef = useRef<number>(0);
 
   const getHotspotPos = useCallback(
     (hotspot: Hotspot): CanvasPos | null => {
-      const mv = modelViewerRef.current as (HTMLElement & {
-        queryHotspot?: (name: string) => { canvasPosition: { x: number; y: number } } | null;
-      }) | null;
+      const mv = modelViewerRef.current as
+        | (HTMLElement & {
+            queryHotspot?: (
+              name: string,
+            ) => { canvasPosition: { x: number; y: number } } | null;
+          })
+        | null;
       if (!mv?.queryHotspot) return null;
       const result = mv.queryHotspot(`hotspot-${hotspot.id}`);
       return result?.canvasPosition ?? null;
     },
-    [modelViewerRef]
+    [modelViewerRef],
   );
 
   const drawLines = useCallback(() => {
@@ -42,7 +49,10 @@ export default function HotspotDirection({ path, modelViewerRef }: HotspotDirect
       if (!posA || !posB) continue;
 
       // Glow / shadow line
-      const glow = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      const glow = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "line",
+      );
       glow.setAttribute("x1", String(posA.x));
       glow.setAttribute("y1", String(posA.y));
       glow.setAttribute("x2", String(posB.x));
@@ -53,7 +63,10 @@ export default function HotspotDirection({ path, modelViewerRef }: HotspotDirect
       svg.appendChild(glow);
 
       // Main red line
-      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      const line = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "line",
+      );
       line.setAttribute("x1", String(posA.x));
       line.setAttribute("y1", String(posA.y));
       line.setAttribute("x2", String(posB.x));
@@ -70,11 +83,20 @@ export default function HotspotDirection({ path, modelViewerRef }: HotspotDirect
       const pos = getHotspotPos(h);
       if (!pos) return;
 
-      const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      const circle = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "circle",
+      );
       circle.setAttribute("cx", String(pos.x));
       circle.setAttribute("cy", String(pos.y));
-      circle.setAttribute("r", idx === 0 || idx === path.length - 1 ? "6" : "4");
-      circle.setAttribute("fill", idx === 0 ? "#22c55e" : idx === path.length - 1 ? "#ef4444" : "#ffffff");
+      circle.setAttribute(
+        "r",
+        idx === 0 || idx === path.length - 1 ? "6" : "4",
+      );
+      circle.setAttribute(
+        "fill",
+        idx === 0 ? "#22c55e" : idx === path.length - 1 ? "#ef4444" : "#ffffff",
+      );
       circle.setAttribute("stroke", "#ef4444");
       circle.setAttribute("stroke-width", "2");
       svg.appendChild(circle);
@@ -93,7 +115,7 @@ export default function HotspotDirection({ path, modelViewerRef }: HotspotDirect
   return (
     <svg
       ref={svgRef}
-      className="direction-line-svg absolute inset-0 pointer-events-none z-10"
+      className="direction-line-svg absolute inset-0 pointer-events-none"
       width="100%"
       height="100%"
       xmlns="http://www.w3.org/2000/svg"

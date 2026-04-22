@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Search, Map } from "lucide-react";
+import { Search } from "lucide-react";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import {
   Accordion,
@@ -35,7 +35,7 @@ export default function Navbar() {
   return (
     <>
       {/* ── Desktop: right vertical sidebar ── */}
-      <nav className="hidden md:flex fixed right-0 top-0 h-full z-40 flex-col items-center bg-white/90 backdrop-blur-sm border-l border-border/50 shadow-lg w-14 py-2 gap-1">
+      <nav className="hidden md:flex fixed right-0 top-0 h-full z-40 flex-col items-center bg-white/70 backdrop-blur-sm border-l border-border/50 shadow-lg w-14 py-2 gap-2">
         <Header />
         <Separator className="my-1" />
 
@@ -45,7 +45,7 @@ export default function Navbar() {
             "flex flex-col items-center justify-center w-10 h-10 rounded-lg gap-0.5 transition-all text-[9px] font-semibold",
             activePanel === "search"
               ? "bg-main text-white shadow-md"
-              : "text-muted-foreground hover:text-main hover:bg-main/10",
+              : "text-muted-foreground hover:text-main",
           )}
           title="Tìm kiếm"
         >
@@ -53,37 +53,20 @@ export default function Navbar() {
           <span>Tìm</span>
         </button>
       </nav>
+
       {/* ── Mobile: bottom horizontal bar ── */}
-      <nav className="flex md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-sm border-t border-border/50 shadow-lg h-14 items-center justify-around px-2">
+      <nav className="flex md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/70 backdrop-blur-sm border-t border-border/50 shadow-lg h-14 items-center justify-center px-2">
         {/* Logo area */}
-        <div className="flex items-center">
-          <img
-            src="/logo.png"
-            alt="UIT iMAP"
-            className="w-7 h-7 object-contain rounded"
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.display = "none";
-            }}
-          />
-        </div>
+        <Header />
 
         <button
           onClick={() => togglePanel("search")}
           className={cn(
-            "flex flex-col items-center justify-center px-4 py-1 gap-0.5 rounded-lg transition-all",
+            "flex flex-col items-center justify-center px-4 py-1 gap-0.5 rounded-lg transition-all hover:text-main",
             activePanel === "search" ? "text-main" : "text-muted-foreground",
           )}
         >
           <Search className="w-5 h-5" />
-          <span className="text-[10px] font-semibold">Tìm kiếm</span>
-        </button>
-
-        <button
-          onClick={() => {}}
-          className="flex flex-col items-center justify-center px-4 py-1 gap-0.5 rounded-lg text-muted-foreground"
-        >
-          <Map className="w-5 h-5" />
-          <span className="text-[10px] font-semibold">Bản đồ</span>
         </button>
       </nav>
       {/* ── Search / Filter Panel Sheet ── */}

@@ -81,13 +81,6 @@ model-viewer {
   overflow: visible;
 }
 
-/* Sidebar/panel glass effect */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
 /* Loading screen */
 .loading-bg {
   background: linear-gradient(135deg, hsl(196, 98%, 10%), hsl(201, 78%, 20%));

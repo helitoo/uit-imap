@@ -20,7 +20,10 @@ export default function DirectionBar() {
 
   // Update endHotspot when change selectedHotspot
   useEffect(() => {
-    if (selectedHotspot) setEndHotspot(selectedHotspot);
+    if (selectedHotspot) {
+      setEndHotspot(selectedHotspot);
+      setSelectedHotspot(null);
+    }
   }, [selectedHotspot]);
 
   // Non-supporting hotspots for selects

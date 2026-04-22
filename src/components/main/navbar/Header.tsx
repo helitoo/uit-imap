@@ -11,13 +11,13 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Header() {
   return (
-    <div className="flex flex-col items-center gap-2 p-3 border-b border-border/40">
+    <div className="flex md:flex-col items-center gap-2 p-3 border-b border-border/40">
       {/* Logo */}
       <div className="flex items-center justify-center">
         <img
           src="/logo.png"
           alt="UIT iMAP"
-          className="w-9 h-9 object-contain rounded-lg"
+          className="w-10 object-contain rounded-lg"
           onError={(e) => {
             (e.target as HTMLImageElement).style.display = "none";
           }}
@@ -30,10 +30,10 @@ export default function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="w-9 h-9 text-muted-foreground hover:text-main hover:bg-main/10"
+            className="w-9 h-9 text-muted-foreground hover:text-main hover:bg-transperant"
             title="Giới thiệu"
           >
-            <Info className="w-4 h-4" />
+            <Info className="size-5 md:size-4" />
           </Button>
         </DialogTrigger>
         <DialogContent className="max-w-md">
@@ -78,10 +78,10 @@ export default function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="w-9 h-9 text-muted-foreground hover:text-main hover:bg-main/10"
+            className="w-9 h-9 text-muted-foreground hover:text-main hover:bg-transperant"
             title="Hướng dẫn"
           >
-            <MessageCircleQuestion className="w-4 h-4" />
+            <MessageCircleQuestion className="size-5 md:size-4" />
           </Button>
         </DialogTrigger>
         <DialogContent className="max-w-md">
@@ -149,10 +149,10 @@ export default function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="w-9 h-9 text-muted-foreground hover:text-main hover:bg-main/10"
+            className="w-9 h-9 text-muted-foreground hover:text-main hover:bg-transperant"
             title="UIT"
           >
-            <School className="w-4 h-4" />
+            <School className="size-5 md:size-4" />
           </Button>
         </DialogTrigger>
         <DialogContent className="max-w-md">
