@@ -266,9 +266,7 @@ function parseTabTable(table: Element, buildingId: string): Schedule[] {
  * or a CORS proxy service.
  */
 async function fetchSchedules(): Promise<Schedule[]> {
-  const response = await fetch("/api/uit/lichphong", {
-    credentials: "include",
-  });
+  const response = await fetch("/api/uit/lichphong");
 
   if (!response.ok) {
     throw new Error(

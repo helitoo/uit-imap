@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/uit/(.*)",
+      "destination": "https://daa.uit.edu.vn/$1"
+    }
+  ]
+}
