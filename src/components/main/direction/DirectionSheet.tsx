@@ -64,7 +64,7 @@ export default function DirectionSheet({ path }: DirectionSheetProps) {
         )}
       >
         <div
-          className="flex flex-col rounded-t-2xl border border-border/50 shadow-2xl overflow-hidden h-full bg-white/70 backdrop-blur-md"
+          className="flex flex-col rounded-t-2xl border border-border/50 shadow-2xl overflow-hidden h-full bg-white/85"
           // overflow-hidden + h-full sẽ clip nội dung khi outer thu nhỏ
         >
           {/* Header — luôn hiển thị */}
@@ -155,7 +155,7 @@ export default function DirectionSheet({ path }: DirectionSheetProps) {
       <div
         className={cn(
           "flex flex-col rounded-l-2xl border border-border/50 shadow-2xl overflow-hidden h-[80vh]",
-          "bg-white/70 backdrop-blur-md",
+          "bg-white/85",
           collapsed && "items-center justify-start",
         )}
       >

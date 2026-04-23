@@ -35,7 +35,7 @@ export default function Navbar() {
   return (
     <>
       {/* ── Desktop: right vertical sidebar ── */}
-      <nav className="hidden md:flex fixed right-0 top-0 h-full z-40 flex-col items-center bg-white/70 backdrop-blur-sm border-l border-border/50 shadow-lg w-14 py-2 gap-2">
+      <nav className="hidden md:flex fixed right-0 top-0 h-full z-40 flex-col items-center bg-white/85 border-l border-border/50 shadow-lg w-14 py-2 gap-2">
         <Header />
         <Separator className="my-1" />
 
@@ -55,7 +55,7 @@ export default function Navbar() {
       </nav>
 
       {/* ── Mobile: bottom horizontal bar ── */}
-      <nav className="flex md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/70 backdrop-blur-sm border-t border-border/50 shadow-lg h-14 items-center justify-center px-2">
+      <nav className="flex md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/85 border-t border-border/50 shadow-lg h-14 items-center justify-center px-2">
         {/* Logo area */}
         <Header />
 

@@ -6,10 +6,10 @@ import ModelViewer, {
 } from "@/components/main/ModelViewer";
 import Navbar from "@/components/main/navbar/Navbar";
 import HotspotDetail from "@/components/main/hotspot/HotspotDetail";
-import DirectionBar from "@/components/main/direction/DirectionBar";
 import DirectionSheet from "@/components/main/direction/DirectionSheet";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
+import WeatherBar from "@/components/main/WeatherBar";
 
 export default function HomePage() {
   const { id } = useParams<{ id?: string }>();
@@ -46,22 +46,25 @@ export default function HomePage() {
   const isDirectionMode = usingMode === "direction";
 
   return (
-    <div className="relative w-full h-full overflow-hidden">
-      {/* ── Full-screen 3D model ── */}
-      <ModelViewer
-        ref={mvRef}
-        visibleHotspots={visibleHotspots}
-        selectedHotspot={selectedHotspot}
-        directionPath={directionPath}
-      />
+    <>
+      <WeatherBar />
+      <div className="relative w-full h-full overflow-hidden">
+        {/* ── Full-screen 3D model ── */}
+        <ModelViewer
+          ref={mvRef}
+          visibleHotspots={visibleHotspots}
+          selectedHotspot={selectedHotspot}
+          directionPath={directionPath}
+        />
 
-      {/* ── Default mode UI ── */}
-      {!isDirectionMode && <Navbar />}
+        {/* ── Default mode UI ── */}
+        {!isDirectionMode && <Navbar />}
 
-      {selectedHotspot && <HotspotDetail hotspot={selectedHotspot} />}
+        {selectedHotspot && <HotspotDetail hotspot={selectedHotspot} />}
 
-      {/* ── Direction mode UI ── */}
-      {isDirectionMode && <DirectionSheet path={directionPath} />}
-    </div>
+        {/* ── Direction mode UI ── */}
+        {isDirectionMode && <DirectionSheet path={directionPath} />}
+      </div>
+    </>
   );
 }
