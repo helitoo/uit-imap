@@ -9,24 +9,23 @@ import { ScheduleProvider } from "@/contexts/scheduleContext";
 
 /** Inner tree – rendered after hotspots are loaded */
 function AppRoutes() {
-  return <LoadingScreen message="Đang tải dữ liệu bản đồ..." />;
-  // const { hotspots, loading, error } = useHotspots();
+  const { hotspots, loading, error } = useHotspots();
 
-  // if (loading) return <LoadingScreen message="Đang tải dữ liệu bản đồ..." />;
-  // if (error) return <LoadingScreen message={`Lỗi: ${error}`} />;
+  if (loading) return <LoadingScreen message="Đang tải dữ liệu bản đồ..." />;
+  if (error) return <LoadingScreen message={`Lỗi: ${error}`} />;
 
-  // return (
-  //   <GraphProvider hotspots={hotspots}>
-  //     <ModeProvider>
-  //       <Routes>
-  //         <Route path="/" element={<HomePage />} />
-  //         <Route path="/hotspot/:id" element={<HomePage />} />
-  //         <Route path="*" element={<HomePage />} />
-  //       </Routes>
-  //       <Toaster position="top-center" richColors />
-  //     </ModeProvider>
-  //   </GraphProvider>
-  // );
+  return (
+    <GraphProvider hotspots={hotspots}>
+      <ModeProvider>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/hotspot/:id" element={<HomePage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
+        <Toaster position="top-center" richColors />
+      </ModeProvider>
+    </GraphProvider>
+  );
 }
 
 /** Root – BrowserRouter must be outermost */
