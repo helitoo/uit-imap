@@ -9,4 +9,14 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      "/api/uit": {
+        target: "https://daa.uit.edu.vn",
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path.replace(/^\/api\/uit/, ""),
+      },
+    },
+  },
 });

@@ -7,161 +7,161 @@ const WMO_CODES: Record<
 > = {
   0: {
     day: {
-      description: "Sunny",
+      description: "Trời nắng",
       image: "http://openweathermap.org/img/wn/01d@2x.png",
     },
     night: {
-      description: "Clear",
+      description: "Quang đãng",
       image: "http://openweathermap.org/img/wn/01n@2x.png",
     },
   },
   1: {
     day: {
-      description: "Mainly Sunny",
+      description: "Trời nắng",
       image: "http://openweathermap.org/img/wn/01d@2x.png",
     },
     night: {
-      description: "Mainly Clear",
+      description: "Quang đãng",
       image: "http://openweathermap.org/img/wn/01n@2x.png",
     },
   },
   2: {
     day: {
-      description: "Partly Cloudy",
+      description: "Có mây",
       image: "http://openweathermap.org/img/wn/02d@2x.png",
     },
     night: {
-      description: "Partly Cloudy",
+      description: "Có mây",
       image: "http://openweathermap.org/img/wn/02n@2x.png",
     },
   },
   3: {
     day: {
-      description: "Cloudy",
+      description: "Có mây",
       image: "http://openweathermap.org/img/wn/03d@2x.png",
     },
     night: {
-      description: "Cloudy",
+      description: "Có mây",
       image: "http://openweathermap.org/img/wn/03n@2x.png",
     },
   },
   45: {
     day: {
-      description: "Foggy",
+      description: "Có sương",
       image: "http://openweathermap.org/img/wn/50d@2x.png",
     },
     night: {
-      description: "Foggy",
+      description: "Có sương",
       image: "http://openweathermap.org/img/wn/50n@2x.png",
     },
   },
   48: {
     day: {
-      description: "Rime Fog",
+      description: "Có sương",
       image: "http://openweathermap.org/img/wn/50d@2x.png",
     },
     night: {
-      description: "Rime Fog",
+      description: "Có sương",
       image: "http://openweathermap.org/img/wn/50n@2x.png",
     },
   },
   51: {
     day: {
-      description: "Light Drizzle",
+      description: "Mưa phùn",
       image: "http://openweathermap.org/img/wn/09d@2x.png",
     },
     night: {
-      description: "Light Drizzle",
+      description: "Mưa phùn",
       image: "http://openweathermap.org/img/wn/09n@2x.png",
     },
   },
   53: {
     day: {
-      description: "Drizzle",
+      description: "Mưa phùn",
       image: "http://openweathermap.org/img/wn/09d@2x.png",
     },
     night: {
-      description: "Drizzle",
+      description: "Mưa phùn",
       image: "http://openweathermap.org/img/wn/09n@2x.png",
     },
   },
   55: {
     day: {
-      description: "Heavy Drizzle",
+      description: "Mưa phùn",
       image: "http://openweathermap.org/img/wn/09d@2x.png",
     },
     night: {
-      description: "Heavy Drizzle",
+      description: "Mưa phùn",
       image: "http://openweathermap.org/img/wn/09n@2x.png",
     },
   },
   56: {
     day: {
-      description: "Light Freezing Drizzle",
+      description: "Mưa phùn",
       image: "http://openweathermap.org/img/wn/09d@2x.png",
     },
     night: {
-      description: "Light Freezing Drizzle",
+      description: "Mưa phùn",
       image: "http://openweathermap.org/img/wn/09n@2x.png",
     },
   },
   57: {
     day: {
-      description: "Freezing Drizzle",
+      description: "Mưa phùn",
       image: "http://openweathermap.org/img/wn/09d@2x.png",
     },
     night: {
-      description: "Freezing Drizzle",
+      description: "Mưa phùn",
       image: "http://openweathermap.org/img/wn/09n@2x.png",
     },
   },
   61: {
     day: {
-      description: "Light Rain",
+      description: "Có mưa",
       image: "http://openweathermap.org/img/wn/10d@2x.png",
     },
     night: {
-      description: "Light Rain",
+      description: "Có mưa",
       image: "http://openweathermap.org/img/wn/10n@2x.png",
     },
   },
   63: {
     day: {
-      description: "Rain",
+      description: "Có mưa",
       image: "http://openweathermap.org/img/wn/10d@2x.png",
     },
     night: {
-      description: "Rain",
+      description: "Có mưa",
       image: "http://openweathermap.org/img/wn/10n@2x.png",
     },
   },
   65: {
     day: {
-      description: "Heavy Rain",
+      description: "Mưa to",
       image: "http://openweathermap.org/img/wn/10d@2x.png",
     },
     night: {
-      description: "Heavy Rain",
+      description: "Mưa to",
       image: "http://openweathermap.org/img/wn/10n@2x.png",
     },
   },
   66: {
     day: {
-      description: "Light Freezing Rain",
+      description: "Có mưa",
       image: "http://openweathermap.org/img/wn/10d@2x.png",
     },
     night: {
-      description: "Light Freezing Rain",
+      description: "Có mưa",
       image: "http://openweathermap.org/img/wn/10n@2x.png",
     },
   },
   67: {
     day: {
-      description: "Freezing Rain",
+      description: "Có mưa",
       image: "http://openweathermap.org/img/wn/10d@2x.png",
     },
     night: {
-      description: "Freezing Rain",
+      description: "Có mưa",
       image: "http://openweathermap.org/img/wn/10n@2x.png",
     },
   },
@@ -197,91 +197,91 @@ const WMO_CODES: Record<
   },
   77: {
     day: {
-      description: "Snow Grains",
+      description: "Snow GCó mưas",
       image: "http://openweathermap.org/img/wn/13d@2x.png",
     },
     night: {
-      description: "Snow Grains",
+      description: "Snow GCó mưas",
       image: "http://openweathermap.org/img/wn/13n@2x.png",
     },
   },
   80: {
     day: {
-      description: "Light Showers",
+      description: "Mưa rào",
       image: "http://openweathermap.org/img/wn/09d@2x.png",
     },
     night: {
-      description: "Light Showers",
+      description: "Mưa rào",
       image: "http://openweathermap.org/img/wn/09n@2x.png",
     },
   },
   81: {
     day: {
-      description: "Showers",
+      description: "Mưa rào",
       image: "http://openweathermap.org/img/wn/09d@2x.png",
     },
     night: {
-      description: "Showers",
+      description: "Mưa rào",
       image: "http://openweathermap.org/img/wn/09n@2x.png",
     },
   },
   82: {
     day: {
-      description: "Heavy Showers",
+      description: "Mưa rào",
       image: "http://openweathermap.org/img/wn/09d@2x.png",
     },
     night: {
-      description: "Heavy Showers",
+      description: "Mưa rào",
       image: "http://openweathermap.org/img/wn/09n@2x.png",
     },
   },
   85: {
     day: {
-      description: "Light Snow Showers",
+      description: "Mưa rào",
       image: "http://openweathermap.org/img/wn/13d@2x.png",
     },
     night: {
-      description: "Light Snow Showers",
+      description: "Mưa rào",
       image: "http://openweathermap.org/img/wn/13n@2x.png",
     },
   },
   86: {
     day: {
-      description: "Snow Showers",
+      description: "Snow Mưa rào",
       image: "http://openweathermap.org/img/wn/13d@2x.png",
     },
     night: {
-      description: "Snow Showers",
+      description: "Snow Mưa rào",
       image: "http://openweathermap.org/img/wn/13n@2x.png",
     },
   },
   95: {
     day: {
-      description: "Thunderstorm",
+      description: "Sấm sét",
       image: "http://openweathermap.org/img/wn/11d@2x.png",
     },
     night: {
-      description: "Thunderstorm",
+      description: "Sấm sét",
       image: "http://openweathermap.org/img/wn/11n@2x.png",
     },
   },
   96: {
     day: {
-      description: "Light Thunderstorms With Hail",
+      description: "Sấm sét",
       image: "http://openweathermap.org/img/wn/11d@2x.png",
     },
     night: {
-      description: "Light Thunderstorms With Hail",
+      description: "Sấm sét",
       image: "http://openweathermap.org/img/wn/11n@2x.png",
     },
   },
   99: {
     day: {
-      description: "Thunderstorm With Hail",
+      description: "Sấm sét",
       image: "http://openweathermap.org/img/wn/11d@2x.png",
     },
     night: {
-      description: "Thunderstorm With Hail",
+      description: "Sấm sét",
       image: "http://openweathermap.org/img/wn/11n@2x.png",
     },
   },

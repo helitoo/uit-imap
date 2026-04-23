@@ -50,12 +50,6 @@ export function HotspotsProvider({ children }: { children: ReactNode }) {
       .then((raw: RawHotspot[]) => {
         const parsed = raw.flatMap(parseRawHotspot);
         setHotspots(parsed);
-        // Default visible: first MAX_VISIBLE non-supporting spots
-        const defaultVisible = parsed
-          .filter((h) => !h.categories.includes("supporting"))
-          .slice(0, MAX_VISIBLE)
-          .map((h) => h.id);
-        setVisibleIds(new Set(defaultVisible));
       })
       .catch((e: Error) => setError(e.message))
       .finally(() => setLoading(false));

@@ -9,7 +9,8 @@ import HotspotDetail from "@/components/main/hotspot/HotspotDetail";
 import DirectionSheet from "@/components/main/direction/DirectionSheet";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
-import WeatherBar from "@/components/main/WeatherBar";
+import SummaryBar from "@/components/main/SummaryBar";
+import { useSchedule } from "@/contexts/scheduleContext";
 
 export default function HomePage() {
   const { id } = useParams<{ id?: string }>();
@@ -25,6 +26,17 @@ export default function HomePage() {
     getHotspotById,
   } = useHotspots();
   const { usingMode } = useMode();
+
+  // Init schedule
+
+  const { initSchedule } = useSchedule();
+
+  useEffect(() => {
+    async function callInitSchedule() {
+      await initSchedule();
+    }
+    callInitSchedule();
+  }, []);
 
   // Handle /hotspot/:id route
   useEffect(() => {
@@ -47,7 +59,7 @@ export default function HomePage() {
 
   return (
     <>
-      <WeatherBar />
+      <SummaryBar />
       <div className="relative w-full h-full overflow-hidden">
         {/* ── Full-screen 3D model ── */}
         <ModelViewer

@@ -5,6 +5,7 @@ import { HotspotsProvider, useHotspots } from "@/contexts/hotspotsContext";
 import { GraphProvider } from "@/contexts/graphContext";
 import LoadingScreen from "@/components/main/LoadingScreen";
 import HomePage from "@/pages/HomePage";
+import { ScheduleProvider } from "@/contexts/scheduleContext";
 
 /** Inner tree – rendered after hotspots are loaded */
 function AppRoutes() {
@@ -32,7 +33,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <HotspotsProvider>
-        <AppRoutes />
+        <ScheduleProvider>
+          <AppRoutes />
+        </ScheduleProvider>
       </HotspotsProvider>
     </BrowserRouter>
   );
