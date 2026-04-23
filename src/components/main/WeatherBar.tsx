@@ -64,33 +64,36 @@ export default function WeatherBar() {
   }, []);
 
   return (
-    <div
-      className={cn(
-        "fixed top-0 left-1/2 -translate-x-1/2 z-40 transition-all duration-300 w-auto",
-      )}
-    >
-      <div className="bg-white/85 text-muted-foreground px-4 py-2 flex items-center justify-between gap-3 shrink-0 rounded-b-lg">
-        <span className="text-sm font-bold whitespace-nowrap">UIT Weather</span>
-        {/* Collapsed inline preview */}
-        {slots.length > 0 && (
-          <div className="flex items-center gap-3 overflow-hidden">
-            {slots.map((slot) => {
-              const info = getWeatherInfo(slot.code, slot.isDay);
-              return (
-                <div key={slot.time} className="flex items-center gap-1">
-                  <img
-                    src={info.image}
-                    alt={info.description}
-                    className="w-5 h-5 object-contain"
-                    draggable={false}
-                  />
-                  <span className="text-xs font-semibold">{slot.time}</span>
-                </div>
-              );
-            })}
+    <>
+      {slots.length && (
+        <div
+          className={cn(
+            "fixed top-0 left-1/2 -translate-x-1/2 z-40 transition-all duration-300 w-auto",
+          )}
+        >
+          <div className="bg-white/85 text-muted-foreground px-4 py-2 flex items-center justify-between gap-3 shrink-0 rounded-b-lg w-full">
+            <span className="text-sm font-bold whitespace-nowrap">
+              UIT Weather
+            </span>
+            <div className="flex items-center gap-3">
+              {slots.map((slot) => {
+                const info = getWeatherInfo(slot.code, slot.isDay);
+                return (
+                  <div key={slot.time} className="flex items-center gap-1">
+                    <img
+                      src={info.image}
+                      alt={info.description}
+                      className="w-5 h-5 object-contain"
+                      draggable={false}
+                    />
+                    <span className="text-xs font-semibold">{slot.time}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        )}
-      </div>
-    </div>
+        </div>
+      )}
+    </>
   );
 }
