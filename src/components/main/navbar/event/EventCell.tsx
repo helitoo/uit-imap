@@ -70,10 +70,12 @@ export default function EventCell({
           </span>
 
           {/* Capacity */}
-          <span className="flex items-center gap-1 text-xs">
-            <Users className="w-3 h-3 shrink-0" />
-            {number_of_members}/{capacity}
-          </span>
+          {number_of_members && (
+            <span className="flex items-center gap-1 text-xs">
+              <Users className="w-3 h-3 shrink-0" />
+              {number_of_members}/{capacity}
+            </span>
+          )}
         </div>
       </div>
     </div>
