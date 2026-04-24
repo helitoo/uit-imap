@@ -94,10 +94,10 @@ export default function SummaryBar() {
       {slots.length && (
         <div
           className={cn(
-            "fixed top-0 left-1/2 -translate-x-1/2 z-40 transition-all duration-300 w-auto",
+            "fixed top-0 left-1/2 -translate-x-1/2 z-40 transition-all duration-300",
           )}
         >
-          <div className="bg-white/85 text-muted-foreground px-4 py-2 flex items-center justify-between gap-3 shrink-0 rounded-b-2xl w-full">
+          <div className="bg-white/85 text-muted-foreground px-4 py-2 flex items-center gap-3 shrink-0 rounded-b-2xl w-max whitespace-nowrap">
             {slots.map((slot) => {
               const info = getWeatherInfo(slot.code, slot.isDay);
               return (
