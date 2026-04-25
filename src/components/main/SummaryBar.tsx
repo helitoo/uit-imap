@@ -97,7 +97,7 @@ export default function SummaryBar() {
             "fixed top-0 left-1/2 -translate-x-1/2 z-40 transition-all duration-300",
           )}
         >
-          <div className="bg-white/85 text-muted-foreground px-4 py-2 flex items-center gap-3 shrink-0 rounded-b-2xl w-max whitespace-nowrap">
+          <div className="bg-white/85 text-muted-foreground px-4 py-1 flex items-center gap-3 shrink-0 rounded-b-2xl w-max whitespace-nowrap">
             {slots.map((slot) => {
               const info = getWeatherInfo(slot.code, slot.isDay);
               return (

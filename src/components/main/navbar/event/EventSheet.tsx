@@ -2,7 +2,8 @@
 
 import EventCell from "@/components/main/navbar/event/EventCell";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
-import { Schedule, useSchedule } from "@/contexts/scheduleContext";
+import { useSchedule } from "@/contexts/scheduleContext";
+import type { Schedule } from "@/lib/types/schedule";
 import { Layers } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
@@ -16,7 +17,7 @@ function formatNow() {
   return new Date().toLocaleDateString("vi-VN", {
     weekday: "long",
     day: "2-digit",
-    month: "long",
+    month: "numeric",
     year: "numeric",
   });
 }
