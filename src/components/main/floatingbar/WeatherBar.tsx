@@ -48,7 +48,7 @@ export default function WeatherBar({ className = "" }: { className?: string }) {
       {slots.length > 0 && (
         <div
           className={cn(
-            "flex items-center justify-center gap-4 text-muted-foreground", // Tăng gap lên 4 để thoáng hơn
+            "flex items-center justify-center gap-2 text-muted-foreground", // Tăng gap lên 4 để thoáng hơn
             className,
           )}
         >
@@ -57,7 +57,7 @@ export default function WeatherBar({ className = "" }: { className?: string }) {
             return (
               <div
                 key={slot.time}
-                className="flex items-center gap-2 shrink-0" // shrink-0 để không bị bóp méo
+                className="flex items-center shrink-0"
                 title={info.description}
               >
                 <img
@@ -72,10 +72,6 @@ export default function WeatherBar({ className = "" }: { className?: string }) {
                   <span className="text-xs font-bold text-gray-800">
                     {slot.time}
                   </span>
-                  {/* Tăng text-[5px] lên tối thiểu 8px - 9px để có thể đọc được */}
-                  <span className="text-[9px] uppercase tracking-tighter text-gray-500">
-                    {info.description}
-                  </span>
                 </div>
               </div>
             );
@@ -87,7 +83,7 @@ export default function WeatherBar({ className = "" }: { className?: string }) {
               title="Độ đông đúc"
             >
               <div
-                className={`size-2.5 rounded-full animate-pulse ${crowdInfo.bg}`}
+                className={`size-3 rounded-full animate-pulse ${crowdInfo.bg}`}
               ></div>
               <span className={`text-xs font-bold ${crowdInfo.text}`}>
                 {crowdInfo.label}
