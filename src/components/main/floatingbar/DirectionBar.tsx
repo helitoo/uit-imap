@@ -96,6 +96,7 @@ export default function DirectionBar() {
           setDirectionPath([]);
           setDestHotspot(null);
         }}
+        title="Thoát chế độ dẫn đường"
       >
         <X />
       </Button>

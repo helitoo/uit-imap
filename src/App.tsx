@@ -9,6 +9,7 @@ import HomePage from "@/pages/HomePage";
 import { ScheduleProvider } from "@/contexts/scheduleContext";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { WindowProvider } from "@/contexts/windowContext";
+import { WeatherProvider } from "@/contexts/weatherContext";
 
 /** Inner tree – rendered after hotspots are loaded */
 function AppRoutes() {
@@ -42,9 +43,11 @@ export default function App() {
         <TooltipProvider delayDuration={100}>
           <HotspotsProvider>
             <RoomsProvider>
-              <ScheduleProvider>
-                <AppRoutes />
-              </ScheduleProvider>
+              <WeatherProvider>
+                <ScheduleProvider>
+                  <AppRoutes />
+                </ScheduleProvider>
+              </WeatherProvider>
             </RoomsProvider>
           </HotspotsProvider>
         </TooltipProvider>

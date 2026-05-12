@@ -55,8 +55,9 @@ export default function HomePage() {
 
   return (
     <>
-      <FloatingBar />
       <div className="relative w-full h-full overflow-hidden">
+        <FloatingBar />
+
         {/* ── Full-screen 3D model ── */}
         <ModelViewer
           ref={mvRef}
@@ -64,8 +65,7 @@ export default function HomePage() {
           directionPath={directionPath}
         />
 
-        {/* ── Default mode UI ── */}
-        {!isDirectionMode && <Navbar />}
+        <Navbar />
 
         {selectedHotspot && <HotspotDetail hotspot={selectedHotspot} />}
       </div>
