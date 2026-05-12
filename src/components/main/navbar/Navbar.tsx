@@ -1,13 +1,6 @@
 import { cn } from "@/lib/utils";
-import {
-  CalendarDays,
-  Info,
-  MessageCircleQuestion,
-  School,
-  Search,
-} from "lucide-react";
+import { CalendarDays, Info, School, Search } from "lucide-react";
 import { useState } from "react";
-import FilterSheet from "@/components/main/navbar/filter/FilterSheet";
 import { EventSheet } from "@/components/main/navbar/event/EventSheet";
 import { useSchedule } from "@/contexts/scheduleContext";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
@@ -15,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import WebIntroContent from "@/components/main/navbar/content/WebIntroContent";
 import WebDirectContent from "@/components/main/navbar/content/WebDirectContent";
 import UitIntroContent from "@/components/main/navbar/content/UitIntroContent";
+import SearchSheet from "@/components/main/search/SearchSheet";
 
 type ActivePanel = "search" | "schedule" | null;
 
@@ -75,7 +69,7 @@ export default function Navbar() {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
-              stroke-linecap="round"
+              strokeLinecap="round"
               strokeLinejoin="round"
               className="lucide lucide-circle-question-mark-icon lucide-circle-question-mark size-5"
             >
@@ -103,7 +97,7 @@ export default function Navbar() {
         <UitIntroContent />
       </Dialog>
 
-      <Button
+      {/* <Button
         onClick={() => togglePanel("search")}
         className={cn(
           "flex flex-col items-center justify-center px-4 py-1 gap-0.5 rounded-lg transition-all",
@@ -114,7 +108,7 @@ export default function Navbar() {
         title="Tìm kiếm"
       >
         <Search className="w-5 h-5" />
-      </Button>
+      </Button> */}
 
       {completedInit && (
         <Button
@@ -136,16 +130,16 @@ export default function Navbar() {
   return (
     <>
       {/* ── Desktop: right vertical sidebar ── */}
-      <nav className="hidden md:flex fixed right-0 top-0 h-full z-40 flex-col items-center bg-white/85 border-l border-border/50 shadow-lg w-14 py-2 gap-2">
+      <nav className="hidden md:flex fixed right-0 top-0 h-full z-40 flex-col items-center bg-white shadow-md w-14 py-2 gap-2">
         {navItems}
       </nav>
 
       {/* ── Mobile: bottom horizontal bar ── */}
-      <nav className="flex md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/85 shadow-lg h-14 items-center justify-center px-2">
+      <nav className="flex md:hidden fixed bottom-0 right-0 z-40 bg-white shadow-md h-14 items-center justify-center px-2 w-full">
         {navItems}
       </nav>
 
-      <FilterSheet
+      <SearchSheet
         open={activePanel === "search"}
         onOpenChange={(open) => !open && setActivePanel(null)}
       />

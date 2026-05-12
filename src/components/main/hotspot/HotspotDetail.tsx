@@ -1,28 +1,26 @@
-import { Share2, Navigation, X, Users, Layers, Info } from "lucide-react";
-import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
-import { CATEGORY_LABELS, CATEGORY_COLORS } from "@/lib/types/category";
-import type { Hotspot } from "@/lib/types/hotspot";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
+import type { Hotspot } from "@/lib/types/hotspot";
 import { getHotspotShareUrl } from "@/lib/utils";
+import { Info, Navigation, Share2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 interface HotspotDetailProps {
   hotspot: Hotspot;
 }
 
 export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
-  const { setSelectedHotspot } = useHotspots();
+  const { setSelectedHotspot, setDestHotspot } = useHotspots();
   const { setUsingMode } = useMode();
   const navigate = useNavigate();
 
@@ -40,15 +38,10 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
   };
 
   const handleDirection = () => {
+    setDestHotspot(hotspot);
+    setSelectedHotspot(null);
     setUsingMode("direction");
   };
-
-  const floorLabel =
-    hotspot.floor < 0
-      ? `Tầng B${Math.abs(hotspot.floor)}`
-      : hotspot.floor === 0
-        ? "Tầng trệt"
-        : `Tầng ${hotspot.floor}`;
 
   return (
     <Sheet open onOpenChange={(open) => !open && handleClose()}>
@@ -64,22 +57,7 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
               <SheetTitle className="text-white text-lg leading-tight">
                 {hotspot.name}
               </SheetTitle>
-              <p className="text-white/75 text-xs font-medium mt-0.5">
-                {floorLabel}
-              </p>
             </SheetHeader>
-          </div>
-
-          {/* Categories */}
-          <div className="flex flex-wrap gap-1.5 mt-3">
-            {hotspot.categories.map((cat) => (
-              <span
-                key={cat}
-                className="inline-flex items-center rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-semibold text-white border border-white/30"
-              >
-                {CATEGORY_LABELS[cat]}
-              </span>
-            ))}
           </div>
         </div>
 
@@ -87,61 +65,17 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
         <ScrollArea className="flex-1 px-5 py-4">
           <div className="space-y-4">
             {/* Description */}
-            {hotspot.description.length > 0 && (
+            {hotspot.description && (
               <div>
                 <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
                   <Info className="w-3.5 h-3.5" />
                   Mô tả
                 </div>
-                <ul className="space-y-1.5">
-                  {hotspot.description.map((d, i) => (
-                    <li
-                      key={i}
-                      className="text-sm text-foreground/80 leading-relaxed"
-                    >
-                      {d}
-                    </li>
-                  ))}
-                </ul>
+                <ul className="space-y-1.5">{hotspot.description}</ul>
               </div>
             )}
 
             <Separator />
-
-            {/* Meta info */}
-            <div className="space-y-2">
-              {hotspot.capacity > 0 && (
-                <div className="flex items-center gap-2 text-sm">
-                  <Users className="w-4 h-4 text-main shrink-0" />
-                  <span className="text-muted-foreground">Sức chứa:</span>
-                  <span className="font-semibold">
-                    {hotspot.capacity} người
-                  </span>
-                </div>
-              )}
-              <div className="flex items-center gap-2 text-sm">
-                <Layers className="w-4 h-4 text-main shrink-0" />
-                <span className="text-muted-foreground">Tầng:</span>
-                <span className="font-semibold">{floorLabel}</span>
-              </div>
-            </div>
-
-            {/* Category badges full */}
-            <div>
-              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                Loại địa điểm
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {hotspot.categories.map((cat) => (
-                  <span
-                    key={cat}
-                    className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${CATEGORY_COLORS[cat]}`}
-                  >
-                    {CATEGORY_LABELS[cat]}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
         </ScrollArea>
 

@@ -1,4 +1,4 @@
-import { Schedule } from "@/contexts/scheduleContext";
+import { Schedule } from "@/lib/types/schedule";
 import { cn } from "@/lib/utils";
 import { Clock, Users } from "lucide-react";
 

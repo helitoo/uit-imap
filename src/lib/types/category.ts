@@ -7,13 +7,12 @@ export type Category =
   | "hall"
   | "parking"
   | "building"
-  | "elevator"
   | "stairs"
   | "canteen"
   | "sport"
   | "wc"
   | "gate"
-  | "supporting";
+  | "warehouse";
 
 export const CATEGORY_LABELS: Record<Category, string> = {
   classroom: "Phòng học",
@@ -24,32 +23,13 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   hall: "Hội trường",
   parking: "Bãi xe",
   building: "Tòa nhà",
-  elevator: "Thang máy",
-  stairs: "Thang bộ",
+  stairs: "Thang",
   canteen: "Căng tin",
   sport: "Khu thể thao",
   wc: "Nhà vệ sinh",
   gate: "Cổng",
-  supporting: "?",
+  warehouse: "Nhà kho",
 };
-
-// export const CATEGORY_ABBR: Record<Category, string> = {
-//   classroom: "CL",
-//   computer_room: "CR",
-//   lab: "LB",
-//   office: "OF",
-//   public: "PB",
-//   hall: "HL",
-//   parking: "PK",
-//   building: "BD",
-//   elevator: "EL",
-//   stairs: "ST",
-//   canteen: "CN",
-//   sport: "SP",
-//   wc: "WC",
-//   gate: "GT",
-//   supporting: "SU",
-// };
 
 export const CATEGORY_COLORS: Record<Category, string> = {
   classroom: "bg-blue-100 text-blue-800",
@@ -60,16 +40,15 @@ export const CATEGORY_COLORS: Record<Category, string> = {
   hall: "bg-yellow-100 text-yellow-800",
   parking: "bg-orange-100 text-orange-800",
   building: "bg-main/10 text-main",
-  elevator: "bg-sky-100 text-sky-800",
   stairs: "bg-cyan-100 text-cyan-800",
   canteen: "bg-amber-100 text-amber-800",
   sport: "bg-lime-100 text-lime-800",
   wc: "bg-teal-100 text-teal-800",
   gate: "bg-rose-100 text-rose-800",
-  supporting: "bg-slate-100 text-slate-600",
+  warehouse: "bg-mist-100 text-mist-800",
 };
 
-export const FILTER_CATEGORIES: Exclude<Category, "supporting">[] = [
+export const FILTER_CATEGORIES: Category[] = [
   "classroom",
   "computer_room",
   "lab",
@@ -78,7 +57,6 @@ export const FILTER_CATEGORIES: Exclude<Category, "supporting">[] = [
   "hall",
   "parking",
   "building",
-  "elevator",
   "stairs",
   "canteen",
   "sport",

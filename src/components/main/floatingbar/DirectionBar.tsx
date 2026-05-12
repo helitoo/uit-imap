@@ -1,0 +1,104 @@
+import SearchInput from "@/components/main/search/SearchInput";
+import { Button } from "@/components/ui/button";
+import { useHotspots } from "@/contexts/hotspotsContext";
+import { useMode } from "@/contexts/modeContext";
+import { getDirection } from "@/lib/services/getDirection";
+import { Hotspot } from "@/lib/types/hotspot";
+import { Room } from "@/lib/types/room";
+import { ArrowDown, ArrowRight, MapPin, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
+
+export default function DirectionBar() {
+  const { setUsingMode } = useMode();
+
+  const {
+    hotspots,
+    adjacencyGraph,
+    setDirectionPath,
+    setDestHotspot,
+    destHotspot,
+    getHotspotById,
+  } = useHotspots();
+
+  const [sourceHotspot, setSourceHotspot] = useState<Hotspot | null>(null);
+
+  // Recalculate direction whenever start/end change
+  useEffect(() => {
+    if (sourceHotspot && destHotspot) {
+      const path = getDirection(
+        sourceHotspot,
+        destHotspot,
+        hotspots,
+        adjacencyGraph,
+      );
+      setDirectionPath(path);
+      if (path.length === 0) {
+        toast.error("Không tìm thấy đường đi giữa hai địa điểm này!");
+      }
+    }
+  }, [sourceHotspot, destHotspot, hotspots, setDirectionPath]);
+
+  const handleChooseSourceHotspot = (r: Room) => {
+    setSourceHotspot(getHotspotById(r?.belongsTo ?? "") ?? null);
+  };
+
+  const handleChooseDestHotspot = (r: Room) => {
+    setDestHotspot(getHotspotById(r?.belongsTo ?? "") ?? null);
+  };
+
+  return (
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 w-[90%] md:w-fit bg-white p-3 rounded-2xl shadow-lg">
+      {/* Container cho 2 Inputs và Arrows */}
+      <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3 flex-grow">
+        {/* Input 1 + Arrow Down (Mobile) */}
+        <div className="flex items-center gap-2">
+          <div className="md:hidden text-gray-500">
+            {" "}
+            <ArrowDown />{" "}
+          </div>
+          <SearchInput
+            className="bg-white shadow-md rounded-full px-3 py-2 w-full md:w-80 h-10 border border-gray-100"
+            placeholder="Chọn điểm đầu"
+            onClickRes={handleChooseSourceHotspot}
+            showDirectionIcon={false}
+          />
+        </div>
+
+        {/* Arrow Right (Chỉ hiện trên Desktop) */}
+        <div className="hidden md:block text-gray-500">
+          <ArrowRight />
+        </div>
+
+        {/* Input 2 + Arrow Down (Mobile) */}
+        <div className="flex items-center gap-2">
+          <div className="md:hidden text-gray-500">
+            {" "}
+            <MapPin />{" "}
+          </div>
+          <SearchInput
+            className="bg-white shadow-md rounded-full px-3 py-2 w-full md:w-80 h-10 border border-gray-100"
+            placeholder="Chọn điểm đến"
+            onClickRes={handleChooseDestHotspot}
+            initText={destHotspot?.name}
+            showDirectionIcon={false}
+          />
+        </div>
+      </div>
+
+      {/* Nút Close (X) - Luôn nằm bên phải và căn giữa theo chiều dọc của cụm input */}
+      <Button
+        variant="ghost"
+        size="icon"
+        className="flex-shrink-0 text-rose-500 hover:text-rose-500 hover:bg-rose-100 rounded-full"
+        onClick={() => {
+          setUsingMode("default");
+          setDirectionPath([]);
+          setDestHotspot(null);
+        }}
+      >
+        <X />
+      </Button>
+    </div>
+  );
+}

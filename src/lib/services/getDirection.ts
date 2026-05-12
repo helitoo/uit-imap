@@ -1,73 +1,72 @@
+import { AdjacencyGraph } from "@/lib/types/adjacencyGraph";
 import type { Hotspot } from "../types/hotspot";
 
-type Adj = Record<string, Record<string, number>>;
-
-/**
- * Returns the shortest path from start to end as an ordered Hotspot[].
- * Uses Dijkstra's algorithm on the adjacency list.
- * Returns [] if no path exists.
- */
 export function getDirection(
   start: Hotspot,
   end: Hotspot,
-  adj: Adj,
-  hotspots: Hotspot[]
+  hotspots: Hotspot[],
+  adjacencyGraph: AdjacencyGraph,
 ): Hotspot[] {
-  if (start.id === end.id) return [start];
-
+  // Map id -> Hotspot để tra cứu nhanh
   const hotspotMap = new Map<string, Hotspot>(hotspots.map((h) => [h.id, h]));
 
-  const dist: Record<string, number> = {};
-  const prev: Record<string, string | null> = {};
+  // Dijkstra
+  const dist = new Map<string, number>();
+  const prev = new Map<string, string | null>();
   const visited = new Set<string>();
 
-  // Min-heap using a simple array (sufficient for typical campus graph sizes)
-  const queue: { id: string; cost: number }[] = [];
+  for (const h of hotspots) {
+    dist.set(h.id, Infinity);
+    prev.set(h.id, null);
+  }
+  dist.set(start.id, 0);
 
-  const push = (id: string, cost: number) => {
-    dist[id] = cost;
-    prev[id] = prev[id] ?? null;
-    queue.push({ id, cost });
-    queue.sort((a, b) => a.cost - b.cost);
-  };
+  // Min-heap đơn giản bằng Set (hoặc dùng priority queue thủ công)
+  // Vì JS không có built-in heap, ta dùng mảng + sort (phù hợp graph nhỏ)
+  const queue = new Set<string>(hotspots.map((h) => h.id));
 
-  // Initialize
-  Object.keys(adj).forEach((id) => {
-    dist[id] = Infinity;
-    prev[id] = null;
-  });
+  while (queue.size > 0) {
+    // Lấy node có dist nhỏ nhất chưa visited
+    let u: string | null = null;
+    let minDist = Infinity;
+    for (const id of queue) {
+      const d = dist.get(id) ?? Infinity;
+      if (d < minDist) {
+        minDist = d;
+        u = id;
+      }
+    }
 
-  push(start.id, 0);
+    if (u === null || minDist === Infinity) break; // Không còn node nào reachable
+    if (u === end.id) break; // Đã đến đích
 
-  while (queue.length > 0) {
-    const { id: u } = queue.shift()!;
-    if (visited.has(u)) continue;
+    queue.delete(u);
     visited.add(u);
 
-    if (u === end.id) break;
+    for (const { id: vId, weight } of adjacencyGraph.get(u) ?? []) {
+      if (visited.has(vId)) continue;
 
-    const neighbors = adj[u] ?? {};
-    for (const [v, w] of Object.entries(neighbors)) {
-      if (visited.has(v)) continue;
-      const alt = (dist[u] ?? Infinity) + w;
-      if (alt < (dist[v] ?? Infinity)) {
-        prev[v] = u;
-        push(v, alt);
+      const alt = (dist.get(u) ?? Infinity) + weight;
+      if (alt < (dist.get(vId) ?? Infinity)) {
+        dist.set(vId, alt);
+        prev.set(vId, u);
       }
     }
   }
 
-  // Reconstruct path
-  if (dist[end.id] === Infinity) return [];
+  // Truy vết đường đi từ end về start
+  const path: Hotspot[] = [];
+  let current: string | null = end.id;
 
-  const path: string[] = [];
-  let cur: string | null = end.id;
-  while (cur !== null) {
-    path.unshift(cur);
-    cur = prev[cur] ?? null;
+  while (current !== null) {
+    const hotspot = hotspotMap.get(current);
+    if (!hotspot) break;
+    path.unshift(hotspot);
+    current = prev.get(current) ?? null;
   }
 
-  return path
-    .map((id) => hotspotMap.get(id))
-    .filter((h): h is Hotspot => h !== undefined);
+  // Nếu không tìm được đường đi hợp lệ
+  if (path.length === 0 || path[0].id !== start.id) return [];
+
+  return path;
 }

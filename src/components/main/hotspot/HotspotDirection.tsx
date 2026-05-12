@@ -72,9 +72,9 @@ export default function HotspotDirection({
       line.setAttribute("x2", String(posB.x));
       line.setAttribute("y2", String(posB.y));
       line.setAttribute("stroke", "#ef4444");
-      line.setAttribute("stroke-width", "2.5");
-      line.setAttribute("stroke-linecap", "round");
-      line.setAttribute("stroke-dasharray", "6 4");
+      line.setAttribute("strokeWidth", "2.5");
+      line.setAttribute("strokeLinecap", "round");
+      line.setAttribute("strokeDasharray", "6 4");
       svg.appendChild(line);
     }
 

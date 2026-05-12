@@ -33,7 +33,7 @@ uit-imap/
     ├── types/
     │   └── model-viewer.d.ts     # TypeScript declarations cho <model-viewer>
     ├── lib/
-    │   ├── utils.ts              # cn(), jaccardSimilarity(), euclidean2D/3D, ...
+    │   ├── utils.ts              # cn(), compareTwoStrings(), euclidean2D/3D, ...
     │   ├── types/
     │   │   ├── category.ts       # Kiểu Category + labels/colors
     │   │   ├── hotspot.ts        # Kiểu Hotspot + parseRawHotspot()

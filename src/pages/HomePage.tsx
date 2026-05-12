@@ -1,16 +1,15 @@
-import { useRef, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { toast } from "sonner";
+import FloatingBar from "@/components/main/floatingbar/FloatingBar";
+import HotspotDetail from "@/components/main/hotspot/HotspotDetail";
 import ModelViewer, {
   type ModelViewerHandle,
 } from "@/components/main/ModelViewer";
 import Navbar from "@/components/main/navbar/Navbar";
-import HotspotDetail from "@/components/main/hotspot/HotspotDetail";
-import DirectionSheet from "@/components/main/direction/DirectionSheet";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
-import SummaryBar from "@/components/main/SummaryBar";
 import { useSchedule } from "@/contexts/scheduleContext";
+import { useEffect, useRef } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "sonner";
 
 export default function HomePage() {
   const { id } = useParams<{ id?: string }>();
@@ -19,12 +18,12 @@ export default function HomePage() {
 
   const {
     hotspots,
-    visibleIds,
     selectedHotspot,
     setSelectedHotspot,
     directionPath,
     getHotspotById,
   } = useHotspots();
+
   const { usingMode } = useMode();
 
   // Init schedule
@@ -52,19 +51,15 @@ export default function HomePage() {
     setSelectedHotspot(found);
   }, [id, hotspots, getHotspotById, setSelectedHotspot, navigate]);
 
-  // Visible hotspots from the checkbox list
-  const visibleHotspots = hotspots.filter((h) => visibleIds.has(h.id));
-
   const isDirectionMode = usingMode === "direction";
 
   return (
     <>
-      <SummaryBar />
+      <FloatingBar />
       <div className="relative w-full h-full overflow-hidden">
         {/* ── Full-screen 3D model ── */}
         <ModelViewer
           ref={mvRef}
-          visibleHotspots={visibleHotspots}
           selectedHotspot={selectedHotspot}
           directionPath={directionPath}
         />
@@ -73,9 +68,6 @@ export default function HomePage() {
         {!isDirectionMode && <Navbar />}
 
         {selectedHotspot && <HotspotDetail hotspot={selectedHotspot} />}
-
-        {/* ── Direction mode UI ── */}
-        {isDirectionMode && <DirectionSheet path={directionPath} />}
       </div>
     </>
   );

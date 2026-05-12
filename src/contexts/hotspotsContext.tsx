@@ -6,111 +6,125 @@ import {
   useCallback,
   type ReactNode,
 } from "react";
-import type { Hotspot, RawHotspot } from "@/lib/types/hotspot";
-import { parseRawHotspot } from "@/lib/types/hotspot";
-
-const MAX_VISIBLE = 30;
+import type { Hotspot } from "@/lib/types/hotspot";
+import { AdjacencyGraph } from "@/lib/types/adjacencyGraph";
+import { euclideanDistance } from "@/lib/helpers/math/euclideanDistance";
+import { DEFAULT_HOTSPOT_IDS } from "@/lib/consts/defaultHotspots";
 
 interface HotspotsContextValue {
   hotspots: Hotspot[];
+  adjacencyGraph: AdjacencyGraph;
+
   loading: boolean;
   error: string | null;
-  // Hotspots currently checked to render on the model
-  visibleIds: Set<string>;
-  setVisibleIds: (ids: Set<string>) => void;
-  toggleVisible: (id: string) => void;
-  // Currently selected / zoomed hotspot
+
   selectedHotspot: Hotspot | null;
   setSelectedHotspot: (h: Hotspot | null) => void;
-  // Direction path
+
+  // For direction mode
+  destHotspot: Hotspot | null;
+  setDestHotspot: (h: Hotspot | null) => void;
+
   directionPath: Hotspot[];
   setDirectionPath: (path: Hotspot[]) => void;
-  // Helper
+
   getHotspotById: (id: string) => Hotspot | undefined;
-  addVisible: (id: string) => void;
-  removeVisible: (id: string) => void;
+  getDefaultHotspots: () => Hotspot[] | undefined;
 }
 
 const HotspotsContext = createContext<HotspotsContextValue | null>(null);
 
 export function HotspotsProvider({ children }: { children: ReactNode }) {
   const [hotspots, setHotspots] = useState<Hotspot[]>([]);
+  const [adjacencyGraph, setAdjacencyGraph] = useState<AdjacencyGraph>(
+    new Map(),
+  );
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [visibleIds, setVisibleIds] = useState<Set<string>>(new Set());
+
   const [selectedHotspot, setSelectedHotspot] = useState<Hotspot | null>(null);
+
+  const [destHotspot, setDestHotspot] = useState<Hotspot | null>(null);
+
   const [directionPath, setDirectionPath] = useState<Hotspot[]>([]);
 
   useEffect(() => {
-    fetch("/hotspots.json")
+    fetch("/data/hotspots.json")
       .then((r) => {
-        if (!r.ok) throw new Error("Không tải được dữ liệu hotspot");
+        if (!r.ok) throw new Error("Can't fetch hotspots data");
         return r.json();
       })
-      .then((raw: RawHotspot[]) => {
-        const parsed = raw.flatMap(parseRawHotspot);
-        setHotspots(parsed);
+      .then((raw) => {
+        setHotspots(raw);
       })
       .catch((e: Error) => setError(e.message))
       .finally(() => setLoading(false));
   }, []);
 
-  const toggleVisible = useCallback((id: string) => {
-    setVisibleIds((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        if (next.size >= MAX_VISIBLE) return prev; // cap at 30
-        next.add(id);
-      }
-      return next;
-    });
-  }, []);
+  useEffect(() => {
+    if (!hotspots.length) return;
+
+    fetch("/data/hotspot-edges.json")
+      .then((r) => {
+        if (!r.ok) throw new Error("Can't fetch hotspot edges data");
+        return r.json();
+      })
+      .then((raw) => {
+        const edges: [string, string][] = raw;
+        const hotspotMap = new Map<string, Hotspot>(
+          hotspots.map((h) => [h.id, h]),
+        );
+
+        // Xây dựng danh sách kề: id -> [(neighborId, weight)]
+        const adjacency = new Map<string, { id: string; weight: number }[]>();
+
+        for (const [aId, bId] of edges) {
+          const a = hotspotMap.get(aId);
+          const b = hotspotMap.get(bId);
+          if (!a || !b) continue;
+
+          const weight = euclideanDistance(a, b);
+
+          if (!adjacency.has(aId)) adjacency.set(aId, []);
+          if (!adjacency.has(bId)) adjacency.set(bId, []);
+
+          adjacency.get(aId)!.push({ id: bId, weight });
+          adjacency.get(bId)!.push({ id: aId, weight });
+        }
+
+        setAdjacencyGraph(adjacency);
+        console.log(adjacency);
+      })
+      .catch((e: Error) => setError(e.message))
+      .finally(() => setLoading(false));
+  }, [hotspots]);
 
   const getHotspotById = useCallback(
     (id: string) => hotspots.find((h) => h.id === id),
     [hotspots],
   );
 
-  const addVisible = useCallback((id: string) => {
-    setVisibleIds((prev) => {
-      if (prev.has(id)) return prev;
-
-      if (prev.size >= MAX_VISIBLE) return prev;
-
-      const next = new Set(prev);
-      next.add(id);
-      return next;
-    });
-  }, []);
-
-  const removeVisible = useCallback((id: string) => {
-    setVisibleIds((prev) => {
-      if (!prev.has(id)) return prev; // không tồn tại → bỏ qua
-
-      const next = new Set(prev);
-      next.delete(id);
-      return next;
-    });
-  }, []);
+  const getDefaultHotspots = useCallback(
+    () => hotspots.filter((h) => DEFAULT_HOTSPOT_IDS.includes(h.id)),
+    [hotspots],
+  );
 
   return (
     <HotspotsContext.Provider
       value={{
         hotspots,
+        adjacencyGraph,
         loading,
         error,
-        visibleIds,
-        setVisibleIds,
-        toggleVisible,
         selectedHotspot,
         setSelectedHotspot,
+        destHotspot,
+        setDestHotspot,
         directionPath,
         setDirectionPath,
         getHotspotById,
-        addVisible,
-        removeVisible,
+        getDefaultHotspots,
       }}
     >
       {children}

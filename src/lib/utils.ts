@@ -6,36 +6,57 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 /** Tokenise a string into a set of lowercase bigrams for Jaccard similarity */
-function toBigrams(text: string): Set<string> {
-  const s = text.toLowerCase().replace(/\s+/g, " ").trim();
-  const bigrams = new Set<string>();
-  if (s.length === 0) return bigrams;
-  if (s.length === 1) {
-    bigrams.add(s);
-    return bigrams;
-  }
-  for (let i = 0; i < s.length - 1; i++) {
-    bigrams.add(s.slice(i, i + 2));
-  }
-  return bigrams;
+function normalizeVietnamese(str: string): string {
+  if (!str || str.length === 0) return "";
+
+  if (/^\d+$/.test(str)) return "";
+
+  const normalized = str
+    .normalize("NFD")
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
+
+  if (/^\d+$/.test(normalized)) return "";
+
+  return normalized;
 }
 
-/** Jaccard similarity between two strings based on bigrams */
-export function jaccardSimilarity(a: string, b: string): number {
-  if (!a && !b) return 1;
-  if (!a || !b) return 0;
-  const setA = toBigrams(a);
-  const setB = toBigrams(b);
-  let intersection = 0;
-  setA.forEach((bg) => { if (setB.has(bg)) intersection++; });
-  const union = setA.size + setB.size - intersection;
-  return union === 0 ? 1 : intersection / union;
+export function compareTwoStrings(first: string, second: string): number {
+  first = normalizeVietnamese(first);
+  second = normalizeVietnamese(second);
+
+  if (first === second) return 1; // identical or empty
+  if (first.length < 2 || second.length < 2) return 0; // if either is a 0-letter or 1-letter string
+
+  const firstBigrams = new Map<string, number>();
+  for (let i = 0; i < first.length - 1; i++) {
+    const bigram = first.substring(i, i + 2);
+    const count = firstBigrams.has(bigram) ? firstBigrams.get(bigram)! + 1 : 1;
+
+    firstBigrams.set(bigram, count);
+  }
+
+  let intersectionSize = 0;
+  for (let i = 0; i < second.length - 1; i++) {
+    const bigram = second.substring(i, i + 2);
+    const count = firstBigrams.has(bigram) ? firstBigrams.get(bigram)! : 0;
+
+    if (count > 0) {
+      firstBigrams.set(bigram, count - 1);
+      intersectionSize++;
+    }
+  }
+
+  return (2.0 * intersectionSize) / (first.length + second.length - 2);
 }
 
 /** Euclidean distance in 3D */
-export function euclidean3D(a: [number, number, number], b: [number, number, number]): number {
+export function euclidean3D(
+  a: [number, number, number],
+  b: [number, number, number],
+): number {
   return Math.sqrt(
-    (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2 + (a[2] - b[2]) ** 2
+    (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2 + (a[2] - b[2]) ** 2,
   );
 }
 
