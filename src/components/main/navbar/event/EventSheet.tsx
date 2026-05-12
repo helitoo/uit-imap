@@ -2,8 +2,8 @@
 
 import EventCell from "@/components/main/navbar/event/EventCell";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
-import { useSchedule } from "@/contexts/scheduleContext";
-import type { Schedule } from "@/lib/types/schedule";
+import { useEvent } from "@/contexts/eventContext";
+import type { Event } from "@/lib/types/event";
 import { Layers } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
@@ -54,11 +54,11 @@ interface EventSheetProps {
 
 /* ─── component ─── */
 export function EventSheet({ open, onOpenChange }: EventSheetProps) {
-  const { getEvents, completedInit } = useSchedule();
+  const { getEvents } = useEvent();
   const [selectedBuilding, setSelectedBuilding] = useState<string>("A");
-  const [eventMap, setEventMap] = useState<
-    Map<string, Map<string, Schedule[]>>
-  >(new Map());
+  const [eventMap, setEventMap] = useState<Map<string, Map<string, Event[]>>>(
+    new Map(),
+  );
   const [now, setNow] = useState(() => ({
     date: formatNow(),
     time: formatTime(),
@@ -66,10 +66,9 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
 
   /* fetch once after init */
   useEffect(() => {
-    if (!completedInit) return;
     const events = getEvents({ start: startOfToday() });
 
-    const map = new Map<string, Map<string, Schedule[]>>();
+    const map = new Map<string, Map<string, Event[]>>();
     for (const ev of events) {
       const bKey = ev.building_id ?? "";
       const rKey = ev.room_name ?? ev.room_name ?? "";
@@ -78,7 +77,7 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
       if (!rm.has(rKey)) rm.set(rKey, []);
       rm.get(rKey)!.push(ev);
     }
-    /* sort schedules inside each room */
+    /* sort events inside each room */
     for (const rm of map.values())
       for (const [k, arr] of rm)
         rm.set(
@@ -87,25 +86,23 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
         );
 
     setEventMap(map);
-  }, [completedInit]);
+  }, []);
 
   /* derive rows for selected building */
   const { morningCols, afternoonCols } = useMemo(() => {
-    const rm = eventMap.get(selectedBuilding) ?? new Map<string, Schedule[]>();
+    const rm = eventMap.get(selectedBuilding) ?? new Map<string, Event[]>();
 
-    /* sort room_names but display room_name; assume room_name is on the schedule */
+    /* sort room_names but display room_name; assume room_name is on the event */
     const rooms = [...rm.keys()].sort();
 
-    const morningCols: { name: string; cells: Schedule[] }[] = [];
-    const afternoonCols: { name: string; cells: Schedule[] }[] = [];
+    const morningCols: { name: string; cells: Event[] }[] = [];
+    const afternoonCols: { name: string; cells: Event[] }[] = [];
 
     for (const roomId of rooms) {
-      const schedules = rm.get(roomId)!;
-      const displayName = schedules[0]?.room_name ?? roomId;
-      const morning = schedules.filter((e) => toMin(e.start) < MORNING_CUT);
-      const afternoon = schedules.filter(
-        (e) => toMin(e.start) >= AFTERNOON_START,
-      );
+      const events = rm.get(roomId)!;
+      const displayName = events[0]?.room_name ?? roomId;
+      const morning = events.filter((e) => toMin(e.start) < MORNING_CUT);
+      const afternoon = events.filter((e) => toMin(e.start) >= AFTERNOON_START);
       if (morning.length)
         morningCols.push({ name: displayName, cells: morning });
       if (afternoon.length)
@@ -114,8 +111,6 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
 
     return { morningCols, afternoonCols };
   }, [eventMap, selectedBuilding]);
-
-  if (!completedInit) return null;
 
   const isEmpty = morningCols.length === 0 && afternoonCols.length === 0;
 
@@ -204,7 +199,7 @@ function SessionSection({
   cols,
 }: {
   label: string;
-  cols: { name: string; cells: Schedule[] }[];
+  cols: { name: string; cells: Event[] }[];
 }) {
   if (cols.length === 0) return null;
 
@@ -243,7 +238,7 @@ function SessionSection({
               {cells.map((ev, i) => (
                 <EventCell
                   key={i}
-                  schedule={ev}
+                  event={ev}
                   style={{ width: CELL_W, height: CELL_H }}
                   className="overflow-hidden"
                 />

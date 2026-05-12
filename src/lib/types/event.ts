@@ -1,4 +1,4 @@
-export type Schedule = {
+export type Event = {
   start: Date;
   end: Date;
   building_id: string;

@@ -6,7 +6,7 @@ import ModelViewer, {
 import Navbar from "@/components/main/navbar/Navbar";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
-import { useSchedule } from "@/contexts/scheduleContext";
+import { useEvent } from "@/contexts/eventContext";
 import { useEffect, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
@@ -26,17 +26,6 @@ export default function HomePage() {
 
   const { usingMode } = useMode();
 
-  // Init schedule
-
-  const { initSchedule } = useSchedule();
-
-  useEffect(() => {
-    async function callInitSchedule() {
-      await initSchedule();
-    }
-    callInitSchedule();
-  }, []);
-
   // Handle /hotspot/:id route
   useEffect(() => {
     if (!id) return;
@@ -50,8 +39,6 @@ export default function HomePage() {
     }
     setSelectedHotspot(found);
   }, [id, hotspots, getHotspotById, setSelectedHotspot, navigate]);
-
-  const isDirectionMode = usingMode === "direction";
 
   return (
     <>

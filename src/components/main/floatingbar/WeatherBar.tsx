@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import WMO_CODES from "@/lib/consts/wmoCodes";
-import { useSchedule } from "@/contexts/scheduleContext";
 import { useWeather } from "@/contexts/weatherContext";
+import { useEvent } from "@/contexts/eventContext";
 
 interface CrowdInfo {
   density: number;
@@ -32,16 +32,16 @@ function getWeatherInfo(code: number, isDay: boolean) {
 export default function WeatherBar({ className = "" }: { className?: string }) {
   const { slots } = useWeather();
   const [crowdInfo, setCrowdInfo] = useState<CrowdInfo | undefined>(undefined);
-  const { getCrowdDensity, completedInit } = useSchedule();
+  const { events, getCrowdDensity } = useEvent();
 
   useEffect(() => {
-    if (!completedInit) return;
+    if (!events.length) return;
 
     const now = new Date();
     const density = getCrowdDensity({ start: now, end: now });
     const { label, bg, text } = getLabelNColorFormDensity(density);
     setCrowdInfo({ density, label, bg, text });
-  }, [completedInit]);
+  }, [events]);
 
   return (
     <>

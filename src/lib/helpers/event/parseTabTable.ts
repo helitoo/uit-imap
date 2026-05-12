@@ -1,10 +1,10 @@
-import type { Schedule } from "@/lib/types/schedule";
+import type { Event } from "@/lib/types/event";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 /**
  * Maps slot index (0–11) to wall-clock start/end times.
- * Order matches the 12 rows per room in the schedule table:
+ * Order matches the 12 rows per room in the event table:
  *   0  → Tiết 1   (07:30–08:15)
  *   1  → Tiết 2   (08:15–09:00)
  *   2  → Tiết 3   (09:00–09:45)
@@ -107,7 +107,7 @@ function buildGrid(tbody: Element): (Element | null)[][] {
 }
 
 /**
- * Parse one building tab's <table> element into Schedule entries.
+ * Parse one building tab's <table> element into Event entries.
  *
  * Table column layout (after grid reconstruction):
  *   col 0 → room info cell  (rowspan = 12, same element for all 12 slot rows)
@@ -117,12 +117,12 @@ function buildGrid(tbody: Element): (Element | null)[][] {
  *   …
  *   col 8 → Sunday
  */
-export function parseTabTable(table: Element, buildingId: string): Schedule[] {
-  const schedules: Schedule[] = [];
+export function parseTabTable(table: Element, buildingId: string): Event[] {
+  const events: Event[] = [];
 
   // ── Column dates from <thead> ────────────────────────────────────────────
   const theadRow = table.querySelector("thead tr");
-  if (!theadRow) return schedules;
+  if (!theadRow) return events;
 
   const headerCells = Array.from(theadRow.children) as Element[];
   // headerCells[0] = "Phòng / Thứ", [1] = "Tiết", [2..8] = day columns
@@ -132,7 +132,7 @@ export function parseTabTable(table: Element, buildingId: string): Schedule[] {
 
   // ── Build grid from <tbody> ──────────────────────────────────────────────
   const tbody = table.querySelector("tbody");
-  if (!tbody) return schedules;
+  if (!tbody) return events;
   const grid = buildGrid(tbody);
 
   // ── Walk rooms (groups of SLOTS_PER_ROOM rows sharing the same col-0 cell)
@@ -199,7 +199,7 @@ export function parseTabTable(table: Element, buildingId: string): Schedule[] {
         const descEl = cell.querySelector("span.description");
         const event_description = descEl?.textContent?.trim() ?? "";
 
-        schedules.push({
+        events.push({
           start,
           end,
           building_id: buildingId,
@@ -215,5 +215,5 @@ export function parseTabTable(table: Element, buildingId: string): Schedule[] {
     rowIdx += SLOTS_PER_ROOM;
   }
 
-  return schedules;
+  return events;
 }

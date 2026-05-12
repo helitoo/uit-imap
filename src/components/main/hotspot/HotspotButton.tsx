@@ -27,10 +27,11 @@ export default function HotspotButton({
   const { usingMode } = useMode();
 
   const handleClick = () => {
-    if (usingMode === "default") setSelectedHotspot(hotspot);
-
-    if (DEFAULT_HOTSPOT_IDS.includes(hotspot.id))
-      navigate(`/hotspot/${hotspot.id}`, { replace: false });
+    if (usingMode === "default") {
+      setSelectedHotspot(hotspot);
+      if (DEFAULT_HOTSPOT_IDS.includes(hotspot.id))
+        navigate(`/hotspot/${hotspot.id}`, { replace: false });
+    }
   };
 
   // Render unnamed hotspot without tooltip and hover effects

@@ -1,4 +1,4 @@
-import { Schedule } from "@/lib/types/schedule";
+import { Event } from "@/lib/types/event";
 import { cn } from "@/lib/utils";
 import { Clock, Users } from "lucide-react";
 
@@ -11,11 +11,11 @@ const isBeforeNoon = (date: Date) => {
 };
 
 export default function EventCell({
-  schedule,
+  event,
   className = "",
   style = {},
 }: {
-  schedule: Schedule;
+  event: Event;
   className?: string;
   style?: object;
 }) {
@@ -26,7 +26,7 @@ export default function EventCell({
     number_of_members,
     event_title,
     event_description,
-  } = schedule;
+  } = event;
 
   return (
     <div

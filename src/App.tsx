@@ -6,7 +6,7 @@ import { RoomsProvider, useRooms } from "@/contexts/roomContext";
 
 import LoadingScreen from "@/components/main/LoadingScreen";
 import HomePage from "@/pages/HomePage";
-import { ScheduleProvider } from "@/contexts/scheduleContext";
+import { EventProvider } from "@/contexts/eventContext";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { WindowProvider } from "@/contexts/windowContext";
 import { WeatherProvider } from "@/contexts/weatherContext";
@@ -44,9 +44,9 @@ export default function App() {
           <HotspotsProvider>
             <RoomsProvider>
               <WeatherProvider>
-                <ScheduleProvider>
+                <EventProvider>
                   <AppRoutes />
-                </ScheduleProvider>
+                </EventProvider>
               </WeatherProvider>
             </RoomsProvider>
           </HotspotsProvider>

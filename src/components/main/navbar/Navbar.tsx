@@ -2,19 +2,19 @@ import { cn } from "@/lib/utils";
 import { CalendarDays, Info, School, Search } from "lucide-react";
 import { useState } from "react";
 import { EventSheet } from "@/components/main/navbar/event/EventSheet";
-import { useSchedule } from "@/contexts/scheduleContext";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import WebIntroContent from "@/components/main/navbar/content/WebIntroContent";
 import WebDirectContent from "@/components/main/navbar/content/WebDirectContent";
 import UitIntroContent from "@/components/main/navbar/content/UitIntroContent";
 import SearchSheet from "@/components/main/search/SearchSheet";
+import { useEvent } from "@/contexts/eventContext";
 
-type ActivePanel = "search" | "schedule" | null;
+type ActivePanel = "search" | "event" | null;
 
 export default function Navbar() {
   const [activePanel, setActivePanel] = useState<ActivePanel>(null);
-  const { completedInit } = useSchedule();
+  const { events } = useEvent();
 
   const togglePanel = (panel: ActivePanel) => {
     setActivePanel((prev) => (prev === panel ? null : panel));
@@ -22,131 +22,101 @@ export default function Navbar() {
 
   const navItems = (
     <>
-      <div className="flex md:flex-col gap-2 items-center justify-center">
+      {/* Container Logo: Giữ tỉ lệ hợp lý giữa mobile và desktop */}
+      <div className="flex md:flex-col gap-2 items-center justify-center mb-1 md:mb-2 ml-5 md:ml-0">
         <img
           src="uit-20-years-logo.png"
-          alt="UIT iMAP"
-          className="w-10 object-contain rounded-lg"
+          alt="UIT 20th"
+          className="h-9 md:w-12 object-contain rounded-lg"
           draggable={false}
         />
         <img
           src="/logo.png"
           alt="UIT iMAP"
-          className="w-10 object-contain rounded-lg"
+          className="h-9 md:w-12 object-contain rounded-lg"
           draggable={false}
         />
       </div>
 
-      {/* Giới thiệu */}
-      <Dialog>
-        <DialogTrigger asChild>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="w-9 h-9 text-muted-foreground"
-            title="Giới thiệu"
-          >
-            <Info className="size-5" />
-          </Button>
-        </DialogTrigger>
-        <WebIntroContent />
-      </Dialog>
-
-      {/* Hướng dẫn */}
-      <Dialog>
-        <DialogTrigger asChild>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="w-9 h-9 text-muted-foreground"
-            title="Hướng dẫn"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-circle-question-mark-icon lucide-circle-question-mark size-5"
+      {/* Các Action Buttons */}
+      <div className="flex flex-row md:flex-col items-center justify-center gap-1 md:gap-4 w-full md:w-auto">
+        {/* Giới thiệu iMap */}
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button
+              variant="ghost"
+              className="flex flex-col items-center justify-center h-auto py-2 px-3 md:w-full hover:bg-slate-100 transition-colors"
             >
-              <circle cx="12" cy="12" r="10" />
-              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-              <path d="M12 17h.01" />
-            </svg>
-          </Button>
-        </DialogTrigger>
-        <WebDirectContent />
-      </Dialog>
+              {/* Tăng size-5 -> size-6, giảm mb-1 -> mb-0.5 */}
+              <Info className="size-6 mb-0.5 text-slate-600" />
+              <span className="text-[10px] md:text-xs font-medium">
+                Về iMap
+              </span>
+            </Button>
+          </DialogTrigger>
+          <WebIntroContent />
+        </Dialog>
 
-      {/* Giới thiệu trường */}
-      <Dialog>
-        <DialogTrigger asChild>
+        {/* Giới thiệu UIT */}
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button
+              variant="ghost"
+              className="flex flex-col items-center justify-center h-auto py-2 px-3 md:w-full hover:bg-slate-100 transition-colors"
+            >
+              <School className="size-6 mb-0.5 text-slate-600" />
+              <span className="text-[10px] md:text-xs font-medium">Về UIT</span>
+            </Button>
+          </DialogTrigger>
+          <UitIntroContent />
+        </Dialog>
+
+        {/* Lịch Sự Kiện */}
+        {events.length > 0 && (
           <Button
+            onClick={() => togglePanel("event")}
             variant="ghost"
-            size="icon"
-            className="w-9 h-9 text-muted-foreground"
-            title="UIT"
+            className={cn(
+              "flex flex-col items-center justify-center h-auto py-2 px-3 md:w-full transition-all",
+              activePanel === "event"
+                ? "bg-blue-50 text-main"
+                : "text-slate-600",
+            )}
           >
-            <School className="size-5" />
+            <CalendarDays
+              className={cn(
+                "size-6 mb-0.5",
+                activePanel === "event" ? "text-main" : "text-slate-600",
+              )}
+            />
+            <span className="text-[10px] md:text-xs font-medium">Lịch</span>
           </Button>
-        </DialogTrigger>
-        <UitIntroContent />
-      </Dialog>
-
-      {/* <Button
-        onClick={() => togglePanel("search")}
-        className={cn(
-          "flex flex-col items-center justify-center px-4 py-1 gap-0.5 rounded-lg transition-all",
-          activePanel === "search" ? "text-main" : "text-muted-foreground",
         )}
-        variant="ghost"
-        size="icon"
-        title="Tìm kiếm"
-      >
-        <Search className="w-5 h-5" />
-      </Button> */}
-
-      {completedInit && (
-        <Button
-          onClick={() => togglePanel("schedule")}
-          className={cn(
-            "flex flex-col items-center justify-center px-4 py-1 gap-0.5 rounded-lg transition-all",
-            activePanel === "schedule" ? "text-main" : "text-muted-foreground",
-          )}
-          variant="ghost"
-          size="icon"
-          title="Xem lịch"
-        >
-          <CalendarDays className="w-5 h-5" />
-        </Button>
-      )}
+      </div>
     </>
   );
 
   return (
     <>
-      {/* ── Desktop: right vertical sidebar ── */}
-      <nav className="hidden md:flex fixed right-0 top-0 h-full z-40 flex-col items-center bg-white shadow-md w-14 py-2 gap-2">
+      {/* Desktop Sidebar: Căn chỉnh w-20 và gap phù hợp với icon lớn hơn */}
+      <nav className="hidden md:flex fixed right-0 top-0 h-full z-40 flex-col items-center bg-white border-l border-slate-200 w-20 py-8 gap-6 shadow-sm">
         {navItems}
       </nav>
 
-      {/* ── Mobile: bottom horizontal bar ── */}
-      <nav className="flex md:hidden fixed bottom-0 right-0 z-40 bg-white shadow-md h-14 items-center justify-center px-2 w-full">
+      {/* Mobile Bottom Bar: h-16 đủ không gian cho icon size-6 */}
+      <nav className="flex md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-slate-200 h-16 items-center justify-around px-2 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
         {navItems}
       </nav>
 
+      {/* Các logic Sheets/Dialogs giữ nguyên */}
       <SearchSheet
         open={activePanel === "search"}
         onOpenChange={(open) => !open && setActivePanel(null)}
       />
 
-      {completedInit && (
+      {events.length > 0 && (
         <EventSheet
-          open={activePanel === "schedule"}
+          open={activePanel === "event"}
           onOpenChange={(open) => !open && setActivePanel(null)}
         />
       )}
