@@ -57,7 +57,7 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
     <Sheet open onOpenChange={(open) => !open && handleClose()}>
       <SheetContent
         side="left"
-        className="w-full sm:w-1/2 md:w-auto p-0 flex flex-col glass-panel border-r border-border/50"
+        className="w-full md:w-auto p-0 flex flex-col glass-panel border-r border-border/50"
         showOverlay={false}
       >
         {/* Header strip with main color */}

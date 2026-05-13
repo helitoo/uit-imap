@@ -2,17 +2,17 @@
 
 import EventCell from "@/components/main/navbar/event/EventCell";
 import { Button } from "@/components/ui/button";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { useEvent } from "@/contexts/eventContext";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useRooms } from "@/contexts/roomContext";
 import type { Event } from "@/lib/types/event";
-import { Room } from "@/lib/types/room";
 import { Layers } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-/* ─── helpers ─── */
+/* ───────────────── helpers ───────────────── */
 
 function formatNow() {
   return new Date().toLocaleDateString("vi-VN", {
@@ -33,7 +33,6 @@ function formatTime() {
 const toMin = (d: Date) => d.getHours() * 60 + d.getMinutes();
 
 const MORNING_CUT = 11 * 60 + 30;
-
 const AFTERNOON_START = 13 * 60;
 
 const BUILDINGS = [
@@ -44,28 +43,48 @@ const BUILDINGS = [
   { value: "Santap", label: "Sân tập thể thao" },
 ] as const;
 
-const CELL_W = 150; // px
-const CELL_H = 150; // px
+/* ───────────────── constants ───────────────── */
 
-/* ─── types ─── */
+const CELL_W = 150;
+const CELL_H = 150;
+const GRID_GAP = 12;
+
+/* ───────────────── types ───────────────── */
+
 interface EventSheetProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
-/* ─── component ─── */
+/* ───────────────── main component ───────────────── */
+
 export function EventSheet({ open, onOpenChange }: EventSheetProps) {
   const { getEvents } = useEvent();
+
   const [selectedBuilding, setSelectedBuilding] = useState<string>("A");
+
   const [eventMap, setEventMap] = useState<Map<string, Map<string, Event[]>>>(
     new Map(),
   );
+
   const [now, setNow] = useState(() => ({
     date: formatNow(),
     time: formatTime(),
   }));
 
-  /* fetch once after init */
+  /* realtime clock */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNow({
+        date: formatNow(),
+        time: formatTime(),
+      });
+    }, 1000 * 30);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  /* fetch events */
   useEffect(() => {
     const now = new Date();
 
@@ -78,6 +97,7 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
       0,
       0,
     );
+
     const end = new Date(
       now.getFullYear(),
       now.getMonth(),
@@ -91,47 +111,82 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
     const events = getEvents({ start, end });
 
     const map = new Map<string, Map<string, Event[]>>();
+
     for (const ev of events) {
-      const bKey = ev.building_id ?? "";
-      const rKey = ev.room_name ?? ev.room_name ?? "";
-      if (!map.has(bKey)) map.set(bKey, new Map());
-      const rm = map.get(bKey)!;
-      if (!rm.has(rKey)) rm.set(rKey, []);
-      rm.get(rKey)!.push(ev);
+      const buildingKey = ev.building_id ?? "";
+      const roomKey = ev.room_name ?? "";
+
+      if (!map.has(buildingKey)) {
+        map.set(buildingKey, new Map());
+      }
+
+      const roomMap = map.get(buildingKey)!;
+
+      if (!roomMap.has(roomKey)) {
+        roomMap.set(roomKey, []);
+      }
+
+      roomMap.get(roomKey)!.push(ev);
     }
+
     /* sort events inside each room */
-    for (const rm of map.values())
-      for (const [k, arr] of rm)
-        rm.set(
-          k,
+    for (const roomMap of map.values()) {
+      for (const [key, arr] of roomMap) {
+        roomMap.set(
+          key,
           arr.sort((a, b) => a.start.getTime() - b.start.getTime()),
         );
-
-    setEventMap(map);
-  }, []);
-
-  /* derive rows for selected building */
-  const { morningCols, afternoonCols } = useMemo(() => {
-    const rm = eventMap.get(selectedBuilding) ?? new Map<string, Event[]>();
-
-    /* sort room_names but display room_name; assume room_name is on the event */
-    const rooms = [...rm.keys()].sort();
-
-    const morningCols: { name: string; cells: Event[] }[] = [];
-    const afternoonCols: { name: string; cells: Event[] }[] = [];
-
-    for (const roomId of rooms) {
-      const events = rm.get(roomId)!;
-      const displayName = events[0]?.room_name ?? roomId;
-      const morning = events.filter((e) => toMin(e.start) < MORNING_CUT);
-      const afternoon = events.filter((e) => toMin(e.start) >= AFTERNOON_START);
-      if (morning.length)
-        morningCols.push({ name: displayName, cells: morning });
-      if (afternoon.length)
-        afternoonCols.push({ name: displayName, cells: afternoon });
+      }
     }
 
-    return { morningCols, afternoonCols };
+    setEventMap(map);
+  }, [getEvents]);
+
+  /* derive UI data */
+  const { morningCols, afternoonCols } = useMemo(() => {
+    const roomMap =
+      eventMap.get(selectedBuilding) ?? new Map<string, Event[]>();
+
+    const rooms = [...roomMap.keys()].sort();
+
+    const morningCols: {
+      name: string;
+      cells: Event[];
+    }[] = [];
+
+    const afternoonCols: {
+      name: string;
+      cells: Event[];
+    }[] = [];
+
+    for (const roomId of rooms) {
+      const events = roomMap.get(roomId)!;
+
+      const displayName = events[0]?.room_name ?? roomId;
+
+      const morning = events.filter((e) => toMin(e.start) < MORNING_CUT);
+
+      const afternoon = events.filter((e) => toMin(e.start) >= AFTERNOON_START);
+
+      if (morning.length) {
+        morningCols.push({
+          name: displayName,
+          cells: morning,
+        });
+      }
+
+      if (afternoon.length) {
+        afternoonCols.push({
+          name: displayName,
+          cells: afternoon,
+        });
+      }
+    }
+
+    return {
+      morningCols,
+      afternoonCols,
+    };
   }, [eventMap, selectedBuilding]);
 
   const isEmpty = morningCols.length === 0 && afternoonCols.length === 0;
@@ -141,31 +196,104 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
       <SheetContent
         side="right"
         showOverlay={false}
-        className="p-0 flex flex-col border-l border-border/50 w-full overflow-hidden"
+        className="
+          p-0
+          flex
+          flex-col
+          border-l
+          border-border/50
+          w-full
+          overflow-hidden
+        "
       >
-        {/* ── Header ── */}
-        <div className="shrink-0 bg-white border-b border-border/50 sticky top-0 z-20">
-          <div className="flex items-center justify-between px-10 py-2 h-14">
-            {/* Left: Time Info */}
+        {/* ───────── Header ───────── */}
+        <div
+          className="
+            shrink-0
+            bg-white
+            border-b
+            border-border/50
+            sticky
+            top-0
+            z-20
+          "
+        >
+          <div
+            className="
+              flex
+              items-center
+              justify-between
+              px-10
+              py-2
+              h-14
+            "
+          >
+            {/* time */}
             <div className="flex flex-col min-w-0">
-              <h2 className="text-[13px] font-bold text-foreground leading-tight">
+              <h2
+                className="
+                  text-[13px]
+                  font-bold
+                  text-foreground
+                  leading-tight
+                "
+              >
                 {now.date}
               </h2>
-              <p className="text-[11px] text-muted-foreground font-medium tabular-nums">
+
+              <p
+                className="
+                  text-[11px]
+                  text-muted-foreground
+                  font-medium
+                  tabular-nums
+                "
+              >
                 {now.time}
               </p>
             </div>
 
-            {/* Right: Building Select */}
+            {/* building select */}
             <div className="flex items-center gap-3">
-              <label className="hidden sm:block text-[11px] font-semibold text-muted-foreground uppercase tracking-wider whitespace-nowrap">
+              <label
+                className="
+                  hidden
+                  sm:block
+                  text-[11px]
+                  font-semibold
+                  text-muted-foreground
+                  uppercase
+                  tracking-wider
+                  whitespace-nowrap
+                "
+              >
                 Tòa nhà
               </label>
+
               <div className="relative">
                 <select
                   value={selectedBuilding}
                   onChange={(e) => setSelectedBuilding(e.target.value)}
-                  className="appearance-none h-9 w-[140px] sm:w-[180px] rounded-lg border border-input bg-muted/30 px-3 pr-8 text-sm font-medium focus:ring-2 focus:ring-main/20 outline-none transition-all cursor-pointer hover:bg-muted/50"
+                  className="
+                    appearance-none
+                    h-9
+                    w-[140px]
+                    sm:w-[180px]
+                    rounded-lg
+                    border
+                    border-input
+                    bg-muted/30
+                    px-3
+                    pr-8
+                    text-sm
+                    font-medium
+                    outline-none
+                    transition-all
+                    cursor-pointer
+                    hover:bg-muted/50
+                    focus:ring-2
+                    focus:ring-main/20
+                  "
                 >
                   {BUILDINGS.map((b) => (
                     <option key={b.value} value={b.value}>
@@ -173,8 +301,19 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
                     </option>
                   ))}
                 </select>
-                {/* Custom Arrow Icon cho khoa học hơn */}
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-muted-foreground">
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-y-0
+                    right-0
+                    flex
+                    items-center
+                    px-2
+                    text-muted-foreground
+                  "
+                >
                   <svg
                     className="h-4 w-4"
                     fill="none"
@@ -194,22 +333,54 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
           </div>
         </div>
 
-        {/* ── Scrollable body ── */}
+        {/* ───────── Body ───────── */}
         <div className="flex-1 overflow-y-auto bg-white">
           {isEmpty ? (
-            <div className="flex flex-col items-center justify-center h-64 gap-3 text-center px-6">
-              <Layers className="w-10 h-10 text-muted-foreground/30" />
-              <p className="text-sm text-muted-foreground">
+            <div
+              className="
+                flex
+                flex-col
+                items-center
+                justify-center
+                h-64
+                gap-3
+                text-center
+                px-6
+              "
+            >
+              <Layers
+                className="
+                  w-10
+                  h-10
+                  text-muted-foreground/30
+                "
+              />
+
+              <p
+                className="
+                  text-sm
+                  text-muted-foreground
+                "
+              >
                 Không tìm thấy sự kiện nào.
               </p>
             </div>
           ) : (
-            <div className="flex flex-col divide-y divide-border/10">
+            <div
+              className="
+                flex
+                flex-col
+                divide-y
+                divide-border/10
+                pb-5
+              "
+            >
               <SessionSection
                 label="Buổi Sáng"
                 cols={morningCols}
                 onOpenChange={onOpenChange}
               />
+
               <SessionSection
                 label="Buổi Chiều"
                 cols={afternoonCols}
@@ -223,21 +394,27 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
   );
 }
 
-/* ─── SessionSection: horizontal scroll with scrollbar at TOP ─── */
+/* ───────────────── session section ───────────────── */
+
 function SessionSection({
   label,
   cols,
   onOpenChange,
 }: {
   label: string;
-  cols: { name: string; cells: Event[] }[];
+  cols: {
+    name: string;
+    cells: Event[];
+  }[];
   onOpenChange: (open: boolean) => void;
 }) {
-  if (cols.length === 0) return null;
-
   const navigate = useNavigate();
+
   const { getRoomByName } = useRooms();
+
   const { setSelectedHotspot, getHotspotById } = useHotspots();
+
+  if (cols.length === 0) return null;
 
   const handleClick = (roomName: string) => {
     const room = getRoomByName(roomName);
@@ -249,57 +426,116 @@ function SessionSection({
     if (!hotspot) return;
 
     onOpenChange(false);
+
     setSelectedHotspot(hotspot);
-    navigate(`/hotspot/${hotspot.id}`, { replace: false });
+
+    navigate(`/hotspot/${hotspot.id}`, {
+      replace: false,
+    });
   };
 
+  const contentWidth = cols.length * CELL_W + (cols.length - 1) * GRID_GAP;
+
   return (
-    <div className="flex flex-col">
-      {/* Section label */}
-      <div className="flex items-center gap-2 px-4 pt-4 pb-2">
-        <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-main">
+    <section className="flex flex-col">
+      {/* section label */}
+      <div
+        className="
+          flex
+          items-center
+          gap-2
+          px-4
+          pt-4
+          pb-2
+        "
+      >
+        <span
+          className="
+            text-[10px]
+            font-bold
+            uppercase
+            tracking-[0.15em]
+            text-main
+          "
+        >
           {label}
         </span>
       </div>
 
-      <div className="overflow-x-auto" style={{ transform: "rotateX(180deg)" }}>
-        <div
-          className="px-4 pb-4 pt-2"
-          style={{
-            transform: "rotateX(180deg)",
-            display: "grid",
-            gridTemplateColumns: `repeat(${cols.length}, ${CELL_W}px)`,
-            gap: "12px",
-            width: "max-content",
-          }}
-        >
-          {cols.map(({ name, cells }) => (
-            <div
-              key={name}
-              className="flex flex-col gap-2"
-              style={{ width: CELL_W }}
-            >
-              {/* Room header */}
-              <Button
-                className="text-[10px] font-bold text-center text-muted-foreground bg-muted/50 rounded py-1.5 px-2 truncate border border-border/40"
-                onClick={() => handleClick(cells[0].room_name)}
+      {/* horizontal scroll */}
+      <ScrollArea
+        className="
+          w-full
+          overflow-y-hidden
+        "
+      >
+        <div className="min-w-max">
+          <div
+            className="
+              grid
+              px-4
+              pb-4
+              pt-2
+            "
+            style={{
+              gridTemplateColumns: `repeat(${cols.length}, ${CELL_W}px)`,
+              gap: `${GRID_GAP}px`,
+              width: `${contentWidth}px`,
+            }}
+          >
+            {cols.map(({ name, cells }) => (
+              <div
+                key={name}
+                className="
+                    flex
+                    flex-col
+                    gap-2
+                  "
+                style={{
+                  width: CELL_W,
+                }}
               >
-                {name}
-              </Button>
+                {/* room header */}
+                <Button
+                  className="
+                      text-[10px]
+                      font-bold
+                      text-center
+                      text-muted-foreground
+                      bg-muted/50
+                      rounded
+                      py-1.5
+                      px-2
+                      truncate
+                      border
+                      border-border/40
+                      hover:bg-muted
+                    "
+                  onClick={() => handleClick(cells[0].room_name)}
+                >
+                  {name}
+                </Button>
 
-              {/* Event cells */}
-              {cells.map((ev, i) => (
-                <EventCell
-                  key={i}
-                  event={ev}
-                  style={{ width: CELL_W, height: CELL_H }}
-                  className="overflow-hidden"
-                />
-              ))}
-            </div>
-          ))}
+                {/* event list */}
+                {cells.map((ev, i) => (
+                  <EventCell
+                    key={i}
+                    event={ev}
+                    style={{
+                      width: CELL_W,
+                      height: CELL_H,
+                    }}
+                    className="overflow-hidden"
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </div>
+
+        {/* identical behavior to FloorMap */}
+        <ScrollBar orientation="horizontal" forceMount />
+      </ScrollArea>
+    </section>
   );
 }

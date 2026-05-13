@@ -24,17 +24,17 @@ export default function HotspotMap({ rooms }: { rooms: Room[] }) {
     .sort((a, b) => b - a);
 
   return (
-    <div className="flex flex-col gap-8 p-6">
+    <div className="flex flex-col gap-8 p-4">
       {sortedFloors.map((floor) => (
         <section key={floor} className="space-y-3">
           <div className="flex items-center gap-4">
-            <h2 className="text-xl font-bold text-gray-700 whitespace-nowrap">
+            <h2 className="text-lg font-bold text-gray-700 whitespace-nowrap">
               Tầng {floor}
             </h2>
             <div className="h-[1px] w-full bg-gray-200"></div>
           </div>
 
-          <div className="bg-gray-50 rounded-xl shadow-sm border p-2">
+          <div className="bg-gray-50 rounded-xl shadow-sm border overflow-hidden flex flex-col max-w-full">
             <FloorMap rooms={roomsByFloor[floor]} />
           </div>
         </section>
