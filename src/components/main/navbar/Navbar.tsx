@@ -5,7 +5,6 @@ import { EventSheet } from "@/components/main/navbar/event/EventSheet";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import WebIntroContent from "@/components/main/navbar/content/WebIntroContent";
-import WebDirectContent from "@/components/main/navbar/content/WebDirectContent";
 import UitIntroContent from "@/components/main/navbar/content/UitIntroContent";
 import SearchSheet from "@/components/main/search/SearchSheet";
 import { useEvent } from "@/contexts/eventContext";
@@ -14,7 +13,7 @@ type ActivePanel = "search" | "event" | null;
 
 export default function Navbar() {
   const [activePanel, setActivePanel] = useState<ActivePanel>(null);
-  const { events } = useEvent();
+  const { loading } = useEvent();
 
   const togglePanel = (panel: ActivePanel) => {
     setActivePanel((prev) => (prev === panel ? null : panel));
@@ -72,7 +71,7 @@ export default function Navbar() {
         </Dialog>
 
         {/* Lịch Sự Kiện */}
-        {events.length > 0 && (
+        {!loading && (
           <Button
             onClick={() => togglePanel("event")}
             variant="ghost"
@@ -114,7 +113,7 @@ export default function Navbar() {
         onOpenChange={(open) => !open && setActivePanel(null)}
       />
 
-      {events.length > 0 && (
+      {!loading && (
         <EventSheet
           open={activePanel === "event"}
           onOpenChange={(open) => !open && setActivePanel(null)}

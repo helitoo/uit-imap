@@ -8,7 +8,7 @@ import { useEvent } from "@/contexts/eventContext";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useRooms } from "@/contexts/roomContext";
 import type { Event } from "@/lib/types/event";
-import { Layers } from "lucide-react";
+import { CalendarX } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -59,7 +59,7 @@ interface EventSheetProps {
 /* ───────────────── main component ───────────────── */
 
 export function EventSheet({ open, onOpenChange }: EventSheetProps) {
-  const { getEvents } = useEvent();
+  const { getTodayEvents } = useEvent();
 
   const [selectedBuilding, setSelectedBuilding] = useState<string>("A");
 
@@ -86,29 +86,7 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
 
   /* fetch events */
   useEffect(() => {
-    const now = new Date();
-
-    const start = new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate(),
-      0,
-      0,
-      0,
-      0,
-    );
-
-    const end = new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate(),
-      23,
-      59,
-      59,
-      999,
-    );
-
-    const events = getEvents({ start, end });
+    const events = getTodayEvents();
 
     const map = new Map<string, Map<string, Event[]>>();
 
@@ -140,7 +118,7 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
     }
 
     setEventMap(map);
-  }, [getEvents]);
+  }, [getTodayEvents]);
 
   /* derive UI data */
   const { morningCols, afternoonCols } = useMemo(() => {
@@ -336,33 +314,10 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
         {/* ───────── Body ───────── */}
         <div className="flex-1 overflow-y-auto bg-white">
           {isEmpty ? (
-            <div
-              className="
-                flex
-                flex-col
-                items-center
-                justify-center
-                h-64
-                gap-3
-                text-center
-                px-6
-              "
-            >
-              <Layers
-                className="
-                  w-10
-                  h-10
-                  text-muted-foreground/30
-                "
-              />
-
-              <p
-                className="
-                  text-sm
-                  text-muted-foreground
-                "
-              >
-                Không tìm thấy sự kiện nào.
+            <div className="flex flex-col items-center justify-center py-8 border-2 border-dashed rounded-xl bg-slate-50/50">
+              <CalendarX className="w-8 h-8 text-muted-foreground mb-2" />
+              <p className="text-sm text-muted-foreground">
+                Trống lịch hôm nay
               </p>
             </div>
           ) : (

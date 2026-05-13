@@ -1,5 +1,5 @@
 // FloorMap.tsx
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Room } from "@/lib/types/room";
 import { CATEGORY_COLORS, CATEGORY_LABELS } from "@/lib/types/category";
@@ -12,30 +12,21 @@ import {
 } from "@/components/ui/dialog";
 
 import { useWindow } from "@/contexts/windowContext";
+import { useEvent } from "@/contexts/eventContext";
+import { Event } from "@/lib/types/event";
+import { CalendarX, Clock, Info, Users } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-interface FloorMapProps {
-  rooms: Room[];
-}
+export default function FloorMap({ rooms }: { rooms: Room[] }) {
+  // Calc layout
 
-export default function FloorMap({ rooms }: FloorMapProps) {
   const { isMobile } = useWindow();
 
-  const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
-
-  /**
-   * Không render nếu không có room
-   */
   if (rooms.length === 0) return null;
 
-  /**
-   * Layout constants
-   */
   const CONTAINER_PADDING = isMobile ? 8 : 16;
   const GAP = 1;
 
-  /**
-   * Tính số hàng / cột lớn nhất
-   */
   const { maxRow, maxCol } = useMemo(() => {
     const maxRow = Math.max(...rooms.map((r) => r.rows?.[1] ?? 1), 1);
 
@@ -60,12 +51,28 @@ export default function FloorMap({ rooms }: FloorMapProps) {
     return Math.min(MAX_SIZE, Math.max(MIN_SIZE, calculated));
   }, [isMobile, maxCol]);
 
-  /**
-   * Grid dimensions
-   */
   const gridWidth = maxCol * CELL_SIZE + (maxCol - 1) * GAP;
 
   const gridHeight = maxRow * CELL_SIZE + (maxRow - 1) * GAP;
+
+  // Event
+  const { loading, getTodayEventsByRoomName } = useEvent();
+  const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
+  const [events, setEvents] = useState<Event[]>([]);
+
+  const handleSelectRoom = (room: Room) => {
+    if (!["stairs", "warehouse", "wc", "tech"].includes(room.category))
+      setSelectedRoom(room);
+  };
+
+  useEffect(() => {
+    if (selectedRoom && !loading) {
+      const data = getTodayEventsByRoomName(selectedRoom.name);
+      setEvents(data);
+    } else {
+      setEvents([]); // Reset khi đóng dialog
+    }
+  }, [selectedRoom, getTodayEventsByRoomName]);
 
   return (
     <>
@@ -98,7 +105,7 @@ export default function FloorMap({ rooms }: FloorMapProps) {
               <button
                 key={room.id}
                 type="button"
-                onClick={() => setSelectedRoom(room)}
+                onClick={() => handleSelectRoom(room)}
                 className={`
                   flex items-center justify-center
                   rounded-md border
@@ -136,61 +143,125 @@ export default function FloorMap({ rooms }: FloorMapProps) {
 
       <Dialog
         open={!!selectedRoom}
-        onOpenChange={(open) => {
-          if (!open) {
-            setSelectedRoom(null);
-          }
-        }}
+        onOpenChange={(open) => !open && setSelectedRoom(null)}
       >
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Thông tin chi tiết: {selectedRoom?.name}</DialogTitle>
+        <DialogContent className="max-w-md p-0 overflow-hidden gap-0">
+          <DialogHeader className="p-6 pb-4 bg-slate-50/50 border-b">
+            <DialogTitle className="flex flex-col gap-1">
+              <div className="text-xl font-bold">{selectedRoom?.name}</div>
+              {selectedRoom?.description && (
+                <p className="line-clamp-3 leading-relaxed text-justify text-sm">
+                  {selectedRoom?.description}
+                </p>
+              )}
+            </DialogTitle>
           </DialogHeader>
 
-          {selectedRoom && (
-            <div className="space-y-3 py-4">
-              <div className="flex justify-between border-b pb-2 gap-3">
-                <span className="font-semibold">Loại phòng:</span>
-
-                <span
-                  className={`
-                    rounded px-2 py-0.5 text-sm
-                    ${
+          <div className="p-6 space-y-6 max-h-[80vh] overflow-y-auto">
+            {/* Section: Thông tin phòng */}
+            {selectedRoom && (
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                <div className="space-y-1">
+                  <p className="text-muted-foreground font-medium">
+                    Loại phòng
+                  </p>
+                  <span
+                    className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold ${
                       selectedRoom.category
                         ? CATEGORY_COLORS[selectedRoom.category]
-                        : "bg-gray-100 text-gray-700"
-                    }
-                  `}
-                >
-                  {selectedRoom.category
-                    ? CATEGORY_LABELS[selectedRoom.category]
-                    : "N/A"}
-                </span>
-              </div>
-
-              <div className="flex justify-between border-b pb-2 gap-3">
-                <span className="font-semibold">Thuộc:</span>
-
-                <span className="text-right">{selectedRoom.belongsTo}</span>
-              </div>
-
-              <div className="flex justify-between border-b pb-2 gap-3">
-                <span className="font-semibold">Tầng:</span>
-
-                <span>{selectedRoom.floor ?? "N/A"}</span>
-              </div>
-
-              {selectedRoom.description && (
-                <div className="pt-2">
-                  <p className="font-semibold mb-1">Mô tả:</p>
-
-                  <p className="text-sm text-gray-600 break-words">
-                    {selectedRoom.description}
+                        : "bg-gray-100"
+                    }`}
+                  >
+                    {selectedRoom.category
+                      ? CATEGORY_LABELS[selectedRoom.category]
+                      : "N/A"}
+                  </span>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-muted-foreground font-medium">Vị trí</p>
+                  <p className="font-semibold text-foreground">
+                    Tầng {selectedRoom.floor ?? "N/A"} •{" "}
+                    {selectedRoom.belongsTo}
                   </p>
                 </div>
-              )}
+              </div>
+            )}
+
+            {/* Section: Danh sách sự kiện (Refactored theo mẫu) */}
+            <div className="space-y-4">
+              <h4 className="text-sm font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                Sự kiện hôm nay
+                <span className="h-px flex-1 bg-border" />
+              </h4>
+
+              <div className="space-y-3">
+                {events.length > 0 ? (
+                  events.map((event, idx) => {
+                    const isMorning = event.start.getHours() < 12;
+
+                    return (
+                      <div
+                        key={idx}
+                        className={cn(
+                          "group relative flex gap-3 p-3 transition-all duration-200",
+                          "hover:bg-accent/30 cursor-default border rounded-r-xl",
+                          "border-l-4",
+                          isMorning
+                            ? "border-l-emerald-400"
+                            : "border-l-amber-400",
+                        )}
+                      >
+                        <div className="flex-1 min-w-0 flex flex-col gap-1.5">
+                          {/* Title */}
+                          <p className="text-sm font-bold text-foreground leading-snug line-clamp-2">
+                            {event.event_title}
+                          </p>
+
+                          {/* Description */}
+                          {event.event_description && (
+                            <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed text-justify">
+                              {event.event_description.replace(
+                                "Giảng viên",
+                                "GV",
+                              )}
+                            </p>
+                          )}
+
+                          {/* Meta Info */}
+                          <div className="flex items-center gap-4 mt-1">
+                            <span className="flex items-center gap-1 text-[11px] font-medium text-muted-foreground">
+                              <Clock className="w-3 h-3 shrink-0" />
+                              {event.start.toLocaleTimeString([], {
+                                hour: "2-digit",
+                                minute: "2-digit",
+                              })}{" "}
+                              -{" "}
+                              {event.end.toLocaleTimeString([], {
+                                hour: "2-digit",
+                                minute: "2-digit",
+                              })}
+                            </span>
+
+                            <span className="flex items-center gap-1 text-[11px] font-medium text-muted-foreground">
+                              <Users className="w-3 h-3 shrink-0" />
+                              {event.number_of_members}/{event.capacity}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <div className="flex flex-col items-center justify-center py-8 border-2 border-dashed rounded-xl bg-slate-50/50">
+                    <CalendarX className="w-8 h-8 text-muted-foreground mb-2" />
+                    <p className="text-sm text-muted-foreground">
+                      Trống lịch hôm nay
+                    </p>
+                  </div>
+                )}
+              </div>
             </div>
-          )}
+          </div>
         </DialogContent>
       </Dialog>
     </>

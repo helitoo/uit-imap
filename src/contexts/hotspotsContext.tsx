@@ -94,7 +94,6 @@ export function HotspotsProvider({ children }: { children: ReactNode }) {
         }
 
         setAdjacencyGraph(adjacency);
-        console.log(adjacency);
       })
       .catch((e: Error) => setError(e.message))
       .finally(() => setLoading(false));

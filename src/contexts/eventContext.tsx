@@ -14,15 +14,19 @@ import {
 
 import { fetchEvents } from "@/lib/helpers/event/fetchEvents";
 
-import type { Event, ScheduleFilter } from "@/lib/types/event";
+import type { Event } from "@/lib/types/event";
 import { useRooms } from "@/contexts/roomContext";
 import { normalizeEvents } from "@/lib/helpers/event/normalizeEvents";
+import getTodayInterval from "@/lib/helpers/event/getTodayInterval";
+import { useHotspots } from "@/contexts/hotspotsContext";
 
 interface EventContextType {
   events: Event[];
-
-  getEvents: (filter: ScheduleFilter) => Event[];
-  getCrowdDensity: (filter: ScheduleFilter) => number;
+  loading: boolean;
+  getTodayEvents: () => Event[];
+  getTodayEventsByRoomName: (roomName: string) => Event[];
+  getTodayEventsByHotspotId: (hotspotId: string) => Event[];
+  getCurrentDensity: () => number;
 }
 
 const LASTFETCH_KEY = "event-lastfetch";
@@ -36,17 +40,15 @@ const EventContext = createContext<EventContextType | undefined>(undefined);
 
 export function EventProvider({ children }: { children: ReactNode }) {
   const [events, setEvents] = useState<Event[]>([]);
-  const { rooms } = useRooms();
+  const [loading, setLoading] = useState<boolean>(true);
+  const { rooms, getRoomByName } = useRooms();
+  const { getHotspotById } = useHotspots();
 
   /** Fetch and hydrate event data from the UIT room page. */
   useEffect(() => {
     if (!rooms || !rooms.length) return;
 
     const initEvents = async () => {
-      let data: Event[] = [];
-
-      let needFetch = false;
-
       try {
         const lastFetch = Number(localStorage.getItem(LASTFETCH_KEY));
 
@@ -57,76 +59,85 @@ export function EventProvider({ children }: { children: ReactNode }) {
 
         if (!scheduleRaw) throw new Error("No cached events");
 
-        data = string2Events(scheduleRaw);
+        const data = string2Events(scheduleRaw);
+        const normalizedEvents = normalizeEvents(data, rooms);
+        setEvents(normalizedEvents);
+        setLoading(false);
       } catch (err) {
         // Lỗi... -> cần fetch lại
-        needFetch = true;
-        if (
-          !(
-            err instanceof Error &&
-            ["Cache expired", "No cached events"].includes(err.message)
-          )
-        ) {
-          console.error("Event cache error:", err);
-        }
-      }
-
-      if (needFetch) {
-        data = await fetchEvents();
+        const data = await fetchEvents();
 
         localStorage.setItem(LASTFETCH_KEY, Date.now().toString());
         localStorage.setItem(SCHEDULE_KEY, events2String(data));
 
         setEvents(data);
+        setLoading(false);
       }
-
-      const normalizedEvents = normalizeEvents(data, rooms);
-      setEvents(normalizedEvents);
     };
 
     initEvents();
   }, [rooms]);
 
-  const getEvents = useCallback(
-    ({
-      start,
-      end,
-      building_id,
-      room_name,
-      capacity,
-      event_title,
-      event_description,
-    }: ScheduleFilter): Event[] => {
-      if (!events.length) return [];
+  const getTodayEvents = useCallback(() => {
+    if (loading) return [];
 
-      return events.filter((s) => {
-        if (start !== undefined && s.end < start) return false;
-        if (end !== undefined && s.start > end) return false;
-        if (building_id !== undefined && s.building_id !== building_id)
-          return false;
-        if (room_name !== undefined && !s.room_name.includes(room_name))
-          return false;
-        if (capacity !== undefined && s.capacity < capacity) return false;
-        if (event_title !== undefined && !s.event_title.includes(event_title))
-          return false;
-        if (
-          event_description !== undefined &&
-          !s.event_description.includes(event_description)
-        )
-          return false;
+    const { start, end } = getTodayInterval();
 
+    return events.filter((event) => {
+      if (event.end <= start) return false;
+      if (event.start >= end) return false;
+      return true;
+    });
+  }, [loading, events]);
+
+  const getTodayEventsByRoomName = useCallback(
+    (roomName: string) => {
+      if (loading) return [];
+
+      const { start, end } = getTodayInterval();
+
+      return events.filter((event) => {
+        if (event.end <= start) return false;
+        if (event.start >= end) return false;
+        if (event.room_name !== roomName) return false;
         return true;
       });
     },
-    [events],
+    [loading, events],
   );
 
-  const getCrowdDensity = useCallback((filter: ScheduleFilter): number => {
-    if (!events.length) return 0;
+  const getTodayEventsByHotspotId = useCallback(
+    (hotspotId: string) => {
+      if (loading) return [];
 
-    const filteredSchedules: Event[] = getEvents(filter);
+      const { start, end } = getTodayInterval();
 
-    const numberOfMembers = filteredSchedules.reduce(
+      return events.filter((event) => {
+        if (event.end <= start) return false;
+        if (event.start >= end) return false;
+
+        const room = getRoomByName(event.room_name);
+        if (!room) return false;
+
+        const hotspot = getHotspotById(room.belongsTo);
+        if (!hotspot) return false;
+
+        if (hotspot.id !== hotspotId) return false;
+        return true;
+      });
+    },
+    [loading, events, getRoomByName, getHotspotById],
+  );
+
+  const getCurrentDensity = useCallback(() => {
+    if (loading) return 0;
+
+    const now = Date.now();
+    const currentEvents: Event[] = events.filter((event) => {
+      return event.start.getDate() <= now && now < event.end.getDate();
+    });
+
+    const numberOfMembers = currentEvents.reduce(
       (sum, s) => sum + s.number_of_members,
       0,
     );
@@ -138,14 +149,17 @@ export function EventProvider({ children }: { children: ReactNode }) {
     // Sport: 490
 
     return numberOfMembers / 9210;
-  }, []);
+  }, [loading, events]);
 
   return (
     <EventContext.Provider
       value={{
         events,
-        getEvents,
-        getCrowdDensity,
+        loading,
+        getTodayEvents,
+        getTodayEventsByRoomName,
+        getTodayEventsByHotspotId,
+        getCurrentDensity,
       }}
     >
       {children}

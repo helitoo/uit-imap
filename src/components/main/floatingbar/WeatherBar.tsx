@@ -32,16 +32,13 @@ function getWeatherInfo(code: number, isDay: boolean) {
 export default function WeatherBar({ className = "" }: { className?: string }) {
   const { slots } = useWeather();
   const [crowdInfo, setCrowdInfo] = useState<CrowdInfo | undefined>(undefined);
-  const { events, getCrowdDensity } = useEvent();
+  const { getCurrentDensity } = useEvent();
 
   useEffect(() => {
-    if (!events.length) return;
-
-    const now = new Date();
-    const density = getCrowdDensity({ start: now, end: now });
+    const density = getCurrentDensity();
     const { label, bg, text } = getLabelNColorFormDensity(density);
     setCrowdInfo({ density, label, bg, text });
-  }, [events]);
+  }, [getCurrentDensity]);
 
   return (
     <>
