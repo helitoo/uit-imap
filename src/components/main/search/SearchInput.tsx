@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
 import { useRooms } from "@/contexts/roomContext";
 import { Room } from "@/lib/types/room";
@@ -30,6 +31,7 @@ export default function SearchInput({
   const { rooms } = useRooms();
   const { setUsingMode } = useMode();
   const containerRef = useRef<HTMLDivElement>(null);
+  const { getHotspotById } = useHotspots();
 
   // Calculate top 5 matching rooms based on search query
   const topMatches = useMemo(() => {
@@ -81,6 +83,7 @@ export default function SearchInput({
     >
       {/* Input chiếm toàn bộ không gian còn lại */}
       <Input
+        spellCheck={false}
         type="text"
         placeholder={placeholder}
         value={searchQuery}
@@ -135,13 +138,11 @@ export default function SearchInput({
                       {r.description}
                     </div>
                   )}
-                  {r.belongsTo &&
-                    r.floor &&
-                    ["A", "B", "C", "D", "E"].includes(r.belongsTo) && (
-                      <div className="font-sm text-gray-400 truncate">
-                        Tòa nhà {r.belongsTo} • Tầng {r.floor}
-                      </div>
-                    )}
+                  {r.belongsTo && r.floor && (
+                    <div className="font-sm text-gray-400 truncate">
+                      {getHotspotById(r.belongsTo)?.name} • Tầng {r.floor}
+                    </div>
+                  )}
                 </button>
               ))
             : searchQuery.trim() && (

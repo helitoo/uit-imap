@@ -3536,12 +3536,12 @@
   },
   {
     "id": 384,
-    "name": "Nhà phục vụ sinh viên",
+    "name": "Căn tin / Cantee",
     "belongsTo": "S1"
   },
   {
     "id": 385,
-    "name": "Căn tin / Canteen",
+    "name": "Nhà phục vụ sinh viên",
     "belongsTo": "Z15"
   },
   {
@@ -3562,7 +3562,7 @@
   {
     "id": 389,
     "name": "Phòng hội họa",
-    "belongsTo": "S1",
+    "belongsTo": "Z15",
     "floor": 2
   }
 ]

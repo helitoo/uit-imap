@@ -29,13 +29,13 @@
   },
   {
     "id": "S3",
-    "name": "Nhà phục vụ sinh viên.",
+    "name": "Nhà phục vụ sinh viên",
     "dataPosition": [-0.2084, -0.01743, 4.67109],
     "dataNormal": [0.0, 1.0, 0.0]
   },
   {
     "id": "S2",
-    "name": "Căn tin.",
+    "name": "Căn tin",
     "dataPosition": [0.07952, -5.46247, 4.06559],
     "dataNormal": [0.0, 1.0, 0.0]
   },
@@ -54,13 +54,13 @@
   },
   {
     "id": "Y2",
-    "name": "Sân gạch.",
+    "name": "Sân gạch",
     "dataPosition": [-2.20857, 0.035, 2.89272],
     "dataNormal": [0, 1, 0]
   },
   {
     "id": "Y3",
-    "name": "Sân khấu tòa nhà B.",
+    "name": "Sân khấu tòa nhà B",
     "dataPosition": [-0.37616, 0.0475, 2.67002],
     "dataNormal": [0, 1, 0]
   },
@@ -277,6 +277,7 @@
   },
   {
     "id": "Z15",
+    "name": "Nhà phục vụ sinh viên",
     "dataPosition": [2.80588, 0.06, 2.75668],
     "dataNormal": [0, 1, 0]
   },
