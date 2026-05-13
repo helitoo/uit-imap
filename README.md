@@ -1,105 +1,61 @@
 # UIT iMAP 🗺️
 
-Bản đồ 3D trực tuyến cho Trường Đại học Công nghệ Thông tin – ĐHQG TP.HCM.
+![UIT iMap logo][https://uit-imap.vercel.app/logo.png]
 
----
+<div align="center">
+    <img src="https://img.shields.io/badge/react_JS-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
+    <img src="https://img.shields.io/badge/Google_Model_Viewer-657D8B?style=for-the-badge&logoColor=FFFFFF" />
+    <img src="https://img.shields.io/badge/SketchUp-%23005F9E.svg?style=for-the-badge&logo=sketchup&logoColor=white" />
+    <img src="https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white" />
+</div>
 
-## Cài đặt & Chạy
+## Product Introduction
 
-```bash
-npm install
-npm run dev
-```
+**UIT iMAP** is an interactive 3D online map for the University of Information Technology (UIT) – VNU-HCM. It provides students, staff, and visitors with an intuitive way to navigate the campus, discover facilities, and find information about rooms and buildings.
 
-Truy cập: `http://localhost:5173`
+## Key Features
 
----
+- **3D Interactive Map**: Explore the campus in a fully interactive 3D environment.
+- **Room & Building Information**: Access detailed information about different rooms and facilities.
+- **Hotspot Navigation**: Interactive hotspots guide you through different areas of campus.
+- **Search Functionality**: Quickly find rooms, buildings, or facilities.
+- **Event Information**: Check upcoming events happening on campus.
+- **Weather Integration**: Real-time weather information for planning your visit.
+- **Direction Guidance**: Get directions and navigation assistance within the campus.
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices.
 
-## Cấu trúc dự án
+## Installation Guide
 
-```
-uit-imap/
-├── index.html                    # Entry HTML – nhúng model-viewer & các thông tin chung
-├── public/
-│   ├── logo.png
-│   ├── favicon.png
-│   ├── models/map.glb
-│   ├── hotspots.json             # Dữ liệu hotspot
-│   └── edge-list.json            # Danh sách cạnh
-└── src/
-    ├── main.tsx
-    ├── App.tsx
-    ├── index.css
-    ├── types/
-    │   └── model-viewer.d.ts     # TypeScript declarations cho <model-viewer>
-    ├── lib/
-    │   ├── utils.ts              # cn(), compareTwoStrings(), euclidean2D/3D, ...
-    │   ├── types/
-    │   │   ├── category.ts       # Kiểu Category + labels/colors
-    │   │   ├── hotspot.ts        # Kiểu Hotspot + parseRawHotspot()
-    │   │   └── filter.ts         # Kiểu Filter
-    │   └── services/
-    │       ├── getFilteredHotspots.ts   # Tìm kiếm xấp xỉ Jaccard
-    │       ├── getSupportingHotspots.ts
-    │       └── getDirection.ts          # Dijkstra shortest path
-    ├── contexts/
-    │   ├── modeContext.tsx        # "default" | "direction"
-    │   ├── hotspotsContext.tsx    # hotspots[], visibleIds, selectedHotspot, ...
-    │   └── graphContext.tsx       # adj (adjacency list from edge-list)
-    ├── pages/
-    │   └── HomePage.tsx           # / và /hotspot/:id
-    └── components/
-        ├── ui/                    # Shadcn/UI components
-        └── main/
-            ├── LoadingScreen.tsx
-            ├── ModelViewer.tsx    # Wraps <model-viewer>, quản lý hotspot slots + SVG lines
-            ├── navbar/
-            │   ├── Navbar.tsx     # Right sidebar (desktop) / bottom bar (mobile)
-            │   ├── Header.tsx     # Logo + Giới thiệu + Hướng dẫn dialogs
-            │   ├── FilterBar.tsx  # Form tìm kiếm / lọc
-            │   └── FilterResult.tsx # Danh sách kết quả tìm kiếm
-            ├── hotspot/
-            │   ├── HotspotButton.tsx # Nút trên model (slot của model-viewer)
-            │   └── HotspotDetail.tsx # Left sheet thông tin hotspot
-            └── direction/
-                ├── DirectionBar.tsx    # Top bar chọn điểm đầu/cuối + GPS
-                ├── DirectionSheet.tsx  # Right panel danh sách bước đường đi
-                └── HotspotDirection.tsx # SVG lines đỏ nối các hotspot trên path
-```
+### Prerequisites
 
----
+Before you begin, ensure you have the following installed:
 
-## Dữ liệu đầu vào
+- **Node.js** (v16 or higher).
+- **npm** or **yarn** package manager.
 
-### `public/hotspots.json`
+### Setup Steps
 
-Mảng các object mô tả từng hotspot theo cấu trúc:
+1. **Clone the Repository**
 
-```json
-{
-  "id": "A101",
-  "name": "Phòng A.101",
-  "categories": ["classroom"],
-  "floor": 1,
-  "belongs_to": "bldA",
-  "description": ["Mô tả phòng học..."],
-  "capacity": 40,
-  "real_position": [10.87012, 106.8031],
-  "model_position": [-3.0, 0, 0.5]
-}
-```
+   ```bash
+   https://github.com/helitoo/uit-imap.git
+   cd uit-imap
+   ```
 
-**Quy tắc chuyển đổi sang Hotspot:**
+2. **Install Dependencies**
 
-- `floor`: Nếu là `"B1"` → parse thành `-1`. Với thang máy/cầu thang có `floor: ["B1", 5]` → tự động tạo 7 hotspot (tầng -1 đến 5).
-- `categories`: Mảng, phần tử đầu tiên là category chính hiển thị trên button.
-- `model_position`: Tọa độ `[x, y, z]` trong không gian 3D model (meter).
-- `real_position`: Tọa độ `[lat, lng]` ngoài thực tế (dùng cho định vị GPS).
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-### `public/edge-list.json`
+3. **Start Development Server**
 
-Mảng các object mô tả danh sách cạnh trong đồ thị dùng để tìm đường đi ngắn nhất:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-```json
-{ "start_id": "gate1", "end_id": "sp_nav1" }
-```
+   - The application will be available at `http://localhost:5173`
