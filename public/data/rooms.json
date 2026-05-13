@@ -3562,6 +3562,7 @@
   {
     "id": 389,
     "name": "Phòng hội họa",
-    "belongsTo": "S1"
+    "belongsTo": "S1",
+    "floor": 2
   }
 ]
