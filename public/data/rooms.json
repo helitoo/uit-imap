@@ -11,12 +11,27 @@
       3
     ],
     "belongsTo": "A",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3,
     "description": "Trung tâm Ngoại ngữ"
   },
   {
     "id": 2,
+    "name": "A303",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "A",
+    "category": "classroom",
+    "floor": 3
+  },
+  {
+    "id": 3,
     "name": "A315",
     "rows": [
       11,
@@ -27,25 +42,9 @@
       6
     ],
     "belongsTo": "A",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3,
-    "description": "Phòng học "
-  },
-  {
-    "id": 3,
-    "name": "A215",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "A",
-    "categories": "classroom",
-    "floor": 2,
-    "description": "Phòng học "
+    "description": " "
   },
   {
     "id": 4,
@@ -59,7 +58,7 @@
       8
     ],
     "belongsTo": "A",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3,
     "description": "Trung tâm Ngoại ngữ"
   },
@@ -75,7 +74,7 @@
       8
     ],
     "belongsTo": "A",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3,
     "description": "Trung tâm Ngoại ngữ"
   },
@@ -91,7 +90,7 @@
       1
     ],
     "belongsTo": "A",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3,
     "description": "Trung tâm Ngoại ngữ"
   },
@@ -107,7 +106,7 @@
       8
     ],
     "belongsTo": "A",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3,
     "description": "Trung tâm Ngoại ngữ"
   },
@@ -123,1038 +122,12 @@
       1
     ],
     "belongsTo": "A",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3,
     "description": "Trung tâm Ngoại ngữ"
   },
   {
     "id": 9,
-    "name": "A120",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "A",
-    "categories": "computer_room",
-    "floor": 1,
-    "description": "Phòng máy Chương trình tiên tiến"
-  },
-  {
-    "id": 10,
-    "name": "Hội Trường A",
-    "rows": [
-      3,
-      9
-    ],
-    "cols": [
-      3,
-      6
-    ],
-    "belongsTo": "A",
-    "categories": "hall",
-    "floor": 3
-  },
-  {
-    "id": 11,
-    "name": "A110",
-    "rows": [
-      10,
-      10
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "A",
-    "categories": "lab",
-    "floor": 1,
-    "description": "Phòng Thí nghiệm HTTT"
-  },
-  {
-    "id": 12,
-    "name": "Thư viện",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "categories": "library",
-    "floor": 2
-  },
-  {
-    "id": 13,
-    "name": "Thư viện",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "categories": "library",
-    "floor": 2
-  },
-  {
-    "id": 14,
-    "name": "A121",
-    "rows": [
-      10,
-      10
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Thanh tra - Pháp chế - Đảm bảo chất lượng"
-  },
-  {
-    "id": 15,
-    "name": "A116",
-    "rows": [
-      10,
-      10
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Thí nghiệm truyền thông ĐPT"
-  },
-  {
-    "id": 16,
-    "name": "A113",
-    "rows": [
-      10,
-      11
-    ],
-    "cols": [
-      8,
-      8
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Kế hoạch - Tài chính"
-  },
-  {
-    "id": 17,
-    "name": "A119",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Phó Hiệu trưởng"
-  },
-  {
-    "id": 18,
-    "name": "A114",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng họp"
-  },
-  {
-    "id": 19,
-    "name": "A112",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng họp"
-  },
-  {
-    "id": 20,
-    "name": "A117",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Phó Hiệu trưởng"
-  },
-  {
-    "id": 21,
-    "name": "A115",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Hiệu trưởng"
-  },
-  {
-    "id": 22,
-    "name": "A101",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Công tác sinh viên"
-  },
-  {
-    "id": 23,
-    "name": "A103",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Y tế"
-  },
-  {
-    "id": 24,
-    "name": "A105",
-    "rows": [
-      5,
-      5
-    ],
-    "cols": [
-      8,
-      8
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Tổ chức - Hành chính"
-  },
-  {
-    "id": 25,
-    "name": "A127",
-    "rows": [
-      5,
-      6
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Đào tạo SĐH - KHCN & QHDN"
-  },
-  {
-    "id": 26,
-    "name": "A102",
-    "rows": [
-      5,
-      6
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Đào tạo Đại học chính quy"
-  },
-  {
-    "id": 27,
-    "name": "A104",
-    "rows": [
-      5,
-      6
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Đào tạo Đại học từ xa"
-  },
-  {
-    "id": 28,
-    "name": "A107",
-    "rows": [
-      6,
-      6
-    ],
-    "cols": [
-      8,
-      8
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Tổ chức - Hành chính"
-  },
-  {
-    "id": 29,
-    "name": "A125",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Đào tạo SĐH - KHCN & QHDN"
-  },
-  {
-    "id": 30,
-    "name": "A106",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng học Chương trình tiên tiến"
-  },
-  {
-    "id": 31,
-    "name": "A109",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      8,
-      8
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Phó Hiệu trưởng"
-  },
-  {
-    "id": 32,
-    "name": "A118",
-    "rows": [
-      9,
-      9
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Thanh tra - Pháp chế - Đảm bảo chất lượng"
-  },
-  {
-    "id": 33,
-    "name": "A108",
-    "rows": [
-      9,
-      9
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Quản trị thiết bị"
-  },
-  {
-    "id": 34,
-    "name": "A111",
-    "rows": [
-      9,
-      9
-    ],
-    "cols": [
-      8,
-      8
-    ],
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Kế hoạch - Tài chính"
-  },
-  {
-    "id": 35,
-    "name": "A122",
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng họp"
-  },
-  {
-    "id": 36,
-    "name": "A128",
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Trưởng phòng Đào tạo SĐH - KHCN & QHDN"
-  },
-  {
-    "id": 37,
-    "name": "A129",
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng giáo sư"
-  },
-  {
-    "id": 38,
-    "name": "A130",
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng giáo sư"
-  },
-  {
-    "id": 39,
-    "name": "A131",
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng giáo sư"
-  },
-  {
-    "id": 40,
-    "name": "A132",
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Đào tạo Đại học"
-  },
-  {
-    "id": 41,
-    "name": "A133",
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Trưởng phòng Đào tạo Đại học"
-  },
-  {
-    "id": 42,
-    "name": "A134",
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng Đào tạo Đại học - VP Chương trình tiên tiến"
-  },
-  {
-    "id": 43,
-    "name": "A135",
-    "belongsTo": "A",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng giáo sư"
-  },
-  {
-    "id": 44,
-    "name": "Phòng bida",
-    "rows": [
-      2,
-      2
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "categories": "sport",
-    "floor": 3
-  },
-  {
-    "id": 45,
-    "name": "Sân Võ Thuật",
-    "rows": [
-      2,
-      2
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "categories": "sport",
-    "floor": 2
-  },
-  {
-    "id": 46,
-    "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "A",
-    "categories": "stairs",
-    "floor": 3
-  },
-  {
-    "id": 47,
-    "name": "Thang bộ",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "A",
-    "categories": "stairs",
-    "floor": 3
-  },
-  {
-    "id": 48,
-    "name": "Thang bộ",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "A",
-    "categories": "stairs",
-    "floor": 1
-  },
-  {
-    "id": 49,
-    "name": "Thang bộ",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "A",
-    "categories": "stairs",
-    "floor": 2
-  },
-  {
-    "id": 50,
-    "name": "Thang bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "A",
-    "categories": "stairs",
-    "floor": 1
-  },
-  {
-    "id": 51,
-    "name": "Thang bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "A",
-    "categories": "stairs",
-    "floor": 2
-  },
-  {
-    "id": 52,
-    "name": "Thang bộ",
-    "rows": [
-      6,
-      6
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "categories": "stairs",
-    "floor": 3
-  },
-  {
-    "id": 53,
-    "name": "Thang bộ",
-    "rows": [
-      6,
-      6
-    ],
-    "cols": [
-      8,
-      8
-    ],
-    "belongsTo": "A",
-    "categories": "stairs",
-    "floor": 3
-  },
-  {
-    "id": 54,
-    "name": "Thang bộ",
-    "rows": [
-      8,
-      8
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "categories": "stairs",
-    "floor": 1
-  },
-  {
-    "id": 55,
-    "name": "Thang bộ",
-    "rows": [
-      8,
-      8
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "categories": "stairs",
-    "floor": 2
-  },
-  {
-    "id": 56,
-    "name": "Thang bộ",
-    "rows": [
-      8,
-      8
-    ],
-    "cols": [
-      8,
-      8
-    ],
-    "belongsTo": "A",
-    "categories": "stairs",
-    "floor": 1
-  },
-  {
-    "id": 57,
-    "name": "Thang bộ",
-    "rows": [
-      8,
-      8
-    ],
-    "cols": [
-      8,
-      8
-    ],
-    "belongsTo": "A",
-    "categories": "stairs",
-    "floor": 2
-  },
-  {
-    "id": 58,
-    "name": "Kho",
-    "rows": [
-      5,
-      11
-    ],
-    "cols": [
-      3,
-      6
-    ],
-    "belongsTo": "A",
-    "categories": "warehouse",
-    "floor": 2
-  },
-  {
-    "id": 59,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "A",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 60,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "A",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 61,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "A",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 62,
-    "name": "WC",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "A",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 63,
-    "name": "WC",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "A",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 64,
-    "name": "WC",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "A",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 65,
-    "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "A",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 66,
-    "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "A",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 67,
-    "name": "A303",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "A",
-    "floor": 3
-  },
-  {
-    "id": 68,
-    "name": "A221",
-    "rows": [
-      10,
-      10
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "floor": 2
-  },
-  {
-    "id": 69,
-    "name": "A213",
-    "rows": [
-      10,
-      11
-    ],
-    "cols": [
-      8,
-      8
-    ],
-    "belongsTo": "A",
-    "floor": 2
-  },
-  {
-    "id": 70,
-    "name": "A219",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "floor": 2
-  },
-  {
-    "id": 71,
-    "name": "A317",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "A",
-    "floor": 3
-  },
-  {
-    "id": 72,
-    "name": "A217",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "A",
-    "floor": 2
-  },
-  {
-    "id": 73,
-    "name": "A201",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "A",
-    "floor": 2
-  },
-  {
-    "id": 74,
-    "name": "A203",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "A",
-    "floor": 2
-  },
-  {
-    "id": 75,
-    "name": "A327",
-    "rows": [
-      3,
-      4
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "floor": 3
-  },
-  {
-    "id": 76,
-    "name": "A205",
-    "rows": [
-      5,
-      5
-    ],
-    "cols": [
-      8,
-      8
-    ],
-    "belongsTo": "A",
-    "floor": 2
-  },
-  {
-    "id": 77,
-    "name": "A227",
-    "rows": [
-      5,
-      6
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "floor": 2
-  },
-  {
-    "id": 78,
-    "name": "A207",
-    "rows": [
-      6,
-      6
-    ],
-    "cols": [
-      8,
-      8
-    ],
-    "belongsTo": "A",
-    "floor": 2
-  },
-  {
-    "id": 79,
-    "name": "A225",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "A",
-    "floor": 2
-  },
-  {
-    "id": 80,
-    "name": "A209",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      8,
-      8
-    ],
-    "belongsTo": "A",
-    "floor": 2
-  },
-  {
-    "id": 81,
     "name": "A311",
     "rows": [
       7,
@@ -1165,10 +138,11 @@
       8
     ],
     "belongsTo": "A",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 82,
+    "id": 10,
     "name": "A321",
     "rows": [
       8,
@@ -1179,10 +153,11 @@
       1
     ],
     "belongsTo": "A",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 83,
+    "id": 11,
     "name": "A313",
     "rows": [
       8,
@@ -1193,10 +168,11 @@
       8
     ],
     "belongsTo": "A",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 84,
+    "id": 12,
     "name": "A123",
     "rows": [
       9,
@@ -1207,10 +183,11 @@
       1
     ],
     "belongsTo": "A",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 85,
+    "id": 13,
     "name": "A223",
     "rows": [
       9,
@@ -1221,10 +198,11 @@
       1
     ],
     "belongsTo": "A",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 86,
+    "id": 14,
     "name": "A319",
     "rows": [
       9,
@@ -1235,10 +213,641 @@
       1
     ],
     "belongsTo": "A",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 87,
+    "id": 15,
+    "name": "A120",
+    "rows": [
+      7,
+      7
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "A",
+    "category": "computer_room",
+    "floor": 1,
+    "description": "Phòng máy Chương trình tiên tiến"
+  },
+  {
+    "id": 16,
+    "name": "Hội Trường A",
+    "rows": [
+      3,
+      9
+    ],
+    "cols": [
+      3,
+      6
+    ],
+    "belongsTo": "A",
+    "category": "hall",
+    "floor": 3
+  },
+  {
+    "id": 17,
+    "name": "A110",
+    "rows": [
+      10,
+      10
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "A",
+    "category": "lab",
+    "floor": 1,
+    "description": "Phòng Thí nghiệm HTTT"
+  },
+  {
+    "id": 18,
+    "name": "Thư viện",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "library",
+    "floor": 1
+  },
+  {
+    "id": 19,
+    "name": "Thư viện",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "library",
+    "floor": 2
+  },
+  {
+    "id": 20,
+    "name": "A121",
+    "rows": [
+      10,
+      10
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Thanh tra - Pháp chế - Đảm bảo chất lượng"
+  },
+  {
+    "id": 21,
+    "name": "A221",
+    "rows": [
+      10,
+      10
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 2
+  },
+  {
+    "id": 22,
+    "name": "A116",
+    "rows": [
+      10,
+      10
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Thí nghiệm truyền thông ĐPT"
+  },
+  {
+    "id": 23,
+    "name": "A113",
+    "rows": [
+      10,
+      11
+    ],
+    "cols": [
+      8,
+      8
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Kế hoạch - Tài chính"
+  },
+  {
+    "id": 24,
+    "name": "A213",
+    "rows": [
+      10,
+      11
+    ],
+    "cols": [
+      8,
+      8
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 2,
+    "description": "Phòng thực hành khoa Kỹ thuật máy tính"
+  },
+  {
+    "id": 25,
+    "name": "A119",
+    "rows": [
+      11,
+      11
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Phó Hiệu trưởng"
+  },
+  {
+    "id": 26,
+    "name": "A219",
+    "rows": [
+      11,
+      11
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 2
+  },
+  {
+    "id": 27,
+    "name": "A114",
+    "rows": [
+      11,
+      11
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng họp"
+  },
+  {
+    "id": 28,
+    "name": "A317",
+    "rows": [
+      11,
+      11
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 3
+  },
+  {
+    "id": 29,
+    "name": "A112",
+    "rows": [
+      11,
+      11
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng họp"
+  },
+  {
+    "id": 30,
+    "name": "A117",
+    "rows": [
+      13,
+      13
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Phó Hiệu trưởng"
+  },
+  {
+    "id": 31,
+    "name": "A217",
+    "rows": [
+      13,
+      13
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 2
+  },
+  {
+    "id": 32,
+    "name": "A115",
+    "rows": [
+      13,
+      13
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Hiệu trưởng"
+  },
+  {
+    "id": 33,
+    "name": "A215",
+    "rows": [
+      13,
+      13
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 2,
+    "description": "Phòng Dữ liệu & CNTT"
+  },
+  {
+    "id": 34,
+    "name": "A101",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Công tác sinh viên"
+  },
+  {
+    "id": 35,
+    "name": "A201",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 2,
+    "description": "Phòng Trưởng phòng Công tác sinh viên"
+  },
+  {
+    "id": 36,
+    "name": "A103",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Y tế"
+  },
+  {
+    "id": 37,
+    "name": "A203",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 2,
+    "description": "Phòng Trưởng phòng Dữ liệu & CNTT"
+  },
+  {
+    "id": 38,
+    "name": "A327",
+    "rows": [
+      3,
+      4
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 3
+  },
+  {
+    "id": 39,
+    "name": "A105",
+    "rows": [
+      5,
+      5
+    ],
+    "cols": [
+      8,
+      8
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Tổ chức - Hành chính"
+  },
+  {
+    "id": 40,
+    "name": "A205",
+    "rows": [
+      5,
+      5
+    ],
+    "cols": [
+      8,
+      8
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 2,
+    "description": "Phòng thực hành Vật lý"
+  },
+  {
+    "id": 41,
+    "name": "A127",
+    "rows": [
+      5,
+      6
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Đào tạo SĐH - KHCN & QHDN"
+  },
+  {
+    "id": 42,
+    "name": "A227",
+    "rows": [
+      5,
+      6
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 2
+  },
+  {
+    "id": 43,
+    "name": "A102",
+    "rows": [
+      5,
+      6
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Đào tạo Đại học chính quy"
+  },
+  {
+    "id": 44,
+    "name": "A104",
+    "rows": [
+      5,
+      6
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Đào tạo Đại học từ xa"
+  },
+  {
+    "id": 45,
+    "name": "A107",
+    "rows": [
+      6,
+      6
+    ],
+    "cols": [
+      8,
+      8
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Tổ chức - Hành chính"
+  },
+  {
+    "id": 46,
+    "name": "A207",
+    "rows": [
+      6,
+      6
+    ],
+    "cols": [
+      8,
+      8
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 2,
+    "description": "Phòng Dữ liệu & CNTT"
+  },
+  {
+    "id": 47,
+    "name": "A125",
+    "rows": [
+      7,
+      7
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Đào tạo SĐH - KHCN & QHDN"
+  },
+  {
+    "id": 48,
+    "name": "A225",
+    "rows": [
+      7,
+      7
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 2
+  },
+  {
+    "id": 49,
+    "name": "A106",
+    "rows": [
+      7,
+      7
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": " Chương trình tiên tiến"
+  },
+  {
+    "id": 50,
+    "name": "A109",
+    "rows": [
+      7,
+      7
+    ],
+    "cols": [
+      8,
+      8
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Phó Hiệu trưởng"
+  },
+  {
+    "id": 51,
+    "name": "A209",
+    "rows": [
+      7,
+      7
+    ],
+    "cols": [
+      8,
+      8
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 2,
+    "description": "Trung tâm Công nghệ Đào tạo trực tuyến"
+  },
+  {
+    "id": 52,
+    "name": "A118",
+    "rows": [
+      9,
+      9
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Thanh tra - Pháp chế - Đảm bảo chất lượng"
+  },
+  {
+    "id": 53,
+    "name": "A108",
+    "rows": [
+      9,
+      9
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Quản trị thiết bị"
+  },
+  {
+    "id": 54,
+    "name": "A111",
+    "rows": [
+      9,
+      9
+    ],
+    "cols": [
+      8,
+      8
+    ],
+    "belongsTo": "A",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng Kế hoạch - Tài chính"
+  },
+  {
+    "id": 55,
     "name": "A211",
     "rows": [
       9,
@@ -1249,10 +858,357 @@
       8
     ],
     "belongsTo": "A",
+    "category": "office",
+    "floor": 2,
+    "description": "Văn phòng Công đoàn"
+  },
+  {
+    "id": 56,
+    "name": "Sân Võ Thuật",
+    "rows": [
+      2,
+      2
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "sport",
     "floor": 2
   },
   {
-    "id": 88,
+    "id": 57,
+    "name": "Phòng bida",
+    "rows": [
+      2,
+      2
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "sport",
+    "floor": 3
+  },
+  {
+    "id": 58,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "A",
+    "category": "stairs",
+    "floor": 3
+  },
+  {
+    "id": 59,
+    "name": "Thang bộ",
+    "rows": [
+      11,
+      11
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "A",
+    "category": "stairs",
+    "floor": 3
+  },
+  {
+    "id": 60,
+    "name": "Thang bộ",
+    "rows": [
+      13,
+      13
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "A",
+    "category": "stairs",
+    "floor": 1
+  },
+  {
+    "id": 61,
+    "name": "Thang bộ",
+    "rows": [
+      13,
+      13
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "A",
+    "category": "stairs",
+    "floor": 2
+  },
+  {
+    "id": 62,
+    "name": "Thang bộ",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "A",
+    "category": "stairs",
+    "floor": 1
+  },
+  {
+    "id": 63,
+    "name": "Thang bộ",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "A",
+    "category": "stairs",
+    "floor": 2
+  },
+  {
+    "id": 64,
+    "name": "Thang bộ",
+    "rows": [
+      6,
+      6
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "stairs",
+    "floor": 3
+  },
+  {
+    "id": 65,
+    "name": "Thang bộ",
+    "rows": [
+      6,
+      6
+    ],
+    "cols": [
+      8,
+      8
+    ],
+    "belongsTo": "A",
+    "category": "stairs",
+    "floor": 3
+  },
+  {
+    "id": 66,
+    "name": "Thang bộ",
+    "rows": [
+      8,
+      8
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "stairs",
+    "floor": 1
+  },
+  {
+    "id": 67,
+    "name": "Thang bộ",
+    "rows": [
+      8,
+      8
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "A",
+    "category": "stairs",
+    "floor": 2
+  },
+  {
+    "id": 68,
+    "name": "Thang bộ",
+    "rows": [
+      8,
+      8
+    ],
+    "cols": [
+      8,
+      8
+    ],
+    "belongsTo": "A",
+    "category": "stairs",
+    "floor": 1
+  },
+  {
+    "id": 69,
+    "name": "Thang bộ",
+    "rows": [
+      8,
+      8
+    ],
+    "cols": [
+      8,
+      8
+    ],
+    "belongsTo": "A",
+    "category": "stairs",
+    "floor": 2
+  },
+  {
+    "id": 70,
+    "name": "Kho",
+    "rows": [
+      5,
+      11
+    ],
+    "cols": [
+      3,
+      6
+    ],
+    "belongsTo": "A",
+    "category": "warehouse",
+    "floor": 2
+  },
+  {
+    "id": 71,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "A",
+    "category": "wc",
+    "floor": 1
+  },
+  {
+    "id": 72,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "A",
+    "category": "wc",
+    "floor": 2
+  },
+  {
+    "id": 73,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "A",
+    "category": "wc",
+    "floor": 3
+  },
+  {
+    "id": 74,
+    "name": "WC",
+    "rows": [
+      11,
+      11
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "A",
+    "category": "wc",
+    "floor": 3
+  },
+  {
+    "id": 75,
+    "name": "WC",
+    "rows": [
+      13,
+      13
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "A",
+    "category": "wc",
+    "floor": 1
+  },
+  {
+    "id": 76,
+    "name": "WC",
+    "rows": [
+      13,
+      13
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "A",
+    "category": "wc",
+    "floor": 2
+  },
+  {
+    "id": 77,
+    "name": "WC",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "A",
+    "category": "wc",
+    "floor": 1
+  },
+  {
+    "id": 78,
+    "name": "WC",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "A",
+    "category": "wc",
+    "floor": 2
+  },
+  {
+    "id": 79,
     "name": "B1.22",
     "rows": [
       1,
@@ -1263,11 +1219,11 @@
       1
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 89,
+    "id": 80,
     "name": "B2.22",
     "rows": [
       1,
@@ -1278,11 +1234,11 @@
       1
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 90,
+    "id": 81,
     "name": "B3.22",
     "rows": [
       1,
@@ -1293,11 +1249,11 @@
       1
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 91,
+    "id": 82,
     "name": "B4.22",
     "rows": [
       1,
@@ -1308,11 +1264,11 @@
       1
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 4
   },
   {
-    "id": 92,
+    "id": 83,
     "name": "B8.08",
     "rows": [
       1,
@@ -1323,11 +1279,11 @@
       1
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 8
   },
   {
-    "id": 93,
+    "id": 84,
     "name": "B9.04",
     "rows": [
       1,
@@ -1338,11 +1294,11 @@
       1
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 9
   },
   {
-    "id": 94,
+    "id": 85,
     "name": "B5.14",
     "rows": [
       1,
@@ -1353,11 +1309,11 @@
       2
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 5
   },
   {
-    "id": 95,
+    "id": 86,
     "name": "B6.12",
     "rows": [
       1,
@@ -1368,11 +1324,11 @@
       2
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 6
   },
   {
-    "id": 96,
+    "id": 87,
     "name": "B7.08",
     "rows": [
       1,
@@ -1383,11 +1339,11 @@
       2
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 7
   },
   {
-    "id": 97,
+    "id": 88,
     "name": "B1.06",
     "rows": [
       1,
@@ -1398,11 +1354,11 @@
       10
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 98,
+    "id": 89,
     "name": "B2.06",
     "rows": [
       1,
@@ -1413,11 +1369,11 @@
       10
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 99,
+    "id": 90,
     "name": "B3.06",
     "rows": [
       1,
@@ -1428,11 +1384,11 @@
       10
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 100,
+    "id": 91,
     "name": "B4.06",
     "rows": [
       1,
@@ -1443,11 +1399,11 @@
       10
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 4
   },
   {
-    "id": 101,
+    "id": 92,
     "name": "B1.04",
     "rows": [
       1,
@@ -1458,11 +1414,11 @@
       11
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 102,
+    "id": 93,
     "name": "B2.04",
     "rows": [
       1,
@@ -1473,11 +1429,11 @@
       11
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 103,
+    "id": 94,
     "name": "B3.04",
     "rows": [
       1,
@@ -1488,11 +1444,11 @@
       11
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 104,
+    "id": 95,
     "name": "B4.04",
     "rows": [
       1,
@@ -1503,11 +1459,11 @@
       11
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 4
   },
   {
-    "id": 105,
+    "id": 96,
     "name": "B1.02",
     "rows": [
       1,
@@ -1518,11 +1474,11 @@
       12
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 106,
+    "id": 97,
     "name": "B2.02",
     "rows": [
       1,
@@ -1533,11 +1489,11 @@
       12
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 107,
+    "id": 98,
     "name": "B3.02",
     "rows": [
       1,
@@ -1548,11 +1504,11 @@
       12
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 108,
+    "id": 99,
     "name": "B4.02",
     "rows": [
       1,
@@ -1563,11 +1519,11 @@
       12
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 4
   },
   {
-    "id": 109,
+    "id": 100,
     "name": "B1.20",
     "rows": [
       1,
@@ -1578,11 +1534,11 @@
       2
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 110,
+    "id": 101,
     "name": "B2.20",
     "rows": [
       1,
@@ -1593,11 +1549,11 @@
       2
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 111,
+    "id": 102,
     "name": "B3.20",
     "rows": [
       1,
@@ -1608,11 +1564,11 @@
       2
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 112,
+    "id": 103,
     "name": "B4.20",
     "rows": [
       1,
@@ -1623,11 +1579,11 @@
       2
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 4
   },
   {
-    "id": 113,
+    "id": 104,
     "name": "B8.06",
     "rows": [
       1,
@@ -1638,11 +1594,11 @@
       2
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 8
   },
   {
-    "id": 114,
+    "id": 105,
     "name": "B9.02",
     "rows": [
       1,
@@ -1653,11 +1609,11 @@
       2
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 9
   },
   {
-    "id": 115,
+    "id": 106,
     "name": "B1.18",
     "rows": [
       1,
@@ -1668,11 +1624,11 @@
       3
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 116,
+    "id": 107,
     "name": "B2.18",
     "rows": [
       1,
@@ -1683,11 +1639,11 @@
       3
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 117,
+    "id": 108,
     "name": "B3.18",
     "rows": [
       1,
@@ -1698,11 +1654,11 @@
       3
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 118,
+    "id": 109,
     "name": "B4.18",
     "rows": [
       1,
@@ -1713,11 +1669,11 @@
       3
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 4
   },
   {
-    "id": 119,
+    "id": 110,
     "name": "B5.12",
     "rows": [
       1,
@@ -1728,11 +1684,11 @@
       3
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 5
   },
   {
-    "id": 120,
+    "id": 111,
     "name": "B6.10",
     "rows": [
       1,
@@ -1743,11 +1699,11 @@
       3
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 6
   },
   {
-    "id": 121,
+    "id": 112,
     "name": "B7.06",
     "rows": [
       1,
@@ -1758,11 +1714,11 @@
       3
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 7
   },
   {
-    "id": 122,
+    "id": 113,
     "name": "B8.04",
     "rows": [
       1,
@@ -1773,11 +1729,11 @@
       3
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 8
   },
   {
-    "id": 123,
+    "id": 114,
     "name": "B1.16",
     "rows": [
       1,
@@ -1788,11 +1744,11 @@
       4
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 124,
+    "id": 115,
     "name": "B2.16",
     "rows": [
       1,
@@ -1803,11 +1759,11 @@
       4
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 125,
+    "id": 116,
     "name": "B3.16",
     "rows": [
       1,
@@ -1818,11 +1774,11 @@
       4
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 126,
+    "id": 117,
     "name": "B4.16",
     "rows": [
       1,
@@ -1833,11 +1789,11 @@
       4
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 4
   },
   {
-    "id": 127,
+    "id": 118,
     "name": "B5.10",
     "rows": [
       1,
@@ -1848,11 +1804,11 @@
       4
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 5
   },
   {
-    "id": 128,
+    "id": 119,
     "name": "B6.08",
     "rows": [
       1,
@@ -1863,11 +1819,11 @@
       4
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 6
   },
   {
-    "id": 129,
+    "id": 120,
     "name": "B7.04",
     "rows": [
       1,
@@ -1878,11 +1834,11 @@
       4
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 7
   },
   {
-    "id": 130,
+    "id": 121,
     "name": "B8.02",
     "rows": [
       1,
@@ -1893,11 +1849,11 @@
       4
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 8
   },
   {
-    "id": 131,
+    "id": 122,
     "name": "B7.02",
     "rows": [
       1,
@@ -1908,11 +1864,11 @@
       5
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 7
   },
   {
-    "id": 132,
+    "id": 123,
     "name": "B1.14",
     "rows": [
       1,
@@ -1923,11 +1879,11 @@
       6
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 133,
+    "id": 124,
     "name": "B2.14",
     "rows": [
       1,
@@ -1938,11 +1894,11 @@
       6
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 134,
+    "id": 125,
     "name": "B3.14",
     "rows": [
       1,
@@ -1953,11 +1909,11 @@
       6
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 135,
+    "id": 126,
     "name": "B4.14",
     "rows": [
       1,
@@ -1968,11 +1924,11 @@
       6
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 4
   },
   {
-    "id": 136,
+    "id": 127,
     "name": "B5.08",
     "rows": [
       1,
@@ -1983,11 +1939,11 @@
       6
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 5
   },
   {
-    "id": 137,
+    "id": 128,
     "name": "B6.06",
     "rows": [
       1,
@@ -1998,11 +1954,11 @@
       6
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 6
   },
   {
-    "id": 138,
+    "id": 129,
     "name": "B1.12",
     "rows": [
       1,
@@ -2013,11 +1969,11 @@
       7
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 139,
+    "id": 130,
     "name": "B2.12",
     "rows": [
       1,
@@ -2028,11 +1984,11 @@
       7
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 140,
+    "id": 131,
     "name": "B3.12",
     "rows": [
       1,
@@ -2043,11 +1999,11 @@
       7
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 141,
+    "id": 132,
     "name": "B4.12",
     "rows": [
       1,
@@ -2058,11 +2014,11 @@
       7
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 4
   },
   {
-    "id": 142,
+    "id": 133,
     "name": "B5.06",
     "rows": [
       1,
@@ -2073,11 +2029,11 @@
       7
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 5
   },
   {
-    "id": 143,
+    "id": 134,
     "name": "B6.04",
     "rows": [
       1,
@@ -2088,11 +2044,11 @@
       7
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 6
   },
   {
-    "id": 144,
+    "id": 135,
     "name": "B1.10",
     "rows": [
       1,
@@ -2103,11 +2059,11 @@
       8
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 145,
+    "id": 136,
     "name": "B2.10",
     "rows": [
       1,
@@ -2118,11 +2074,11 @@
       8
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 146,
+    "id": 137,
     "name": "B3.10",
     "rows": [
       1,
@@ -2133,11 +2089,11 @@
       8
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 147,
+    "id": 138,
     "name": "B4.10",
     "rows": [
       1,
@@ -2148,11 +2104,11 @@
       8
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 4
   },
   {
-    "id": 148,
+    "id": 139,
     "name": "B5.04",
     "rows": [
       1,
@@ -2163,11 +2119,11 @@
       8
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 5
   },
   {
-    "id": 149,
+    "id": 140,
     "name": "B6.02",
     "rows": [
       1,
@@ -2178,11 +2134,11 @@
       8
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 6
   },
   {
-    "id": 150,
+    "id": 141,
     "name": "B1.08",
     "rows": [
       1,
@@ -2193,11 +2149,11 @@
       9
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 151,
+    "id": 142,
     "name": "B2.08",
     "rows": [
       1,
@@ -2208,11 +2164,11 @@
       9
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 152,
+    "id": 143,
     "name": "B3.08",
     "rows": [
       1,
@@ -2223,11 +2179,11 @@
       9
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 153,
+    "id": 144,
     "name": "B4.08",
     "rows": [
       1,
@@ -2238,11 +2194,11 @@
       9
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 4
   },
   {
-    "id": 154,
+    "id": 145,
     "name": "B5.02",
     "rows": [
       1,
@@ -2253,11 +2209,11 @@
       9
     ],
     "belongsTo": "B",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 5
   },
   {
-    "id": 155,
+    "id": 146,
     "name": "B1.01",
     "rows": [
       3,
@@ -2268,12 +2224,12 @@
       5
     ],
     "belongsTo": "B",
-    "categories": "office",
+    "category": "office",
     "floor": 1,
     "description": "Phòng thiết bị"
   },
   {
-    "id": 156,
+    "id": 147,
     "name": "B2.01",
     "rows": [
       3,
@@ -2284,12 +2240,11 @@
       5
     ],
     "belongsTo": "B",
-    "categories": "office",
-    "floor": 2,
-    "description": "Phòng thiết bị"
+    "category": "office",
+    "floor": 2
   },
   {
-    "id": 157,
+    "id": 148,
     "name": "B3.01",
     "rows": [
       3,
@@ -2300,12 +2255,11 @@
       5
     ],
     "belongsTo": "B",
-    "categories": "office",
-    "floor": 3,
-    "description": "Phòng thiết bị"
+    "category": "office",
+    "floor": 3
   },
   {
-    "id": 158,
+    "id": 149,
     "name": "B4.01",
     "rows": [
       3,
@@ -2316,12 +2270,11 @@
       5
     ],
     "belongsTo": "B",
-    "categories": "office",
-    "floor": 4,
-    "description": "Phòng thiết bị"
+    "category": "office",
+    "floor": 4
   },
   {
-    "id": 159,
+    "id": 150,
     "name": "B5.01",
     "rows": [
       3,
@@ -2332,12 +2285,11 @@
       5
     ],
     "belongsTo": "B",
-    "categories": "office",
-    "floor": 5,
-    "description": "Phòng thiết bị"
+    "category": "office",
+    "floor": 5
   },
   {
-    "id": 160,
+    "id": 151,
     "name": "B6.01",
     "rows": [
       3,
@@ -2348,12 +2300,11 @@
       5
     ],
     "belongsTo": "B",
-    "categories": "office",
-    "floor": 6,
-    "description": "Phòng thiết bị"
+    "category": "office",
+    "floor": 6
   },
   {
-    "id": 161,
+    "id": 152,
     "name": "B7.01",
     "rows": [
       3,
@@ -2364,12 +2315,11 @@
       5
     ],
     "belongsTo": "B",
-    "categories": "office",
-    "floor": 7,
-    "description": "Phòng thiết bị"
+    "category": "office",
+    "floor": 7
   },
   {
-    "id": 162,
+    "id": 153,
     "name": "Thang bộ",
     "rows": [
       3,
@@ -2380,11 +2330,11 @@
       11
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 1
   },
   {
-    "id": 163,
+    "id": 154,
     "name": "Thang bộ",
     "rows": [
       3,
@@ -2395,11 +2345,11 @@
       11
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 2
   },
   {
-    "id": 164,
+    "id": 155,
     "name": "Thang bộ",
     "rows": [
       3,
@@ -2410,11 +2360,11 @@
       11
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 3
   },
   {
-    "id": 165,
+    "id": 156,
     "name": "Thang bộ",
     "rows": [
       3,
@@ -2425,11 +2375,11 @@
       11
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 4
   },
   {
-    "id": 166,
+    "id": 157,
     "name": "Thang máy/bộ",
     "rows": [
       3,
@@ -2440,7 +2390,142 @@
       2
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
+    "floor": 1
+  },
+  {
+    "id": 158,
+    "name": "Thang máy/bộ",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "B",
+    "category": "stairs",
+    "floor": 2
+  },
+  {
+    "id": 159,
+    "name": "Thang máy/bộ",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "B",
+    "category": "stairs",
+    "floor": 3
+  },
+  {
+    "id": 160,
+    "name": "Thang máy/bộ",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "B",
+    "category": "stairs",
+    "floor": 4
+  },
+  {
+    "id": 161,
+    "name": "Thang máy/bộ",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "B",
+    "category": "stairs",
+    "floor": 5
+  },
+  {
+    "id": 162,
+    "name": "Thang máy/bộ",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "B",
+    "category": "stairs",
+    "floor": 6
+  },
+  {
+    "id": 163,
+    "name": "Thang máy/bộ",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "B",
+    "category": "stairs",
+    "floor": 7
+  },
+  {
+    "id": 164,
+    "name": "Thang máy/bộ",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "B",
+    "category": "stairs",
+    "floor": 8
+  },
+  {
+    "id": 165,
+    "name": "Thang máy/bộ",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "B",
+    "category": "stairs",
+    "floor": 9
+  },
+  {
+    "id": 166,
+    "name": "Thang máy/bộ",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "B",
+    "category": "stairs",
     "floor": 1
   },
   {
@@ -2451,11 +2536,11 @@
       3
     ],
     "cols": [
-      2,
-      2
+      6,
+      6
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 2
   },
   {
@@ -2466,11 +2551,11 @@
       3
     ],
     "cols": [
-      2,
-      2
+      6,
+      6
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 3
   },
   {
@@ -2481,11 +2566,11 @@
       3
     ],
     "cols": [
-      2,
-      2
+      6,
+      6
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 4
   },
   {
@@ -2496,11 +2581,11 @@
       3
     ],
     "cols": [
-      2,
-      2
+      6,
+      6
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 5
   },
   {
@@ -2511,11 +2596,11 @@
       3
     ],
     "cols": [
-      2,
-      2
+      6,
+      6
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 6
   },
   {
@@ -2526,150 +2611,15 @@
       3
     ],
     "cols": [
-      2,
-      2
+      6,
+      6
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 7
   },
   {
     "id": 173,
-    "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "B",
-    "categories": "stairs",
-    "floor": 8
-  },
-  {
-    "id": 174,
-    "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "B",
-    "categories": "stairs",
-    "floor": 9
-  },
-  {
-    "id": 175,
-    "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "B",
-    "categories": "stairs",
-    "floor": 1
-  },
-  {
-    "id": 176,
-    "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "B",
-    "categories": "stairs",
-    "floor": 2
-  },
-  {
-    "id": 177,
-    "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "B",
-    "categories": "stairs",
-    "floor": 3
-  },
-  {
-    "id": 178,
-    "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "B",
-    "categories": "stairs",
-    "floor": 4
-  },
-  {
-    "id": 179,
-    "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "B",
-    "categories": "stairs",
-    "floor": 5
-  },
-  {
-    "id": 180,
-    "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "B",
-    "categories": "stairs",
-    "floor": 6
-  },
-  {
-    "id": 181,
-    "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "B",
-    "categories": "stairs",
-    "floor": 7
-  },
-  {
-    "id": 182,
     "name": "Thang bộ",
     "rows": [
       3,
@@ -2680,11 +2630,11 @@
       8
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 1
   },
   {
-    "id": 183,
+    "id": 174,
     "name": "Thang máy/bộ",
     "rows": [
       3,
@@ -2695,11 +2645,11 @@
       8
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 2
   },
   {
-    "id": 184,
+    "id": 175,
     "name": "Thang máy/bộ",
     "rows": [
       3,
@@ -2710,11 +2660,11 @@
       8
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 3
   },
   {
-    "id": 185,
+    "id": 176,
     "name": "Thang máy/bộ",
     "rows": [
       3,
@@ -2725,11 +2675,11 @@
       8
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 4
   },
   {
-    "id": 186,
+    "id": 177,
     "name": "Thang máy/bộ",
     "rows": [
       3,
@@ -2740,11 +2690,11 @@
       8
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 5
   },
   {
-    "id": 187,
+    "id": 178,
     "name": "Thang máy/bộ",
     "rows": [
       3,
@@ -2755,11 +2705,11 @@
       8
     ],
     "belongsTo": "B",
-    "categories": "stairs",
+    "category": "stairs",
     "floor": 6
   },
   {
-    "id": 188,
+    "id": 179,
     "name": "WC",
     "rows": [
       3,
@@ -2770,7 +2720,142 @@
       1
     ],
     "belongsTo": "B",
-    "categories": "wc",
+    "category": "wc",
+    "floor": 1
+  },
+  {
+    "id": 180,
+    "name": "WC",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "B",
+    "category": "wc",
+    "floor": 2
+  },
+  {
+    "id": 181,
+    "name": "WC",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "B",
+    "category": "wc",
+    "floor": 3
+  },
+  {
+    "id": 182,
+    "name": "WC",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "B",
+    "category": "wc",
+    "floor": 4
+  },
+  {
+    "id": 183,
+    "name": "WC",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "B",
+    "category": "wc",
+    "floor": 5
+  },
+  {
+    "id": 184,
+    "name": "WC",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "B",
+    "category": "wc",
+    "floor": 6
+  },
+  {
+    "id": 185,
+    "name": "WC",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "B",
+    "category": "wc",
+    "floor": 7
+  },
+  {
+    "id": 186,
+    "name": "WC",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "B",
+    "category": "wc",
+    "floor": 8
+  },
+  {
+    "id": 187,
+    "name": "WC",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "B",
+    "category": "wc",
+    "floor": 9
+  },
+  {
+    "id": 188,
+    "name": "WC",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      12,
+      12
+    ],
+    "belongsTo": "B",
+    "category": "wc",
     "floor": 1
   },
   {
@@ -2781,11 +2866,11 @@
       3
     ],
     "cols": [
-      1,
-      1
+      12,
+      12
     ],
     "belongsTo": "B",
-    "categories": "wc",
+    "category": "wc",
     "floor": 2
   },
   {
@@ -2796,11 +2881,11 @@
       3
     ],
     "cols": [
-      1,
-      1
+      12,
+      12
     ],
     "belongsTo": "B",
-    "categories": "wc",
+    "category": "wc",
     "floor": 3
   },
   {
@@ -2811,11 +2896,11 @@
       3
     ],
     "cols": [
-      1,
-      1
+      12,
+      12
     ],
     "belongsTo": "B",
-    "categories": "wc",
+    "category": "wc",
     "floor": 4
   },
   {
@@ -2826,12 +2911,12 @@
       3
     ],
     "cols": [
-      1,
-      1
+      4,
+      4
     ],
     "belongsTo": "B",
-    "categories": "wc",
-    "floor": 5
+    "category": "wc",
+    "floor": 1
   },
   {
     "id": 193,
@@ -2841,12 +2926,12 @@
       3
     ],
     "cols": [
-      1,
-      1
+      4,
+      4
     ],
     "belongsTo": "B",
-    "categories": "wc",
-    "floor": 6
+    "category": "wc",
+    "floor": 2
   },
   {
     "id": 194,
@@ -2856,12 +2941,12 @@
       3
     ],
     "cols": [
-      1,
-      1
+      4,
+      4
     ],
     "belongsTo": "B",
-    "categories": "wc",
-    "floor": 7
+    "category": "wc",
+    "floor": 3
   },
   {
     "id": 195,
@@ -2871,12 +2956,12 @@
       3
     ],
     "cols": [
-      1,
-      1
+      4,
+      4
     ],
     "belongsTo": "B",
-    "categories": "wc",
-    "floor": 8
+    "category": "wc",
+    "floor": 4
   },
   {
     "id": 196,
@@ -2886,12 +2971,12 @@
       3
     ],
     "cols": [
-      1,
-      1
+      4,
+      4
     ],
     "belongsTo": "B",
-    "categories": "wc",
-    "floor": 9
+    "category": "wc",
+    "floor": 5
   },
   {
     "id": 197,
@@ -2901,12 +2986,12 @@
       3
     ],
     "cols": [
-      12,
-      12
+      4,
+      4
     ],
     "belongsTo": "B",
-    "categories": "wc",
-    "floor": 1
+    "category": "wc",
+    "floor": 6
   },
   {
     "id": 198,
@@ -2916,12 +3001,12 @@
       3
     ],
     "cols": [
-      12,
-      12
+      4,
+      4
     ],
     "belongsTo": "B",
-    "categories": "wc",
-    "floor": 2
+    "category": "wc",
+    "floor": 7
   },
   {
     "id": 199,
@@ -2931,12 +3016,12 @@
       3
     ],
     "cols": [
-      12,
-      12
+      4,
+      4
     ],
     "belongsTo": "B",
-    "categories": "wc",
-    "floor": 3
+    "category": "wc",
+    "floor": 8
   },
   {
     "id": 200,
@@ -2946,12 +3031,12 @@
       3
     ],
     "cols": [
-      12,
-      12
+      9,
+      9
     ],
     "belongsTo": "B",
-    "categories": "wc",
-    "floor": 4
+    "category": "wc",
+    "floor": 1
   },
   {
     "id": 201,
@@ -2961,12 +3046,12 @@
       3
     ],
     "cols": [
-      4,
-      4
+      9,
+      9
     ],
     "belongsTo": "B",
-    "categories": "wc",
-    "floor": 1
+    "category": "wc",
+    "floor": 2
   },
   {
     "id": 202,
@@ -2976,12 +3061,12 @@
       3
     ],
     "cols": [
-      4,
-      4
+      9,
+      9
     ],
     "belongsTo": "B",
-    "categories": "wc",
-    "floor": 2
+    "category": "wc",
+    "floor": 3
   },
   {
     "id": 203,
@@ -2991,12 +3076,12 @@
       3
     ],
     "cols": [
-      4,
-      4
+      9,
+      9
     ],
     "belongsTo": "B",
-    "categories": "wc",
-    "floor": 3
+    "category": "wc",
+    "floor": 4
   },
   {
     "id": 204,
@@ -3006,150 +3091,15 @@
       3
     ],
     "cols": [
-      4,
-      4
+      9,
+      9
     ],
     "belongsTo": "B",
-    "categories": "wc",
-    "floor": 4
+    "category": "wc",
+    "floor": 5
   },
   {
     "id": 205,
-    "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "B",
-    "categories": "wc",
-    "floor": 5
-  },
-  {
-    "id": 206,
-    "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "B",
-    "categories": "wc",
-    "floor": 6
-  },
-  {
-    "id": 207,
-    "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "B",
-    "categories": "wc",
-    "floor": 7
-  },
-  {
-    "id": 208,
-    "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "B",
-    "categories": "wc",
-    "floor": 8
-  },
-  {
-    "id": 209,
-    "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      9,
-      9
-    ],
-    "belongsTo": "B",
-    "categories": "wc",
-    "floor": 1
-  },
-  {
-    "id": 210,
-    "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      9,
-      9
-    ],
-    "belongsTo": "B",
-    "categories": "wc",
-    "floor": 2
-  },
-  {
-    "id": 211,
-    "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      9,
-      9
-    ],
-    "belongsTo": "B",
-    "categories": "wc",
-    "floor": 3
-  },
-  {
-    "id": 212,
-    "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      9,
-      9
-    ],
-    "belongsTo": "B",
-    "categories": "wc",
-    "floor": 4
-  },
-  {
-    "id": 213,
-    "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      9,
-      9
-    ],
-    "belongsTo": "B",
-    "categories": "wc",
-    "floor": 5
-  },
-  {
-    "id": 214,
     "name": "C101",
     "rows": [
       1,
@@ -3160,11 +3110,11 @@
       11
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 215,
+    "id": 206,
     "name": "C201",
     "rows": [
       1,
@@ -3175,11 +3125,11 @@
       11
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 216,
+    "id": 207,
     "name": "C301",
     "rows": [
       1,
@@ -3190,11 +3140,11 @@
       11
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 217,
+    "id": 208,
     "name": "C315",
     "rows": [
       1,
@@ -3205,11 +3155,11 @@
       3
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 218,
+    "id": 209,
     "name": "C113",
     "rows": [
       1,
@@ -3220,12 +3170,12 @@
       4
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1,
     "description": "Phòng WB"
   },
   {
-    "id": 219,
+    "id": 210,
     "name": "C213",
     "rows": [
       1,
@@ -3236,11 +3186,11 @@
       4
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 220,
+    "id": 211,
     "name": "C313",
     "rows": [
       1,
@@ -3251,11 +3201,11 @@
       4
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 221,
+    "id": 212,
     "name": "C211",
     "rows": [
       1,
@@ -3266,12 +3216,12 @@
       5
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2,
     "description": "Phòng WB"
   },
   {
-    "id": 222,
+    "id": 213,
     "name": "C311",
     "rows": [
       1,
@@ -3282,11 +3232,11 @@
       5
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 223,
+    "id": 214,
     "name": "C209",
     "rows": [
       1,
@@ -3297,12 +3247,12 @@
       6
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2,
     "description": "Phòng WB"
   },
   {
-    "id": 224,
+    "id": 215,
     "name": "C309",
     "rows": [
       1,
@@ -3313,11 +3263,11 @@
       6
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 225,
+    "id": 216,
     "name": "C207",
     "rows": [
       1,
@@ -3328,12 +3278,12 @@
       7
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2,
     "description": "Phòng WB"
   },
   {
-    "id": 226,
+    "id": 217,
     "name": "C307",
     "rows": [
       1,
@@ -3344,11 +3294,11 @@
       7
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 227,
+    "id": 218,
     "name": "C205",
     "rows": [
       1,
@@ -3359,12 +3309,12 @@
       8
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2,
     "description": "Phòng WB"
   },
   {
-    "id": 228,
+    "id": 219,
     "name": "C305",
     "rows": [
       1,
@@ -3375,11 +3325,11 @@
       8
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 229,
+    "id": 220,
     "name": "C102",
     "rows": [
       3,
@@ -3390,11 +3340,11 @@
       12
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1
   },
   {
-    "id": 230,
+    "id": 221,
     "name": "C202",
     "rows": [
       3,
@@ -3405,11 +3355,11 @@
       12
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 231,
+    "id": 222,
     "name": "C302",
     "rows": [
       3,
@@ -3420,11 +3370,11 @@
       12
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 232,
+    "id": 223,
     "name": "C218",
     "rows": [
       3,
@@ -3435,12 +3385,12 @@
       3
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2,
     "description": "Phòng WB"
   },
   {
-    "id": 233,
+    "id": 224,
     "name": "C318",
     "rows": [
       3,
@@ -3451,11 +3401,11 @@
       3
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 234,
+    "id": 225,
     "name": "C110",
     "rows": [
       3,
@@ -3466,12 +3416,12 @@
       4
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1,
     "description": "Phòng WB"
   },
   {
-    "id": 235,
+    "id": 226,
     "name": "C216",
     "rows": [
       3,
@@ -3482,12 +3432,12 @@
       4
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2,
     "description": "Phòng WB"
   },
   {
-    "id": 236,
+    "id": 227,
     "name": "C316",
     "rows": [
       3,
@@ -3498,11 +3448,11 @@
       4
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 237,
+    "id": 228,
     "name": "C108",
     "rows": [
       3,
@@ -3513,12 +3463,12 @@
       5
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1,
     "description": "Phòng WB"
   },
   {
-    "id": 238,
+    "id": 229,
     "name": "C214",
     "rows": [
       3,
@@ -3529,12 +3479,12 @@
       5
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2,
     "description": "Phòng WB"
   },
   {
-    "id": 239,
+    "id": 230,
     "name": "C314",
     "rows": [
       3,
@@ -3545,11 +3495,11 @@
       5
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 240,
+    "id": 231,
     "name": "C106",
     "rows": [
       3,
@@ -3560,12 +3510,12 @@
       6
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1,
     "description": "Phòng WB"
   },
   {
-    "id": 241,
+    "id": 232,
     "name": "C212",
     "rows": [
       3,
@@ -3576,11 +3526,11 @@
       6
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2
   },
   {
-    "id": 242,
+    "id": 233,
     "name": "C312",
     "rows": [
       3,
@@ -3591,11 +3541,11 @@
       6
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 243,
+    "id": 234,
     "name": "C210",
     "rows": [
       3,
@@ -3606,12 +3556,12 @@
       7
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2,
     "description": "Phòng WB"
   },
   {
-    "id": 244,
+    "id": 235,
     "name": "C310",
     "rows": [
       3,
@@ -3622,11 +3572,11 @@
       7
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 245,
+    "id": 236,
     "name": "C104",
     "rows": [
       3,
@@ -3637,12 +3587,12 @@
       9
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 1,
     "description": "Phòng WB"
   },
   {
-    "id": 246,
+    "id": 237,
     "name": "C208",
     "rows": [
       3,
@@ -3653,12 +3603,12 @@
       8
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 2,
     "description": "Phòng WB"
   },
   {
-    "id": 247,
+    "id": 238,
     "name": "C308",
     "rows": [
       3,
@@ -3669,11 +3619,11 @@
       8
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 248,
+    "id": 239,
     "name": "C206",
     "rows": [
       3,
@@ -3684,12 +3634,11 @@
       10
     ],
     "belongsTo": "C",
-    "categories": "classroom",
-    "floor": 2,
-    "description": "Phòng học"
+    "category": "classroom",
+    "floor": 2
   },
   {
-    "id": 249,
+    "id": 240,
     "name": "C306",
     "rows": [
       3,
@@ -3700,11 +3649,11 @@
       10
     ],
     "belongsTo": "C",
-    "categories": "classroom",
+    "category": "classroom",
     "floor": 3
   },
   {
-    "id": 250,
+    "id": 241,
     "name": "C111",
     "rows": [
       1,
@@ -3715,12 +3664,12 @@
       5
     ],
     "belongsTo": "C",
-    "categories": "computer_room",
+    "category": "computer_room",
     "floor": 1,
     "description": "Phòng máy"
   },
   {
-    "id": 251,
+    "id": 242,
     "name": "C109",
     "rows": [
       1,
@@ -3731,12 +3680,12 @@
       6
     ],
     "belongsTo": "C",
-    "categories": "computer_room",
+    "category": "computer_room",
     "floor": 1,
     "description": "Phòng máy"
   },
   {
-    "id": 252,
+    "id": 243,
     "name": "C107",
     "rows": [
       1,
@@ -3747,12 +3696,12 @@
       7
     ],
     "belongsTo": "C",
-    "categories": "computer_room",
+    "category": "computer_room",
     "floor": 1,
     "description": "Phòng máy"
   },
   {
-    "id": 253,
+    "id": 244,
     "name": "C105",
     "rows": [
       1,
@@ -3763,12 +3712,12 @@
       8
     ],
     "belongsTo": "C",
-    "categories": "office",
+    "category": "office",
     "floor": 1,
     "description": "Phòng LV"
   },
   {
-    "id": 254,
+    "id": 245,
     "name": "C103",
     "rows": [
       1,
@@ -3779,12 +3728,12 @@
       9
     ],
     "belongsTo": "C",
-    "categories": "office",
+    "category": "office",
     "floor": 1,
     "description": "Phòng LV"
   },
   {
-    "id": 255,
+    "id": 246,
     "name": "C203",
     "rows": [
       1,
@@ -3795,12 +3744,12 @@
       9
     ],
     "belongsTo": "C",
-    "categories": "office",
+    "category": "office",
     "floor": 2,
     "description": "Phòng LV"
   },
   {
-    "id": 256,
+    "id": 247,
     "name": "C303",
     "rows": [
       1,
@@ -3811,12 +3760,12 @@
       9
     ],
     "belongsTo": "C",
-    "categories": "office",
+    "category": "office",
     "floor": 3,
     "description": "Phòng LV"
   },
   {
-    "id": 257,
+    "id": 248,
     "name": "C204",
     "rows": [
       3,
@@ -3827,12 +3776,12 @@
       11
     ],
     "belongsTo": "C",
-    "categories": "office",
+    "category": "office",
     "floor": 2,
     "description": "Phòng LV"
   },
   {
-    "id": 258,
+    "id": 249,
     "name": "C304",
     "rows": [
       3,
@@ -3843,12 +3792,12 @@
       11
     ],
     "belongsTo": "C",
-    "categories": "office",
+    "category": "office",
     "floor": 3,
     "description": "Phòng LV"
   },
   {
-    "id": 259,
+    "id": 250,
     "name": "Sảnh C",
     "rows": [
       2,
@@ -3859,266 +3808,266 @@
       10
     ],
     "belongsTo": "C",
-    "categories": "public",
+    "category": "public",
+    "floor": 1
+  },
+  {
+    "id": 251,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      10,
+      10
+    ],
+    "belongsTo": "C",
+    "category": "stairs",
+    "floor": 1
+  },
+  {
+    "id": 252,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      10,
+      10
+    ],
+    "belongsTo": "C",
+    "category": "stairs",
+    "floor": 2
+  },
+  {
+    "id": 253,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      10,
+      10
+    ],
+    "belongsTo": "C",
+    "category": "stairs",
+    "floor": 3
+  },
+  {
+    "id": 254,
+    "name": "Thang bộ",
+    "rows": [
+      2,
+      2
+    ],
+    "cols": [
+      13,
+      13
+    ],
+    "belongsTo": "C",
+    "category": "stairs",
+    "floor": 1
+  },
+  {
+    "id": 255,
+    "name": "Thang bộ",
+    "rows": [
+      2,
+      2
+    ],
+    "cols": [
+      13,
+      13
+    ],
+    "belongsTo": "C",
+    "category": "stairs",
+    "floor": 2
+  },
+  {
+    "id": 256,
+    "name": "Thang bộ",
+    "rows": [
+      2,
+      2
+    ],
+    "cols": [
+      13,
+      13
+    ],
+    "belongsTo": "C",
+    "category": "stairs",
+    "floor": 3
+  },
+  {
+    "id": 257,
+    "name": "Thang bộ",
+    "rows": [
+      2,
+      2
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "C",
+    "category": "stairs",
+    "floor": 2
+  },
+  {
+    "id": 258,
+    "name": "Thang bộ",
+    "rows": [
+      2,
+      2
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "C",
+    "category": "stairs",
+    "floor": 3
+  },
+  {
+    "id": 259,
+    "name": "Kho",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "C",
+    "category": "warehouse",
     "floor": 1
   },
   {
     "id": 260,
-    "name": "Thang bộ",
+    "name": "Kho",
     "rows": [
       1,
       1
     ],
     "cols": [
-      10,
-      10
+      1,
+      1
     ],
     "belongsTo": "C",
-    "categories": "stairs",
-    "floor": 1
+    "category": "warehouse",
+    "floor": 2
   },
   {
     "id": 261,
-    "name": "Thang bộ",
+    "name": "Kho",
     "rows": [
       1,
       1
     ],
     "cols": [
-      10,
-      10
+      1,
+      1
     ],
     "belongsTo": "C",
-    "categories": "stairs",
-    "floor": 2
+    "category": "warehouse",
+    "floor": 3
   },
   {
     "id": 262,
-    "name": "Thang bộ",
+    "name": "WC",
     "rows": [
       1,
       1
     ],
     "cols": [
-      10,
-      10
+      12,
+      12
     ],
     "belongsTo": "C",
-    "categories": "stairs",
-    "floor": 3
-  },
-  {
-    "id": 263,
-    "name": "Thang bộ",
-    "rows": [
-      2,
-      2
-    ],
-    "cols": [
-      13,
-      13
-    ],
-    "belongsTo": "C",
-    "categories": "stairs",
+    "category": "wc",
     "floor": 1
   },
   {
-    "id": 264,
-    "name": "Thang bộ",
+    "id": 263,
+    "name": "WC",
     "rows": [
-      2,
-      2
+      1,
+      1
     ],
     "cols": [
-      13,
-      13
+      12,
+      12
     ],
     "belongsTo": "C",
-    "categories": "stairs",
+    "category": "wc",
     "floor": 2
   },
   {
-    "id": 265,
-    "name": "Thang bộ",
+    "id": 264,
+    "name": "WC",
     "rows": [
-      2,
-      2
+      1,
+      1
     ],
     "cols": [
-      13,
-      13
+      12,
+      12
     ],
     "belongsTo": "C",
-    "categories": "stairs",
+    "category": "wc",
     "floor": 3
   },
   {
-    "id": 266,
-    "name": "Thang bộ",
+    "id": 265,
+    "name": "WC",
     "rows": [
       2,
-      2
+      3
     ],
     "cols": [
-      2,
-      2
+      1,
+      1
     ],
     "belongsTo": "C",
-    "categories": "stairs",
+    "category": "wc",
+    "floor": 1
+  },
+  {
+    "id": 266,
+    "name": "WC",
+    "rows": [
+      2,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "C",
+    "category": "wc",
     "floor": 2
   },
   {
     "id": 267,
-    "name": "Thang bộ",
+    "name": "WC",
     "rows": [
       2,
-      2
+      3
     ],
     "cols": [
-      2,
-      2
+      1,
+      1
     ],
     "belongsTo": "C",
-    "categories": "stairs",
+    "category": "wc",
     "floor": 3
   },
   {
     "id": 268,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "C",
-    "categories": "warehouse",
-    "floor": 1
-  },
-  {
-    "id": 269,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "C",
-    "categories": "warehouse",
-    "floor": 2
-  },
-  {
-    "id": 270,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "C",
-    "categories": "warehouse",
-    "floor": 3
-  },
-  {
-    "id": 271,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      12,
-      12
-    ],
-    "belongsTo": "C",
-    "categories": "wc",
-    "floor": 1
-  },
-  {
-    "id": 272,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      12,
-      12
-    ],
-    "belongsTo": "C",
-    "categories": "wc",
-    "floor": 2
-  },
-  {
-    "id": 273,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      12,
-      12
-    ],
-    "belongsTo": "C",
-    "categories": "wc",
-    "floor": 3
-  },
-  {
-    "id": 274,
-    "name": "WC",
-    "rows": [
-      2,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "C",
-    "categories": "wc",
-    "floor": 1
-  },
-  {
-    "id": 275,
-    "name": "WC",
-    "rows": [
-      2,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "C",
-    "categories": "wc",
-    "floor": 2
-  },
-  {
-    "id": 276,
-    "name": "WC",
-    "rows": [
-      2,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "C",
-    "categories": "wc",
-    "floor": 3
-  },
-  {
-    "id": 277,
     "name": "E02.3",
     "rows": [
       1,
@@ -4129,12 +4078,11 @@
       6
     ],
     "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 2,
-    "description": "Phòng Học"
+    "category": "classroom",
+    "floor": 2
   },
   {
-    "id": 278,
+    "id": 269,
     "name": "E03.3",
     "rows": [
       1,
@@ -4145,12 +4093,11 @@
       6
     ],
     "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 3,
-    "description": "Phòng Học"
+    "category": "classroom",
+    "floor": 3
   },
   {
-    "id": 279,
+    "id": 270,
     "name": "E04.3",
     "rows": [
       1,
@@ -4161,1233 +4108,11 @@
       6
     ],
     "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 4,
-    "description": "Phòng Học"
-  },
-  {
-    "id": 280,
-    "name": "E01.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 1,
-    "description": "Phòng Họp"
-  },
-  {
-    "id": 281,
-    "name": "E04.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 4,
-    "description": "Phòng Học"
-  },
-  {
-    "id": 282,
-    "name": "E10.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 10,
-    "description": "Phòng Học"
-  },
-  {
-    "id": 283,
-    "name": "E12.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 12,
-    "description": "Phòng Sinh hoạt chung"
-  },
-  {
-    "id": 284,
-    "name": "E11.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 11,
-    "description": "Phòng Học"
-  },
-  {
-    "id": 285,
-    "name": "E01.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 1,
-    "description": "Phòng Không gian Tiếng Anh"
-  },
-  {
-    "id": 286,
-    "name": "E02.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 2,
-    "description": "Phòng tự học"
-  },
-  {
-    "id": 287,
-    "name": "E03.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 3,
-    "description": "Phòng Học"
-  },
-  {
-    "id": 288,
-    "name": "E04.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 4,
-    "description": "Phòng Học"
-  },
-  {
-    "id": 289,
-    "name": "E11.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 11,
-    "description": "Phòng Học"
-  },
-  {
-    "id": 290,
-    "name": "E11.6",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 11,
-    "description": "Phòng Học"
-  },
-  {
-    "id": 291,
-    "name": "E02.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 2,
-    "description": "Phòng Học"
-  },
-  {
-    "id": 292,
-    "name": "E03.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 3,
-    "description": "Phòng Học"
-  },
-  {
-    "id": 293,
-    "name": "E04.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 4,
-    "description": "Phòng Học"
-  },
-  {
-    "id": 294,
-    "name": "E11.8",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      7,
-      7
-    ],
-    "belongsTo": "E",
-    "categories": "classroom",
-    "floor": 11,
-    "description": "Phòng Học"
-  },
-  {
-    "id": 295,
-    "name": "HTE (Hội trường E12)",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      7
-    ],
-    "belongsTo": "E",
-    "categories": "hall",
-    "floor": 12
-  },
-  {
-    "id": 296,
-    "name": "E11.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "E",
-    "categories": "lab",
-    "floor": 11,
-    "description": "Trung tâm An ninh mạng"
-  },
-  {
-    "id": 297,
-    "name": "E03.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "E",
-    "categories": "lab",
-    "floor": 3,
-    "description": "Phòng Thực hành Khoa MMT&TT"
-  },
-  {
-    "id": 298,
-    "name": "E05.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "E",
-    "categories": "lab",
-    "floor": 5,
-    "description": "Phòng Thí nghiệm Truyền thông Đa phương tiện"
-  },
-  {
-    "id": 299,
-    "name": "E06.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "E",
-    "categories": "lab",
-    "floor": 6,
-    "description": "Phòng Thí nghiệm Vi mạch Tích hợp Chuyên dụng"
-  },
-  {
-    "id": 300,
-    "name": "E08.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "E",
-    "categories": "lab",
-    "floor": 8,
-    "description": "Phòng Thí nghiệm An toàn Thông tin - Trung tâm An ninh mạng"
-  },
-  {
-    "id": 301,
-    "name": "E09.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "E",
-    "categories": "lab",
-    "floor": 9,
-    "description": "Phòng Thí nghiệm Hệ thống Thông tin"
-  },
-  {
-    "id": 302,
-    "name": "E01.5",
-    "belongsTo": "E",
-    "categories": "lab",
-    "floor": 1,
-    "description": "Phòng Hệ thống Máy lạnh (kỹ thuật – có thể loại. Tạm giữ)"
-  },
-  {
-    "id": 303,
-    "name": "E02.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
-    "belongsTo": "E",
-    "categories": "office",
-    "floor": 2,
-    "description": "Ban Quản lý Cơ sở"
-  },
-  {
-    "id": 304,
-    "name": "E03.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
-    "belongsTo": "E",
-    "categories": "office",
-    "floor": 3,
-    "description": "Phòng Giảng viên Tiếng Nhật"
-  },
-  {
-    "id": 305,
-    "name": "E04.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
-    "belongsTo": "E",
-    "categories": "office",
-    "floor": 4,
-    "description": "Phòng Giảng viên Tiếng Nhật"
-  },
-  {
-    "id": 306,
-    "name": "E02.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "E",
-    "categories": "office",
-    "floor": 2,
-    "description": "Văn phòng Các chương trình Đặc biệt"
-  },
-  {
-    "id": 307,
-    "name": "E07.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "E",
-    "categories": "office",
-    "floor": 7,
-    "description": "Phòng Ăn - Phòng nghỉ Giảng viên - Viên chức & Người lao động"
-  },
-  {
-    "id": 308,
-    "name": "E11.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
-    "belongsTo": "E",
-    "categories": "office",
-    "floor": 11,
-    "description": "Công ty Rosen"
-  },
-  {
-    "id": 309,
-    "name": "E01.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
-    "belongsTo": "E",
-    "categories": "office",
-    "floor": 1,
-    "description": "Trung tâm Ngoại ngữ"
-  },
-  {
-    "id": 310,
-    "name": "E01.3",
-    "belongsTo": "E",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng thiết bị điện"
-  },
-  {
-    "id": 311,
-    "name": "E01.7",
-    "belongsTo": "E",
-    "categories": "office",
-    "floor": 1,
-    "description": "Phòng nghỉ Trung tâm Ngoại ngữ"
-  },
-  {
-    "id": 312,
-    "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 1
-  },
-  {
-    "id": 313,
-    "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 2
-  },
-  {
-    "id": 314,
-    "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 3
-  },
-  {
-    "id": 315,
-    "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
+    "category": "classroom",
     "floor": 4
   },
   {
-    "id": 316,
-    "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 5
-  },
-  {
-    "id": 317,
-    "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 6
-  },
-  {
-    "id": 318,
-    "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 7
-  },
-  {
-    "id": 319,
-    "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 8
-  },
-  {
-    "id": 320,
-    "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 9
-  },
-  {
-    "id": 321,
-    "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 10
-  },
-  {
-    "id": 322,
-    "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 11
-  },
-  {
-    "id": 323,
-    "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 12
-  },
-  {
-    "id": 324,
-    "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 1
-  },
-  {
-    "id": 325,
-    "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 2
-  },
-  {
-    "id": 326,
-    "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 3
-  },
-  {
-    "id": 327,
-    "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 4
-  },
-  {
-    "id": 328,
-    "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 5
-  },
-  {
-    "id": 329,
-    "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 6
-  },
-  {
-    "id": 330,
-    "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 7
-  },
-  {
-    "id": 331,
-    "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 8
-  },
-  {
-    "id": 332,
-    "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 9
-  },
-  {
-    "id": 333,
-    "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 10
-  },
-  {
-    "id": 334,
-    "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 11
-  },
-  {
-    "id": 335,
-    "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
-    "belongsTo": "E",
-    "categories": "stairs",
-    "floor": 12
-  },
-  {
-    "id": 336,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "warehouse",
-    "floor": 1
-  },
-  {
-    "id": 337,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "warehouse",
-    "floor": 2
-  },
-  {
-    "id": 338,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "warehouse",
-    "floor": 3
-  },
-  {
-    "id": 339,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "warehouse",
-    "floor": 4
-  },
-  {
-    "id": 340,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "warehouse",
-    "floor": 5
-  },
-  {
-    "id": 341,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "warehouse",
-    "floor": 6
-  },
-  {
-    "id": 342,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "warehouse",
-    "floor": 7
-  },
-  {
-    "id": 343,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "warehouse",
-    "floor": 8
-  },
-  {
-    "id": 344,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "warehouse",
-    "floor": 9
-  },
-  {
-    "id": 345,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "warehouse",
-    "floor": 10
-  },
-  {
-    "id": 346,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
-    "belongsTo": "E",
-    "categories": "warehouse",
-    "floor": 11
-  },
-  {
-    "id": 347,
-    "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      7
-    ],
-    "belongsTo": "E",
-    "categories": "warehouse",
-    "floor": 12
-  },
-  {
-    "id": 348,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "E",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 349,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "E",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 350,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "E",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 351,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "E",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 352,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "E",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 353,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "E",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 354,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "E",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 355,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "E",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 356,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "E",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 357,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "E",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 358,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "E",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 359,
-    "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
-    "belongsTo": "E",
-    "categories": "wc",
-    "floor": 9
-  },
-  {
-    "id": 360,
-    "name": "E05.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "E",
-    "floor": 5
-  },
-  {
-    "id": 361,
+    "id": 271,
     "name": "E06.3",
     "rows": [
       1,
@@ -5398,150 +4123,11 @@
       6
     ],
     "belongsTo": "E",
+    "category": "classroom",
     "floor": 6
   },
   {
-    "id": 362,
-    "name": "E07.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "E",
-    "floor": 7
-  },
-  {
-    "id": 363,
-    "name": "E08.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "E",
-    "floor": 8
-  },
-  {
-    "id": 364,
-    "name": "E09.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "E",
-    "floor": 9
-  },
-  {
-    "id": 365,
-    "name": "E10.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
-    "belongsTo": "E",
-    "floor": 10
-  },
-  {
-    "id": 366,
-    "name": "E05.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
-    "belongsTo": "E",
-    "floor": 5
-  },
-  {
-    "id": 367,
-    "name": "E06.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
-    "belongsTo": "E",
-    "floor": 6
-  },
-  {
-    "id": 368,
-    "name": "E07.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
-    "belongsTo": "E",
-    "floor": 7
-  },
-  {
-    "id": 369,
-    "name": "E08.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
-    "belongsTo": "E",
-    "floor": 8
-  },
-  {
-    "id": 370,
-    "name": "E09.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
-    "belongsTo": "E",
-    "floor": 9
-  },
-  {
-    "id": 371,
-    "name": "E10.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
-    "belongsTo": "E",
-    "floor": 10
-  },
-  {
-    "id": 372,
+    "id": 272,
     "name": "E11.5",
     "rows": [
       1,
@@ -5552,95 +4138,149 @@
       7
     ],
     "belongsTo": "E",
+    "category": "classroom",
     "floor": 11
   },
   {
-    "id": 373,
-    "name": "E05.2",
+    "id": 273,
+    "name": "E04.1",
     "rows": [
-      3,
+      1,
       3
     ],
     "cols": [
-      4,
-      5
+      1,
+      1
     ],
     "belongsTo": "E",
-    "floor": 5
+    "category": "classroom",
+    "floor": 4
   },
   {
-    "id": 374,
-    "name": "E06.2",
+    "id": 274,
+    "name": "E10.1",
     "rows": [
-      3,
+      1,
       3
     ],
     "cols": [
-      4,
-      5
+      1,
+      1
     ],
     "belongsTo": "E",
-    "floor": 6
-  },
-  {
-    "id": 375,
-    "name": "E07.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
-    "belongsTo": "E",
-    "floor": 7
-  },
-  {
-    "id": 376,
-    "name": "E08.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
-    "belongsTo": "E",
-    "floor": 8
-  },
-  {
-    "id": 377,
-    "name": "E09.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
-    "belongsTo": "E",
-    "floor": 9
-  },
-  {
-    "id": 378,
-    "name": "E10.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
-    "belongsTo": "E",
+    "category": "classroom",
     "floor": 10
   },
   {
-    "id": 379,
-    "name": "E05.4",
+    "id": 275,
+    "name": "E11.2",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "E",
+    "category": "classroom",
+    "floor": 11
+  },
+  {
+    "id": 276,
+    "name": "E01.2",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "classroom",
+    "floor": 1,
+    "description": "Phòng Không gian Tiếng Anh"
+  },
+  {
+    "id": 277,
+    "name": "E02.2",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "classroom",
+    "floor": 2,
+    "description": "Phòng tự học"
+  },
+  {
+    "id": 278,
+    "name": "E03.2",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "classroom",
+    "floor": 3
+  },
+  {
+    "id": 279,
+    "name": "E04.2",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "classroom",
+    "floor": 4
+  },
+  {
+    "id": 280,
+    "name": "E11.4",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "classroom",
+    "floor": 11
+  },
+  {
+    "id": 281,
+    "name": "E11.6",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "E",
+    "category": "classroom",
+    "floor": 11
+  },
+  {
+    "id": 282,
+    "name": "E02.4",
     "rows": [
       3,
       3
@@ -5650,11 +4290,12 @@
       7
     ],
     "belongsTo": "E",
-    "floor": 5
+    "category": "classroom",
+    "floor": 2
   },
   {
-    "id": 380,
-    "name": "E06.4",
+    "id": 283,
+    "name": "E03.4",
     "rows": [
       3,
       3
@@ -5664,11 +4305,12 @@
       7
     ],
     "belongsTo": "E",
-    "floor": 6
+    "category": "classroom",
+    "floor": 3
   },
   {
-    "id": 381,
-    "name": "E07.4",
+    "id": 284,
+    "name": "E04.4",
     "rows": [
       3,
       3
@@ -5678,10 +4320,11 @@
       7
     ],
     "belongsTo": "E",
-    "floor": 7
+    "category": "classroom",
+    "floor": 4
   },
   {
-    "id": 382,
+    "id": 285,
     "name": "E08.4",
     "rows": [
       3,
@@ -5692,10 +4335,601 @@
       7
     ],
     "belongsTo": "E",
+    "category": "classroom",
     "floor": 8
   },
   {
-    "id": 383,
+    "id": 286,
+    "name": "E11.8",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      7,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "classroom",
+    "floor": 11
+  },
+  {
+    "id": 287,
+    "name": "HTE (Hội trường E12)",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "hall",
+    "floor": 12
+  },
+  {
+    "id": 288,
+    "name": "E11.3",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "E",
+    "category": "lab",
+    "floor": 11,
+    "description": "Trung tâm An ninh mạng"
+  },
+  {
+    "id": 289,
+    "name": "E03.1",
+    "rows": [
+      1,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "E",
+    "category": "lab",
+    "floor": 3,
+    "description": "Phòng Thực hành Khoa MMT&TT"
+  },
+  {
+    "id": 290,
+    "name": "E05.1",
+    "rows": [
+      1,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "E",
+    "category": "lab",
+    "floor": 5,
+    "description": "Phòng Thí nghiệm Truyền thông Đa phương tiện"
+  },
+  {
+    "id": 291,
+    "name": "E06.1",
+    "rows": [
+      1,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "E",
+    "category": "lab",
+    "floor": 6,
+    "description": "Phòng Thí nghiệm Vi mạch Tích hợp Chuyên dụng"
+  },
+  {
+    "id": 292,
+    "name": "E08.1",
+    "rows": [
+      1,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "E",
+    "category": "lab",
+    "floor": 8,
+    "description": "Phòng Thí nghiệm An toàn Thông tin - Trung tâm An ninh mạng"
+  },
+  {
+    "id": 293,
+    "name": "E09.1",
+    "rows": [
+      1,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "E",
+    "category": "lab",
+    "floor": 9,
+    "description": "Phòng Thí nghiệm Hệ thống Thông tin"
+  },
+  {
+    "id": 294,
+    "name": "E05.3",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 5,
+    "description": "Văn phòng khoa Khoa học máy tính"
+  },
+  {
+    "id": 295,
+    "name": "E07.3",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 7,
+    "description": "Văn phòng khoa Công nghệ phần mềm"
+  },
+  {
+    "id": 296,
+    "name": "E08.3",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 8,
+    "description": "Văn phòng khoa Mạng máy tính & Truyền thông"
+  },
+  {
+    "id": 297,
+    "name": "E09.3",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 9,
+    "description": "Văn phòng khoa Hệ thống thông tin"
+  },
+  {
+    "id": 298,
+    "name": "E10.3",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 10,
+    "description": "Văn phòng khoa Khoa học & Kỹ thuật thông tin"
+  },
+  {
+    "id": 299,
+    "name": "E01.7",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      7,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng nghỉ Trung tâm Ngoại ngữ"
+  },
+  {
+    "id": 300,
+    "name": "E02.5",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      7,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 2,
+    "description": "Ban Quản lý Cơ sở"
+  },
+  {
+    "id": 301,
+    "name": "E03.5",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      7,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 3,
+    "description": "Phòng Giảng viên Tiếng Nhật"
+  },
+  {
+    "id": 302,
+    "name": "E04.5",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      7,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 4,
+    "description": "Phòng Giảng viên Tiếng Nhật"
+  },
+  {
+    "id": 303,
+    "name": "E05.5",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      7,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 5,
+    "description": "Văn phòng khoa Khoa học máy tính"
+  },
+  {
+    "id": 304,
+    "name": "E06.5",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      7,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 6,
+    "description": "Văn phòng khoa Kỹ thuật máy tính"
+  },
+  {
+    "id": 305,
+    "name": "E07.5",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      7,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 7,
+    "description": "Văn phòng khoa Công nghệ phần mềm"
+  },
+  {
+    "id": 306,
+    "name": "E08.5",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      7,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 8,
+    "description": "Văn phòng khoa Mạng máy tính & Truyền thông"
+  },
+  {
+    "id": 307,
+    "name": "E09.5",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      7,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 9,
+    "description": "Văn phòng khoa Hệ thống thông tin"
+  },
+  {
+    "id": 308,
+    "name": "E10.5",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      7,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 10,
+    "description": "Văn phòng khoa Khoa học & Kỹ thuật thông tin"
+  },
+  {
+    "id": 309,
+    "name": "E01.1",
+    "rows": [
+      1,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 1,
+    "description": "Phòng họp"
+  },
+  {
+    "id": 310,
+    "name": "E02.1",
+    "rows": [
+      1,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 2,
+    "description": "Văn phòng Các chương trình Đặc biệt"
+  },
+  {
+    "id": 311,
+    "name": "E07.1",
+    "rows": [
+      1,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 7,
+    "description": "Phòng Ăn - Phòng nghỉ Giảng viên - Viên chức & Người lao động"
+  },
+  {
+    "id": 312,
+    "name": "E11.1",
+    "rows": [
+      1,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 11,
+    "description": "Công ty Rosen"
+  },
+  {
+    "id": 313,
+    "name": "E05.2",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 5,
+    "description": "Văn phòng khoa Khoa học máy tính"
+  },
+  {
+    "id": 314,
+    "name": "E06.2",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 6,
+    "description": "Văn phòng khoa Kỹ thuật máy tính"
+  },
+  {
+    "id": 315,
+    "name": "E07.2",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 7,
+    "description": "Văn phòng khoa Công nghệ phần mềm"
+  },
+  {
+    "id": 316,
+    "name": "E08.2",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 8,
+    "description": "Văn phòng khoa Mạng máy tính & Truyền thông"
+  },
+  {
+    "id": 317,
+    "name": "E09.2",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 9,
+    "description": "Văn phòng khoa Hệ thống thông tin"
+  },
+  {
+    "id": 318,
+    "name": "E10.2",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      4,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 10,
+    "description": "Văn phòng khoa Khoa học & Kỹ thuật thông tin"
+  },
+  {
+    "id": 319,
+    "name": "E01.4",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      6,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 1,
+    "description": "Trung tâm Ngoại ngữ"
+  },
+  {
+    "id": 320,
+    "name": "E05.4",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      6,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 5,
+    "description": "Văn phòng khoa Khoa học máy tính"
+  },
+  {
+    "id": 321,
+    "name": "E06.4",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      6,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 6,
+    "description": "Văn phòng khoa Kỹ thuật máy tính"
+  },
+  {
+    "id": 322,
+    "name": "E07.4",
+    "rows": [
+      3,
+      3
+    ],
+    "cols": [
+      6,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "office",
+    "floor": 7,
+    "description": "Văn phòng khoa Công nghệ phần mềm"
+  },
+  {
+    "id": 323,
     "name": "E09.4",
     "rows": [
       3,
@@ -5706,10 +4940,12 @@
       7
     ],
     "belongsTo": "E",
-    "floor": 9
+    "category": "office",
+    "floor": 9,
+    "description": "Văn phòng khoa Hệ thống thông tin"
   },
   {
-    "id": 384,
+    "id": 324,
     "name": "E10.4",
     "rows": [
       3,
@@ -5720,62 +4956,833 @@
       7
     ],
     "belongsTo": "E",
+    "category": "office",
+    "floor": 10,
+    "description": "Văn phòng khoa Khoa học & Kỹ thuật thông tin"
+  },
+  {
+    "id": 325,
+    "name": "E12.1",
+    "rows": [
+      1,
+      3
+    ],
+    "cols": [
+      1,
+      1
+    ],
+    "belongsTo": "E",
+    "category": "public",
+    "floor": 12,
+    "description": "Phòng Sinh hoạt chung"
+  },
+  {
+    "id": 326,
+    "name": "Thang máy",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 1
+  },
+  {
+    "id": 327,
+    "name": "Thang máy",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 2
+  },
+  {
+    "id": 328,
+    "name": "Thang máy",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 3
+  },
+  {
+    "id": 329,
+    "name": "Thang máy",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 4
+  },
+  {
+    "id": 330,
+    "name": "Thang máy",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 5
+  },
+  {
+    "id": 331,
+    "name": "Thang máy",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 6
+  },
+  {
+    "id": 332,
+    "name": "Thang máy",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 7
+  },
+  {
+    "id": 333,
+    "name": "Thang máy",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 8
+  },
+  {
+    "id": 334,
+    "name": "Thang máy",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 9
+  },
+  {
+    "id": 335,
+    "name": "Thang máy",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
     "floor": 10
   },
   {
-    "id": 385,
+    "id": 336,
+    "name": "Thang máy",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 11
+  },
+  {
+    "id": 337,
+    "name": "Thang máy",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      3,
+      3
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 12
+  },
+  {
+    "id": 338,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 1
+  },
+  {
+    "id": 339,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 2
+  },
+  {
+    "id": 340,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 3
+  },
+  {
+    "id": 341,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 4
+  },
+  {
+    "id": 342,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 5
+  },
+  {
+    "id": 343,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 6
+  },
+  {
+    "id": 344,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 7
+  },
+  {
+    "id": 345,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 8
+  },
+  {
+    "id": 346,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 9
+  },
+  {
+    "id": 347,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 10
+  },
+  {
+    "id": 348,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 11
+  },
+  {
+    "id": 349,
+    "name": "Thang bộ",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      4,
+      4
+    ],
+    "belongsTo": "E",
+    "category": "stairs",
+    "floor": 12
+  },
+  {
+    "id": 350,
+    "name": "E01.3",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "tech",
+    "floor": 1,
+    "description": "Phòng thiết bị điện"
+  },
+  {
+    "id": 351,
+    "name": "E01.5",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      6,
+      6
+    ],
+    "belongsTo": "E",
+    "category": "tech",
+    "floor": 1,
+    "description": "Phòng Hệ thống Máy lạnh"
+  },
+  {
+    "id": 352,
+    "name": "Kho",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "warehouse",
+    "floor": 1
+  },
+  {
+    "id": 353,
+    "name": "Kho",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "warehouse",
+    "floor": 2
+  },
+  {
+    "id": 354,
+    "name": "Kho",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "warehouse",
+    "floor": 3
+  },
+  {
+    "id": 355,
+    "name": "Kho",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "warehouse",
+    "floor": 4
+  },
+  {
+    "id": 356,
+    "name": "Kho",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "warehouse",
+    "floor": 5
+  },
+  {
+    "id": 357,
+    "name": "Kho",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "warehouse",
+    "floor": 6
+  },
+  {
+    "id": 358,
+    "name": "Kho",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "warehouse",
+    "floor": 7
+  },
+  {
+    "id": 359,
+    "name": "Kho",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "warehouse",
+    "floor": 8
+  },
+  {
+    "id": 360,
+    "name": "Kho",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "warehouse",
+    "floor": 9
+  },
+  {
+    "id": 361,
+    "name": "Kho",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "warehouse",
+    "floor": 10
+  },
+  {
+    "id": 362,
+    "name": "Kho",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      5
+    ],
+    "belongsTo": "E",
+    "category": "warehouse",
+    "floor": 11
+  },
+  {
+    "id": 363,
+    "name": "Kho",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      5,
+      7
+    ],
+    "belongsTo": "E",
+    "category": "warehouse",
+    "floor": 12
+  },
+  {
+    "id": 364,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "E",
+    "category": "wc",
+    "floor": 1
+  },
+  {
+    "id": 365,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "E",
+    "category": "wc",
+    "floor": 2
+  },
+  {
+    "id": 366,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "E",
+    "category": "wc",
+    "floor": 3
+  },
+  {
+    "id": 367,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "E",
+    "category": "wc",
+    "floor": 4
+  },
+  {
+    "id": 368,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "E",
+    "category": "wc",
+    "floor": 5
+  },
+  {
+    "id": 369,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "E",
+    "category": "wc",
+    "floor": 6
+  },
+  {
+    "id": 370,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "E",
+    "category": "wc",
+    "floor": 7
+  },
+  {
+    "id": 371,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "E",
+    "category": "wc",
+    "floor": 8
+  },
+  {
+    "id": 372,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "E",
+    "category": "wc",
+    "floor": 9
+  },
+  {
+    "id": 373,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "E",
+    "category": "wc",
+    "floor": 10
+  },
+  {
+    "id": 374,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "E",
+    "category": "wc",
+    "floor": 11
+  },
+  {
+    "id": 375,
+    "name": "WC",
+    "rows": [
+      1,
+      1
+    ],
+    "cols": [
+      2,
+      2
+    ],
+    "belongsTo": "E",
+    "category": "wc",
+    "floor": 12
+  },
+  {
+    "id": 376,
     "name": "Phòng Bóng Bàn",
     "belongsTo": "Y4",
-    "categories": "sport",
+    "category": "sport",
     "description": "Khu tập bóng bàn"
   },
   {
-    "id": 386,
+    "id": 377,
     "name": "Sân Bóng Chuyền",
     "belongsTo": "Y4",
-    "categories": "sport",
+    "category": "sport",
     "description": "Sân thể thao ngoài trời"
   },
   {
-    "id": 387,
+    "id": 378,
     "name": "Sân Bóng Đá",
     "belongsTo": "Y4",
-    "categories": "sport",
+    "category": "sport",
     "description": "Sân cỏ nhân tạo"
   },
   {
-    "id": 388,
+    "id": 379,
     "name": "Sân Bóng Rổ",
     "belongsTo": "Y4",
-    "categories": "sport",
+    "category": "sport",
     "description": "Sân thể thao ngoài trời"
   },
   {
-    "id": 389,
+    "id": 380,
     "name": "Sân Cầu Lông (USSH)",
     "belongsTo": "Y4",
-    "categories": "sport",
+    "category": "sport",
     "description": "Sân cầu lông liên kết"
   },
   {
-    "id": 390,
+    "id": 381,
     "name": "Sân Pickleball 01",
     "belongsTo": "Y5",
-    "categories": "sport",
+    "category": "sport",
     "description": "Sân Pickleball (cũ)"
   },
   {
-    "id": 391,
+    "id": 382,
     "name": "Sân Pickleball 02",
     "belongsTo": "Y5",
-    "categories": "sport",
+    "category": "sport",
     "description": "Sân Pickleball (mới)"
   },
   {
-    "id": 392,
+    "id": 383,
     "name": "Sân Pickleball 03",
     "belongsTo": "Y5",
-    "categories": "sport",
+    "category": "sport",
     "description": "Sân Pickleball (mới)"
   }
 ]
+

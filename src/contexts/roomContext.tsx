@@ -12,6 +12,8 @@ interface RoomContextValue {
   rooms: Room[];
   loading: boolean;
   error: string | null;
+  getRoomsByBelongsTo: (belongsTo: string) => Room[];
+  getRoomByName: (name: string) => Room | null;
 
   // For direction
   destRoom: Room | null;
@@ -26,6 +28,22 @@ export function RoomsProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [destRoom, setDestRoom] = useState<Room | null>(null);
+
+  const getRoomsByBelongsTo = useCallback(
+    (belongsTo: string) => {
+      if (!rooms.length) return [];
+      return rooms.filter((r) => r.belongsTo === belongsTo);
+    },
+    [rooms],
+  );
+
+  const getRoomByName = useCallback(
+    (name: string): Room | null => {
+      if (!rooms.length) return null;
+      return rooms.filter((r) => r.name === name)[0];
+    },
+    [rooms],
+  );
 
   useEffect(() => {
     fetch("/data/rooms.json")
@@ -44,6 +62,8 @@ export function RoomsProvider({ children }: { children: ReactNode }) {
     <RoomsContext.Provider
       value={{
         rooms,
+        getRoomsByBelongsTo,
+        getRoomByName,
         destRoom,
         setDestRoom,
         loading,

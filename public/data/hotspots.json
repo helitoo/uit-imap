@@ -265,11 +265,13 @@
   },
   {
     "id": "Y4",
+    "name": "Sân tập thể thao",
     "dataPosition": [-3.38955, -0.05, 5.55781],
     "dataNormal": [0, 1, 0]
   },
   {
     "id": "Y5",
+    "name": "Sân tập thể thao",
     "dataPosition": [3.07353, 0.06, 1.23359],
     "dataNormal": [0, 1, 0]
   },

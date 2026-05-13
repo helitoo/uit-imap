@@ -1,3 +1,4 @@
+import HotspotMap from "@/components/main/roomsMap/hotspotMap";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
@@ -9,9 +10,12 @@ import {
 } from "@/components/ui/sheet";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
+import { useRooms } from "@/contexts/roomContext";
 import type { Hotspot } from "@/lib/types/hotspot";
+import { Room } from "@/lib/types/room";
 import { getHotspotShareUrl } from "@/lib/utils";
 import { Info, Navigation, Share2 } from "lucide-react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
@@ -21,8 +25,14 @@ interface HotspotDetailProps {
 
 export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
   const { setSelectedHotspot, setDestHotspot } = useHotspots();
+  const { getRoomsByBelongsTo } = useRooms();
   const { setUsingMode } = useMode();
   const navigate = useNavigate();
+  const [rooms, setRooms] = useState<Room[]>([]);
+
+  useEffect(() => {
+    setRooms(getRoomsByBelongsTo(hotspot.id));
+  }, [hotspot.id, getRoomsByBelongsTo]);
 
   const handleClose = () => {
     setSelectedHotspot(null);
@@ -47,7 +57,7 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
     <Sheet open onOpenChange={(open) => !open && handleClose()}>
       <SheetContent
         side="left"
-        className="w-[340px] sm:w-[380px] p-0 flex flex-col glass-panel border-r border-border/50"
+        className="w-full sm:w-1/2 md:w-auto p-0 flex flex-col glass-panel border-r border-border/50"
         showOverlay={false}
       >
         {/* Header strip with main color */}
@@ -76,6 +86,8 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
             )}
 
             <Separator />
+
+            <HotspotMap rooms={rooms} />
           </div>
         </ScrollArea>
 

@@ -5,7 +5,7 @@ export interface Room {
   name: string;
   floor?: number;
   belongsTo: string;
-  category?: Category;
+  category: Category;
   description?: string;
   rows?: [number, number];
   cols?: [number, number];

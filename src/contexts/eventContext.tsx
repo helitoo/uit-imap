@@ -118,7 +118,7 @@ export function EventProvider({ children }: { children: ReactNode }) {
         return true;
       });
     },
-    [],
+    [events],
   );
 
   const getCrowdDensity = useCallback((filter: ScheduleFilter): number => {

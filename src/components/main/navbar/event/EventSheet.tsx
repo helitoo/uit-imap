@@ -1,17 +1,18 @@
 "use client";
 
 import EventCell from "@/components/main/navbar/event/EventCell";
+import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { useEvent } from "@/contexts/eventContext";
+import { useHotspots } from "@/contexts/hotspotsContext";
+import { useRooms } from "@/contexts/roomContext";
 import type { Event } from "@/lib/types/event";
+import { Room } from "@/lib/types/room";
 import { Layers } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 /* ─── helpers ─── */
-function startOfToday(): Date {
-  const n = new Date();
-  return new Date(n.getFullYear(), n.getMonth(), n.getDate());
-}
 
 function formatNow() {
   return new Date().toLocaleDateString("vi-VN", {
@@ -66,7 +67,28 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
 
   /* fetch once after init */
   useEffect(() => {
-    const events = getEvents({ start: startOfToday() });
+    const now = new Date();
+
+    const start = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      0,
+      0,
+      0,
+      0,
+    );
+    const end = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      23,
+      59,
+      59,
+      999,
+    );
+
+    const events = getEvents({ start, end });
 
     const map = new Map<string, Map<string, Event[]>>();
     for (const ev of events) {
@@ -183,8 +205,16 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
             </div>
           ) : (
             <div className="flex flex-col divide-y divide-border/10">
-              <SessionSection label="Buổi Sáng" cols={morningCols} />
-              <SessionSection label="Buổi Chiều" cols={afternoonCols} />
+              <SessionSection
+                label="Buổi Sáng"
+                cols={morningCols}
+                onOpenChange={onOpenChange}
+              />
+              <SessionSection
+                label="Buổi Chiều"
+                cols={afternoonCols}
+                onOpenChange={onOpenChange}
+              />
             </div>
           )}
         </div>
@@ -197,11 +227,31 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
 function SessionSection({
   label,
   cols,
+  onOpenChange,
 }: {
   label: string;
   cols: { name: string; cells: Event[] }[];
+  onOpenChange: (open: boolean) => void;
 }) {
   if (cols.length === 0) return null;
+
+  const navigate = useNavigate();
+  const { getRoomByName } = useRooms();
+  const { setSelectedHotspot, getHotspotById } = useHotspots();
+
+  const handleClick = (roomName: string) => {
+    const room = getRoomByName(roomName);
+
+    if (!room) return;
+
+    const hotspot = getHotspotById(room.belongsTo) || null;
+
+    if (!hotspot) return;
+
+    onOpenChange(false);
+    setSelectedHotspot(hotspot);
+    navigate(`/hotspot/${hotspot.id}`, { replace: false });
+  };
 
   return (
     <div className="flex flex-col">
@@ -230,9 +280,12 @@ function SessionSection({
               style={{ width: CELL_W }}
             >
               {/* Room header */}
-              <div className="text-[10px] font-bold text-center text-muted-foreground bg-muted/50 rounded py-1.5 px-2 truncate border border-border/40">
+              <Button
+                className="text-[10px] font-bold text-center text-muted-foreground bg-muted/50 rounded py-1.5 px-2 truncate border border-border/40"
+                onClick={() => handleClick(cells[0].room_name)}
+              >
                 {name}
-              </div>
+              </Button>
 
               {/* Event cells */}
               {cells.map((ev, i) => (
