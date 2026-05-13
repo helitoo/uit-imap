@@ -1,7 +1,5 @@
 # UIT iMAP 🗺️
 
-![UIT iMap logo][https://uit-imap.vercel.app/logo.png]
-
 <div align="center">
     <img src="https://img.shields.io/badge/react_JS-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
     <img src="https://img.shields.io/badge/Google_Model_Viewer-657D8B?style=for-the-badge&logoColor=FFFFFF" />
