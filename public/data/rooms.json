@@ -2,14 +2,8 @@
   {
     "id": 1,
     "name": "A301",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 3,
@@ -18,14 +12,8 @@
   {
     "id": 2,
     "name": "A303",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 3
@@ -33,14 +21,8 @@
   {
     "id": 3,
     "name": "A315",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [11, 11],
+    "cols": [6, 6],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 3,
@@ -49,14 +31,8 @@
   {
     "id": 4,
     "name": "A305",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [3, 3],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 3,
@@ -65,14 +41,8 @@
   {
     "id": 5,
     "name": "A307",
-    "rows": [
-      4,
-      4
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [4, 4],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 3,
@@ -81,14 +51,8 @@
   {
     "id": 6,
     "name": "A325",
-    "rows": [
-      5,
-      5
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [5, 5],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 3,
@@ -97,14 +61,8 @@
   {
     "id": 7,
     "name": "A309",
-    "rows": [
-      5,
-      5
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [5, 5],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 3,
@@ -113,14 +71,8 @@
   {
     "id": 8,
     "name": "A323",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [7, 7],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 3,
@@ -129,14 +81,8 @@
   {
     "id": 9,
     "name": "A311",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [7, 7],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 3
@@ -144,14 +90,8 @@
   {
     "id": 10,
     "name": "A321",
-    "rows": [
-      8,
-      8
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [8, 8],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 3
@@ -159,14 +99,8 @@
   {
     "id": 11,
     "name": "A313",
-    "rows": [
-      8,
-      9
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [8, 9],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 3
@@ -174,14 +108,8 @@
   {
     "id": 12,
     "name": "A123",
-    "rows": [
-      9,
-      9
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [9, 9],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 1
@@ -189,14 +117,8 @@
   {
     "id": 13,
     "name": "A223",
-    "rows": [
-      9,
-      9
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [9, 9],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 2
@@ -204,14 +126,8 @@
   {
     "id": 14,
     "name": "A319",
-    "rows": [
-      9,
-      9
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [9, 9],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "classroom",
     "floor": 3
@@ -219,14 +135,8 @@
   {
     "id": 15,
     "name": "A120",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [7, 7],
+    "cols": [3, 3],
     "belongsTo": "A",
     "category": "computer_room",
     "floor": 1,
@@ -235,14 +145,8 @@
   {
     "id": 16,
     "name": "Hội Trường A",
-    "rows": [
-      3,
-      9
-    ],
-    "cols": [
-      3,
-      6
-    ],
+    "rows": [3, 9],
+    "cols": [3, 6],
     "belongsTo": "A",
     "category": "hall",
     "floor": 3
@@ -250,30 +154,18 @@
   {
     "id": 17,
     "name": "A110",
-    "rows": [
-      10,
-      10
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [10, 10],
+    "cols": [6, 6],
     "belongsTo": "A",
     "category": "lab",
     "floor": 1,
-    "description": "Phòng Thí nghiệm HTTT"
+    "description": "Phòng Thí nghiệm Hệ thống thông tin (ISLab)"
   },
   {
     "id": 18,
     "name": "Thư viện",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 1],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "library",
     "floor": 1
@@ -281,14 +173,8 @@
   {
     "id": 19,
     "name": "Thư viện",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 1],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "library",
     "floor": 2
@@ -296,14 +182,8 @@
   {
     "id": 20,
     "name": "A121",
-    "rows": [
-      10,
-      10
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [10, 10],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -312,14 +192,8 @@
   {
     "id": 21,
     "name": "A221",
-    "rows": [
-      10,
-      10
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [10, 10],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "office",
     "floor": 2
@@ -327,30 +201,18 @@
   {
     "id": 22,
     "name": "A116",
-    "rows": [
-      10,
-      10
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [10, 10],
+    "cols": [3, 3],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
-    "description": "Phòng Thí nghiệm truyền thông ĐPT"
+    "description": "Phòng Thí nghiệm truyền thông Đa phương tiện (MMLab)"
   },
   {
     "id": 23,
     "name": "A113",
-    "rows": [
-      10,
-      11
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [10, 11],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -359,14 +221,8 @@
   {
     "id": 24,
     "name": "A213",
-    "rows": [
-      10,
-      11
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [10, 11],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "office",
     "floor": 2,
@@ -375,14 +231,8 @@
   {
     "id": 25,
     "name": "A119",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [11, 11],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -391,14 +241,8 @@
   {
     "id": 26,
     "name": "A219",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [11, 11],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "office",
     "floor": 2
@@ -406,14 +250,8 @@
   {
     "id": 27,
     "name": "A114",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [11, 11],
+    "cols": [3, 3],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -422,14 +260,8 @@
   {
     "id": 28,
     "name": "A317",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [11, 11],
+    "cols": [3, 3],
     "belongsTo": "A",
     "category": "office",
     "floor": 3
@@ -437,14 +269,8 @@
   {
     "id": 29,
     "name": "A112",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [11, 11],
+    "cols": [6, 6],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -453,14 +279,8 @@
   {
     "id": 30,
     "name": "A117",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [13, 13],
+    "cols": [3, 3],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -469,14 +289,8 @@
   {
     "id": 31,
     "name": "A217",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [13, 13],
+    "cols": [3, 3],
     "belongsTo": "A",
     "category": "office",
     "floor": 2
@@ -484,14 +298,8 @@
   {
     "id": 32,
     "name": "A115",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [13, 13],
+    "cols": [6, 6],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -500,14 +308,8 @@
   {
     "id": 33,
     "name": "A215",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [13, 13],
+    "cols": [6, 6],
     "belongsTo": "A",
     "category": "office",
     "floor": 2,
@@ -516,14 +318,8 @@
   {
     "id": 34,
     "name": "A101",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [3, 3],
+    "cols": [3, 3],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -532,14 +328,8 @@
   {
     "id": 35,
     "name": "A201",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [3, 3],
+    "cols": [3, 3],
     "belongsTo": "A",
     "category": "office",
     "floor": 2,
@@ -548,14 +338,8 @@
   {
     "id": 36,
     "name": "A103",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [3, 3],
+    "cols": [6, 6],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -564,14 +348,8 @@
   {
     "id": 37,
     "name": "A203",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [3, 3],
+    "cols": [6, 6],
     "belongsTo": "A",
     "category": "office",
     "floor": 2,
@@ -580,14 +358,8 @@
   {
     "id": 38,
     "name": "A327",
-    "rows": [
-      3,
-      4
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [3, 4],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "office",
     "floor": 3
@@ -595,14 +367,8 @@
   {
     "id": 39,
     "name": "A105",
-    "rows": [
-      5,
-      5
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [5, 5],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -611,14 +377,8 @@
   {
     "id": 40,
     "name": "A205",
-    "rows": [
-      5,
-      5
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [5, 5],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "office",
     "floor": 2,
@@ -627,14 +387,8 @@
   {
     "id": 41,
     "name": "A127",
-    "rows": [
-      5,
-      6
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [5, 6],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -643,14 +397,8 @@
   {
     "id": 42,
     "name": "A227",
-    "rows": [
-      5,
-      6
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [5, 6],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "office",
     "floor": 2
@@ -658,14 +406,8 @@
   {
     "id": 43,
     "name": "A102",
-    "rows": [
-      5,
-      6
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [5, 6],
+    "cols": [3, 3],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -674,14 +416,8 @@
   {
     "id": 44,
     "name": "A104",
-    "rows": [
-      5,
-      6
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [5, 6],
+    "cols": [6, 6],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -690,14 +426,8 @@
   {
     "id": 45,
     "name": "A107",
-    "rows": [
-      6,
-      6
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [6, 6],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -706,14 +436,8 @@
   {
     "id": 46,
     "name": "A207",
-    "rows": [
-      6,
-      6
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [6, 6],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "office",
     "floor": 2,
@@ -722,14 +446,8 @@
   {
     "id": 47,
     "name": "A125",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [7, 7],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -738,14 +456,8 @@
   {
     "id": 48,
     "name": "A225",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [7, 7],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "office",
     "floor": 2
@@ -753,14 +465,8 @@
   {
     "id": 49,
     "name": "A106",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [7, 7],
+    "cols": [6, 6],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -769,14 +475,8 @@
   {
     "id": 50,
     "name": "A109",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [7, 7],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -785,14 +485,8 @@
   {
     "id": 51,
     "name": "A209",
-    "rows": [
-      7,
-      7
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [7, 7],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "office",
     "floor": 2,
@@ -801,14 +495,8 @@
   {
     "id": 52,
     "name": "A118",
-    "rows": [
-      9,
-      9
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [9, 9],
+    "cols": [3, 3],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -817,14 +505,8 @@
   {
     "id": 53,
     "name": "A108",
-    "rows": [
-      9,
-      9
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [9, 9],
+    "cols": [6, 6],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -833,14 +515,8 @@
   {
     "id": 54,
     "name": "A111",
-    "rows": [
-      9,
-      9
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [9, 9],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "office",
     "floor": 1,
@@ -849,14 +525,8 @@
   {
     "id": 55,
     "name": "A211",
-    "rows": [
-      9,
-      9
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [9, 9],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "office",
     "floor": 2,
@@ -865,14 +535,8 @@
   {
     "id": 56,
     "name": "Sân Võ Thuật",
-    "rows": [
-      2,
-      2
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [2, 2],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "sport",
     "floor": 2
@@ -880,14 +544,8 @@
   {
     "id": 57,
     "name": "Phòng bida",
-    "rows": [
-      2,
-      2
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [2, 2],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "sport",
     "floor": 3
@@ -895,14 +553,8 @@
   {
     "id": 58,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "A",
     "category": "stairs",
     "floor": 3
@@ -910,14 +562,8 @@
   {
     "id": 59,
     "name": "Thang bộ",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [11, 11],
+    "cols": [4, 4],
     "belongsTo": "A",
     "category": "stairs",
     "floor": 3
@@ -925,14 +571,8 @@
   {
     "id": 60,
     "name": "Thang bộ",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [13, 13],
+    "cols": [4, 4],
     "belongsTo": "A",
     "category": "stairs",
     "floor": 1
@@ -940,14 +580,8 @@
   {
     "id": 61,
     "name": "Thang bộ",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [13, 13],
+    "cols": [4, 4],
     "belongsTo": "A",
     "category": "stairs",
     "floor": 2
@@ -955,14 +589,8 @@
   {
     "id": 62,
     "name": "Thang bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [4, 4],
     "belongsTo": "A",
     "category": "stairs",
     "floor": 1
@@ -970,14 +598,8 @@
   {
     "id": 63,
     "name": "Thang bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [4, 4],
     "belongsTo": "A",
     "category": "stairs",
     "floor": 2
@@ -985,14 +607,8 @@
   {
     "id": 64,
     "name": "Thang bộ",
-    "rows": [
-      6,
-      6
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [6, 6],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "stairs",
     "floor": 3
@@ -1000,14 +616,8 @@
   {
     "id": 65,
     "name": "Thang bộ",
-    "rows": [
-      6,
-      6
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [6, 6],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "stairs",
     "floor": 3
@@ -1015,14 +625,8 @@
   {
     "id": 66,
     "name": "Thang bộ",
-    "rows": [
-      8,
-      8
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [8, 8],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "stairs",
     "floor": 1
@@ -1030,14 +634,8 @@
   {
     "id": 67,
     "name": "Thang bộ",
-    "rows": [
-      8,
-      8
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [8, 8],
+    "cols": [1, 1],
     "belongsTo": "A",
     "category": "stairs",
     "floor": 2
@@ -1045,14 +643,8 @@
   {
     "id": 68,
     "name": "Thang bộ",
-    "rows": [
-      8,
-      8
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [8, 8],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "stairs",
     "floor": 1
@@ -1060,14 +652,8 @@
   {
     "id": 69,
     "name": "Thang bộ",
-    "rows": [
-      8,
-      8
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [8, 8],
+    "cols": [8, 8],
     "belongsTo": "A",
     "category": "stairs",
     "floor": 2
@@ -1075,14 +661,8 @@
   {
     "id": 70,
     "name": "Kho",
-    "rows": [
-      5,
-      11
-    ],
-    "cols": [
-      3,
-      6
-    ],
+    "rows": [5, 11],
+    "cols": [3, 6],
     "belongsTo": "A",
     "category": "warehouse",
     "floor": 2
@@ -1090,14 +670,8 @@
   {
     "id": 71,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "A",
     "category": "wc",
     "floor": 1
@@ -1105,14 +679,8 @@
   {
     "id": 72,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "A",
     "category": "wc",
     "floor": 2
@@ -1120,14 +688,8 @@
   {
     "id": 73,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "A",
     "category": "wc",
     "floor": 3
@@ -1135,14 +697,8 @@
   {
     "id": 74,
     "name": "WC",
-    "rows": [
-      11,
-      11
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [11, 11],
+    "cols": [5, 5],
     "belongsTo": "A",
     "category": "wc",
     "floor": 3
@@ -1150,14 +706,8 @@
   {
     "id": 75,
     "name": "WC",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [13, 13],
+    "cols": [5, 5],
     "belongsTo": "A",
     "category": "wc",
     "floor": 1
@@ -1165,14 +715,8 @@
   {
     "id": 76,
     "name": "WC",
-    "rows": [
-      13,
-      13
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [13, 13],
+    "cols": [5, 5],
     "belongsTo": "A",
     "category": "wc",
     "floor": 2
@@ -1180,14 +724,8 @@
   {
     "id": 77,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [5, 5],
     "belongsTo": "A",
     "category": "wc",
     "floor": 1
@@ -1195,14 +733,8 @@
   {
     "id": 78,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [5, 5],
     "belongsTo": "A",
     "category": "wc",
     "floor": 2
@@ -1210,14 +742,8 @@
   {
     "id": 79,
     "name": "B1.22",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 1],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 1
@@ -1225,14 +751,8 @@
   {
     "id": 80,
     "name": "B2.22",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 1],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 2
@@ -1240,14 +760,8 @@
   {
     "id": 81,
     "name": "B3.22",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 1],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 3
@@ -1255,14 +769,8 @@
   {
     "id": 82,
     "name": "B4.22",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 1],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 4
@@ -1270,14 +778,8 @@
   {
     "id": 83,
     "name": "B8.08",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 1],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 8
@@ -1285,14 +787,8 @@
   {
     "id": 84,
     "name": "B9.04",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 1],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 9
@@ -1300,14 +796,8 @@
   {
     "id": 85,
     "name": "B5.14",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [1, 2],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 5
@@ -1315,14 +805,8 @@
   {
     "id": 86,
     "name": "B6.12",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [1, 2],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 6
@@ -1330,14 +814,8 @@
   {
     "id": 87,
     "name": "B7.08",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [1, 2],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 7
@@ -1345,14 +823,8 @@
   {
     "id": 88,
     "name": "B1.06",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      10,
-      10
-    ],
+    "rows": [1, 1],
+    "cols": [10, 10],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 1
@@ -1360,14 +832,8 @@
   {
     "id": 89,
     "name": "B2.06",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      10,
-      10
-    ],
+    "rows": [1, 1],
+    "cols": [10, 10],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 2
@@ -1375,14 +841,8 @@
   {
     "id": 90,
     "name": "B3.06",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      10,
-      10
-    ],
+    "rows": [1, 1],
+    "cols": [10, 10],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 3
@@ -1390,14 +850,8 @@
   {
     "id": 91,
     "name": "B4.06",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      10,
-      10
-    ],
+    "rows": [1, 1],
+    "cols": [10, 10],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 4
@@ -1405,14 +859,8 @@
   {
     "id": 92,
     "name": "B1.04",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      11,
-      11
-    ],
+    "rows": [1, 1],
+    "cols": [11, 11],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 1
@@ -1420,14 +868,8 @@
   {
     "id": 93,
     "name": "B2.04",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      11,
-      11
-    ],
+    "rows": [1, 1],
+    "cols": [11, 11],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 2
@@ -1435,14 +877,8 @@
   {
     "id": 94,
     "name": "B3.04",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      11,
-      11
-    ],
+    "rows": [1, 1],
+    "cols": [11, 11],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 3
@@ -1450,14 +886,8 @@
   {
     "id": 95,
     "name": "B4.04",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      11,
-      11
-    ],
+    "rows": [1, 1],
+    "cols": [11, 11],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 4
@@ -1465,14 +895,8 @@
   {
     "id": 96,
     "name": "B1.02",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      12,
-      12
-    ],
+    "rows": [1, 1],
+    "cols": [12, 12],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 1
@@ -1480,14 +904,8 @@
   {
     "id": 97,
     "name": "B2.02",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      12,
-      12
-    ],
+    "rows": [1, 1],
+    "cols": [12, 12],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 2
@@ -1495,14 +913,8 @@
   {
     "id": 98,
     "name": "B3.02",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      12,
-      12
-    ],
+    "rows": [1, 1],
+    "cols": [12, 12],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 3
@@ -1510,14 +922,8 @@
   {
     "id": 99,
     "name": "B4.02",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      12,
-      12
-    ],
+    "rows": [1, 1],
+    "cols": [12, 12],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 4
@@ -1525,14 +931,8 @@
   {
     "id": 100,
     "name": "B1.20",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 1
@@ -1540,14 +940,8 @@
   {
     "id": 101,
     "name": "B2.20",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 2
@@ -1555,14 +949,8 @@
   {
     "id": 102,
     "name": "B3.20",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 3
@@ -1570,14 +958,8 @@
   {
     "id": 103,
     "name": "B4.20",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 4
@@ -1585,14 +967,8 @@
   {
     "id": 104,
     "name": "B8.06",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 8
@@ -1600,14 +976,8 @@
   {
     "id": 105,
     "name": "B9.02",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 9
@@ -1615,14 +985,8 @@
   {
     "id": 106,
     "name": "B1.18",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 1
@@ -1630,14 +994,8 @@
   {
     "id": 107,
     "name": "B2.18",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 2
@@ -1645,14 +1003,8 @@
   {
     "id": 108,
     "name": "B3.18",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 3
@@ -1660,14 +1012,8 @@
   {
     "id": 109,
     "name": "B4.18",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 4
@@ -1675,14 +1021,8 @@
   {
     "id": 110,
     "name": "B5.12",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 5
@@ -1690,14 +1030,8 @@
   {
     "id": 111,
     "name": "B6.10",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 6
@@ -1705,14 +1039,8 @@
   {
     "id": 112,
     "name": "B7.06",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 7
@@ -1720,14 +1048,8 @@
   {
     "id": 113,
     "name": "B8.04",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 8
@@ -1735,14 +1057,8 @@
   {
     "id": 114,
     "name": "B1.16",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 1
@@ -1750,14 +1066,8 @@
   {
     "id": 115,
     "name": "B2.16",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 2
@@ -1765,14 +1075,8 @@
   {
     "id": 116,
     "name": "B3.16",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 3
@@ -1780,14 +1084,8 @@
   {
     "id": 117,
     "name": "B4.16",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 4
@@ -1795,14 +1093,8 @@
   {
     "id": 118,
     "name": "B5.10",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 5
@@ -1810,14 +1102,8 @@
   {
     "id": 119,
     "name": "B6.08",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 6
@@ -1825,14 +1111,8 @@
   {
     "id": 120,
     "name": "B7.04",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 7
@@ -1840,14 +1120,8 @@
   {
     "id": 121,
     "name": "B8.02",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 8
@@ -1855,14 +1129,8 @@
   {
     "id": 122,
     "name": "B7.02",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 7
@@ -1870,14 +1138,8 @@
   {
     "id": 123,
     "name": "B1.14",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [5, 6],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 1
@@ -1885,14 +1147,8 @@
   {
     "id": 124,
     "name": "B2.14",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [5, 6],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 2
@@ -1900,14 +1156,8 @@
   {
     "id": 125,
     "name": "B3.14",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [5, 6],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 3
@@ -1915,14 +1165,8 @@
   {
     "id": 126,
     "name": "B4.14",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [5, 6],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 4
@@ -1930,14 +1174,8 @@
   {
     "id": 127,
     "name": "B5.08",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [5, 6],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 5
@@ -1945,14 +1183,8 @@
   {
     "id": 128,
     "name": "B6.06",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [5, 6],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 6
@@ -1960,14 +1192,8 @@
   {
     "id": 129,
     "name": "B1.12",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 1
@@ -1975,14 +1201,8 @@
   {
     "id": 130,
     "name": "B2.12",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 2
@@ -1990,14 +1210,8 @@
   {
     "id": 131,
     "name": "B3.12",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 3
@@ -2005,14 +1219,8 @@
   {
     "id": 132,
     "name": "B4.12",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 4
@@ -2020,14 +1228,8 @@
   {
     "id": 133,
     "name": "B5.06",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 5
@@ -2035,14 +1237,8 @@
   {
     "id": 134,
     "name": "B6.04",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 6
@@ -2050,14 +1246,8 @@
   {
     "id": 135,
     "name": "B1.10",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [1, 1],
+    "cols": [8, 8],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 1
@@ -2065,14 +1255,8 @@
   {
     "id": 136,
     "name": "B2.10",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [1, 1],
+    "cols": [8, 8],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 2
@@ -2080,14 +1264,8 @@
   {
     "id": 137,
     "name": "B3.10",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [1, 1],
+    "cols": [8, 8],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 3
@@ -2095,14 +1273,8 @@
   {
     "id": 138,
     "name": "B4.10",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [1, 1],
+    "cols": [8, 8],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 4
@@ -2110,14 +1282,8 @@
   {
     "id": 139,
     "name": "B5.04",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [1, 1],
+    "cols": [8, 8],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 5
@@ -2125,14 +1291,8 @@
   {
     "id": 140,
     "name": "B6.02",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [1, 1],
+    "cols": [8, 8],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 6
@@ -2140,14 +1300,8 @@
   {
     "id": 141,
     "name": "B1.08",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      9,
-      9
-    ],
+    "rows": [1, 1],
+    "cols": [9, 9],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 1
@@ -2155,14 +1309,8 @@
   {
     "id": 142,
     "name": "B2.08",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      9,
-      9
-    ],
+    "rows": [1, 1],
+    "cols": [9, 9],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 2
@@ -2170,14 +1318,8 @@
   {
     "id": 143,
     "name": "B3.08",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      9,
-      9
-    ],
+    "rows": [1, 1],
+    "cols": [9, 9],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 3
@@ -2185,14 +1327,8 @@
   {
     "id": 144,
     "name": "B4.08",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      9,
-      9
-    ],
+    "rows": [1, 1],
+    "cols": [9, 9],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 4
@@ -2200,14 +1336,8 @@
   {
     "id": 145,
     "name": "B5.02",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      9,
-      9
-    ],
+    "rows": [1, 1],
+    "cols": [9, 9],
     "belongsTo": "B",
     "category": "classroom",
     "floor": 5
@@ -2215,14 +1345,8 @@
   {
     "id": 146,
     "name": "B1.01",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [5, 5],
     "belongsTo": "B",
     "category": "office",
     "floor": 1,
@@ -2231,14 +1355,8 @@
   {
     "id": 147,
     "name": "B2.01",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [5, 5],
     "belongsTo": "B",
     "category": "office",
     "floor": 2
@@ -2246,14 +1364,8 @@
   {
     "id": 148,
     "name": "B3.01",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [5, 5],
     "belongsTo": "B",
     "category": "office",
     "floor": 3
@@ -2261,14 +1373,8 @@
   {
     "id": 149,
     "name": "B4.01",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [5, 5],
     "belongsTo": "B",
     "category": "office",
     "floor": 4
@@ -2276,14 +1382,8 @@
   {
     "id": 150,
     "name": "B5.01",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [5, 5],
     "belongsTo": "B",
     "category": "office",
     "floor": 5
@@ -2291,14 +1391,8 @@
   {
     "id": 151,
     "name": "B6.01",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [5, 5],
     "belongsTo": "B",
     "category": "office",
     "floor": 6
@@ -2306,14 +1400,8 @@
   {
     "id": 152,
     "name": "B7.01",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [5, 5],
     "belongsTo": "B",
     "category": "office",
     "floor": 7
@@ -2321,14 +1409,8 @@
   {
     "id": 153,
     "name": "Thang bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      11,
-      11
-    ],
+    "rows": [3, 3],
+    "cols": [11, 11],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 1
@@ -2336,14 +1418,8 @@
   {
     "id": 154,
     "name": "Thang bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      11,
-      11
-    ],
+    "rows": [3, 3],
+    "cols": [11, 11],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 2
@@ -2351,14 +1427,8 @@
   {
     "id": 155,
     "name": "Thang bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      11,
-      11
-    ],
+    "rows": [3, 3],
+    "cols": [11, 11],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 3
@@ -2366,14 +1436,8 @@
   {
     "id": 156,
     "name": "Thang bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      11,
-      11
-    ],
+    "rows": [3, 3],
+    "cols": [11, 11],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 4
@@ -2381,14 +1445,8 @@
   {
     "id": 157,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [3, 3],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 1
@@ -2396,14 +1454,8 @@
   {
     "id": 158,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [3, 3],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 2
@@ -2411,14 +1463,8 @@
   {
     "id": 159,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [3, 3],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 3
@@ -2426,14 +1472,8 @@
   {
     "id": 160,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [3, 3],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 4
@@ -2441,14 +1481,8 @@
   {
     "id": 161,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [3, 3],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 5
@@ -2456,14 +1490,8 @@
   {
     "id": 162,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [3, 3],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 6
@@ -2471,14 +1499,8 @@
   {
     "id": 163,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [3, 3],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 7
@@ -2486,14 +1508,8 @@
   {
     "id": 164,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [3, 3],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 8
@@ -2501,14 +1517,8 @@
   {
     "id": 165,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [3, 3],
+    "cols": [2, 2],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 9
@@ -2516,14 +1526,8 @@
   {
     "id": 166,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [3, 3],
+    "cols": [6, 6],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 1
@@ -2531,14 +1535,8 @@
   {
     "id": 167,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [3, 3],
+    "cols": [6, 6],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 2
@@ -2546,14 +1544,8 @@
   {
     "id": 168,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [3, 3],
+    "cols": [6, 6],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 3
@@ -2561,14 +1553,8 @@
   {
     "id": 169,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [3, 3],
+    "cols": [6, 6],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 4
@@ -2576,14 +1562,8 @@
   {
     "id": 170,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [3, 3],
+    "cols": [6, 6],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 5
@@ -2591,14 +1571,8 @@
   {
     "id": 171,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [3, 3],
+    "cols": [6, 6],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 6
@@ -2606,14 +1580,8 @@
   {
     "id": 172,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [3, 3],
+    "cols": [6, 6],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 7
@@ -2621,14 +1589,8 @@
   {
     "id": 173,
     "name": "Thang bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [3, 3],
+    "cols": [8, 8],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 1
@@ -2636,14 +1598,8 @@
   {
     "id": 174,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [3, 3],
+    "cols": [8, 8],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 2
@@ -2651,14 +1607,8 @@
   {
     "id": 175,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [3, 3],
+    "cols": [8, 8],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 3
@@ -2666,14 +1616,8 @@
   {
     "id": 176,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [3, 3],
+    "cols": [8, 8],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 4
@@ -2681,14 +1625,8 @@
   {
     "id": 177,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [3, 3],
+    "cols": [8, 8],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 5
@@ -2696,14 +1634,8 @@
   {
     "id": 178,
     "name": "Thang máy/bộ",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [3, 3],
+    "cols": [8, 8],
     "belongsTo": "B",
     "category": "stairs",
     "floor": 6
@@ -2711,14 +1643,8 @@
   {
     "id": 179,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [3, 3],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "wc",
     "floor": 1
@@ -2726,14 +1652,8 @@
   {
     "id": 180,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [3, 3],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "wc",
     "floor": 2
@@ -2741,14 +1661,8 @@
   {
     "id": 181,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [3, 3],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "wc",
     "floor": 3
@@ -2756,14 +1670,8 @@
   {
     "id": 182,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [3, 3],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "wc",
     "floor": 4
@@ -2771,14 +1679,8 @@
   {
     "id": 183,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [3, 3],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "wc",
     "floor": 5
@@ -2786,14 +1688,8 @@
   {
     "id": 184,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [3, 3],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "wc",
     "floor": 6
@@ -2801,14 +1697,8 @@
   {
     "id": 185,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [3, 3],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "wc",
     "floor": 7
@@ -2816,14 +1706,8 @@
   {
     "id": 186,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [3, 3],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "wc",
     "floor": 8
@@ -2831,14 +1715,8 @@
   {
     "id": 187,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [3, 3],
+    "cols": [1, 1],
     "belongsTo": "B",
     "category": "wc",
     "floor": 9
@@ -2846,14 +1724,8 @@
   {
     "id": 188,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      12,
-      12
-    ],
+    "rows": [3, 3],
+    "cols": [12, 12],
     "belongsTo": "B",
     "category": "wc",
     "floor": 1
@@ -2861,14 +1733,8 @@
   {
     "id": 189,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      12,
-      12
-    ],
+    "rows": [3, 3],
+    "cols": [12, 12],
     "belongsTo": "B",
     "category": "wc",
     "floor": 2
@@ -2876,14 +1742,8 @@
   {
     "id": 190,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      12,
-      12
-    ],
+    "rows": [3, 3],
+    "cols": [12, 12],
     "belongsTo": "B",
     "category": "wc",
     "floor": 3
@@ -2891,14 +1751,8 @@
   {
     "id": 191,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      12,
-      12
-    ],
+    "rows": [3, 3],
+    "cols": [12, 12],
     "belongsTo": "B",
     "category": "wc",
     "floor": 4
@@ -2906,14 +1760,8 @@
   {
     "id": 192,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "wc",
     "floor": 1
@@ -2921,14 +1769,8 @@
   {
     "id": 193,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "wc",
     "floor": 2
@@ -2936,14 +1778,8 @@
   {
     "id": 194,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "wc",
     "floor": 3
@@ -2951,14 +1787,8 @@
   {
     "id": 195,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "wc",
     "floor": 4
@@ -2966,14 +1796,8 @@
   {
     "id": 196,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "wc",
     "floor": 5
@@ -2981,14 +1805,8 @@
   {
     "id": 197,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "wc",
     "floor": 6
@@ -2996,14 +1814,8 @@
   {
     "id": 198,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "wc",
     "floor": 7
@@ -3011,14 +1823,8 @@
   {
     "id": 199,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [4, 4],
     "belongsTo": "B",
     "category": "wc",
     "floor": 8
@@ -3026,14 +1832,8 @@
   {
     "id": 200,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      9,
-      9
-    ],
+    "rows": [3, 3],
+    "cols": [9, 9],
     "belongsTo": "B",
     "category": "wc",
     "floor": 1
@@ -3041,14 +1841,8 @@
   {
     "id": 201,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      9,
-      9
-    ],
+    "rows": [3, 3],
+    "cols": [9, 9],
     "belongsTo": "B",
     "category": "wc",
     "floor": 2
@@ -3056,14 +1850,8 @@
   {
     "id": 202,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      9,
-      9
-    ],
+    "rows": [3, 3],
+    "cols": [9, 9],
     "belongsTo": "B",
     "category": "wc",
     "floor": 3
@@ -3071,14 +1859,8 @@
   {
     "id": 203,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      9,
-      9
-    ],
+    "rows": [3, 3],
+    "cols": [9, 9],
     "belongsTo": "B",
     "category": "wc",
     "floor": 4
@@ -3086,14 +1868,8 @@
   {
     "id": 204,
     "name": "WC",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      9,
-      9
-    ],
+    "rows": [3, 3],
+    "cols": [9, 9],
     "belongsTo": "B",
     "category": "wc",
     "floor": 5
@@ -3101,14 +1877,8 @@
   {
     "id": 205,
     "name": "C101",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      11,
-      11
-    ],
+    "rows": [1, 1],
+    "cols": [11, 11],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 1
@@ -3116,14 +1886,8 @@
   {
     "id": 206,
     "name": "C201",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      11,
-      11
-    ],
+    "rows": [1, 1],
+    "cols": [11, 11],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2
@@ -3131,14 +1895,8 @@
   {
     "id": 207,
     "name": "C301",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      11,
-      11
-    ],
+    "rows": [1, 1],
+    "cols": [11, 11],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3146,14 +1904,8 @@
   {
     "id": 208,
     "name": "C315",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3161,14 +1913,8 @@
   {
     "id": 209,
     "name": "C113",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [3, 4],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 1,
@@ -3177,14 +1923,8 @@
   {
     "id": 210,
     "name": "C213",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [3, 4],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2
@@ -3192,14 +1932,8 @@
   {
     "id": 211,
     "name": "C313",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3207,14 +1941,8 @@
   {
     "id": 212,
     "name": "C211",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2,
@@ -3223,14 +1951,8 @@
   {
     "id": 213,
     "name": "C311",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3238,14 +1960,8 @@
   {
     "id": 214,
     "name": "C209",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2,
@@ -3254,14 +1970,8 @@
   {
     "id": 215,
     "name": "C309",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3269,14 +1979,8 @@
   {
     "id": 216,
     "name": "C207",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2,
@@ -3285,14 +1989,8 @@
   {
     "id": 217,
     "name": "C307",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3300,14 +1998,8 @@
   {
     "id": 218,
     "name": "C205",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [1, 1],
+    "cols": [8, 8],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2,
@@ -3316,14 +2008,8 @@
   {
     "id": 219,
     "name": "C305",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [1, 1],
+    "cols": [8, 8],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3331,14 +2017,8 @@
   {
     "id": 220,
     "name": "C102",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      11,
-      12
-    ],
+    "rows": [3, 3],
+    "cols": [11, 12],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 1
@@ -3346,14 +2026,8 @@
   {
     "id": 221,
     "name": "C202",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      12,
-      12
-    ],
+    "rows": [3, 3],
+    "cols": [12, 12],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2
@@ -3361,14 +2035,8 @@
   {
     "id": 222,
     "name": "C302",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      12,
-      12
-    ],
+    "rows": [3, 3],
+    "cols": [12, 12],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3376,14 +2044,8 @@
   {
     "id": 223,
     "name": "C218",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [3, 3],
+    "cols": [3, 3],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2,
@@ -3392,14 +2054,8 @@
   {
     "id": 224,
     "name": "C318",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [3, 3],
+    "cols": [3, 3],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3407,14 +2063,8 @@
   {
     "id": 225,
     "name": "C110",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      3,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [3, 4],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 1,
@@ -3423,14 +2073,8 @@
   {
     "id": 226,
     "name": "C216",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [4, 4],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2,
@@ -3439,14 +2083,8 @@
   {
     "id": 227,
     "name": "C316",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [4, 4],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3454,14 +2092,8 @@
   {
     "id": 228,
     "name": "C108",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [5, 5],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 1,
@@ -3470,14 +2102,8 @@
   {
     "id": 229,
     "name": "C214",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [5, 5],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2,
@@ -3486,14 +2112,8 @@
   {
     "id": 230,
     "name": "C314",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [5, 5],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3501,14 +2121,8 @@
   {
     "id": 231,
     "name": "C106",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [3, 3],
+    "cols": [6, 6],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 1,
@@ -3517,14 +2131,8 @@
   {
     "id": 232,
     "name": "C212",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [3, 3],
+    "cols": [6, 6],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2
@@ -3532,14 +2140,8 @@
   {
     "id": 233,
     "name": "C312",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [3, 3],
+    "cols": [6, 6],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3547,14 +2149,8 @@
   {
     "id": 234,
     "name": "C210",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [7, 7],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2,
@@ -3563,14 +2159,8 @@
   {
     "id": 235,
     "name": "C310",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [7, 7],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3578,14 +2168,8 @@
   {
     "id": 236,
     "name": "C104",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      7,
-      9
-    ],
+    "rows": [3, 3],
+    "cols": [7, 9],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 1,
@@ -3594,14 +2178,8 @@
   {
     "id": 237,
     "name": "C208",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [3, 3],
+    "cols": [8, 8],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2,
@@ -3610,14 +2188,8 @@
   {
     "id": 238,
     "name": "C308",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [3, 3],
+    "cols": [8, 8],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3625,14 +2197,8 @@
   {
     "id": 239,
     "name": "C206",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      9,
-      10
-    ],
+    "rows": [3, 3],
+    "cols": [9, 10],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 2
@@ -3640,14 +2206,8 @@
   {
     "id": 240,
     "name": "C306",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      9,
-      10
-    ],
+    "rows": [3, 3],
+    "cols": [9, 10],
     "belongsTo": "C",
     "category": "classroom",
     "floor": 3
@@ -3655,14 +2215,8 @@
   {
     "id": 241,
     "name": "C111",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "C",
     "category": "computer_room",
     "floor": 1,
@@ -3671,14 +2225,8 @@
   {
     "id": 242,
     "name": "C109",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "C",
     "category": "computer_room",
     "floor": 1,
@@ -3687,14 +2235,8 @@
   {
     "id": 243,
     "name": "C107",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "C",
     "category": "computer_room",
     "floor": 1,
@@ -3703,14 +2245,8 @@
   {
     "id": 244,
     "name": "C105",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      8,
-      8
-    ],
+    "rows": [1, 1],
+    "cols": [8, 8],
     "belongsTo": "C",
     "category": "office",
     "floor": 1,
@@ -3719,14 +2255,8 @@
   {
     "id": 245,
     "name": "C103",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      9,
-      9
-    ],
+    "rows": [1, 1],
+    "cols": [9, 9],
     "belongsTo": "C",
     "category": "office",
     "floor": 1,
@@ -3735,14 +2265,8 @@
   {
     "id": 246,
     "name": "C203",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      9,
-      9
-    ],
+    "rows": [1, 1],
+    "cols": [9, 9],
     "belongsTo": "C",
     "category": "office",
     "floor": 2,
@@ -3751,14 +2275,8 @@
   {
     "id": 247,
     "name": "C303",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      9,
-      9
-    ],
+    "rows": [1, 1],
+    "cols": [9, 9],
     "belongsTo": "C",
     "category": "office",
     "floor": 3,
@@ -3767,14 +2285,8 @@
   {
     "id": 248,
     "name": "C204",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      11,
-      11
-    ],
+    "rows": [3, 3],
+    "cols": [11, 11],
     "belongsTo": "C",
     "category": "office",
     "floor": 2,
@@ -3783,14 +2295,8 @@
   {
     "id": 249,
     "name": "C304",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      11,
-      11
-    ],
+    "rows": [3, 3],
+    "cols": [11, 11],
     "belongsTo": "C",
     "category": "office",
     "floor": 3,
@@ -3799,14 +2305,8 @@
   {
     "id": 250,
     "name": "Sảnh C",
-    "rows": [
-      2,
-      2
-    ],
-    "cols": [
-      10,
-      10
-    ],
+    "rows": [2, 2],
+    "cols": [10, 10],
     "belongsTo": "C",
     "category": "public",
     "floor": 1
@@ -3814,14 +2314,8 @@
   {
     "id": 251,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      10,
-      10
-    ],
+    "rows": [1, 1],
+    "cols": [10, 10],
     "belongsTo": "C",
     "category": "stairs",
     "floor": 1
@@ -3829,14 +2323,8 @@
   {
     "id": 252,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      10,
-      10
-    ],
+    "rows": [1, 1],
+    "cols": [10, 10],
     "belongsTo": "C",
     "category": "stairs",
     "floor": 2
@@ -3844,14 +2332,8 @@
   {
     "id": 253,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      10,
-      10
-    ],
+    "rows": [1, 1],
+    "cols": [10, 10],
     "belongsTo": "C",
     "category": "stairs",
     "floor": 3
@@ -3859,14 +2341,8 @@
   {
     "id": 254,
     "name": "Thang bộ",
-    "rows": [
-      2,
-      2
-    ],
-    "cols": [
-      13,
-      13
-    ],
+    "rows": [2, 2],
+    "cols": [13, 13],
     "belongsTo": "C",
     "category": "stairs",
     "floor": 1
@@ -3874,14 +2350,8 @@
   {
     "id": 255,
     "name": "Thang bộ",
-    "rows": [
-      2,
-      2
-    ],
-    "cols": [
-      13,
-      13
-    ],
+    "rows": [2, 2],
+    "cols": [13, 13],
     "belongsTo": "C",
     "category": "stairs",
     "floor": 2
@@ -3889,14 +2359,8 @@
   {
     "id": 256,
     "name": "Thang bộ",
-    "rows": [
-      2,
-      2
-    ],
-    "cols": [
-      13,
-      13
-    ],
+    "rows": [2, 2],
+    "cols": [13, 13],
     "belongsTo": "C",
     "category": "stairs",
     "floor": 3
@@ -3904,14 +2368,8 @@
   {
     "id": 257,
     "name": "Thang bộ",
-    "rows": [
-      2,
-      2
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [2, 2],
+    "cols": [2, 2],
     "belongsTo": "C",
     "category": "stairs",
     "floor": 2
@@ -3919,14 +2377,8 @@
   {
     "id": 258,
     "name": "Thang bộ",
-    "rows": [
-      2,
-      2
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [2, 2],
+    "cols": [2, 2],
     "belongsTo": "C",
     "category": "stairs",
     "floor": 3
@@ -3934,14 +2386,8 @@
   {
     "id": 259,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 1],
+    "cols": [1, 1],
     "belongsTo": "C",
     "category": "warehouse",
     "floor": 1
@@ -3949,14 +2395,8 @@
   {
     "id": 260,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 1],
+    "cols": [1, 1],
     "belongsTo": "C",
     "category": "warehouse",
     "floor": 2
@@ -3964,14 +2404,8 @@
   {
     "id": 261,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 1],
+    "cols": [1, 1],
     "belongsTo": "C",
     "category": "warehouse",
     "floor": 3
@@ -3979,14 +2413,8 @@
   {
     "id": 262,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      12,
-      12
-    ],
+    "rows": [1, 1],
+    "cols": [12, 12],
     "belongsTo": "C",
     "category": "wc",
     "floor": 1
@@ -3994,14 +2422,8 @@
   {
     "id": 263,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      12,
-      12
-    ],
+    "rows": [1, 1],
+    "cols": [12, 12],
     "belongsTo": "C",
     "category": "wc",
     "floor": 2
@@ -4009,14 +2431,8 @@
   {
     "id": 264,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      12,
-      12
-    ],
+    "rows": [1, 1],
+    "cols": [12, 12],
     "belongsTo": "C",
     "category": "wc",
     "floor": 3
@@ -4024,14 +2440,8 @@
   {
     "id": 265,
     "name": "WC",
-    "rows": [
-      2,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [2, 3],
+    "cols": [1, 1],
     "belongsTo": "C",
     "category": "wc",
     "floor": 1
@@ -4039,14 +2449,8 @@
   {
     "id": 266,
     "name": "WC",
-    "rows": [
-      2,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [2, 3],
+    "cols": [1, 1],
     "belongsTo": "C",
     "category": "wc",
     "floor": 2
@@ -4054,14 +2458,8 @@
   {
     "id": 267,
     "name": "WC",
-    "rows": [
-      2,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [2, 3],
+    "cols": [1, 1],
     "belongsTo": "C",
     "category": "wc",
     "floor": 3
@@ -4069,14 +2467,8 @@
   {
     "id": 268,
     "name": "E02.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 2
@@ -4084,14 +2476,8 @@
   {
     "id": 269,
     "name": "E03.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 3
@@ -4099,14 +2485,8 @@
   {
     "id": 270,
     "name": "E04.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 4
@@ -4114,14 +2494,8 @@
   {
     "id": 271,
     "name": "E06.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 6
@@ -4129,14 +2503,8 @@
   {
     "id": 272,
     "name": "E11.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 11
@@ -4144,14 +2512,8 @@
   {
     "id": 273,
     "name": "E04.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 3],
+    "cols": [1, 1],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 4
@@ -4159,14 +2521,8 @@
   {
     "id": 274,
     "name": "E10.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 3],
+    "cols": [1, 1],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 10
@@ -4174,14 +2530,8 @@
   {
     "id": 275,
     "name": "E11.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [3, 3],
+    "cols": [4, 4],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 11
@@ -4189,14 +2539,8 @@
   {
     "id": 276,
     "name": "E01.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [4, 5],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 1,
@@ -4205,14 +2549,8 @@
   {
     "id": 277,
     "name": "E02.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [4, 5],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 2,
@@ -4221,14 +2559,8 @@
   {
     "id": 278,
     "name": "E03.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [4, 5],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 3
@@ -4236,14 +2568,8 @@
   {
     "id": 279,
     "name": "E04.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [4, 5],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 4
@@ -4251,14 +2577,8 @@
   {
     "id": 280,
     "name": "E11.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [5, 5],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 11
@@ -4266,14 +2586,8 @@
   {
     "id": 281,
     "name": "E11.6",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [3, 3],
+    "cols": [6, 6],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 11
@@ -4281,14 +2595,8 @@
   {
     "id": 282,
     "name": "E02.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [6, 7],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 2
@@ -4296,14 +2604,8 @@
   {
     "id": 283,
     "name": "E03.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [6, 7],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 3
@@ -4311,14 +2613,8 @@
   {
     "id": 284,
     "name": "E04.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [6, 7],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 4
@@ -4326,14 +2622,8 @@
   {
     "id": 285,
     "name": "E08.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [6, 7],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 8
@@ -4341,14 +2631,8 @@
   {
     "id": 286,
     "name": "E11.8",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [7, 7],
     "belongsTo": "E",
     "category": "classroom",
     "floor": 11
@@ -4356,14 +2640,8 @@
   {
     "id": 287,
     "name": "HTE (Hội trường E12)",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [4, 7],
     "belongsTo": "E",
     "category": "hall",
     "floor": 12
@@ -4371,14 +2649,8 @@
   {
     "id": 288,
     "name": "E11.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "E",
     "category": "lab",
     "floor": 11,
@@ -4387,14 +2659,8 @@
   {
     "id": 289,
     "name": "E03.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 3],
+    "cols": [1, 1],
     "belongsTo": "E",
     "category": "lab",
     "floor": 3,
@@ -4403,78 +2669,48 @@
   {
     "id": 290,
     "name": "E05.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 3],
+    "cols": [1, 1],
     "belongsTo": "E",
     "category": "lab",
     "floor": 5,
-    "description": "Phòng Thí nghiệm Truyền thông Đa phương tiện"
+    "description": "Phòng Thí nghiệm Truyền thông Đa phương tiện (MMLab)"
   },
   {
     "id": 291,
     "name": "E06.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 3],
+    "cols": [1, 1],
     "belongsTo": "E",
     "category": "lab",
     "floor": 6,
-    "description": "Phòng Thí nghiệm Vi mạch Tích hợp Chuyên dụng"
+    "description": "Phòng Thí nghiệm Vi mạch Tích hợp Chuyên dụng (ASIC Lab)"
   },
   {
     "id": 292,
     "name": "E08.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 3],
+    "cols": [1, 1],
     "belongsTo": "E",
     "category": "lab",
     "floor": 8,
-    "description": "Phòng Thí nghiệm An toàn Thông tin - Trung tâm An ninh mạng"
+    "description": "Phòng Thí nghiệm An toàn Thông tin - Trung tâm An ninh mạng (InSecLab)"
   },
   {
     "id": 293,
     "name": "E09.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 3],
+    "cols": [1, 1],
     "belongsTo": "E",
     "category": "lab",
     "floor": 9,
-    "description": "Phòng Thí nghiệm Hệ thống Thông tin"
+    "description": "Phòng Thí nghiệm Hệ thống Thông tin (ISLab)"
   },
   {
     "id": 294,
     "name": "E05.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "E",
     "category": "office",
     "floor": 5,
@@ -4483,14 +2719,8 @@
   {
     "id": 295,
     "name": "E07.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "E",
     "category": "office",
     "floor": 7,
@@ -4499,14 +2729,8 @@
   {
     "id": 296,
     "name": "E08.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "E",
     "category": "office",
     "floor": 8,
@@ -4515,14 +2739,8 @@
   {
     "id": 297,
     "name": "E09.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "E",
     "category": "office",
     "floor": 9,
@@ -4531,14 +2749,8 @@
   {
     "id": 298,
     "name": "E10.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "E",
     "category": "office",
     "floor": 10,
@@ -4547,14 +2759,8 @@
   {
     "id": 299,
     "name": "E01.7",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 1,
@@ -4563,14 +2769,8 @@
   {
     "id": 300,
     "name": "E02.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 2,
@@ -4579,14 +2779,8 @@
   {
     "id": 301,
     "name": "E03.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 3,
@@ -4595,14 +2789,8 @@
   {
     "id": 302,
     "name": "E04.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 4,
@@ -4611,14 +2799,8 @@
   {
     "id": 303,
     "name": "E05.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 5,
@@ -4627,14 +2809,8 @@
   {
     "id": 304,
     "name": "E06.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 6,
@@ -4643,14 +2819,8 @@
   {
     "id": 305,
     "name": "E07.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 7,
@@ -4659,14 +2829,8 @@
   {
     "id": 306,
     "name": "E08.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 8,
@@ -4675,14 +2839,8 @@
   {
     "id": 307,
     "name": "E09.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 9,
@@ -4691,14 +2849,8 @@
   {
     "id": 308,
     "name": "E10.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      7,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [7, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 10,
@@ -4707,14 +2859,8 @@
   {
     "id": 309,
     "name": "E01.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 3],
+    "cols": [1, 1],
     "belongsTo": "E",
     "category": "office",
     "floor": 1,
@@ -4723,14 +2869,8 @@
   {
     "id": 310,
     "name": "E02.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 3],
+    "cols": [1, 1],
     "belongsTo": "E",
     "category": "office",
     "floor": 2,
@@ -4739,14 +2879,8 @@
   {
     "id": 311,
     "name": "E07.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 3],
+    "cols": [1, 1],
     "belongsTo": "E",
     "category": "office",
     "floor": 7,
@@ -4755,14 +2889,8 @@
   {
     "id": 312,
     "name": "E11.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 3],
+    "cols": [1, 1],
     "belongsTo": "E",
     "category": "office",
     "floor": 11,
@@ -4771,14 +2899,8 @@
   {
     "id": 313,
     "name": "E05.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [4, 5],
     "belongsTo": "E",
     "category": "office",
     "floor": 5,
@@ -4787,14 +2909,8 @@
   {
     "id": 314,
     "name": "E06.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [4, 5],
     "belongsTo": "E",
     "category": "office",
     "floor": 6,
@@ -4803,14 +2919,8 @@
   {
     "id": 315,
     "name": "E07.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [4, 5],
     "belongsTo": "E",
     "category": "office",
     "floor": 7,
@@ -4819,14 +2929,8 @@
   {
     "id": 316,
     "name": "E08.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [4, 5],
     "belongsTo": "E",
     "category": "office",
     "floor": 8,
@@ -4835,14 +2939,8 @@
   {
     "id": 317,
     "name": "E09.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [4, 5],
     "belongsTo": "E",
     "category": "office",
     "floor": 9,
@@ -4851,14 +2949,8 @@
   {
     "id": 318,
     "name": "E10.2",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      4,
-      5
-    ],
+    "rows": [3, 3],
+    "cols": [4, 5],
     "belongsTo": "E",
     "category": "office",
     "floor": 10,
@@ -4867,14 +2959,8 @@
   {
     "id": 319,
     "name": "E01.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [6, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 1,
@@ -4883,14 +2969,8 @@
   {
     "id": 320,
     "name": "E05.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [6, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 5,
@@ -4899,14 +2979,8 @@
   {
     "id": 321,
     "name": "E06.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [6, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 6,
@@ -4915,14 +2989,8 @@
   {
     "id": 322,
     "name": "E07.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [6, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 7,
@@ -4931,14 +2999,8 @@
   {
     "id": 323,
     "name": "E09.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [6, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 9,
@@ -4947,14 +3009,8 @@
   {
     "id": 324,
     "name": "E10.4",
-    "rows": [
-      3,
-      3
-    ],
-    "cols": [
-      6,
-      7
-    ],
+    "rows": [3, 3],
+    "cols": [6, 7],
     "belongsTo": "E",
     "category": "office",
     "floor": 10,
@@ -4963,14 +3019,8 @@
   {
     "id": 325,
     "name": "E12.1",
-    "rows": [
-      1,
-      3
-    ],
-    "cols": [
-      1,
-      1
-    ],
+    "rows": [1, 3],
+    "cols": [1, 1],
     "belongsTo": "E",
     "category": "public",
     "floor": 12,
@@ -4979,14 +3029,8 @@
   {
     "id": 326,
     "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 1
@@ -4994,14 +3038,8 @@
   {
     "id": 327,
     "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 2
@@ -5009,14 +3047,8 @@
   {
     "id": 328,
     "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 3
@@ -5024,14 +3056,8 @@
   {
     "id": 329,
     "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 4
@@ -5039,14 +3065,8 @@
   {
     "id": 330,
     "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 5
@@ -5054,14 +3074,8 @@
   {
     "id": 331,
     "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 6
@@ -5069,14 +3083,8 @@
   {
     "id": 332,
     "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 7
@@ -5084,14 +3092,8 @@
   {
     "id": 333,
     "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 8
@@ -5099,14 +3101,8 @@
   {
     "id": 334,
     "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 9
@@ -5114,14 +3110,8 @@
   {
     "id": 335,
     "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 10
@@ -5129,14 +3119,8 @@
   {
     "id": 336,
     "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 11
@@ -5144,14 +3128,8 @@
   {
     "id": 337,
     "name": "Thang máy",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      3,
-      3
-    ],
+    "rows": [1, 1],
+    "cols": [3, 3],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 12
@@ -5159,14 +3137,8 @@
   {
     "id": 338,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 1
@@ -5174,14 +3146,8 @@
   {
     "id": 339,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 2
@@ -5189,14 +3155,8 @@
   {
     "id": 340,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 3
@@ -5204,14 +3164,8 @@
   {
     "id": 341,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 4
@@ -5219,14 +3173,8 @@
   {
     "id": 342,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 5
@@ -5234,14 +3182,8 @@
   {
     "id": 343,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 6
@@ -5249,14 +3191,8 @@
   {
     "id": 344,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 7
@@ -5264,14 +3200,8 @@
   {
     "id": 345,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 8
@@ -5279,14 +3209,8 @@
   {
     "id": 346,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 9
@@ -5294,14 +3218,8 @@
   {
     "id": 347,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 10
@@ -5309,14 +3227,8 @@
   {
     "id": 348,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 11
@@ -5324,14 +3236,8 @@
   {
     "id": 349,
     "name": "Thang bộ",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      4,
-      4
-    ],
+    "rows": [1, 1],
+    "cols": [4, 4],
     "belongsTo": "E",
     "category": "stairs",
     "floor": 12
@@ -5339,14 +3245,8 @@
   {
     "id": 350,
     "name": "E01.3",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "E",
     "category": "tech",
     "floor": 1,
@@ -5355,14 +3255,8 @@
   {
     "id": 351,
     "name": "E01.5",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      6,
-      6
-    ],
+    "rows": [1, 1],
+    "cols": [6, 6],
     "belongsTo": "E",
     "category": "tech",
     "floor": 1,
@@ -5371,14 +3265,8 @@
   {
     "id": 352,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "E",
     "category": "warehouse",
     "floor": 1
@@ -5386,14 +3274,8 @@
   {
     "id": 353,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "E",
     "category": "warehouse",
     "floor": 2
@@ -5401,14 +3283,8 @@
   {
     "id": 354,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "E",
     "category": "warehouse",
     "floor": 3
@@ -5416,14 +3292,8 @@
   {
     "id": 355,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "E",
     "category": "warehouse",
     "floor": 4
@@ -5431,14 +3301,8 @@
   {
     "id": 356,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "E",
     "category": "warehouse",
     "floor": 5
@@ -5446,14 +3310,8 @@
   {
     "id": 357,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "E",
     "category": "warehouse",
     "floor": 6
@@ -5461,14 +3319,8 @@
   {
     "id": 358,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "E",
     "category": "warehouse",
     "floor": 7
@@ -5476,14 +3328,8 @@
   {
     "id": 359,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "E",
     "category": "warehouse",
     "floor": 8
@@ -5491,14 +3337,8 @@
   {
     "id": 360,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "E",
     "category": "warehouse",
     "floor": 9
@@ -5506,14 +3346,8 @@
   {
     "id": 361,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "E",
     "category": "warehouse",
     "floor": 10
@@ -5521,14 +3355,8 @@
   {
     "id": 362,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      5
-    ],
+    "rows": [1, 1],
+    "cols": [5, 5],
     "belongsTo": "E",
     "category": "warehouse",
     "floor": 11
@@ -5536,14 +3364,8 @@
   {
     "id": 363,
     "name": "Kho",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      5,
-      7
-    ],
+    "rows": [1, 1],
+    "cols": [5, 7],
     "belongsTo": "E",
     "category": "warehouse",
     "floor": 12
@@ -5551,14 +3373,8 @@
   {
     "id": 364,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "E",
     "category": "wc",
     "floor": 1
@@ -5566,14 +3382,8 @@
   {
     "id": 365,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "E",
     "category": "wc",
     "floor": 2
@@ -5581,14 +3391,8 @@
   {
     "id": 366,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "E",
     "category": "wc",
     "floor": 3
@@ -5596,14 +3400,8 @@
   {
     "id": 367,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "E",
     "category": "wc",
     "floor": 4
@@ -5611,14 +3409,8 @@
   {
     "id": 368,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "E",
     "category": "wc",
     "floor": 5
@@ -5626,14 +3418,8 @@
   {
     "id": 369,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "E",
     "category": "wc",
     "floor": 6
@@ -5641,14 +3427,8 @@
   {
     "id": 370,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "E",
     "category": "wc",
     "floor": 7
@@ -5656,14 +3436,8 @@
   {
     "id": 371,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "E",
     "category": "wc",
     "floor": 8
@@ -5671,14 +3445,8 @@
   {
     "id": 372,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "E",
     "category": "wc",
     "floor": 9
@@ -5686,14 +3454,8 @@
   {
     "id": 373,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "E",
     "category": "wc",
     "floor": 10
@@ -5701,14 +3463,8 @@
   {
     "id": 374,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "E",
     "category": "wc",
     "floor": 11
@@ -5716,14 +3472,8 @@
   {
     "id": 375,
     "name": "WC",
-    "rows": [
-      1,
-      1
-    ],
-    "cols": [
-      2,
-      2
-    ],
+    "rows": [1, 1],
+    "cols": [2, 2],
     "belongsTo": "E",
     "category": "wc",
     "floor": 12
@@ -5783,6 +3533,35 @@
     "belongsTo": "Y5",
     "category": "sport",
     "description": "Sân Pickleball (mới)"
+  },
+  {
+    "id": 384,
+    "name": "Nhà phục vụ sinh viên",
+    "belongsTo": "S1"
+  },
+  {
+    "id": 385,
+    "name": "Căn tin / Canteen",
+    "belongsTo": "Z15"
+  },
+  {
+    "id": 386,
+    "name": "Nhà xe phía trước, cổng A",
+    "belongsTo": "P1"
+  },
+  {
+    "id": 387,
+    "name": "Nhà xe phía sau, cổng A",
+    "belongsTo": "P2"
+  },
+  {
+    "id": 388,
+    "name": "Nhà xe sau nhà B",
+    "belongsTo": "P3"
+  },
+  {
+    "id": 389,
+    "name": "Phòng hội họa",
+    "belongsTo": "S1"
   }
 ]
-

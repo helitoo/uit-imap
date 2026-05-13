@@ -67,7 +67,7 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
       <SheetContent
         side="left"
         showOverlay={false}
-        className="w-fit p-0 gap-0 flex flex-col border-r border-border/50"
+        className="w-full md:w-1/2 sm:w-3/4 p-0 gap-0 flex flex-col border-r border-border/50"
       >
         {/* HEADER */}
         <div className="bg-main text-white px-3 py-3 shrink-0">
@@ -75,23 +75,22 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
             <SheetTitle className="text-base md:text-lg leading-snug text-white">
               {hotspot.name}
             </SheetTitle>
-
-            {hotspot.description && (
-              <div className="flex items-start gap-1.5 text-xs text-white/85">
-                <Info className="w-3.5 h-3.5 mt-[1px] shrink-0" />
-
-                <p className="line-clamp-3 leading-relaxed">
-                  {Array.isArray(hotspot.description)
-                    ? hotspot.description.join(" ")
-                    : hotspot.description}
-                </p>
-              </div>
-            )}
           </SheetHeader>
         </div>
 
         {/* MAP AREA */}
         <ScrollArea className="flex-1 min-h-0">
+          {hotspot.description && (
+            <div className="flex items-start gap-1.5 text-xs text-main px-5 py-2">
+              <Info className="w-3.5 h-3.5 mt-[1px] shrink-0" />
+
+              <p className="line-clamp-3 leading-relaxed text-justify">
+                {Array.isArray(hotspot.description)
+                  ? hotspot.description.join(" ")
+                  : hotspot.description}
+              </p>
+            </div>
+          )}
           <div className="h-full flex flex-col">
             {/* Map section */}
             <div className="flex-1 min-h-[320px] p-1 md:p-2 h-full rounded-xl overflow-hidden">

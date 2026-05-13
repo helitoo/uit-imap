@@ -28,7 +28,7 @@ export default function HotspotButton({
   const handleClick = () => {
     if (usingMode === "default") {
       setSelectedHotspot(hotspot);
-      if (DEFAULT_HOTSPOT_IDS.includes(hotspot.id))
+      if (["A", "B", "C", "D"].includes(hotspot.id))
         navigate(`/hotspot/${hotspot.id}`, { replace: false });
     }
   };

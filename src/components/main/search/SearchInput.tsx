@@ -41,8 +41,7 @@ export default function SearchInput({
         const nameScore = compareTwoStrings(searchQuery, r.name || "");
         const descScore = compareTwoStrings(searchQuery, r.description || "");
 
-        // Use weighted average: name has higher priority
-        const score = nameScore * 0.7 + descScore * 0.3;
+        const score = nameScore * 0.5 + descScore * 0.5;
 
         return { r, score };
       })

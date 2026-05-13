@@ -2,65 +2,65 @@
   {
     "id": "E",
     "name": "Tòa nhà E",
-    "description": "Tòa nhà văn phòng các khoa và phòng học",
+    "description": "Tòa nhà văn phòng các khoa, phòng học và lab. Khởi công xây dựng vào ngày 08/03/2013, là tòa nhà cao nhất khu đô thị ĐHQG-HCM cho tới hiện nay.",
     "dataPosition": [-4.42778, 0.01, 3.09877],
     "dataNormal": [0.0, 1.0, 0.0]
   },
   {
     "id": "B",
     "name": "Tòa nhà B",
-    "description": "Tòa nhà phòng học",
+    "description": "Tòa nhà phòng học chính của UIT, xây dựng từ năm 2013.",
     "dataPosition": [-0.32348, 0.01, 1.66388],
     "dataNormal": [0.0, 1.0, 0.0]
   },
   {
     "id": "C",
     "name": "Tòa nhà C",
-    "description": "Tòa nhà phòng học",
+    "description": "Tòa nhà phòng học. Là công trình lâu đời nhất UIT do đồng chí Hồng Long - tổng cục trường TCDN Việt Nam và đồng chí Yonaitis Vladislovas Vladislovovich - tổng lãnh sự Liên Xô đặt viên đá đầu tiên xây dựng vào ngày 11/03/1986.",
     "dataPosition": [-1.67668, 0.39915, 4.8139],
     "dataNormal": [0.0, 1.0, 0.0]
   },
   {
     "id": "D",
     "name": "Tòa nhà D",
-    "description": "Tòa nhà văn phòng Đoàn - Hội",
+    "description": "Tòa nhà văn phòng Đoàn - Hội.",
     "dataPosition": [-0.97208, -0.05, 6.94522],
     "dataNormal": [0.0, 1.0, 0.0]
   },
   {
     "id": "S3",
-    "name": "Nhà phục vụ sinh viên",
+    "name": "Nhà phục vụ sinh viên.",
     "dataPosition": [-0.2084, -0.01743, 4.67109],
     "dataNormal": [0.0, 1.0, 0.0]
   },
   {
     "id": "S2",
-    "name": "Căn tin",
+    "name": "Căn tin.",
     "dataPosition": [0.07952, -5.46247, 4.06559],
     "dataNormal": [0.0, 1.0, 0.0]
   },
   {
     "id": "A",
     "name": "Tòa nhà A",
-    "description": "Tòa nhà hành chính và phòng học",
+    "description": "Tòa nhà hành chính và phòng học.",
     "dataPosition": [-3.36387, 0.035, 0.19157],
     "dataNormal": [0.0, 1.0, 0.0]
   },
   {
     "id": "Y1",
-    "name": "Sân khấu tòa nhà A-E",
+    "name": "Sân khấu tòa nhà A-E.",
     "dataPosition": [-5.05679, 0.01, 2.04703],
     "dataNormal": [0, 1, 0]
   },
   {
     "id": "Y2",
-    "name": "Sân gạch",
+    "name": "Sân gạch.",
     "dataPosition": [-2.20857, 0.035, 2.89272],
     "dataNormal": [0, 1, 0]
   },
   {
     "id": "Y3",
-    "name": "Sân khấu tòa nhà B",
+    "name": "Sân khấu tòa nhà B.",
     "dataPosition": [-0.37616, 0.0475, 2.67002],
     "dataNormal": [0, 1, 0]
   },
