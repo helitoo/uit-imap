@@ -26,13 +26,13 @@ export default function Navbar() {
         <img
           src="uit-20-years-logo.png"
           alt="UIT 20th"
-          className="h-9 md:w-12 object-contain rounded-lg"
+          className="h-5 md:w-12 md:h-auto object-contain rounded-lg"
           draggable={false}
         />
         <img
           src="/logo.png"
           alt="UIT iMAP"
-          className="h-9 md:w-12 object-contain rounded-lg"
+          className="h-5 md:w-12 md:h-auto object-contain rounded-lg"
           draggable={false}
         />
       </div>
@@ -46,8 +46,8 @@ export default function Navbar() {
               variant="ghost"
               className="flex flex-col items-center justify-center h-auto py-2 px-3 md:w-full hover:bg-slate-100 transition-colors"
             >
-              {/* Tăng size-5 -> size-6, giảm mb-1 -> mb-0.5 */}
-              <Info className="size-6 mb-0.5 text-slate-600" />
+              {/* Tăng size-5 -> size-6, giảm mb-1 -> */}
+              <Info className="size-6 text-slate-600" />
               <span className="text-[10px] md:text-xs font-medium">
                 Về iMap
               </span>
@@ -63,7 +63,7 @@ export default function Navbar() {
               variant="ghost"
               className="flex flex-col items-center justify-center h-auto py-2 px-3 md:w-full hover:bg-slate-100 transition-colors"
             >
-              <School className="size-6 mb-0.5 text-slate-600" />
+              <School className="size-6 text-slate-600" />
               <span className="text-[10px] md:text-xs font-medium">Về UIT</span>
             </Button>
           </DialogTrigger>
@@ -77,14 +77,12 @@ export default function Navbar() {
             variant="ghost"
             className={cn(
               "flex flex-col items-center justify-center h-auto py-2 px-3 md:w-full transition-all",
-              activePanel === "event"
-                ? "bg-blue-50 text-main"
-                : "text-slate-600",
+              activePanel === "event" && "bg-blue-50 text-main",
             )}
           >
             <CalendarDays
               className={cn(
-                "size-6 mb-0.5",
+                "size-6",
                 activePanel === "event" ? "text-main" : "text-slate-600",
               )}
             />

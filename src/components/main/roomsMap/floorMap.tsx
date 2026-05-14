@@ -146,16 +146,16 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
         onOpenChange={(open) => !open && setSelectedRoom(null)}
       >
         <DialogContent className="max-w-md p-0 overflow-hidden gap-0">
-          <DialogHeader className="p-6 pb-4 bg-slate-50/50 border-b">
-            <DialogTitle className="flex flex-col gap-1">
+          <div className="p-6 pb-4 bg-slate-50/50 border-b">
+            <div className="flex flex-col gap-1">
               <div className="text-xl font-bold">{selectedRoom?.name}</div>
               {selectedRoom?.description && (
                 <p className="line-clamp-3 leading-relaxed text-justify text-sm">
                   {selectedRoom?.description}
                 </p>
               )}
-            </DialogTitle>
-          </DialogHeader>
+            </div>
+          </div>
 
           <div className="p-6 space-y-6 max-h-[80vh] overflow-y-auto">
             {/* Section: Thông tin phòng */}

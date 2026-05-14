@@ -164,7 +164,7 @@
   {
     "id": 18,
     "name": "Thư viện",
-    "rows": [1, 1],
+    "rows": [1, 2],
     "cols": [1, 1],
     "belongsTo": "A",
     "category": "library",
@@ -173,7 +173,7 @@
   {
     "id": 19,
     "name": "Thư viện",
-    "rows": [1, 1],
+    "rows": [1, 2],
     "cols": [1, 1],
     "belongsTo": "A",
     "category": "library",
@@ -535,9 +535,7 @@
   {
     "id": 56,
     "name": "Sân Võ Thuật",
-    "rows": [2, 2],
-    "cols": [1, 1],
-    "belongsTo": "A",
+    "belongsTo": "Y4",
     "category": "sport",
     "floor": 2
   },
@@ -3261,15 +3259,6 @@
     "category": "tech",
     "floor": 1,
     "description": "Phòng Hệ thống Máy lạnh"
-  },
-  {
-    "id": 352,
-    "name": "Kho",
-    "rows": [1, 1],
-    "cols": [5, 5],
-    "belongsTo": "E",
-    "category": "warehouse",
-    "floor": 1
   },
   {
     "id": 353,
