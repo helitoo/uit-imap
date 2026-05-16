@@ -6,7 +6,7 @@ import { RoomsProvider, useRooms } from "@/contexts/roomContext";
 
 import LoadingScreen from "@/components/main/LoadingScreen";
 import HomePage from "@/pages/HomePage";
-import { EventProvider } from "@/contexts/eventContext";
+import { EventProvider, useEvent } from "@/contexts/eventContext";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { WindowProvider } from "@/contexts/windowContext";
 import { WeatherProvider } from "@/contexts/weatherContext";
@@ -17,7 +17,9 @@ function AppRoutes() {
 
   const { loading: roomsLoading, error: roomsError } = useRooms();
 
-  if (hotspotsLoading && roomsLoading)
+  const { loading: eventLoading } = useEvent();
+
+  if (!(!hotspotsLoading && !roomsLoading && !eventLoading))
     return <LoadingScreen message="Đang tải dữ liệu bản đồ..." />;
 
   if (hotspotsError || roomsError)
