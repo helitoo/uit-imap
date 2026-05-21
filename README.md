@@ -4,7 +4,7 @@
 
 **Contributors**:
 - Leader: Cao Thái Bảo - 24520145 - [Github](https://github.com/helitoo)
-- Member: Nguyễn Phúc Thịnh - 25521775.
+- Member: Nguyễn Phúc Thịnh - 25521775 - [Github](https://github.com/Thinh25521775).
 
 **Supervisors**: N/A.
 
