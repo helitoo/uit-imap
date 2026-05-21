@@ -1,59 +1,39 @@
+![UIT](https://img.shields.io/badge/from-UIT%20VNUHCM-blue?style=for-the-badge&link=https%3A%2F%2Fwww.uit.edu.vn%2F)
+
 # UIT iMAP 🗺️
 
-<div align="center">
-    <img src="https://img.shields.io/badge/react_JS-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
-    <img src="https://img.shields.io/badge/Google_Model_Viewer-657D8B?style=for-the-badge&logoColor=FFFFFF" />
-    <img src="https://img.shields.io/badge/SketchUp-%23005F9E.svg?style=for-the-badge&logo=sketchup&logoColor=white" />
-    <img src="https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white" />
-</div>
+**Contributors**:
+- Leader: Cao Thái Bảo - 24520145 - [Github](https://github.com/helitoo)
+- Member: Nguyễn Phúc Thịnh - 25521775.
 
-## Product Introduction
+**Supervisors**: N/A.
 
-**UIT iMAP** is an interactive 3D online map for the University of Information Technology (UIT) – VNU-HCM. It provides students, staff, and visitors with an intuitive way to navigate the campus, discover facilities, and find information about rooms and buildings.
+**Description**: UIT iMAP is an interactive 3D online map for the University of Information Technology (UIT) – VNU-HCM. It provides students, staff, and visitors with an intuitive way to navigate the campus, discover facilities, and find information about rooms and buildings.
 
-## Key Features
+**How to use**:
+1. Clone the repository: `git clone https://github.com/helitoo/uit-imap.git`.
+2. Install dependencies: `npm install`.
+3. Start the development server: `npm run dev`.
+4. Access the application at `http://localhost:5173`.
 
-- **3D Interactive Map**: Explore the campus in a fully interactive 3D environment.
-- **Room & Building Information**: Access detailed information about different rooms and facilities.
-- **Hotspot Navigation**: Interactive hotspots guide you through different areas of campus.
-- **Search Functionality**: Quickly find rooms, buildings, or facilities.
-- **Event Information**: Check upcoming events happening on campus.
-- **Weather Integration**: Real-time weather information for planning your visit.
-- **Direction Guidance**: Get directions and navigation assistance within the campus.
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices.
+**Additional information**: N/A.
 
-## Installation Guide
+**Code of conducting**: N/A.
 
-### Prerequisites
+**License**:
 
-Before you begin, ensure you have the following installed:
+MIT License
 
-- **Node.js** (v16 or higher).
-- **npm** or **yarn** package manager.
+Copyright (c) 2026 helitoo
 
-### Setup Steps
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-1. **Clone the Repository**
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-   ```bash
-   https://github.com/helitoo/uit-imap.git
-   cd uit-imap
-   ```
-
-2. **Install Dependencies**
-
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Start Development Server**
-
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-   - The application will be available at `http://localhost:5173`
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND...
