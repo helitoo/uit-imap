@@ -1,0 +1,394 @@
+[
+  {
+    "id": "E",
+    "name": "Tòa nhà E",
+    "description": "Tòa nhà văn phòng các khoa, phòng học và lab. Khởi công xây dựng vào ngày 08/03/2013, là tòa nhà cao nhất khu đô thị ĐHQG-HCM cho tới hiện nay.",
+    "dataPosition": [-4.42778, 0.01, 3.09877],
+    "dataNormal": [0.0, 1.0, 0.0]
+  },
+  {
+    "id": "B",
+    "name": "Tòa nhà B",
+    "description": "Tòa nhà phòng học chính của UIT, xây dựng từ năm 2013.",
+    "dataPosition": [-0.32348, 0.01, 1.66388],
+    "dataNormal": [0.0, 1.0, 0.0]
+  },
+  {
+    "id": "C",
+    "name": "Tòa nhà C",
+    "description": "Tòa nhà phòng học. Là công trình lâu đời nhất UIT do đồng chí Hồng Long - tổng cục trường TCDN Việt Nam và đồng chí Yonaitis Vladislovas Vladislovovich - tổng lãnh sự Liên Xô đặt viên đá đầu tiên xây dựng vào ngày 11/03/1986.",
+    "dataPosition": [-1.67668, 0.39915, 4.8139],
+    "dataNormal": [0.0, 1.0, 0.0]
+  },
+  {
+    "id": "D",
+    "name": "Tòa nhà D",
+    "description": "Tòa nhà văn phòng Đoàn - Hội.",
+    "dataPosition": [-0.97208, -0.05, 6.94522],
+    "dataNormal": [0.0, 1.0, 0.0]
+  },
+  {
+    "id": "S3",
+    "name": "Nhà phục vụ sinh viên",
+    "dataPosition": [-0.2084, -0.01743, 4.67109],
+    "dataNormal": [0.0, 1.0, 0.0]
+  },
+  {
+    "id": "S2",
+    "name": "Căn tin",
+    "dataPosition": [0.07952, -5.46247, 4.06559],
+    "dataNormal": [0.0, 1.0, 0.0]
+  },
+  {
+    "id": "A",
+    "name": "Tòa nhà A",
+    "description": "Tòa nhà hành chính và phòng học.",
+    "dataPosition": [-3.36387, 0.035, 0.19157],
+    "dataNormal": [0.0, 1.0, 0.0]
+  },
+  {
+    "id": "Y1",
+    "name": "Sân khấu tòa nhà A-E.",
+    "dataPosition": [-5.05679, 0.01, 2.04703],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Y2",
+    "name": "Sân gạch",
+    "dataPosition": [-2.20857, 0.035, 2.89272],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Y3",
+    "name": "Sân khấu tòa nhà B",
+    "dataPosition": [-0.37616, 0.0475, 2.67002],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "A1",
+    "dataPosition": [-3.37254, 0.035, 1.93065],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "A2",
+    "dataPosition": [-4.38743, 0.035, 1.04477],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "A3",
+    "dataPosition": [-3.7964, 0.01, -0.58765],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "A4",
+    "name": "Thư viện",
+    "dataPosition": [-2.15987, 0.02921, -1.21095],
+    "dataNormal": [0.08601, 0.99629, 0]
+  },
+  {
+    "id": "A5",
+    "name": "Thư viện",
+    "dataPosition": [-2.48299, 0.03249, -0.26359],
+    "dataNormal": [0.02999, 0.9991, 0.02999]
+  },
+  {
+    "id": "A6",
+    "dataPosition": [-2.32919, 0.0312, 0.90224],
+    "dataNormal": [0.06135, 0.99812, 0]
+  },
+  {
+    "id": "E1",
+    "dataPosition": [-4.14051, 0.01, 2.66001],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "E2",
+    "name": "Nhà xe",
+    "dataPosition": [-3.78436, 0.01, 3.31261],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "E3",
+    "name": "Nhà xe",
+    "dataPosition": [-4.95691, 0, 3.16401],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "C1",
+    "name": "Sảnh tòa nhà C",
+    "dataPosition": [-1.67762, -0.05, 4.16284],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "C2",
+    "dataPosition": [-0.68436, -0.04, 4.65346],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "C3",
+    "name": "Sảnh tòa nhà C",
+    "dataPosition": [-1.66477, -0.05, 5.55527],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "C4",
+    "dataPosition": [-4.57548, -0.05, 5.56152],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "C5",
+    "dataPosition": [-4.57686, 0.01, 4.18934],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "B1",
+    "dataPosition": [-1.19066, 0.01, 1.27859],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "B2",
+    "name": "Nhà xe",
+    "dataPosition": [1.30089, 0, 2.03711],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "P1",
+    "name": "Nhà xe 2 bánh",
+    "dataPosition": [-4.45366, 0, -2.95761],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "P2",
+    "name": "Nhà xe 2 bánh",
+    "dataPosition": [-1.99875, 0, -5.42577],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "P3",
+    "name": "Nhà xe 2 bánh",
+    "dataPosition": [0.8878, 0, 1.37495],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "cA",
+    "name": "Cổng A (đối diện USSH)",
+    "dataPosition": [-7.14725, 0, -0.03873],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "cB",
+    "name": "Cổng B (đối diện Suối Tiên)",
+    "dataPosition": [-0.16445, -0.05, 7.12868],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "D1",
+    "name": "Tòa nhà D",
+    "dataPosition": [-0.19609, -0.05, 6.62228],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "S1",
+    "name": "Căn tin",
+    "dataPosition": [-0.19277, -0.01628, 4.64323],
+    "dataNormal": [0, 0.99915, 0.04116]
+  },
+  {
+    "id": "Z1",
+    "dataPosition": [-5.21857, 0.01, 1.88227],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z2",
+    "dataPosition": [-4.96566, 0.01, 1.59251],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z3",
+    "dataPosition": [-4.14543, 0.01, 2.37833],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z4",
+    "dataPosition": [-3.43014, 0.01, 3.30977],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z5",
+    "dataPosition": [-3.34148, -0.04, 4.21601],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z6",
+    "dataPosition": [-0.82489, -0.04, 4.07893],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z7",
+    "dataPosition": [-0.18744, 0, 4.04515],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z8",
+    "dataPosition": [0.75283, 0, 4.03861],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z9",
+    "dataPosition": [1.23638, 0, 3.46208],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z10",
+    "dataPosition": [0.2274, 0, 0.99419],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z11",
+    "dataPosition": [-0.62079, 0, 0.89781],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z12",
+    "dataPosition": [-1.49741, 0, 0.89161],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z13",
+    "dataPosition": [-1.6975, 0, -1.21294],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z14",
+    "dataPosition": [-1.72093, 0, -5.17273],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Y4",
+    "name": "Sân tập thể thao",
+    "dataPosition": [-3.38955, -0.05, 5.55781],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Y5",
+    "name": "Sân tập thể thao",
+    "dataPosition": [3.07353, 0.06, 1.23359],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z15",
+    "name": "Nhà phục vụ sinh viên",
+    "dataPosition": [2.80588, 0.06, 2.75668],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z16",
+    "dataPosition": [-2.86581, 0.035, 2.17602],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z17",
+    "dataPosition": [-3.37084, 0.035, 2.38476],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z18",
+    "dataPosition": [-2.22055, 0.035, 2.39806],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z19",
+    "dataPosition": [-1.87213, 0.027, 2.38619],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z20",
+    "dataPosition": [-1.10285, 0.01, 2.6022],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z21",
+    "dataPosition": [-1.66886, 0.01, 3.38965],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z22",
+    "dataPosition": [-0.0103, 0.01, 2.76912],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z23",
+    "dataPosition": [-0.21155, 0.01, 3.03157],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z24",
+    "dataPosition": [-0.60529, 0.01, 2.95574],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z25",
+    "dataPosition": [-0.7737, 0.01, 2.66274],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z26",
+    "dataPosition": [-5.4997, 0, 1.62959],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z27",
+    "dataPosition": [-5.58494, 0, 3.18998],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z28",
+    "dataPosition": [-5.61109, -0.05, 5.0929],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z29",
+    "dataPosition": [-5.21843, -0.05, 5.53396],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z30",
+    "dataPosition": [-5.46059, -0.05, 5.39811],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z31",
+    "dataPosition": [-4.41378, 0.01001, -1.20155],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z32",
+    "dataPosition": [-5.89743, 0, -1.26301],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z33",
+    "dataPosition": [-3.79012, 0.01, 3.48316],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z34",
+    "dataPosition": [-4.57196, 0.01, 3.51829],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z35",
+    "dataPosition": [-4.93122, 0.01, 3.47713],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z36",
+    "dataPosition": [-0.19506, -0.05, 5.89313],
+    "dataNormal": [0, 1, 0]
+  },
+  {
+    "id": "Z37",
+    "dataPosition": [-0.52612, -0.05, 5.60141],
+    "dataNormal": [0, 1, 0]
+  }
+]

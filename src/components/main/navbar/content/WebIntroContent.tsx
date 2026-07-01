@@ -24,21 +24,22 @@ export default function WebIntroContent() {
             bản đồ 3D trực tuyến dành cho Trường Đại học Công nghệ Thông tin –
             ĐHQG-HCM.
           </p>
-          <p>
-            Hệ thống cho phép sinh viên, giảng viên và khách tham quan dễ dàng
-            tìm kiếm, khám phá các địa điểm trong khuôn viên trường bao gồm:
-            phòng học, phòng máy, phòng lab, văn phòng khoa/bộ môn, căng tin,
-            bãi xe và các khu vực tiện ích khác.
-          </p>
-          <p>
-            Với giao diện 3D tương tác, người dùng có thể xoay, phóng to/thu nhỏ
-            và khám phá toàn bộ khuôn viên từ nhiều góc độ khác nhau.
-          </p>
-          <p>
-            Tính năng dẫn đường thông minh giúp tìm đường đi ngắn nhất giữa hai
-            địa điểm bất kỳ, hỗ trợ cả định vị GPS để xác định vị trí hiện tại
-            của người dùng.
-          </p>
+          <div className="space-y-2 pt-3 text-justify">
+            <div className="overflow-hidden rounded-lg border bg-card">
+              <img src="demo.gif" className="w-full" alt="Video demo" draggable={false} />
+            </div>
+            <div className="text-xs text-muted-foreground text-left space-y-2">
+              <p className="font-medium text-foreground">Hướng dẫn tương tác:</p>
+              <ul className="list-disc pl-4 space-y-2">
+                <li>
+                  <span className="font-medium text-foreground">Đối với mobile:</span> Sử dụng 1 ngón tay để xoay model, 2 ngón tay để thu / phóng và di chuyển model.
+                </li>
+                <li>
+                  <span className="font-medium text-foreground">Đối với laptop:</span> Sử dụng chuột trái để xoay model, nút cuộn để thu / phóng và chuột phải di chuyển model.
+                </li>
+              </ul>
+            </div>
+          </div>
 
           <p className="flex flex-col text-xs text-muted-foreground border-t pt-3 gap-2">
             <div className="flex gap-1">
@@ -50,6 +51,7 @@ export default function WebIntroContent() {
               />
               <span>Phát triển bởi sinh viên UIT</span>
             </div>
+
             <a
               href="https://github.com/helitoo/uit-imap"
               className="flex gap-1 text-main"
@@ -63,6 +65,23 @@ export default function WebIntroContent() {
                 draggable="false"
               />
               <span className="hover:underline">helitoo/uit-imap</span>
+            </a>
+
+            <a
+              href="https://skfb.ly/pKtHO"
+              className="flex gap-1 text-main"
+              target="_blank"
+              title="Sketchfab model"
+            >
+              <img
+                src="https://static.sketchfab.com/img/press/logos/sketchfab-logo.svg"
+                alt="Sketchfab logo"
+                className="size-4"
+                draggable="false"
+              />
+              <span className="hover:underline">
+                University of Information Technology - UIT
+              </span>
             </a>
           </p>
         </div>

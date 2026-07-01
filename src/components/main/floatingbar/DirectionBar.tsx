@@ -6,7 +6,7 @@ import { getDirection } from "@/lib/services/getDirection";
 import { Hotspot } from "@/lib/types/hotspot";
 import { Room } from "@/lib/types/room";
 import { ArrowDown, ArrowRight, MapPin, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { toast } from "sonner";
 
 export default function DirectionBar() {
@@ -22,6 +22,18 @@ export default function DirectionBar() {
   } = useHotspots();
 
   const [sourceHotspot, setSourceHotspot] = useState<Hotspot | null>(null);
+  const startInputRef = useRef<HTMLInputElement>(null);
+
+  // Focus the first input (Chọn điểm đầu) when mounted via HotspotDetail (where destHotspot is already set)
+  useEffect(() => {
+    if (destHotspot) {
+      const timer = setTimeout(() => {
+        startInputRef.current?.focus();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Recalculate direction whenever start/end change
   useEffect(() => {
@@ -58,6 +70,7 @@ export default function DirectionBar() {
             <ArrowDown />{" "}
           </div>
           <SearchInput
+            ref={startInputRef}
             className="bg-white shadow-md rounded-full px-3 py-2 w-full md:w-80 h-10 border border-gray-100"
             placeholder="Chọn điểm đầu"
             onClickRes={handleChooseSourceHotspot}

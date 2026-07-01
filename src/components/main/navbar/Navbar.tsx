@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
-import { CalendarDays, Info, School, Search } from "lucide-react";
+import { CalendarDays, Info, School, Search, Bus } from "lucide-react";
 import { useState } from "react";
 import { EventSheet } from "@/components/main/navbar/event/EventSheet";
+import { TransportSheet } from "@/components/main/navbar/transport/TransportSheet";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import WebIntroContent from "@/components/main/navbar/content/WebIntroContent";
@@ -9,7 +10,7 @@ import UitIntroContent from "@/components/main/navbar/content/UitIntroContent";
 import SearchSheet from "@/components/main/search/SearchSheet";
 import { useEvent } from "@/contexts/eventContext";
 
-type ActivePanel = "search" | "event" | null;
+type ActivePanel = "search" | "event" | "transport" | null;
 
 export default function Navbar() {
   const [activePanel, setActivePanel] = useState<ActivePanel>(null);
@@ -89,6 +90,26 @@ export default function Navbar() {
             <span className="text-[10px] md:text-xs font-medium">Lịch</span>
           </Button>
         )}
+
+        {/* Tuyến Xe / Di Chuyển */}
+        {!loading && (
+          <Button
+            onClick={() => togglePanel("transport")}
+            variant="ghost"
+            className={cn(
+              "flex flex-col items-center justify-center h-auto py-2 px-3 md:w-full transition-all",
+              activePanel === "transport" && "bg-blue-50 text-main",
+            )}
+          >
+            <Bus
+              className={cn(
+                "size-6",
+                activePanel === "transport" ? "text-main" : "text-slate-600",
+              )}
+            />
+            <span className="text-[10px] md:text-xs font-medium">Tuyến xe</span>
+          </Button>
+        )}
       </div>
     </>
   );
@@ -114,6 +135,13 @@ export default function Navbar() {
       {!loading && (
         <EventSheet
           open={activePanel === "event"}
+          onOpenChange={(open) => !open && setActivePanel(null)}
+        />
+      )}
+
+      {!loading && (
+        <TransportSheet
+          open={activePanel === "transport"}
           onOpenChange={(open) => !open && setActivePanel(null)}
         />
       )}
