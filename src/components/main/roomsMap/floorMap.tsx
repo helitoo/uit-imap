@@ -1,5 +1,6 @@
 // FloorMap.tsx
 import { useEffect, useMemo, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { Room } from "@/lib/types/room";
 import { CATEGORY_COLORS, CATEGORY_LABELS } from "@/lib/types/category";
@@ -21,6 +22,19 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
   // Calc layout
 
   const { isMobile } = useWindow();
+  const { id, roomId } = useParams<{ id?: string; roomId?: string }>();
+  const navigate = useNavigate();
+
+  const targetRoomId = useMemo(() => {
+    if (!roomId) return null;
+    const parsed = parseInt(roomId, 10);
+    return isNaN(parsed) ? null : parsed;
+  }, [roomId]);
+
+  const matchedRoom = useMemo(() => {
+    if (targetRoomId === null) return null;
+    return rooms.find((r) => r.id === targetRoomId) || null;
+  }, [rooms, targetRoomId]);
 
   if (rooms.length === 0) return null;
 
@@ -61,9 +75,28 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
   const [events, setEvents] = useState<Event[]>([]);
 
   const handleSelectRoom = (room: Room) => {
-    if (!["stairs", "warehouse", "wc", "tech"].includes(room.category))
-      setSelectedRoom(room);
+    if (!["stairs", "warehouse", "wc", "tech"].includes(room.category)) {
+      navigate(`/hotspot/${id}/${room.id}`);
+    }
   };
+
+  useEffect(() => {
+    if (matchedRoom) {
+      setSelectedRoom(matchedRoom);
+
+      // const timer = setTimeout(() => {
+      //   const element = document.getElementById(`room-cell-${matchedRoom.id}`);
+      //   if (element) {
+      //     element.scrollIntoView({
+      //       behavior: "smooth",
+      //       block: "center",
+      //       inline: "center",
+      //     });
+      //   }
+      // }, 150);
+      // return () => clearTimeout(timer);
+    }
+  }, [matchedRoom]);
 
   useEffect(() => {
     if (selectedRoom && !loading) {
@@ -108,6 +141,7 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
             {rooms.map((room) => (
               <button
                 key={room.id}
+                id={`room-cell-${room.id}`}
                 type="button"
                 onClick={() => handleSelectRoom(room)}
                 className={`
@@ -122,7 +156,12 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
                   overflow-hidden
                   break-words
                   leading-tight
-                  ${room.hasEvent ? "border-2 border-green-500" : ""}
+                  ${room.id === targetRoomId
+                    ? "border-2 border-main"
+                    : room.hasEvent
+                      ? "border-2 border-green-500"
+                      : ""
+                  }
                   ${isMobile ? "text-[8px]" : "text-[11px]"}
                   ${CATEGORY_COLORS[room.category] ??
                   "bg-gray-100 text-gray-700"
@@ -146,7 +185,14 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
 
       <Dialog
         open={!!selectedRoom}
-        onOpenChange={(open) => !open && setSelectedRoom(null)}
+        onOpenChange={(open) => {
+          if (!open) {
+            setSelectedRoom(null);
+            if (roomId) {
+              navigate(`/hotspot/${id}`, { replace: true });
+            }
+          }
+        }}
       >
         <DialogContent className="max-w-md p-0 overflow-hidden gap-0">
           <div className="p-6 pb-4 bg-slate-50/50 border-b">

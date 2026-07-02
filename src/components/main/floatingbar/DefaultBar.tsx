@@ -3,15 +3,20 @@ import SearchInput from "@/components/main/search/SearchInput";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { Room } from "@/lib/types/room";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 export default function DefaultBar() {
-  const { setSelectedHotspot, getHotspotById } = useHotspots();
+  const { getHotspotById } = useHotspots();
+  const navigate = useNavigate();
 
   const onClickRes = (room: Room) => {
     const belongsToId = getHotspotById(room.belongsTo);
 
-    if (!belongsToId) toast.error("Chưa có dữ liệu về địa điểm này!");
-    else setSelectedHotspot(getHotspotById(room.belongsTo) ?? null);
+    if (!belongsToId) {
+      toast.error("Chưa có dữ liệu về địa điểm này!");
+    } else {
+      navigate(`/hotspot/${room.belongsTo}/${room.id}`);
+    }
   };
 
   return (

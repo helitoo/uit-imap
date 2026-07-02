@@ -33,6 +33,7 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/hotspot/:id" element={<HomePage />} />
+        <Route path="/hotspot/:id/:roomId" element={<HomePage />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
       <Toaster position="top-center" richColors />
