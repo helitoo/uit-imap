@@ -9,4 +9,5 @@ export interface Room {
   description?: string;
   rows?: [number, number];
   cols?: [number, number];
+  hasEvent?: boolean;
 }

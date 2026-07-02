@@ -67,12 +67,16 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
 
   useEffect(() => {
     if (selectedRoom && !loading) {
-      const data = getTodayEventsByRoomName(selectedRoom.name);
-      setEvents(data);
+      if (selectedRoom.hasEvent) {
+        const data = getTodayEventsByRoomName(selectedRoom.name);
+        setEvents(data);
+      } else {
+        setEvents([]);
+      }
     } else {
       setEvents([]); // Reset khi đóng dialog
     }
-  }, [selectedRoom, getTodayEventsByRoomName]);
+  }, [selectedRoom, getTodayEventsByRoomName, loading]);
 
   return (
     <>
@@ -108,21 +112,20 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
                 onClick={() => handleSelectRoom(room)}
                 className={`
                   flex items-center justify-center
-                  rounded-md border
+                  rounded-md
                   p-1
                   text-center
                   font-medium
-                  shadow-sm
                   transition-all
                   hover:opacity-80
                   active:scale-95
                   overflow-hidden
                   break-words
                   leading-tight
+                  ${room.hasEvent ? "border-2 border-green-500" : ""}
                   ${isMobile ? "text-[8px]" : "text-[11px]"}
-                  ${
-                    CATEGORY_COLORS[room.category] ??
-                    "bg-gray-100 text-gray-700"
+                  ${CATEGORY_COLORS[room.category] ??
+                  "bg-gray-100 text-gray-700"
                   }
                 `}
                 style={{
@@ -166,11 +169,10 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
                     Loại phòng
                   </p>
                   <span
-                    className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-                      selectedRoom.category
-                        ? CATEGORY_COLORS[selectedRoom.category]
-                        : "bg-gray-100"
-                    }`}
+                    className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold ${selectedRoom.category
+                      ? CATEGORY_COLORS[selectedRoom.category]
+                      : "bg-gray-100"
+                      }`}
                   >
                     {selectedRoom.category
                       ? CATEGORY_LABELS[selectedRoom.category]

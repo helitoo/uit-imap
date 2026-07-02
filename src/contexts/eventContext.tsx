@@ -44,9 +44,9 @@ export function EventProvider({ children }: { children: ReactNode }) {
   const { rooms, getRoomByName } = useRooms();
   const { getHotspotById } = useHotspots();
 
-  /** Fetch and hydrate event data from the UIT room page. */
+  const roomsLength = rooms?.length || 0;
   useEffect(() => {
-    if (!rooms || !rooms.length) return;
+    if (roomsLength === 0) return;
 
     const initEvents = async () => {
       try {
@@ -76,7 +76,8 @@ export function EventProvider({ children }: { children: ReactNode }) {
     };
 
     initEvents();
-  }, [rooms]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [roomsLength]);
 
   const getTodayEvents = useCallback(() => {
     if (loading) return [];

@@ -5,11 +5,14 @@ import {
   useEffect,
   useCallback,
   type ReactNode,
+  type Dispatch,
+  type SetStateAction,
 } from "react";
 import type { Room } from "@/lib/types/room";
 
 interface RoomContextValue {
   rooms: Room[];
+  setRooms: Dispatch<SetStateAction<Room[]>>;
   loading: boolean;
   error: string | null;
   getRoomsByBelongsTo: (belongsTo: string) => Room[];
@@ -62,6 +65,7 @@ export function RoomsProvider({ children }: { children: ReactNode }) {
     <RoomsContext.Provider
       value={{
         rooms,
+        setRooms,
         getRoomsByBelongsTo,
         getRoomByName,
         destRoom,
@@ -81,4 +85,25 @@ export function useRooms() {
     throw new Error("useRooms must be used within RoomsProvider");
   }
   return context;
+}
+
+export function useSyncRoomsWithEvents(
+  getTodayEventsByRoomName: (roomName: string) => any[],
+  eventsLoading: boolean,
+) {
+  const { rooms, setRooms, loading: roomsLoading } = useRooms();
+
+  useEffect(() => {
+    if (!roomsLoading && !eventsLoading && rooms.length > 0) {
+      const hasUndefined = rooms.some((r) => r.hasEvent === undefined);
+      if (hasUndefined) {
+        setRooms((prev) =>
+          prev.map((r) => ({
+            ...r,
+            hasEvent: getTodayEventsByRoomName(r.name).length > 0,
+          })),
+        );
+      }
+    }
+  }, [roomsLoading, eventsLoading, rooms, getTodayEventsByRoomName, setRooms]);
 }

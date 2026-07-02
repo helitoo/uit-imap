@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import { ModeProvider } from "@/contexts/modeContext";
 import { HotspotsProvider, useHotspots } from "@/contexts/hotspotsContext";
-import { RoomsProvider, useRooms } from "@/contexts/roomContext";
+import { RoomsProvider, useRooms, useSyncRoomsWithEvents } from "@/contexts/roomContext";
 
 import LoadingScreen from "@/components/main/LoadingScreen";
 import HomePage from "@/pages/HomePage";
@@ -17,7 +17,10 @@ function AppRoutes() {
 
   const { loading: roomsLoading, error: roomsError } = useRooms();
 
-  const { loading: eventLoading } = useEvent();
+  const { loading: eventLoading, getTodayEventsByRoomName } = useEvent();
+
+  // Sync rooms with events once loaded
+  useSyncRoomsWithEvents(getTodayEventsByRoomName, eventLoading);
 
   if (!(!hotspotsLoading && !roomsLoading && !eventLoading))
     return <LoadingScreen message="Đang tải dữ liệu bản đồ..." />;
