@@ -100,8 +100,8 @@ export const tourspots: Tourspot[] = [
     dataNormal: [0, 0.999999999999991, 1.3435883843274952e-7],
   },
   {
-    id: "42",
-    sceneId: "42-tng-11-khu-vc-doanh-nghip-nghin-cu",
+    id: "41",
+    sceneId: "41-nh-a---ni-xe-a-n",
     dataPosition: [-2.376283611804645, 0.03409840173445658, 0.8942058135791073],
     dataNormal: [
       0.061350280066433414, 0.9981162974001339, 1.3410574633947995e-7,
