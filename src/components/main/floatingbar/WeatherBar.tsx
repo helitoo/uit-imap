@@ -76,7 +76,7 @@ export default function WeatherBar({ className = "" }: { className?: string }) {
 
           {crowdInfo && (
             <div
-              className="flex items-center gap-2 pl-3 shrink-0"
+              className="hidden lg:flex items-center gap-2 pl-3 shrink-0"
               title="Độ đông đúc"
             >
               <div
