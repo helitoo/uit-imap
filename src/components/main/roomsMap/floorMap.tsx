@@ -22,7 +22,10 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
   // Calc layout
 
   const { isMobile } = useWindow();
-  const { id, roomId } = useParams<{ id?: string; roomId?: string }>();
+  const { hotspotId, roomId } = useParams<{
+    hotspotId?: string;
+    roomId?: string;
+  }>();
   const navigate = useNavigate();
 
   const targetRoomId = useMemo(() => {
@@ -76,7 +79,7 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
 
   const handleSelectRoom = (room: Room) => {
     if (!["stairs", "warehouse", "wc", "tech"].includes(room.category)) {
-      navigate(`/hotspot/${id}/${room.id}`);
+      navigate(`/hotspot/${hotspotId}/${room.id}`);
     }
   };
 
@@ -156,15 +159,17 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
                   overflow-hidden
                   break-words
                   leading-tight
-                  ${room.id === targetRoomId
-                    ? "border-2 border-main"
-                    : room.hasEvent
-                      ? "border-2 border-green-500"
-                      : ""
+                  ${
+                    room.id === targetRoomId
+                      ? "border-2 border-main"
+                      : room.hasEvent
+                        ? "border-2 border-green-500"
+                        : ""
                   }
                   ${isMobile ? "text-[8px]" : "text-[11px]"}
-                  ${CATEGORY_COLORS[room.category] ??
-                  "bg-gray-100 text-gray-700"
+                  ${
+                    CATEGORY_COLORS[room.category] ??
+                    "bg-gray-100 text-gray-700"
                   }
                 `}
                 style={{
@@ -189,7 +194,7 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
           if (!open) {
             setSelectedRoom(null);
             if (roomId) {
-              navigate(`/hotspot/${id}`, { replace: true });
+              navigate(`/hotspot/${hotspotId}`, { replace: true });
             }
           }
         }}
@@ -215,10 +220,11 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
                     Loại phòng
                   </p>
                   <span
-                    className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold ${selectedRoom.category
-                      ? CATEGORY_COLORS[selectedRoom.category]
-                      : "bg-gray-100"
-                      }`}
+                    className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                      selectedRoom.category
+                        ? CATEGORY_COLORS[selectedRoom.category]
+                        : "bg-gray-100"
+                    }`}
                   >
                     {selectedRoom.category
                       ? CATEGORY_LABELS[selectedRoom.category]

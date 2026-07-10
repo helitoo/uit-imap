@@ -4,6 +4,9 @@ import type { Hotspot } from "@/lib/types/hotspot";
 import HotspotButton from "@/components/main/hotspot/HotspotButton";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import HotspotDirection from "@/components/main/hotspot/HotspotDirection";
+import { tourspots } from "@/lib/consts/tourSpot";
+import TourspotButton from "@/components/main/hotspot/TourspotButton";
+import { useMode } from "@/contexts/modeContext";
 
 type CustomModelViewer = HTMLElement & {
   cameraOrbit: string;
@@ -46,6 +49,7 @@ const INITIAL_FOV = "13.71deg";
 const ModelViewer = forwardRef<ModelViewerHandle, ModelViewerProps>(
   ({ selectedHotspot, directionPath }, ref) => {
     const { getDefaultHotspots } = useHotspots();
+    const { showTourspots } = useMode();
 
     const mvRef = useRef<CustomModelViewer | null>(null);
 
@@ -108,6 +112,10 @@ const ModelViewer = forwardRef<ModelViewerHandle, ModelViewerProps>(
             overflow: "hidden",
           }}
         >
+          {/* Render tourspot buttons as slots */}
+          {showTourspots &&
+            tourspots.map((t) => <TourspotButton key={t.id} tourspot={t} />)}
+
           {/* Render hotspot buttons as slots */}
           {hotspotsToRender &&
             hotspotsToRender.map((h) => (

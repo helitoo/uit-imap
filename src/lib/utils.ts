@@ -122,3 +122,7 @@ export function euclidean2D(a: [number, number], b: [number, number]): number {
 export function getHotspotShareUrl(id: string): string {
   return `${window.location.origin}/hotspot/${id}`;
 }
+
+export function getSceneShareUrl(id: string): string {
+  return `${window.location.origin}/scene/${id}`;
+}

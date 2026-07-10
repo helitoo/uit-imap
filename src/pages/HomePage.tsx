@@ -5,16 +5,19 @@ import ModelViewer, {
 } from "@/components/main/ModelViewer";
 import Navbar from "@/components/main/navbar/Navbar";
 import { useHotspots } from "@/contexts/hotspotsContext";
-import { useMode } from "@/contexts/modeContext";
-import { useEvent } from "@/contexts/eventContext";
-import { useEffect, useRef } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useMemo, useRef } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 export default function HomePage() {
-  const { id } = useParams<{ id?: string }>();
+  const location = useLocation();
   const navigate = useNavigate();
   const mvRef = useRef<ModelViewerHandle>(null);
+
+  const hotspotId = useMemo(() => {
+    const match = location.pathname.match(/^\/hotspot\/([^/]+)/);
+    return match?.[1] ? decodeURIComponent(match[1]) : undefined;
+  }, [location.pathname]);
 
   const {
     hotspots,
@@ -24,21 +27,19 @@ export default function HomePage() {
     getHotspotById,
   } = useHotspots();
 
-  const { usingMode } = useMode();
-
   // Handle /hotspot/:id route
   useEffect(() => {
-    if (!id) return;
+    if (!hotspotId) return;
     if (hotspots.length === 0) return; // wait for data
 
-    const found = getHotspotById(id);
+    const found = getHotspotById(hotspotId);
     if (!found) {
       toast.error("Không tìm thấy địa điểm này.");
       navigate("/", { replace: true });
       return;
     }
     setSelectedHotspot(found);
-  }, [id, hotspots, getHotspotById, setSelectedHotspot, navigate]);
+  }, [hotspotId, hotspots, getHotspotById, setSelectedHotspot, navigate]);
 
   return (
     <>

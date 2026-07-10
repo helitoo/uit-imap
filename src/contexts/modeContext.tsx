@@ -5,14 +5,20 @@ export type UsingMode = "default" | "direction";
 interface ModeContextValue {
   usingMode: UsingMode;
   setUsingMode: (mode: UsingMode) => void;
+  showTourspots: boolean;
+  setShowTourspots: (v: boolean) => void;
 }
 
 const ModeContext = createContext<ModeContextValue | null>(null);
 
 export function ModeProvider({ children }: { children: ReactNode }) {
   const [usingMode, setUsingMode] = useState<UsingMode>("default");
+  const [showTourspots, setShowTourspots] = useState<boolean>(false);
+
   return (
-    <ModeContext.Provider value={{ usingMode, setUsingMode }}>
+    <ModeContext.Provider
+      value={{ usingMode, setUsingMode, showTourspots, setShowTourspots }}
+    >
       {children}
     </ModeContext.Provider>
   );
