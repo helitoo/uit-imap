@@ -50,8 +50,8 @@ export default function TourViewer({
   const viewerRef = useRef<{ destroy: () => void } | null>(null);
   const hotspotRootsRef = useRef<Root[]>([]);
   const hasShownMissingSceneToast = useRef<string | null>(null);
-  const [isSceneMenuOpen, setIsSceneMenuOpen] = useState(true);
-  const [isRoadmapOpen, setIsRoadmapOpen] = useState(true);
+  const [isSceneMenuOpen, setIsSceneMenuOpen] = useState(false);
+  // const [isRoadmapOpen, setIsRoadmapOpen] = useState(true);
   const {
     currentSceneId,
     currentScene,
@@ -231,8 +231,8 @@ export default function TourViewer({
       />
 
       <header className="fixed top-0 left-0 right-0 z-10 w-full flex min-h-16 items-stretch justify-end sm:justify-between gap-3">
-        <div className="flex-1 flex min-w-0 flex-col justify-center px-5 sm:pr-36 bg-gradient-to-r from-slate-950/70 via-slate-950/40 to-transparent">
-          <p className="hidden sm:block text-[11px] font-semibold uppercase leading-tight text-sky-200">
+        <div className="hidden sm:flex flex-1 min-w-0 flex-col justify-center px-5 sm:pr-36 bg-gradient-to-r from-slate-950/70 via-slate-950/40 to-transparent">
+          <p className="text-[11px] font-semibold uppercase leading-tight text-sky-200">
             UIT 360 Tour
           </p>
           <h1 className="truncate font-bold leading-tight text-white text-xl">
