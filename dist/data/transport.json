@@ -1,0 +1,37 @@
+[
+  {
+    "spot": "cA",
+    "name": "Đại học Công nghệ Thông tin",
+    "type": "bus",
+    "providers": [
+      "https://maps.app.goo.gl/TFTc8bRScMsYFzS88"
+    ]
+  },
+  {
+    "spot": "cB",
+    "name": "Trường Giáo dục Quốc phòng",
+    "type": "bus",
+    "providers": [
+      "https://maps.app.goo.gl/AX4hj4dawSWf7guW6",
+      "https://map.busmap.vn/hcm/station/576"
+    ]
+  },
+  {
+    "spot": "cB",
+    "name": "Ga Metro ĐHQG",
+    "type": "bus",
+    "providers": [
+      "https://maps.app.goo.gl/UqZPDXkSTdZaru9D8",
+      "https://map.busmap.vn/hcm/station/8099"
+    ]
+  },
+  {
+    "spot": "cB",
+    "name": "Ga Metro ĐHQG",
+    "type": "metro",
+    "providers": [
+      "https://maps.app.goo.gl/HRNDTcr3Rw3GgG6D8",
+      "https://hcmc-metro.com/station_detail.php?id=13"
+    ]
+  }
+]

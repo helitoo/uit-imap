@@ -1,0 +1,2696 @@
+[
+  {
+    "id": "0-cng-a",
+    "name": "Cổng A",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -2.9896900795624006,
+      "pitch": -0.20021620335418433,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -3.0024777628792023,
+        "pitch": 0.02757360649764351,
+        "rotation": 0,
+        "target": "1-sn-c"
+      },
+      {
+        "yaw": 2.3514928541217106,
+        "pitch": 0.02442096850812092,
+        "rotation": 24.347343065320914,
+        "target": "2-ng-vo-ta-nh-a"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "1-sn-c",
+    "name": "Sân cờ",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -3.06011290856709,
+      "pitch": -0.17692660600367915,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 2.7385358399090993,
+        "pitch": 0.009656331748811198,
+        "rotation": 0,
+        "target": "39-li-vo-ta-nh-e"
+      },
+      {
+        "yaw": 1.7565776381033427,
+        "pitch": 0.028050413041828648,
+        "rotation": 0,
+        "target": "7-pha-trc-phng-a116---a118"
+      },
+      {
+        "yaw": 0.1852729056204847,
+        "pitch": 0.00893829913326627,
+        "rotation": 0,
+        "target": "0-cng-a"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "2-ng-vo-ta-nh-a",
+    "name": "Đường vào tòa nhà A",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 0.08726759360244962,
+      "pitch": -0.0633800572177492,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -1.9504332755824727,
+        "pitch": 0.031114797122270943,
+        "rotation": 7.0685834705770345,
+        "target": "3-ng-i-xanh-mt-t-nh-xe"
+      },
+      {
+        "yaw": 2.55373991366114,
+        "pitch": 0.07751811183754498,
+        "rotation": 5.497787143782138,
+        "target": "0-cng-a"
+      },
+      {
+        "yaw": 0.05591314180442275,
+        "pitch": 0.07096442311000928,
+        "rotation": 0,
+        "target": "8-pha-trc-phng-a102---a120"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "3-ng-i-xanh-mt-t-nh-xe",
+    "name": "Đường đi xanh mát từ nhà xe",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": 2.624597825074243,
+        "pitch": 0.05045337049028831,
+        "rotation": 5.497787143782138,
+        "target": "2-ng-vo-ta-nh-a"
+      },
+      {
+        "yaw": 0.09054244729911787,
+        "pitch": 0.07903737631692742,
+        "rotation": 0,
+        "target": "5-sn--xe---ta-nh-a"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "4-ng-i-pha-sau-ta-nh-a",
+    "name": "Đường đi phía sau tòa nhà A",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -2.1682084968748274,
+      "pitch": 0.04847854922673989,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 1.1482893404090362,
+        "pitch": 0.10293540535991141,
+        "rotation": 4.71238898038469,
+        "target": "5-sn--xe---ta-nh-a"
+      },
+      {
+        "yaw": -1.999720419335688,
+        "pitch": 0.05972009018813651,
+        "rotation": 0.7853981633974483,
+        "target": "6-sn-gia-ta-nh-a---e"
+      },
+      {
+        "yaw": -3.0551666303896994,
+        "pitch": 0.06539405172204837,
+        "rotation": 0,
+        "target": "18-sn-gch"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "5-sn--xe---ta-nh-a",
+    "name": "Sân đỗ xe - tòa nhà A",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 2.0584122590666647,
+      "pitch": -0.05926597019681523,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -2.505579186530344,
+        "pitch": 0.045132390947969725,
+        "rotation": 0,
+        "target": "10-pha-trc-ca-vo-th-vin-"
+      },
+      {
+        "yaw": 2.100083391431638,
+        "pitch": 0.019055275876411315,
+        "rotation": 0.7853981633974483,
+        "target": "4-ng-i-pha-sau-ta-nh-a"
+      },
+      {
+        "yaw": 0.6821841910508528,
+        "pitch": 0.08638099893925322,
+        "rotation": 5.497787143782138,
+        "target": "23-ng-i-pha-sau-ta-nh-b"
+      },
+      {
+        "yaw": -1.662940100195435,
+        "pitch": 0.009487513691739835,
+        "rotation": 0.7853981633974483,
+        "target": "3-ng-i-xanh-mt-t-nh-xe"
+      },
+      {
+        "yaw": 2.684332130931887,
+        "pitch": 0.03565104451449841,
+        "rotation": 0,
+        "target": "6-sn-gia-ta-nh-a---e"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "6-sn-gia-ta-nh-a---e",
+    "name": "Sân giữa tòa nhà A - E",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 2.1355867020562744,
+      "pitch": -0.07259315184696646,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.955868687040244,
+        "pitch": 0.05758352173994474,
+        "rotation": 5.497787143782138,
+        "target": "18-sn-gch"
+      },
+      {
+        "yaw": -2.8318091701272117,
+        "pitch": 0.04959201969540317,
+        "rotation": 5.497787143782138,
+        "target": "39-li-vo-ta-nh-e"
+      },
+      {
+        "yaw": -1.6465990846848015,
+        "pitch": 0.04183003373198346,
+        "rotation": 5.497787143782138,
+        "target": "7-pha-trc-phng-a116---a118"
+      },
+      {
+        "yaw": -0.32478210897592064,
+        "pitch": 0.019560599675962465,
+        "rotation": 0,
+        "target": "5-sn--xe---ta-nh-a"
+      },
+      {
+        "yaw": 2.1269373817947947,
+        "pitch": 0.11752816919157283,
+        "rotation": 0,
+        "target": "30-sn-gh-"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "7-pha-trc-phng-a116---a118",
+    "name": "Phía trước phòng A116 - A118",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 2.4335858415060585,
+      "pitch": -0.0009012514552875217,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -2.9851417029785505,
+        "pitch": 0.029623365227250176,
+        "rotation": 0,
+        "target": "6-sn-gia-ta-nh-a---e"
+      },
+      {
+        "yaw": 1.5272525547486842,
+        "pitch": 0.047844429153910184,
+        "rotation": 0.7853981633974483,
+        "target": "8-pha-trc-phng-a102---a120"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "8-pha-trc-phng-a102---a120",
+    "name": "Phía trước phòng A102 - A120",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 2.8335835931051783,
+      "pitch": -0.04837507018899956,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.23610718516982843,
+        "pitch": 0.05910991455494852,
+        "rotation": 5.497787143782138,
+        "target": "7-pha-trc-phng-a116---a118"
+      },
+      {
+        "yaw": 1.783759326887015,
+        "pitch": 0.062454869204586316,
+        "rotation": 5.497787143782138,
+        "target": "2-ng-vo-ta-nh-a"
+      },
+      {
+        "yaw": -3.1317687290568337,
+        "pitch": 0.12253018873585475,
+        "rotation": 0,
+        "target": "10-pha-trc-ca-vo-th-vin-"
+      },
+      {
+        "yaw": -1.9197271820659,
+        "pitch": 0.0436624714329934,
+        "rotation": 14.137166941154074,
+        "target": "9-ng-t-khoa-hc---ta-nh-nh-a"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "9-ng-t-khoa-hc---ta-nh-nh-a",
+    "name": "Ngã tư khoa học - tòa nhà nhà A",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": -0.882538488818577,
+        "pitch": 0.03610152598738381,
+        "rotation": 4.71238898038469,
+        "target": "8-pha-trc-phng-a102---a120"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "10-pha-trc-ca-vo-th-vin-",
+    "name": "Phía trước cửa vào thư viện ",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -0.33554260848146633,
+      "pitch": -0.07326886136370625,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -1.9912067687291728,
+        "pitch": 0.06886199429238715,
+        "rotation": 0,
+        "target": "8-pha-trc-phng-a102---a120"
+      },
+      {
+        "yaw": 2.295185136571627,
+        "pitch": 0.14920553605344544,
+        "rotation": 4.71238898038469,
+        "target": "5-sn--xe---ta-nh-a"
+      },
+      {
+        "yaw": -0.7662342545566236,
+        "pitch": 0.12478454000687478,
+        "rotation": 0.7853981633974483,
+        "target": "11-tng-1-th-vin"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "11-tng-1-th-vin",
+    "name": "Tầng 1 thư viện",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.9025137592128019,
+        "pitch": 0.1058369321389776,
+        "rotation": 0,
+        "target": "10-pha-trc-ca-vo-th-vin-"
+      },
+      {
+        "yaw": 1.2742137115816377,
+        "pitch": 0.060951320494480044,
+        "rotation": 0,
+        "target": "12-tng-2-th-vin"
+      },
+      {
+        "yaw": -1.0694970005522038,
+        "pitch": 0.0436481741878012,
+        "rotation": 0,
+        "target": "5-sn--xe---ta-nh-a"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "12-tng-2-th-vin",
+    "name": "Tầng 2 thư viện",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -2.3771465779493806,
+      "pitch": 0.22168680646752037,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 1.7728315098316267,
+        "pitch": 0.07782656808496746,
+        "rotation": 3.141592653589793,
+        "target": "11-tng-1-th-vin"
+      },
+      {
+        "yaw": 1.3119406088772259,
+        "pitch": 0.090322204089194,
+        "rotation": 5.497787143782138,
+        "target": "13-phng-bida"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "13-phng-bida",
+    "name": "Phòng bida",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": 1.445543871101516,
+        "pitch": 0.06467307724910398,
+        "rotation": 5.497787143782138,
+        "target": "12-tng-2-th-vin"
+      },
+      {
+        "yaw": 1.8869937152170335,
+        "pitch": -0.012307465667824147,
+        "rotation": 0.7853981633974483,
+        "target": "16-hnh-lng-tng-3-3---ta-nh-a"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "14-hnh-lang-tng-3-1---ta-nh-a",
+    "name": "Hành lang tầng 3 (1) - tòa nhà A",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -0.849853769498548,
+      "pitch": 0.1669087641706426,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -3.1319746077950423,
+        "pitch": 0.08017000036476318,
+        "rotation": 0,
+        "target": "15-hnh-lng-tng-3-2---ta-nh-a"
+      },
+      {
+        "yaw": 2.970555294949829,
+        "pitch": 0.13772579339062574,
+        "rotation": 11.780972450961727,
+        "target": "17-hi-trng-a"
+      },
+      {
+        "yaw": 1.470488828409401,
+        "pitch": 0.11963798438501883,
+        "rotation": 7.0685834705770345,
+        "target": "17-hi-trng-a"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "15-hnh-lng-tng-3-2---ta-nh-a",
+    "name": "Hành làng tầng 3 (2) - tòa nhà A",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -0.976603698967665,
+      "pitch": -0.0410106252585436,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 3.0804661089887713,
+        "pitch": 0.0552538300203409,
+        "rotation": 5.497787143782138,
+        "target": "16-hnh-lng-tng-3-3---ta-nh-a"
+      },
+      {
+        "yaw": 1.0669853371624711,
+        "pitch": 0.05443496266586223,
+        "rotation": 0.7853981633974483,
+        "target": "14-hnh-lang-tng-3-1---ta-nh-a"
+      },
+      {
+        "yaw": 2.9172811935810454,
+        "pitch": 0.15087111051852986,
+        "rotation": 5.497787143782138,
+        "target": "17-hi-trng-a"
+      },
+      {
+        "yaw": 1.2223391114811655,
+        "pitch": 0.13495132486191075,
+        "rotation": 0.7853981633974483,
+        "target": "17-hi-trng-a"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "16-hnh-lng-tng-3-3---ta-nh-a",
+    "name": "Hành làng tầng 3 (3) - tòa nhà A",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -2.0061038997815483,
+      "pitch": 0.09778659947226842,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 2.1895911138729662,
+        "pitch": 0.010658686313117727,
+        "rotation": 8.63937979737193,
+        "target": "13-phng-bida"
+      },
+      {
+        "yaw": 0.27648101087128296,
+        "pitch": 0.06745000615436325,
+        "rotation": 0,
+        "target": "15-hnh-lng-tng-3-2---ta-nh-a"
+      },
+      {
+        "yaw": 0.52071139141953,
+        "pitch": 0.1339503704719025,
+        "rotation": 0.7853981633974483,
+        "target": "17-hi-trng-a"
+      },
+      {
+        "yaw": 2.0625755706412274,
+        "pitch": 0.10637780385526341,
+        "rotation": 5.497787143782138,
+        "target": "17-hi-trng-a"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "17-hi-trng-a",
+    "name": "Hội trường A",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 0.15601866007830978,
+      "pitch": -0.0633800572177492,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 1.564533734888796,
+        "pitch": -0.0779612485854333,
+        "rotation": 5.497787143782138,
+        "target": "16-hnh-lng-tng-3-3---ta-nh-a"
+      },
+      {
+        "yaw": -2.692705662981318,
+        "pitch": -0.06716886942873757,
+        "rotation": 0,
+        "target": "15-hnh-lng-tng-3-2---ta-nh-a"
+      },
+      {
+        "yaw": -1.290917360715028,
+        "pitch": -0.07841407305662784,
+        "rotation": 0,
+        "target": "14-hnh-lang-tng-3-1---ta-nh-a"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "18-sn-gch",
+    "name": "Sân gạch",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.19325744359351837,
+        "pitch": 0.01609154141752711,
+        "rotation": 1.5707963267948966,
+        "target": "20-sn-khu-b"
+      },
+      {
+        "yaw": -2.157104936541881,
+        "pitch": 0.024756154006773556,
+        "rotation": 5.497787143782138,
+        "target": "6-sn-gia-ta-nh-a---e"
+      },
+      {
+        "yaw": -1.7634529787308395,
+        "pitch": 0.02297765534556717,
+        "rotation": 0.7853981633974483,
+        "target": "4-ng-i-pha-sau-ta-nh-a"
+      },
+      {
+        "yaw": 1.20262159785025,
+        "pitch": 0.020150944838256635,
+        "rotation": 0.7853981633974483,
+        "target": "33-sn-trc-ta-nh-c"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "19-snh-ta-nh-b",
+    "name": "Sảnh tòa nhà B",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.052438335667378766,
+        "pitch": 0.2522157156788083,
+        "rotation": 0,
+        "target": "20-sn-khu-b"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "20-sn-khu-b",
+    "name": "Sân khấu B",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -3.0317465299864317,
+      "pitch": -0.2870743768098052,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -1.6036450963056197,
+        "pitch": 0.11994398944712081,
+        "rotation": 5.497787143782138,
+        "target": "24-trc-nh-phc-v-sinh-vin"
+      },
+      {
+        "yaw": -2.1667525693852845,
+        "pitch": -0.007808396585964772,
+        "rotation": 0,
+        "target": "19-snh-ta-nh-b"
+      },
+      {
+        "yaw": -3.1002801837488594,
+        "pitch": -0.016995835574331153,
+        "rotation": 0,
+        "target": "21-phng-hc-ta-nh-b"
+      },
+      {
+        "yaw": 2.246287171767909,
+        "pitch": -0.014083337704642318,
+        "rotation": 0,
+        "target": "22-phng-my-tnh-ta-nh-b"
+      },
+      {
+        "yaw": 1.4444870002954167,
+        "pitch": 0.0674461512131046,
+        "rotation": 0,
+        "target": "18-sn-gch"
+      },
+      {
+        "yaw": 0.7690699676008492,
+        "pitch": 0.08684688503718618,
+        "rotation": 0,
+        "target": "33-sn-trc-ta-nh-c"
+      },
+      {
+        "yaw": -0.44672398695758275,
+        "pitch": 0.1248530440785025,
+        "rotation": 0,
+        "target": "51-cng-b"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "21-phng-hc-ta-nh-b",
+    "name": "Phòng học tòa nhà B",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -2.5676085663631305,
+      "pitch": 0.037485835093459485,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -1.7493537191566126,
+        "pitch": 0.036183822885007544,
+        "rotation": 5.497787143782138,
+        "target": "20-sn-khu-b"
+      },
+      {
+        "yaw": 2.9261245871758916,
+        "pitch": 0.04971142815699636,
+        "rotation": 7.0685834705770345,
+        "target": "20-sn-khu-b"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "22-phng-my-tnh-ta-nh-b",
+    "name": "Phòng máy tính tòa nhà B",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": -2.32394375666396,
+        "pitch": 0.047601796219471026,
+        "rotation": 5.497787143782138,
+        "target": "20-sn-khu-b"
+      },
+      {
+        "yaw": 2.2273006526703725,
+        "pitch": 0.055792097989792566,
+        "rotation": 0.7853981633974483,
+        "target": "20-sn-khu-b"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "23-ng-i-pha-sau-ta-nh-b",
+    "name": "Đường đi phía sau tòa nhà B",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 2.8269045005786957,
+      "pitch": -0.12337080656289423,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 1.6349300367625244,
+        "pitch": 0.045792744451588874,
+        "rotation": 0.7853981633974483,
+        "target": "24-trc-nh-phc-v-sinh-vin"
+      },
+      {
+        "yaw": -1.464370399196735,
+        "pitch": 0.08356671908611624,
+        "rotation": 0.7853981633974483,
+        "target": "5-sn--xe---ta-nh-a"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "24-trc-nh-phc-v-sinh-vin",
+    "name": "Trước nhà phục vụ sinh viên",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 2.9271125302413896,
+      "pitch": -0.018076010034057788,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 1.122918693470755,
+        "pitch": -0.013089771332762012,
+        "rotation": 10.995574287564278,
+        "target": "23-ng-i-pha-sau-ta-nh-b"
+      },
+      {
+        "yaw": 1.861228739948352,
+        "pitch": -0.0698609278128508,
+        "rotation": 1.5707963267948966,
+        "target": "26-sn-bng-r"
+      },
+      {
+        "yaw": -0.21702283236115605,
+        "pitch": 0.0310071596195165,
+        "rotation": 0,
+        "target": "20-sn-khu-b"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "25-sn-bng-chuyn",
+    "name": "Sân bóng chuyền",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": -2.2525625578301263,
+        "pitch": 0.025176949193163267,
+        "rotation": 0,
+        "target": "26-sn-bng-r"
+      },
+      {
+        "yaw": -2.9264148244588064,
+        "pitch": 0.04454436978337384,
+        "rotation": 0,
+        "target": "27-sn-cu-lng"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "26-sn-bng-r",
+    "name": "Sân bóng rổ",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.28921957165140455,
+        "pitch": 0.0859774540505569,
+        "rotation": 0,
+        "target": "28-sn-pickleball"
+      },
+      {
+        "yaw": 2.9420569861047223,
+        "pitch": 0.06930764721112581,
+        "rotation": 10.995574287564278,
+        "target": "24-trc-nh-phc-v-sinh-vin"
+      },
+      {
+        "yaw": -1.263889140187091,
+        "pitch": 0.054261744469803475,
+        "rotation": 0,
+        "target": "27-sn-cu-lng"
+      },
+      {
+        "yaw": -2.5313107927388376,
+        "pitch": 0.04845557032274428,
+        "rotation": 0,
+        "target": "25-sn-bng-chuyn"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "27-sn-cu-lng",
+    "name": "Sân cầu lông",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": -1.350599203776298,
+        "pitch": 0.05078881098933863,
+        "rotation": 0,
+        "target": "26-sn-bng-r"
+      },
+      {
+        "yaw": -2.4424545316825945,
+        "pitch": 0.025122320992233327,
+        "rotation": 0,
+        "target": "28-sn-pickleball"
+      },
+      {
+        "yaw": 0.18136324834131834,
+        "pitch": 0.02377809129084163,
+        "rotation": 0,
+        "target": "25-sn-bng-chuyn"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "28-sn-pickleball",
+    "name": "Sân pickleball",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": -3.0832031311886308,
+        "pitch": 0.11058492127275699,
+        "rotation": 0,
+        "target": "26-sn-bng-r"
+      },
+      {
+        "yaw": -2.091910707849994,
+        "pitch": 0.10722491794676259,
+        "rotation": 0,
+        "target": "27-sn-cu-lng"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "29-snh-ta-nh-c",
+    "name": "Sảnh tòa nhà C",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 0.03437769738776986,
+      "pitch": -0.33926971804795514,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.5332448392701039,
+        "pitch": 0.05144209046930115,
+        "rotation": 5.497787143782138,
+        "target": "33-sn-trc-ta-nh-c"
+      },
+      {
+        "yaw": 1.440042023736198,
+        "pitch": 0.058163679248625755,
+        "rotation": 0,
+        "target": "31-h-c-ta-nh-c"
+      },
+      {
+        "yaw": -1.1860291946692367,
+        "pitch": 0.020428415211032558,
+        "rotation": 0.7853981633974483,
+        "target": "36-phng-mac-ta-nh-c"
+      },
+      {
+        "yaw": -3.124842691992626,
+        "pitch": -0.5678078459406226,
+        "rotation": 0,
+        "target": "34-ban-cng-tng-2-ta-nh-c"
+      },
+      {
+        "yaw": -3.119133358439276,
+        "pitch": 0.04981007810267357,
+        "rotation": 0,
+        "target": "38-sn-bng-"
+      },
+      {
+        "yaw": -1.885988972429498,
+        "pitch": 0.02260029940286401,
+        "rotation": 0.7853981633974483,
+        "target": "32-hnh-lang-tng-1-ta-nh-c"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "30-sn-gh-",
+    "name": "Sân ghế đá",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": 1.4392946076420916,
+        "pitch": 0.08214525210990686,
+        "rotation": 0,
+        "target": "34-ban-cng-tng-2-ta-nh-c"
+      },
+      {
+        "yaw": -1.5657945736975112,
+        "pitch": 0.017916010826333206,
+        "rotation": 13.351768777756625,
+        "target": "6-sn-gia-ta-nh-a---e"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "31-h-c-ta-nh-c",
+    "name": "Hồ cá tòa nhà C",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -0.43205451441496123,
+      "pitch": 0.022369431959187835,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.2934187094855645,
+        "pitch": 0.13321878848569035,
+        "rotation": 0,
+        "target": "29-snh-ta-nh-c"
+      },
+      {
+        "yaw": -2.884680162430204,
+        "pitch": 0.03675027742323245,
+        "rotation": 1.5707963267948966,
+        "target": "51-cng-b"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "32-hnh-lang-tng-1-ta-nh-c",
+    "name": "Hành lang tầng 1 tòa nhà C",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 2.7682460518890846,
+      "pitch": -0.27216142217033834,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 2.7702076958226103,
+        "pitch": 0.06650597921898083,
+        "rotation": 0,
+        "target": "36-phng-mac-ta-nh-c"
+      },
+      {
+        "yaw": -1.773479949628772,
+        "pitch": 0.0580233266724548,
+        "rotation": 5.497787143782138,
+        "target": "29-snh-ta-nh-c"
+      },
+      {
+        "yaw": 1.3385027641781004,
+        "pitch": 0.058149930946376216,
+        "rotation": 4.71238898038469,
+        "target": "35-phng-hc-ta-nh-c"
+      },
+      {
+        "yaw": 1.956470801040104,
+        "pitch": 0.054336581656130534,
+        "rotation": 0.7853981633974483,
+        "target": "37-phng-my-tnh-ta-nh-c"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "33-sn-trc-ta-nh-c",
+    "name": "Sân trước tòa nhà C",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 2.222112314149326,
+      "pitch": -0.14819648773794114,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.12723063589496242,
+        "pitch": -0.0038133575086849447,
+        "rotation": 0,
+        "target": "20-sn-khu-b"
+      },
+      {
+        "yaw": -0.9189492017749323,
+        "pitch": -0.0056059894492968,
+        "rotation": 0,
+        "target": "18-sn-gch"
+      },
+      {
+        "yaw": -2.4427465108057174,
+        "pitch": 0.08564027830767529,
+        "rotation": 0,
+        "target": "30-sn-gh-"
+      },
+      {
+        "yaw": 2.1821107886598003,
+        "pitch": 0.08623734910665704,
+        "rotation": 0.7853981633974483,
+        "target": "29-snh-ta-nh-c"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "34-ban-cng-tng-2-ta-nh-c",
+    "name": "Ban công tầng 2 tòa nhà C",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 0.08990745014906487,
+      "pitch": -0.17523208196952922,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.047518162641893014,
+        "pitch": 0.056520535946667394,
+        "rotation": 3.141592653589793,
+        "target": "29-snh-ta-nh-c"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "35-phng-hc-ta-nh-c",
+    "name": "Phòng học tòa nhà C",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -2.973100494835773,
+      "pitch": -0.025296202868897666,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -2.463045341660454,
+        "pitch": 0.050458848775470244,
+        "rotation": 1.5707963267948966,
+        "target": "32-hnh-lang-tng-1-ta-nh-c"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "36-phng-mac-ta-nh-c",
+    "name": "Phòng Mac tòa nhà C",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 0.12693303650868337,
+      "pitch": -0.018641193299338,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.19273312089611316,
+        "pitch": 0.09906584328199664,
+        "rotation": 1.5707963267948966,
+        "target": "29-snh-ta-nh-c"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "37-phng-my-tnh-ta-nh-c",
+    "name": "Phòng máy tính tòa nhà C",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 0.0397025042765371,
+      "pitch": 0,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -1.5824015237895672,
+        "pitch": 0.18246476192835992,
+        "rotation": 5.497787143782138,
+        "target": "32-hnh-lang-tng-1-ta-nh-c"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "38-sn-bng-",
+    "name": "Sân bóng đá",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -2.9776374814327493,
+      "pitch": -0.27610896898667825,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -2.990470481998596,
+        "pitch": 0.013006219409458453,
+        "rotation": 0,
+        "target": "29-snh-ta-nh-c"
+      },
+      {
+        "yaw": -1.5900603892482685,
+        "pitch": 0.006742332511851856,
+        "rotation": 1.5707963267948966,
+        "target": "51-cng-b"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "39-li-vo-ta-nh-e",
+    "name": "Lối vào tòa nhà E",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": -0.005098114894925843,
+        "pitch": -0.16896129876904808,
+        "rotation": 4.71238898038469,
+        "target": "40-phng-truyn-thng"
+      },
+      {
+        "yaw": -1.5952144697990356,
+        "pitch": 0.03649352004646822,
+        "rotation": 0,
+        "target": "6-sn-gia-ta-nh-a---e"
+      },
+      {
+        "yaw": 2.407865072381961,
+        "pitch": 0.023969163323897646,
+        "rotation": 4.71238898038469,
+        "target": "1-sn-c"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "40-phng-truyn-thng",
+    "name": "Phòng truyền thống",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "pitch": 0,
+      "yaw": 0,
+      "fov": 1.5707963267948966
+    },
+    "linkHotspots": [
+      {
+        "yaw": 1.5905175610339413,
+        "pitch": 0.15382954538812932,
+        "rotation": 1.5707963267948966,
+        "target": "39-li-vo-ta-nh-e"
+      },
+      {
+        "yaw": 1.3030076527174135,
+        "pitch": 0.1421092036836935,
+        "rotation": 5.497787143782138,
+        "target": "41-tng-3-ta-nh-e"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "41-tng-3-ta-nh-e",
+    "name": "Tầng 3 tòa nhà E",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -3.020833161695025,
+      "pitch": -0.023837917547304244,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.010899503930950516,
+        "pitch": 0.1746597725143939,
+        "rotation": 3.141592653589793,
+        "target": "40-phng-truyn-thng"
+      },
+      {
+        "yaw": 0.012677220671056588,
+        "pitch": -0.0372669162611885,
+        "rotation": 0,
+        "target": "42-tng-4-ta-nh-e"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "42-tng-4-ta-nh-e",
+    "name": "Tầng 4 tòa nhà E",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -3.0620482586242304,
+      "pitch": -0.0223694319592056,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -0.06659455940640413,
+        "pitch": -0.04006389165916957,
+        "rotation": 0,
+        "target": "43-khoa-khoa-hc-my-tnh---tng-5-ta-nh-e"
+      },
+      {
+        "yaw": -0.06442710293359077,
+        "pitch": 0.1886370043293475,
+        "rotation": 3.141592653589793,
+        "target": "41-tng-3-ta-nh-e"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "43-khoa-khoa-hc-my-tnh---tng-5-ta-nh-e",
+    "name": "Khoa Khoa học máy tính - tầng 5 tòa nhà E",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 2.9564242427043865,
+      "pitch": -0.033758169053580644,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -0.33013993630919813,
+        "pitch": -0.07116680135062481,
+        "rotation": 0,
+        "target": "44-khoa-k-thut-my-tnh---tng-6-ta-nh-e"
+      },
+      {
+        "yaw": -0.3398015128386742,
+        "pitch": 0.17179313229650006,
+        "rotation": 3.141592653589793,
+        "target": "42-tng-4-ta-nh-e"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "44-khoa-k-thut-my-tnh---tng-6-ta-nh-e",
+    "name": "Khoa Kỹ thuật máy tính - tầng 6 tòa nhà E",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 3.0749642565263615,
+      "pitch": 0.0149129546394704,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -0.1883052207476652,
+        "pitch": -0.0885543883859583,
+        "rotation": 0,
+        "target": "45-khoa-cng-ngh-phn-mm---tng-7-ta-nh-e"
+      },
+      {
+        "yaw": -0.19434271744934684,
+        "pitch": 0.18274858204784827,
+        "rotation": 3.141592653589793,
+        "target": "43-khoa-khoa-hc-my-tnh---tng-5-ta-nh-e"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "45-khoa-cng-ngh-phn-mm---tng-7-ta-nh-e",
+    "name": "Khoa Công nghệ phần mềm - tầng 7 tòa nhà E",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 0.15866629563584844,
+      "pitch": -0.03354925026252076,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": -2.9726474482037055,
+        "pitch": -0.07468571470124097,
+        "rotation": 6.283185307179586,
+        "target": "46-khoa-mng-my-tnh-v-truyn-thng-d-liu---tng-8-ta-nh-e"
+      },
+      {
+        "yaw": -2.9710325239371542,
+        "pitch": 0.13646055322760198,
+        "rotation": 9.42477796076938,
+        "target": "44-khoa-k-thut-my-tnh---tng-6-ta-nh-e"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "46-khoa-mng-my-tnh-v-truyn-thng-d-liu---tng-8-ta-nh-e",
+    "name": "Khoa Mạng máy tính và truyền thông dữ liệu - Tầng 8 tòa nhà E",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -0.03966657390896344,
+      "pitch": 0.0037282386598676,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 2.830185935987413,
+        "pitch": -0.035114026026251466,
+        "rotation": 0,
+        "target": "47-khoa-h-thng-thng-tin---tng-9-ta-nh-e"
+      },
+      {
+        "yaw": 2.8312591116505033,
+        "pitch": 0.1724033907171414,
+        "rotation": 3.141592653589793,
+        "target": "45-khoa-cng-ngh-phn-mm---tng-7-ta-nh-e"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "47-khoa-h-thng-thng-tin---tng-9-ta-nh-e",
+    "name": "Khoa Hệ thống thông tin - Tầng 9 tòa nhà E",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 0,
+      "pitch": 0,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 3.0201590693348166,
+        "pitch": -0.051472325637469396,
+        "rotation": 0,
+        "target": "48-khoa-khoa-hc-v-k-thut-thng-tin---tng-10-ta-nh-e"
+      },
+      {
+        "yaw": 3.018450912929506,
+        "pitch": 0.14948121677610082,
+        "rotation": 3.141592653589793,
+        "target": "46-khoa-mng-my-tnh-v-truyn-thng-d-liu---tng-8-ta-nh-e"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "48-khoa-khoa-hc-v-k-thut-thng-tin---tng-10-ta-nh-e",
+    "name": "Khoa Khoa học và kỹ thuật thông tin - tầng 10 tòa nhà E",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 0.10842124015010945,
+      "pitch": -0.0223694319592056,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 3.0270954121818043,
+        "pitch": -0.050065225497171184,
+        "rotation": 0,
+        "target": "49-snh-trc-hi-trng-e"
+      },
+      {
+        "yaw": 3.0333562555439757,
+        "pitch": 0.1542788863205793,
+        "rotation": 3.141592653589793,
+        "target": "47-khoa-h-thng-thng-tin---tng-9-ta-nh-e"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "49-snh-trc-hi-trng-e",
+    "name": "Sảnh trước hội trường e",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -3.0796511986264736,
+      "pitch": -0.09320596649669,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.02070978778703747,
+        "pitch": 0.15537111679771698,
+        "rotation": 3.141592653589793,
+        "target": "48-khoa-khoa-hc-v-k-thut-thng-tin---tng-10-ta-nh-e"
+      },
+      {
+        "yaw": 1.5683473915659665,
+        "pitch": -0.0444773908979208,
+        "rotation": 0,
+        "target": "50-hi-trng-e"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "50-hi-trng-e",
+    "name": "Hội trường E",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -3.1088792879744336,
+      "pitch": -0.01519974222869891,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.257750782230616,
+        "pitch": -0.00681878330745711,
+        "rotation": 0,
+        "target": "49-snh-trc-hi-trng-e"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "51-cng-b",
+    "name": "Cổng B",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": 2.4752319376733194,
+      "pitch": -0.04846976896396882,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 1.5905443221667088,
+        "pitch": 0.024959933003053436,
+        "rotation": 0,
+        "target": "38-sn-bng-"
+      },
+      {
+        "yaw": -3.0524797594675874,
+        "pitch": -0.00023877661791615878,
+        "rotation": 4.71238898038469,
+        "target": "31-h-c-ta-nh-c"
+      },
+      {
+        "yaw": -2.6645521183877694,
+        "pitch": 0.007169702111461618,
+        "rotation": 5.497787143782138,
+        "target": "20-sn-khu-b"
+      }
+    ],
+    "infoHotspots": []
+  }
+]

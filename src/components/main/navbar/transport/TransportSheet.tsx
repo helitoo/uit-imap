@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -8,98 +9,28 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Bus, TramFront, Info, MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useHotspots } from "@/contexts/hotspotsContext";
-
-
-type TransportProvider = "google" | "busmap" | "hcmcmetro";
+import type { Transport } from "@/lib/types/transport";
 
 const getTransportInfo = (
-  type: TransportProvider,
+  url: string,
 ): { url: string; name: string } => {
-  switch (type) {
-    case "google":
-      return {
-        url: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Google_Maps_icon_%282026%29.svg",
-        name: "Google Map",
-      };
-    case "busmap":
-      return {
-        url: "https://upload.wikimedia.org/wikipedia/vi/9/94/BusMap_Icon.png",
-        name: "BusMap",
-      };
-    case "hcmcmetro":
-      return {
-        url: "https://images.seeklogo.com/logo-png/45/1/hcmc-metro-logo-png_seeklogo-453926.png",
-        name: "HCMC Metro",
-      };
+  if (url.includes("busmap.vn")) {
+    return {
+      url: "https://upload.wikimedia.org/wikipedia/vi/9/94/BusMap_Icon.png",
+      name: "BusMap",
+    };
   }
+  if (url.includes("metro")) {
+    return {
+      url: "https://images.seeklogo.com/logo-png/45/1/hcmc-metro-logo-png_seeklogo-453926.png",
+      name: "HCMC Metro",
+    };
+  }
+  return {
+    url: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Google_Maps_icon_%282026%29.svg",
+    name: "Google Map",
+  };
 };
-
-const transports: {
-  spot: "cA" | "cB";
-  name: string;
-  type: "bus" | "metro";
-  providers: {
-    provider: TransportProvider;
-    url: string;
-  }[];
-}[] = [
-  {
-    spot: "cA",
-    name: "Đại học Công nghệ Thông tin",
-    type: "bus",
-    providers: [
-      {
-        provider: "google",
-        url: "https://maps.app.goo.gl/TFTc8bRScMsYFzS88",
-      },
-    ],
-  },
-  {
-    spot: "cB",
-    name: "Trường Giáo dục Quốc phòng",
-    type: "bus",
-    providers: [
-      {
-        provider: "google",
-        url: "https://maps.app.goo.gl/AX4hj4dawSWf7guW6",
-      },
-      {
-        provider: "busmap",
-        url: "https://map.busmap.vn/hcm/station/576",
-      },
-    ],
-  },
-  {
-    spot: "cB",
-    name: "Ga Metro ĐHQG",
-    type: "bus",
-    providers: [
-      {
-        provider: "google",
-        url: "https://maps.app.goo.gl/UqZPDXkSTdZaru9D8",
-      },
-      {
-        provider: "busmap",
-        url: "https://map.busmap.vn/hcm/station/8099",
-      },
-    ],
-  },
-  {
-    spot: "cB",
-    name: "Ga Metro ĐHQG",
-    type: "metro",
-    providers: [
-      {
-        provider: "google",
-        url: "https://maps.app.goo.gl/HRNDTcr3Rw3GgG6D8",
-      },
-      {
-        provider: "hcmcmetro",
-        url: "https://hcmc-metro.com/station_detail.php?id=13",
-      },
-    ],
-  },
-];
 
 interface TransportSheetProps {
   open: boolean;
@@ -109,6 +40,17 @@ interface TransportSheetProps {
 export function TransportSheet({ open, onOpenChange }: TransportSheetProps) {
   const navigate = useNavigate();
   const { getHotspotById, setSelectedHotspot } = useHotspots();
+  const [transports, setTransports] = useState<Transport[]>([]);
+
+  useEffect(() => {
+    fetch("/data/transport.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch transport data");
+        return res.json();
+      })
+      .then((data: Transport[]) => setTransports(data))
+      .catch((err) => console.error("Error loading transport data:", err));
+  }, []);
 
   const handleSpotClick = (spotId: string) => {
     const hotspot = getHotspotById(spotId);
@@ -169,12 +111,12 @@ export function TransportSheet({ open, onOpenChange }: TransportSheetProps) {
                   {/* Provider Icons */}
                   <div className="mt-4 flex items-center justify-end">
                     <div className="flex gap-2">
-                      {item.providers.map((p, pIdx) => {
-                        const info = getTransportInfo(p.provider);
+                      {item.providers.map((url, pIdx) => {
+                        const info = getTransportInfo(url);
                         return (
                           <a
                             key={pIdx}
-                            href={p.url}
+                            href={url}
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}

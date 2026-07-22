@@ -2,17 +2,18 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
 
-import { tourScenes } from "@/lib/consts/tourScenes";
-import type { MarzipanoScene } from "@/lib/types/pano";
+import type { MarzipanoScene, TourScene } from "@/lib/types/pano";
 
 interface PanoContextValue {
   currentSceneId: string;
-  currentScene?: (typeof tourScenes)[number];
+  currentScene?: TourScene;
+  tourScenes: TourScene[];
   isReady: boolean;
   setScene: (sceneId: string) => void;
   nextScene: () => void;
@@ -27,12 +28,30 @@ const PanoContext = createContext<PanoContextValue | null>(null);
 export function PanoProvider({ children }: { children: React.ReactNode }) {
   const sceneRefs = useRef<Map<string, MarzipanoScene>>(new Map());
 
-  const [currentSceneId, setCurrentSceneId] = useState(tourScenes[0]?.id ?? "");
+  const [tourScenes, setTourScenes] = useState<TourScene[]>([]);
+  const [currentSceneId, setCurrentSceneId] = useState("");
   const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    fetch("/data/tourScenes.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch tour scenes data");
+        return res.json();
+      })
+      .then((data: TourScene[]) => {
+        setTourScenes(data);
+        if (data.length > 0) {
+          setCurrentSceneId((prev) => prev || data[0].id);
+        }
+      })
+      .catch((err) => {
+        console.error("Error loading tour scenes data:", err);
+      });
+  }, []);
 
   const sceneById = useMemo(
     () => new Map(tourScenes.map((scene) => [scene.id, scene])),
-    [],
+    [tourScenes],
   );
 
   const registerScenes = useCallback((scenes: Map<string, MarzipanoScene>) => {
@@ -57,25 +76,28 @@ export function PanoProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const nextScene = useCallback(() => {
+    if (tourScenes.length === 0) return;
     const index = tourScenes.findIndex((s) => s.id === currentSceneId);
 
     const next = tourScenes[(index + 1) % tourScenes.length];
 
     setScene(next.id);
-  }, [currentSceneId, setScene]);
+  }, [currentSceneId, setScene, tourScenes]);
 
   const prevScene = useCallback(() => {
+    if (tourScenes.length === 0) return;
     const index = tourScenes.findIndex((s) => s.id === currentSceneId);
 
     const prev =
       tourScenes[(index - 1 + tourScenes.length) % tourScenes.length];
 
     setScene(prev.id);
-  }, [currentSceneId, setScene]);
+  }, [currentSceneId, setScene, tourScenes]);
 
   const value = {
     currentSceneId,
     currentScene: sceneById.get(currentSceneId),
+    tourScenes,
     isReady,
     setScene,
     nextScene,

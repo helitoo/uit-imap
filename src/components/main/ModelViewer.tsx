@@ -1,10 +1,10 @@
-import { useRef, useEffect, forwardRef, useImperativeHandle } from "react";
+import { useRef, useEffect, useState, forwardRef, useImperativeHandle } from "react";
 
 import type { Hotspot } from "@/lib/types/hotspot";
+import type { Tourspot } from "@/lib/types/pano";
 import HotspotButton from "@/components/main/hotspot/HotspotButton";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import HotspotDirection from "@/components/main/hotspot/HotspotDirection";
-import { tourspots } from "@/lib/consts/tourSpot";
 import TourspotButton from "@/components/main/hotspot/TourspotButton";
 import { useMode } from "@/contexts/modeContext";
 
@@ -50,6 +50,17 @@ const ModelViewer = forwardRef<ModelViewerHandle, ModelViewerProps>(
   ({ selectedHotspot, directionPath }, ref) => {
     const { getDefaultHotspots } = useHotspots();
     const { showTourspots } = useMode();
+    const [tourspots, setTourspots] = useState<Tourspot[]>([]);
+
+    useEffect(() => {
+      fetch("/data/tourspots.json")
+        .then((res) => {
+          if (!res.ok) throw new Error("Failed to fetch tourspots data");
+          return res.json();
+        })
+        .then((data: Tourspot[]) => setTourspots(data))
+        .catch((err) => console.error("Error loading tourspots data:", err));
+    }, []);
 
     const mvRef = useRef<CustomModelViewer | null>(null);
 

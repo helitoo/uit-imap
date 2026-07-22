@@ -1,5 +1,4 @@
 import Marzipano from "marzipano";
-import { tourScenes } from "@/lib/consts/tourScenes";
 import { LinkHotspot, MarzipanoScene } from "@/lib/types/pano";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot, type Root } from "react-dom/client";
@@ -55,6 +54,7 @@ export default function TourViewer({
   const {
     currentSceneId,
     currentScene,
+    tourScenes,
     registerScenes,
     clearScenes,
     setScene,
@@ -63,13 +63,17 @@ export default function TourViewer({
 
   const sceneById = useMemo(
     () => new Map(tourScenes.map((scene) => [scene.id, scene])),
-    [],
+    [tourScenes],
   );
 
   useEffect(() => {
     if (!sceneId) {
       hasShownMissingSceneToast.current = null;
       clearScenes();
+      return;
+    }
+
+    if (tourScenes.length === 0) {
       return;
     }
 
@@ -82,7 +86,7 @@ export default function TourViewer({
       return;
     }
 
-    if (!panoRef.current || tourScenes.length === 0) {
+    if (!panoRef.current) {
       return;
     }
 
