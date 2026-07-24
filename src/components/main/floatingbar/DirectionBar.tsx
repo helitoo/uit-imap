@@ -24,16 +24,13 @@ export default function DirectionBar() {
   const [sourceHotspot, setSourceHotspot] = useState<Hotspot | null>(null);
   const startInputRef = useRef<HTMLInputElement>(null);
 
-  // Focus the first input (Chọn điểm đầu) when mounted via HotspotDetail (where destHotspot is already set)
+  // Focus the first input (Chọn điểm đầu) when entering direction mode or setting destination hotspot
   useEffect(() => {
-    if (destHotspot) {
-      const timer = setTimeout(() => {
-        startInputRef.current?.focus();
-      }, 100);
-      return () => clearTimeout(timer);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const timer = setTimeout(() => {
+      startInputRef.current?.focus();
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [destHotspot]);
 
   // Recalculate direction whenever start/end change
   useEffect(() => {

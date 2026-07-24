@@ -20,18 +20,12 @@ export default function LoadingScreen({
           <span className="absolute inset-0 rounded-2xl" />
         </div>
 
-        <div className="text-center">
-          <p className="text-white/60 text-sm font-medium">
-            Bản đồ 3D trực tuyến - Trường Đại học Công nghệ thông tin
-          </p>
-        </div>
-
         {/* Loading bar */}
         <div className="w-48 h-1 bg-white/20 rounded-full overflow-hidden">
           <div
-            className="h-full bg-white rounded-full animate-[loading_1.5s_ease-in-out_infinite]"
+            className="h-full w-1/3 bg-white rounded-full"
             style={{
-              animation: "loading 1.5s ease-in-out infinite",
+              animation: "loading 1.2s linear infinite",
             }}
           />
         </div>

@@ -22,8 +22,8 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
   // Calc layout
 
   const { isMobile } = useWindow();
-  const { hotspotId, roomId } = useParams<{
-    hotspotId?: string;
+  const { id, roomId } = useParams<{
+    id?: string;
     roomId?: string;
   }>();
   const navigate = useNavigate();
@@ -78,8 +78,10 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
   const [events, setEvents] = useState<Event[]>([]);
 
   const handleSelectRoom = (room: Room) => {
-    if (!["stairs", "warehouse", "wc", "tech"].includes(room.category)) {
-      navigate(`/hotspot/${hotspotId}/${room.id}`);
+    if (!["stairs", "warehouse", "wc", "tech"].includes(room.category || ""))
+      setSelectedRoom(room);
+    if (!["stairs", "warehouse", "wc", "tech"].includes(room.category || "")) {
+      navigate(`/hotspot/${id}/${room.id}`);
     }
   };
 
@@ -194,7 +196,7 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
           if (!open) {
             setSelectedRoom(null);
             if (roomId) {
-              navigate(`/hotspot/${hotspotId}`, { replace: true });
+              navigate(`/hotspot/${id}`, { replace: true });
             }
           }
         }}

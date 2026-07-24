@@ -70,6 +70,9 @@ function AppRoutes() {
   return (
     <ModeProvider>
       <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/hotspot/:id" element={<HomePage />} />
+        <Route path="/hotspot/:id/:roomId" element={<HomePage />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
       <TourViewer

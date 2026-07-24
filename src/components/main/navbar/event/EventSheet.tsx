@@ -384,7 +384,7 @@ function SessionSection({
 
     setSelectedHotspot(hotspot);
 
-    navigate(`/hotspot/${hotspot.id}`, {
+    navigate(`/hotspot/${hotspot.id}/${room.id}`, {
       replace: false,
     });
   };
