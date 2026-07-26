@@ -1,9 +1,43 @@
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   DialogContent,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
+
+function IntroImage({
+  src,
+  alt,
+  className,
+  skeletonClassName,
+}: {
+  src: string;
+  alt: string;
+  className: string;
+  skeletonClassName: string;
+}) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <>
+      {!loaded && <Skeleton className={skeletonClassName} />}
+      <img
+        src={src}
+        alt={alt}
+        className={cn(className, !loaded && "hidden")}
+        draggable={false}
+        onLoad={() => setLoaded(true)}
+        onError={() => setLoaded(true)}
+        ref={(el) => {
+          if (el?.complete) setLoaded(true);
+        }}
+      />
+    </>
+  );
+}
 
 export default function UitIntroContent() {
   return (
@@ -15,11 +49,11 @@ export default function UitIntroContent() {
       </DialogHeader>
       <ScrollArea className="max-h-[60vh]">
         <div className="space-y-3 text-sm text-foreground/80 leading-relaxed pr-4 text-justify">
-          <img
+          <IntroImage
             src="uit-20-years-logo.png"
             alt="UIT"
             className="w-1/3 mx-auto"
-            draggable={false}
+            skeletonClassName="w-1/3 h-16 mx-auto rounded-lg"
           />
           <p>
             <strong className="text-foreground">UIT</strong>{" "}
@@ -32,11 +66,11 @@ export default function UitIntroContent() {
             là hướng vào các ứng dụng nhằm góp phần đẩy mạnh sự nghiệp công
             nghiệp hóa, hiện đại hóa đất nước.
           </p>
-          <img
+          <IntroImage
             src="citd-logo.jpg"
             alt="CITD"
             className="w-1/3 mx-auto"
-            draggable={false}
+            skeletonClassName="w-1/3 h-16 mx-auto rounded-lg"
           />
           <p>
             <strong className="text-foreground">
@@ -66,3 +100,4 @@ export default function UitIntroContent() {
     </DialogContent>
   );
 }
+

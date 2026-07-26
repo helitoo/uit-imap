@@ -9,8 +9,40 @@ import WebIntroContent from "@/components/main/navbar/content/WebIntroContent";
 import UitIntroContent from "@/components/main/navbar/content/UitIntroContent";
 import SearchSheet from "@/components/main/search/SearchSheet";
 import { useEvent } from "@/contexts/eventContext";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type ActivePanel = "search" | "event" | "transport" | null;
+
+function NavbarLogo({
+  src,
+  alt,
+  className,
+  skeletonClassName,
+}: {
+  src: string;
+  alt: string;
+  className: string;
+  skeletonClassName: string;
+}) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <>
+      {!loaded && <Skeleton className={skeletonClassName} />}
+      <img
+        src={src}
+        alt={alt}
+        className={cn(className, !loaded && "hidden")}
+        draggable={false}
+        onLoad={() => setLoaded(true)}
+        onError={() => setLoaded(true)}
+        ref={(el) => {
+          if (el?.complete) setLoaded(true);
+        }}
+      />
+    </>
+  );
+}
 
 export default function Navbar() {
   const [activePanel, setActivePanel] = useState<ActivePanel>(null);
@@ -24,17 +56,17 @@ export default function Navbar() {
     <>
       {/* Container Logo: Giữ tỉ lệ hợp lý giữa mobile và desktop */}
       <div className="flex md:flex-col gap-2 items-center justify-center mb-1 md:mb-2 ml-5 md:ml-0">
-        <img
+        <NavbarLogo
           src="uit-20-years-logo.png"
           alt="UIT 20th"
           className="h-5 md:w-12 md:h-auto object-contain rounded-lg"
-          draggable={false}
+          skeletonClassName="h-5 w-10 md:w-12 md:h-12 rounded-lg"
         />
-        <img
+        <NavbarLogo
           src="/logo.png"
           alt="UIT iMAP"
           className="h-5 md:w-12 md:h-auto object-contain rounded-lg"
-          draggable={false}
+          skeletonClassName="h-5 w-10 md:w-12 md:h-12 rounded-lg"
         />
       </div>
 

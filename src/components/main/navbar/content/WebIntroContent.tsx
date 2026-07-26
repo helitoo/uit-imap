@@ -1,9 +1,46 @@
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   DialogContent,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
+
+function IntroImage({
+  src,
+  alt,
+  className,
+  skeletonClassName,
+  title,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  skeletonClassName?: string;
+  title?: string;
+}) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <>
+      {!loaded && <Skeleton className={skeletonClassName || className} />}
+      <img
+        src={src}
+        alt={alt}
+        title={title}
+        className={cn(className, !loaded && "hidden")}
+        draggable={false}
+        onLoad={() => setLoaded(true)}
+        onError={() => setLoaded(true)}
+        ref={(el) => {
+          if (el?.complete) setLoaded(true);
+        }}
+      />
+    </>
+  );
+}
 
 export default function WebIntroContent() {
   return (
@@ -13,11 +50,11 @@ export default function WebIntroContent() {
       </DialogHeader>
       <ScrollArea className="max-h-[60vh]">
         <div className="space-y-3 text-sm text-foreground/80 leading-relaxed pr-4 text-justify">
-          <img
+          <IntroImage
             src="logo.png"
             alt="UIT"
             className="w-1/2 mx-auto"
-            draggable={false}
+            skeletonClassName="w-1/2 h-20 mx-auto rounded-lg"
           />
           <p>
             <strong className="text-foreground">UIT iMAP</strong> là hệ thống
@@ -26,7 +63,12 @@ export default function WebIntroContent() {
           </p>
           <div className="space-y-2 pt-3 text-justify">
             <div className="overflow-hidden rounded-lg border bg-card">
-              <img src="demo.gif" className="w-full" alt="Video demo" draggable={false} />
+              <IntroImage
+                src="demo.gif"
+                alt="Video demo"
+                className="w-full"
+                skeletonClassName="w-full h-44 rounded-lg"
+              />
             </div>
             <div className="text-xs text-muted-foreground text-left space-y-2">
               <p className="font-medium text-foreground">Hướng dẫn tương tác:</p>
@@ -41,51 +83,52 @@ export default function WebIntroContent() {
             </div>
           </div>
 
-          <p className="flex flex-col text-xs text-muted-foreground border-t pt-3 gap-2">
-            <div className="flex gap-1">
-              <img
+          <div className="flex flex-col text-xs text-muted-foreground border-t pt-3 gap-2">
+            <div className="flex gap-1 items-center">
+              <IntroImage
                 src="uit-logo.jpg"
                 alt="UIT logo"
-                draggable={false}
                 className="w-4 object-contain"
+                skeletonClassName="w-4 h-4 rounded shrink-0"
               />
               <span>Phát triển bởi sinh viên UIT</span>
             </div>
 
             <a
               href="https://github.com/helitoo/uit-imap"
-              className="flex gap-1 text-main"
+              className="flex gap-1 text-main items-center"
               target="_blank"
               title="Github repository"
             >
-              <img
+              <IntroImage
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
                 alt="Github logo"
                 className="size-4"
-                draggable="false"
+                skeletonClassName="size-4 rounded shrink-0"
               />
               <span className="hover:underline">helitoo/uit-imap</span>
             </a>
 
             <a
               href="https://skfb.ly/pKtHO"
-              className="flex gap-1 text-main"
+              className="flex gap-1 text-main items-center"
               target="_blank"
               title="Sketchfab model"
             >
-              <img
+              <IntroImage
                 src="https://static.sketchfab.com/img/press/logos/sketchfab-logo.svg"
                 alt="Sketchfab logo"
                 className="size-4"
-                draggable="false"
+                skeletonClassName="size-4 rounded shrink-0"
               />
               <span className="hover:underline">
                 University of Information Technology - UIT
               </span>
             </a>
-          </p>
+          </div>
         </div>
       </ScrollArea>
     </DialogContent>
   );
 }
+

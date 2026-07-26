@@ -3,12 +3,34 @@ import { cn } from "@/lib/utils";
 import WMO_CODES from "@/lib/consts/wmoCodes";
 import { useWeather } from "@/contexts/weatherContext";
 import { useEvent } from "@/contexts/eventContext";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface CrowdInfo {
   density: number;
   label: string;
   bg: string;
   text: string;
+}
+
+function WeatherItemImage({ src, alt }: { src: string; alt: string }) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <>
+      {!loaded && <Skeleton className="size-10 rounded-md shrink-0" />}
+      <img
+        src={src}
+        alt={alt}
+        className={cn("size-10 object-contain", !loaded && "hidden")}
+        draggable={false}
+        onLoad={() => setLoaded(true)}
+        onError={() => setLoaded(true)}
+        ref={(el) => {
+          if (el?.complete) setLoaded(true);
+        }}
+      />
+    </>
+  );
 }
 
 function getLabelNColorFormDensity(density: number) {
@@ -57,12 +79,7 @@ export default function WeatherBar({ className = "" }: { className?: string }) {
                 className="flex items-center shrink-0"
                 title={info.description}
               >
-                <img
-                  src={info.image}
-                  alt={info.description}
-                  className="size-10 object-contain" // Tăng nhẹ size icon
-                  draggable={false}
-                />
+                <WeatherItemImage src={info.image} alt={info.description} />
                 <div className="flex flex-col leading-tight">
                   {" "}
                   {/* leading-tight giúp khoảng cách dòng đẹp hơn */}

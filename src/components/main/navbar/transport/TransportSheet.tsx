@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Sheet,
   SheetContent,
@@ -31,6 +33,27 @@ const getTransportInfo = (
     name: "Google Map",
   };
 };
+
+function TransportProviderImage({ src, alt }: { src: string; alt: string }) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <>
+      {!loaded && <Skeleton className="w-full h-full rounded" />}
+      <img
+        src={src}
+        alt={alt}
+        draggable={false}
+        className={cn("w-full h-full object-contain", !loaded && "hidden")}
+        onLoad={() => setLoaded(true)}
+        onError={() => setLoaded(true)}
+        ref={(el) => {
+          if (el?.complete) setLoaded(true);
+        }}
+      />
+    </>
+  );
+}
 
 interface TransportSheetProps {
   open: boolean;
@@ -123,11 +146,9 @@ export function TransportSheet({ open, onOpenChange }: TransportSheetProps) {
                             title={info.name}
                             className="w-7 h-7 p-1 bg-white border border-slate-100 rounded-md hover:border-main/50 hover:shadow-sm transition-all duration-200 flex items-center justify-center"
                           >
-                            <img
+                            <TransportProviderImage
                               src={info.url}
                               alt={info.name}
-                              draggable={false}
-                              className="w-full h-full object-contain"
                             />
                           </a>
                         );
