@@ -24,7 +24,7 @@ export default function DefaultBar() {
     <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex flex-row items-center justify-between gap-3 mx-5">
       <div className="flex flex-col lg:flex-row gap-1 md:gap-3">
         <SearchInput
-          className="bg-white shadow-md rounded-full pl-3 pr-1 py-2 w-64 lg:w-80 h-10 items-center border border-gray-100 flex-shrink-0"
+          className="bg-white shadow-md rounded-full pl-4 pr-1.5 w-64 lg:w-80 h-10 items-center border border-gray-100 flex-shrink-0"
           onClickRes={onClickRes}
         />
         <WeatherBar className="bg-white shadow-md rounded-full px-5 py-2 w-64 lg:w-80 h-10 border border-gray-100 flex-shrink-0" />

@@ -22,12 +22,12 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     {
       showDirectionIcon = true,
       className = "",
-      onClickRes = (room: Room) => { },
+      onClickRes = (room: Room) => {},
       defaultRoom = null,
       initText = "",
       placeholder = "Tìm phòng hoặc địa điểm...",
     },
-    ref
+    ref,
   ) => {
     const [searchQuery, setSearchQuery] = useState(
       initText || defaultRoom?.name || "",
@@ -72,7 +72,8 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       };
 
       document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
     const handleSelectRoom = (r: Room) => {
@@ -87,7 +88,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         ref={containerRef}
         className={cn(
           "relative flex items-center transition-all duration-200 focus-within:border-main focus-within:ring-1 focus-within:ring-main",
-          className
+          className,
         )}
       >
         {/* Input chiếm toàn bộ không gian còn lại */}
@@ -110,24 +111,26 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         />
 
         {/* Cụm Icon bên phải */}
-        <div className="flex items-center gap-2 ml-2 pl-2">
+        <div className="flex items-center gap-1 shrink-0">
           <Button
+            type="button"
             variant="ghost"
-            size="sm"
-            className="text-gray-500 hover:text-main rounded-full transition-colors"
+            size="icon"
+            className="h-7 w-7 rounded-full text-gray-500 hover:text-main hover:bg-slate-100 transition-colors p-0 flex items-center justify-center shrink-0"
             title="Tìm kiếm"
           >
-            <Search className="w-5 h-5" />
+            <Search className="w-4 h-4" />
           </Button>
           {showDirectionIcon && (
             <Button
+              type="button"
               variant="ghost"
-              size="sm"
-              className="hover:text-main rounded-full transition-colors text-main"
+              size="icon"
+              className="h-7 w-7 rounded-full text-gray-500 hover:bg-main/10 hover:text-main transition-all duration-200 p-0 flex items-center justify-center shrink-0 shadow-xs"
               title="Dẫn đường"
               onClick={() => setUsingMode("direction")}
             >
-              <CornerUpRight className="w-5 h-5" />
+              <CornerUpRight className="w-4 h-4" />
             </Button>
           )}
         </div>
@@ -137,37 +140,36 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
           <div className="absolute top-[calc(100%+8px)] left-0 right-0 bg-white border border-gray-100 rounded-2xl shadow-xl z-50 overflow-y-auto overflow-x-hidden">
             {topMatches.length > 0
               ? topMatches.map(({ r, score }) => (
-                <button
-                  key={r.id}
-                  onClick={() => handleSelectRoom(r)}
-                  className="w-full px-5 py-3 text-left hover:bg-slate-50 transition-colors border-b border-gray-50 last:border-b-0"
-                >
-                  <div className="font-semibold text-gray-900">{r.name}</div>
-                  {r.description && (
-                    <div className="text-sm text-gray-500 truncate">
-                      {r.description}
-                    </div>
-                  )}
-                  {r.belongsTo && r.floor && (
-                    <div className="font-sm text-gray-400 truncate">
-                      {getHotspotById(r.belongsTo)?.name} • Tầng {r.floor}
-                    </div>
-                  )}
-                </button>
-              ))
+                  <button
+                    key={r.id}
+                    onClick={() => handleSelectRoom(r)}
+                    className="w-full px-5 py-3 text-left hover:bg-slate-50 transition-colors border-b border-gray-50 last:border-b-0"
+                  >
+                    <div className="font-semibold text-gray-900">{r.name}</div>
+                    {r.description && (
+                      <div className="text-sm text-gray-500 truncate">
+                        {r.description}
+                      </div>
+                    )}
+                    {r.belongsTo && r.floor && (
+                      <div className="font-sm text-gray-400 truncate">
+                        {getHotspotById(r.belongsTo)?.name} • Tầng {r.floor}
+                      </div>
+                    )}
+                  </button>
+                ))
               : searchQuery.trim() && (
-                <div className="p-4 text-center text-gray-400 text-sm">
-                  Không tìm thấy kết quả
-                </div>
-              )}
+                  <div className="p-4 text-center text-gray-400 text-sm">
+                    Không tìm thấy kết quả
+                  </div>
+                )}
           </div>
         )}
       </div>
     );
-  }
+  },
 );
 
 SearchInput.displayName = "SearchInput";
 
 export default SearchInput;
-

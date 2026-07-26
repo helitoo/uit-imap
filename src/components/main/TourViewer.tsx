@@ -48,6 +48,7 @@ export default function TourViewer({
   const panoRef = useRef<HTMLDivElement | null>(null);
   const viewerRef = useRef<{ destroy: () => void } | null>(null);
   const hotspotRootsRef = useRef<Root[]>([]);
+  const selectedSceneRef = useRef<HTMLButtonElement | null>(null);
   const hasShownMissingSceneToast = useRef<string | null>(null);
   const [isSceneMenuOpen, setIsSceneMenuOpen] = useState(false);
   // const [isRoadmapOpen, setIsRoadmapOpen] = useState(true);
@@ -113,7 +114,7 @@ export default function TourViewer({
                 type="button"
                 onClick={handleClick}
                 className={cn(
-                  "group relative grid size-11 place-items-center rounded-full border-2 border-white/85 bg-sky-500/90 text-white shadow-[0_10px_26px_rgba(0,0,0,0.28)] transition hover:scale-105 hover:bg-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
+                  "group relative grid size-8 place-items-center rounded-full border-2 border-white/85 bg-sky-500/50 text-white shadow-[0_10px_26px_rgba(0,0,0,0.28)] transition hover:scale-105 hover:bg-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
                 )}
                 style={{ transform: `rotate(${hotspot.rotation}rad)` }}
                 aria-label={`Go to ${hotspotName}`}
@@ -199,6 +200,15 @@ export default function TourViewer({
     targetScene.view.setParameters(targetScene.data.initialViewParameters);
     targetScene.scene.switchTo();
   }, [currentSceneId]);
+
+  useEffect(() => {
+    if (isSceneMenuOpen && selectedSceneRef.current) {
+      selectedSceneRef.current.scrollIntoView({
+        block: "nearest",
+        inline: "nearest",
+      });
+    }
+  }, [isSceneMenuOpen, currentSceneId]);
 
   const goToAdjacentScene = (direction: "next" | "prev") => {
     const index = tourScenes.findIndex((scene) => scene.id === currentSceneId);
@@ -302,20 +312,24 @@ export default function TourViewer({
         aria-label="Scenes"
       >
         <div className="overflow-y-auto pr-0.5 space-y-1 custom-scrollbar">
-          {tourScenes.map((scene) => (
-            <Button
-              key={scene.id}
-              variant="ghost"
-              className={cn(
-                "flex h-9 w-full items-center justify-center sm:justify-start rounded-md border border-transparent px-2.5 text-white hover:bg-white/10 hover:text-white",
-                scene.id === currentSceneId &&
-                  "border-sky-300/70 bg-sky-500/90 hover:bg-sky-500/90 hover:text-white",
-              )}
-              onClick={() => onSceneChange(scene.id)}
-            >
-              <span className="truncate">{scene.name}</span>
-            </Button>
-          ))}
+          {tourScenes.map((scene) => {
+            const isSelected = scene.id === currentSceneId;
+            return (
+              <Button
+                key={scene.id}
+                ref={isSelected ? selectedSceneRef : null}
+                variant="ghost"
+                className={cn(
+                  "flex h-9 w-full items-center justify-center sm:justify-start rounded-md border border-transparent px-2.5 text-white hover:bg-white/10 hover:text-white",
+                  isSelected &&
+                    "border-sky-300/70 bg-sky-500/90 hover:bg-sky-500/90 hover:text-white",
+                )}
+                onClick={() => onSceneChange(scene.id)}
+              >
+                <span className="truncate">{scene.name}</span>
+              </Button>
+            );
+          })}
         </div>
       </nav>
     </main>

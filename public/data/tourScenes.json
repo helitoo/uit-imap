@@ -1761,8 +1761,8 @@
     },
     "linkHotspots": [
       {
-        "yaw": 2.7702076958226103,
-        "pitch": 0.06650597921898083,
+        "yaw": 2.7202076958226103,
+        "pitch": -0.02079402078,
         "rotation": 0,
         "target": "36-phng-mac-ta-nh-c"
       },
@@ -1773,14 +1773,20 @@
         "target": "29-snh-ta-nh-c"
       },
       {
-        "yaw": 1.3385027641781004,
-        "pitch": 0.058149930946376216,
+        "yaw": 1.1617755416890427,
+        "pitch": 0.09319889983,
         "rotation": 4.71238898038469,
-        "target": "35-phng-hc-ta-nh-c"
+        "target": "35-phng-hc-ta-nh-c-1"
+      },
+      {
+        "yaw": 1.2569318214911187,
+        "pitch": 0.0132073821,
+        "rotation": 10.995574287564278,
+        "target": "35-phng-hc-ta-nh-c-2"
       },
       {
         "yaw": 1.956470801040104,
-        "pitch": 0.054336581656130534,
+        "pitch": -0.03296341834,
         "rotation": 0.7853981633974483,
         "target": "37-phng-my-tnh-ta-nh-c"
       }
@@ -1890,8 +1896,8 @@
     "infoHotspots": []
   },
   {
-    "id": "35-phng-hc-ta-nh-c",
-    "name": "Phòng học tòa nhà C",
+    "id": "35-phng-hc-ta-nh-c-1",
+    "name": "Phòng học tòa nhà C (1)",
     "levels": [
       {
         "tileSize": 256,
@@ -1925,6 +1931,48 @@
       {
         "yaw": -2.463045341660454,
         "pitch": 0.050458848775470244,
+        "rotation": 1.5707963267948966,
+        "target": "32-hnh-lang-tng-1-ta-nh-c"
+      }
+    ],
+    "infoHotspots": []
+  },
+  {
+    "id": "35-phng-hc-ta-nh-c-2",
+    "name": "Phòng học tòa nhà C (2)",
+    "levels": [
+      {
+        "tileSize": 256,
+        "size": 256,
+        "fallbackOnly": true
+      },
+      {
+        "tileSize": 512,
+        "size": 512
+      },
+      {
+        "tileSize": 512,
+        "size": 1024
+      },
+      {
+        "tileSize": 512,
+        "size": 2048
+      },
+      {
+        "tileSize": 512,
+        "size": 4096
+      }
+    ],
+    "faceSize": 2976,
+    "initialViewParameters": {
+      "yaw": -2.973100494835773,
+      "pitch": -0.025296202868897666,
+      "fov": 1.3093574628562612
+    },
+    "linkHotspots": [
+      {
+        "yaw": 0.47585354049738804,
+        "pitch": 0.004862855070072669,
         "rotation": 1.5707963267948966,
         "target": "32-hnh-lang-tng-1-ta-nh-c"
       }

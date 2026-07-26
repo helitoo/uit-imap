@@ -68,7 +68,7 @@ export default function DirectionBar() {
           </div>
           <SearchInput
             ref={startInputRef}
-            className="bg-white shadow-md rounded-full px-3 py-2 w-full md:w-80 h-10 border border-gray-100"
+            className="bg-white shadow-md rounded-full pl-4 pr-1.5 w-full md:w-80 h-10 border border-gray-100"
             placeholder="Chọn điểm đầu"
             onClickRes={handleChooseSourceHotspot}
             showDirectionIcon={false}
@@ -87,7 +87,7 @@ export default function DirectionBar() {
             <MapPin />{" "}
           </div>
           <SearchInput
-            className="bg-white shadow-md rounded-full px-3 py-2 w-full md:w-80 h-10 border border-gray-100"
+            className="bg-white shadow-md rounded-full pl-4 pr-1.5 w-full md:w-80 h-10 border border-gray-100"
             placeholder="Chọn điểm đến"
             onClickRes={handleChooseDestHotspot}
             initText={destHotspot?.name}
