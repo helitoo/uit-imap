@@ -9,6 +9,17 @@
 - **Developer / Author**: University of Information Technology - VNU-HCM (UIT)
 - **Copyright**: University of Information Technology - VNU-HCM (UIT)
 
+## Routes & Features
+
+- [/](/): Interactive 3D campus map and main navigation hub.
+- [/uit](/uit): Introduction and overview of the University of Information Technology (UIT).
+- [/imap](/imap): Information about the UIT iMap application and its features.
+- [/transport](/transport): Transport schedule and bus routes accessing the campus.
+- [/schedule](/schedule): Event schedule and timetable for classrooms and campus locations.
+- [/hotspot/:id](/hotspot/:id): Detailed information for specific campus hotspots and buildings.
+- [/hotspot/:id/:roomId](/hotspot/:id/:roomId): Detailed information for specific rooms within campus hotspots.
+- [/scene/:sceneId](/scene/:sceneId): 360-degree panoramic virtual tour for specific campus scenes.
+
 ## Contact Information
 
 - [uit.edu.vn](https://www.uit.edu.vn/): Official website of the University of Information Technology.

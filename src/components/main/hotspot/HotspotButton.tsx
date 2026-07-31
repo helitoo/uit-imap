@@ -29,7 +29,7 @@ export default function HotspotButton({
     if (usingMode === "default") {
       setSelectedHotspot(hotspot);
       if (DEFAULT_HOTSPOT_IDS.includes(hotspot.id))
-        navigate(`/hotspot/${hotspot.id}`, { replace: false });
+        navigate(`/hotspot/${hotspot.id}`);
     }
   };
 

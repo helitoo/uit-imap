@@ -50,7 +50,9 @@ function AppRoutes() {
   const handleSceneChange = useCallback(
     (nextSceneId: string) => {
       navigate(`/scene/${nextSceneId}`, {
-        state: { from: previousPath.startsWith("/scene/") ? "/" : previousPath },
+        state: {
+          from: previousPath.startsWith("/scene/") ? "/" : previousPath,
+        },
       });
     },
     [navigate, previousPath],
@@ -64,7 +66,10 @@ function AppRoutes() {
 
   const isTourRoute = Boolean(sceneId);
   const isLoading =
-    hotspotsLoading || roomsLoading || eventLoading || (isTourRoute && !tourReady);
+    hotspotsLoading ||
+    roomsLoading ||
+    eventLoading ||
+    (isTourRoute && !tourReady);
   const hasError = hotspotsError || roomsError;
 
   return (
@@ -73,6 +78,10 @@ function AppRoutes() {
         <Route path="/" element={<HomePage />} />
         <Route path="/hotspot/:id" element={<HomePage />} />
         <Route path="/hotspot/:id/:roomId" element={<HomePage />} />
+        <Route path="/uit" element={<HomePage />} />
+        <Route path="/imap" element={<HomePage />} />
+        <Route path="/transport" element={<HomePage />} />
+        <Route path="/schedule" element={<HomePage />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
       <TourViewer
@@ -81,9 +90,7 @@ function AppRoutes() {
         onExit={handleExitTour}
         onSceneChange={handleSceneChange}
       />
-      {isLoading && (
-        <LoadingScreen />
-      )}
+      {isLoading && <LoadingScreen />}
       {hasError && (
         <LoadingScreen message={`Loi: ${hotspotsError} ${roomsError}`} />
       )}
