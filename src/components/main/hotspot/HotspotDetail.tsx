@@ -74,7 +74,7 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
         className="w-full md:w-1/2 sm:w-3/4 p-0 gap-0 flex flex-col border-r border-border/50"
       >
         {/* HEADER */}
-        <div className="bg-main text-white px-3 py-3 shrink-0">
+        <div className="bg-main text-white p-3 shrink-0 card-header">
           <SheetHeader className="text-left space-y-1">
             <SheetTitle className="text-base md:text-lg leading-snug text-white">
               {hotspot.name}

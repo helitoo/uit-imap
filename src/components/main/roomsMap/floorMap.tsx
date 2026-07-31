@@ -5,18 +5,24 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Room } from "@/lib/types/room";
 import { CATEGORY_COLORS, CATEGORY_LABELS } from "@/lib/types/category";
 
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 import { useWindow } from "@/contexts/windowContext";
 import { useEvent } from "@/contexts/eventContext";
+import { useHotspots } from "@/contexts/hotspotsContext";
+import { useMode } from "@/contexts/modeContext";
 import { Event } from "@/lib/types/event";
-import { CalendarX, Clock, Info, Users } from "lucide-react";
+import {
+  CalendarX,
+  Clock,
+  Info,
+  Navigation,
+  Share2,
+  Users,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 export default function FloorMap({ rooms }: { rooms: Room[] }) {
   // Calc layout
@@ -74,8 +80,34 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
 
   // Event
   const { loading, getTodayEventsByRoomName } = useEvent();
+  const {
+    selectedHotspot,
+    setSelectedHotspot,
+    setDestHotspot,
+    getHotspotById,
+  } = useHotspots();
+  const { setUsingMode } = useMode();
+
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
   const [events, setEvents] = useState<Event[]>([]);
+
+  const handleShare = () => {
+    const url = window.location.href;
+
+    navigator.clipboard
+      .writeText(url)
+      .then(() => toast.success("Đã sao chép đường dẫn!"))
+      .catch(() => toast.error("Không thể sao chép đường dẫn."));
+  };
+
+  const handleDirection = () => {
+    const hotspot = selectedHotspot || (id ? getHotspotById(id) : null);
+    if (hotspot) {
+      setDestHotspot(hotspot);
+      setSelectedHotspot(null);
+      setUsingMode("direction");
+    }
+  };
 
   const handleSelectRoom = (room: Room) => {
     if (!["stairs", "warehouse", "wc", "tech"].includes(room.category || ""))
@@ -209,10 +241,10 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
           }
           visuallyHiddenTitle
           visuallyHiddenDescription
-          className="max-w-md p-0 overflow-hidden gap-0"
+          className="max-w-md p-0 overflow-hidden gap-0 flex flex-col max-h-[85vh]"
         >
-          <div className="p-6 pb-4 bg-slate-50/50 border-b">
-            <div className="flex flex-col gap-1">
+          <div className="p-3 card-header text-white shrink-0">
+            <div className="flex flex-col">
               <div className="text-xl font-bold">{selectedRoom?.name}</div>
               {selectedRoom?.description && (
                 <p className="line-clamp-3 leading-relaxed text-justify text-sm">
@@ -222,7 +254,7 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
             </div>
           </div>
 
-          <div className="p-6 space-y-6 max-h-[80vh] overflow-y-auto">
+          <div className="p-6 space-y-6 overflow-y-auto flex-1 min-h-0">
             {/* Section: Thông tin phòng */}
             {selectedRoom && (
               <div className="grid grid-cols-2 gap-4 text-sm">
@@ -326,6 +358,36 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
                 )}
               </div>
             </div>
+          </div>
+
+          {/* FOOTER */}
+          <div
+            className="
+              shrink-0
+              border-t
+              border-border/50
+              p-2
+              grid
+              grid-cols-2
+              gap-2
+              bg-background/80
+              backdrop-blur
+            "
+          >
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-1.5"
+              onClick={handleShare}
+            >
+              <Share2 className="w-3.5 h-3.5" />
+              Chia sẻ
+            </Button>
+
+            <Button size="sm" className="gap-1.5" onClick={handleDirection}>
+              <Navigation className="w-3.5 h-3.5" />
+              Dẫn đường
+            </Button>
           </div>
         </DialogContent>
       </Dialog>

@@ -57,7 +57,7 @@ export default function Navbar() {
       {/* Container Logo: Giữ tỉ lệ hợp lý giữa mobile và desktop */}
       <div className="flex md:flex-col gap-2 items-center justify-center mb-1 md:mb-2 ml-5 md:ml-0">
         <NavbarLogo
-          src="uit-20-years-logo.png"
+          src="uit-logo.png"
           alt="UIT 20th"
           className="h-5 md:w-12 md:h-auto object-contain rounded-lg"
           skeletonClassName="h-5 w-10 md:w-12 md:h-12 rounded-lg"

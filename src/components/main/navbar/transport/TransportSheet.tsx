@@ -13,9 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import type { Transport } from "@/lib/types/transport";
 
-const getTransportInfo = (
-  url: string,
-): { url: string; name: string } => {
+const getTransportInfo = (url: string): { url: string; name: string } => {
   if (url.includes("busmap.vn")) {
     return {
       url: "https://upload.wikimedia.org/wikipedia/vi/9/94/BusMap_Icon.png",
@@ -94,9 +92,8 @@ export function TransportSheet({ open, onOpenChange }: TransportSheetProps) {
         className="p-0 flex flex-col glass-panel border-l border-border/50 w-full sm:w-1/2 h-dvh"
       >
         {/* Header */}
-        <SheetHeader className="p-4 border-b border-border/50 shrink-0 bg-white">
-          <SheetTitle className="text-lg font-bold text-slate-800 flex items-center gap-2">
-            <Bus className="w-5 h-5 text-main" />
+        <SheetHeader className="p-3 shrink-0 card-header">
+          <SheetTitle className="text-lg font-bold text-white flex items-center gap-2">
             Tuyến đường & Di chuyển
           </SheetTitle>
         </SheetHeader>
