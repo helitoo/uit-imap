@@ -172,6 +172,10 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent
+        title="Lịch sự kiện"
+        description="Bảng tổng hợp lịch sự kiện tại các tòa nhà trong ngày"
+        visuallyHiddenTitle
+        visuallyHiddenDescription
         side="right"
         showOverlay={false}
         className="

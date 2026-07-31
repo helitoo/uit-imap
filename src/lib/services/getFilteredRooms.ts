@@ -8,14 +8,14 @@ export function getFilteredRooms(filter: Filter, rooms: Room[]): Room[] {
   // Build a map of building id -> building name for belongsTo matching
   const buildingNames: Record<string, string> = {};
   rooms.forEach((h) => {
-    if (h.categories.includes("building")) {
+    if ((h as any).categories?.includes("building") || (h.category as string) === "building") {
       buildingNames[h.id] = h.name;
     }
   });
 
   return rooms.filter((h) => {
     // Category filter
-    if (filter.category && !h.categories.includes(filter.category))
+    if (filter.category && h.category !== filter.category)
       return false;
 
     // Floor filter

@@ -237,6 +237,7 @@ export default function TourViewer({
           : "pointer-events-none opacity-0",
       )}
       aria-hidden={!isOpen}
+      inert={!isOpen ? "" : undefined}
     >
       <div
         ref={panoRef}
@@ -310,6 +311,8 @@ export default function TourViewer({
             : "pointer-events-none -translate-x-full opacity-0",
         )}
         aria-label="Scenes"
+        aria-hidden={!isSceneMenuOpen}
+        inert={!isSceneMenuOpen ? "" : undefined}
       >
         <div className="overflow-y-auto pr-0.5 space-y-1 custom-scrollbar">
           {tourScenes.map((scene) => {

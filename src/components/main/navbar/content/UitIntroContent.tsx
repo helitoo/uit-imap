@@ -41,7 +41,11 @@ function IntroImage({
 
 export default function UitIntroContent() {
   return (
-    <DialogContent className="max-w-md">
+    <DialogContent
+      description="Thông tin tổng quan về Trường Đại học Công nghệ thông tin và Trung tâm CITD"
+      visuallyHiddenDescription
+      className="max-w-md"
+    >
       <DialogHeader>
         <DialogTitle className="text-main">
           Trường Đại học Công nghệ thông tin - ĐHQG-HCM

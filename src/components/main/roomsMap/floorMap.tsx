@@ -201,7 +201,16 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
           }
         }}
       >
-        <DialogContent className="max-w-md p-0 overflow-hidden gap-0">
+        <DialogContent
+          title={selectedRoom?.name || "Thông tin phòng"}
+          description={
+            selectedRoom?.description ||
+            "Chi tiết thông tin phòng và danh sách sự kiện tại đây"
+          }
+          visuallyHiddenTitle
+          visuallyHiddenDescription
+          className="max-w-md p-0 overflow-hidden gap-0"
+        >
           <div className="p-6 pb-4 bg-slate-50/50 border-b">
             <div className="flex flex-col gap-1">
               <div className="text-xl font-bold">{selectedRoom?.name}</div>

@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 import { cva, type VariantProps } from "class-variance-authority";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -45,6 +46,10 @@ interface SheetContentProps
     React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
     VariantProps<typeof sheetVariants> {
   showOverlay?: boolean;
+  title?: string;
+  description?: string;
+  visuallyHiddenTitle?: boolean;
+  visuallyHiddenDescription?: boolean;
 }
 
 const SheetContent = React.forwardRef<
@@ -52,28 +57,59 @@ const SheetContent = React.forwardRef<
   SheetContentProps
 >(
   (
-    { side = "right", className, children, showOverlay = true, ...props },
+    {
+      side = "right",
+      className,
+      children,
+      showOverlay = true,
+      title,
+      description,
+      visuallyHiddenTitle,
+      visuallyHiddenDescription,
+      ...props
+    },
     ref,
-  ) => (
-    <SheetPortal>
-      {showOverlay && <SheetOverlay />}
-      <SheetPrimitive.Content
-        ref={ref}
-        className={cn(
-          sheetVariants({ side }),
-          "bg-white supports-[backdrop-filter]:bg-white",
-          className,
-        )}
-        {...props}
-      >
-        <SheetPrimitive.Close className="z-50 absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary ">
-          <X className="h-4 w-4" />
-          <span className="sr-only">Close</span>
-        </SheetPrimitive.Close>
-        {children}
-      </SheetPrimitive.Content>
-    </SheetPortal>
-  ),
+  ) => {
+    const TitleWrapper = visuallyHiddenTitle
+      ? VisuallyHidden.Root
+      : React.Fragment;
+    const DescWrapper = visuallyHiddenDescription
+      ? VisuallyHidden.Root
+      : React.Fragment;
+
+    return (
+      <SheetPortal>
+        {showOverlay && <SheetOverlay />}
+        <SheetPrimitive.Content
+          ref={ref}
+          className={cn(
+            sheetVariants({ side }),
+            "bg-white supports-[backdrop-filter]:bg-white",
+            className,
+          )}
+          {...props}
+        >
+          {title && (
+            <TitleWrapper {...(visuallyHiddenTitle ? { asChild: true } : {})}>
+              <SheetTitle>{title}</SheetTitle>
+            </TitleWrapper>
+          )}
+          {description && (
+            <DescWrapper
+              {...(visuallyHiddenDescription ? { asChild: true } : {})}
+            >
+              <SheetDescription>{description}</SheetDescription>
+            </DescWrapper>
+          )}
+          <SheetPrimitive.Close className="z-50 absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary ">
+            <X className="h-4 w-4" />
+            <span className="sr-only">Close</span>
+          </SheetPrimitive.Close>
+          {children}
+        </SheetPrimitive.Content>
+      </SheetPortal>
+    );
+  },
 );
 SheetContent.displayName = SheetPrimitive.Content.displayName;
 

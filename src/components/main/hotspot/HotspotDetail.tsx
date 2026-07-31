@@ -65,6 +65,10 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
   return (
     <Sheet open onOpenChange={(open) => !open && handleClose()}>
       <SheetContent
+        description={
+          hotspot.description || "Thông tin chi tiết về điểm hotspot"
+        }
+        visuallyHiddenDescription
         side="left"
         showOverlay={false}
         className="w-full md:w-1/2 sm:w-3/4 p-0 gap-0 flex flex-col border-r border-border/50"

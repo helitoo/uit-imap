@@ -44,7 +44,11 @@ function IntroImage({
 
 export default function WebIntroContent() {
   return (
-    <DialogContent className="max-w-md">
+    <DialogContent
+      description="Thông tin giới thiệu về hệ thống bản đồ 3D trực tuyến UIT iMap"
+      visuallyHiddenDescription
+      className="max-w-md"
+    >
       <DialogHeader>
         <DialogTitle className="text-main">Giới thiệu UIT iMap</DialogTitle>
       </DialogHeader>

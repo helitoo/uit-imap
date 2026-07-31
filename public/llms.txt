@@ -1,0 +1,23 @@
+# UIT iMap
+
+> An interactive 3D online map for the University of Information Technology (UIT) combined with 360-degree panoramic photos. It enables students, staff, and visitors to look up classrooms and buildings, discover facilities, and navigate the campus efficiently.
+
+## Detailed Information
+
+- **Application**: UIT iMap
+- **Description**: An interactive 3D online map for the University of Information Technology (UIT) – VNU-HCM combined with 360-degree panoramic photos. It provides students, staff, and visitors with an intuitive way to navigate the campus, discover facilities, and find information about rooms and buildings.
+- **Developer / Author**: University of Information Technology - VNU-HCM (UIT)
+- **Copyright**: University of Information Technology - VNU-HCM (UIT)
+
+## Contact Information
+
+- [uit.edu.vn](https://www.uit.edu.vn/): Official website of the University of Information Technology.
+- [tuyensinh.uit.edu.vn](https://tuyensinh.uit.edu.vn/): Official admissions portal of the University of Information Technology.
+- **Address**: Quarter 34, Linh Xuan Ward, Ho Chi Minh City, Vietnam
+- **Email**: info@uit.edu.vn
+- **Phone**: (+84) 28-372-52002
+- **Fax**: (+84) 28-372-52148
+
+## Keywords
+
+Map, 3D, UIT 360, UIT, University of Information Technology, VNU-HCM

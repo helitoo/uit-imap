@@ -87,6 +87,8 @@ export function TransportSheet({ open, onOpenChange }: TransportSheetProps) {
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent
+        description="Danh sách các tuyến xe bus, metro và hướng dẫn di chuyển đến UIT"
+        visuallyHiddenDescription
         side="right"
         showOverlay={false}
         className="p-0 flex flex-col glass-panel border-l border-border/50 w-full sm:w-1/2 h-dvh"

@@ -7,7 +7,11 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function WebDirectContent() {
   return (
-    <DialogContent className="max-w-md">
+    <DialogContent
+      description="Hướng dẫn điều hướng, tìm kiếm và sử dụng các tính năng trên bản đồ UIT iMap"
+      visuallyHiddenDescription
+      className="max-w-md"
+    >
       <DialogHeader>
         <DialogTitle className="text-main">Hướng dẫn sử dụng</DialogTitle>
       </DialogHeader>

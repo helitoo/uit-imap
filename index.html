@@ -7,8 +7,50 @@
     />
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.ico" />
+    <title>UIT iMap</title>
+    <meta property="og:title" content="UIT iMap" />
+    <meta property="og:site_name" content="UIT iMap" />
+    <meta name="tweetmeme-title" content="UIT iMap" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UIT iMAP</title>
+    <meta
+      name="description"
+      content="Bản đồ 3D trường Đại học Công nghệ thông tin (UIT) kết hợp với ảnh 360 độ toàn cảnh. Cho phép tra cứu phòng học, tòa nhà, chỉ đường nhanh cho học sinh, sinh viên và khách tham quan"
+    />
+    <meta
+      property="og:description"
+      content="Bản đồ 3D trường Đại học Công nghệ thông tin (UIT) kết hợp với ảnh 360 độ toàn cảnh. Cho phép tra cứu phòng học, tòa nhà, chỉ đường nhanh cho học sinh, sinh viên và khách tham quan"
+    />
+    <meta
+      name="author"
+      content="Trường Đại học Công nghệ thông tin - ĐHQG-HCM (UIT), info@uit.edu.vn"
+    />
+    <meta property="og:image" content="og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="600" />
+    <!-- <meta property="og:url" content="https://example.com" /> -->
+    <meta property="og:type" content="website" />
+    <meta name="og:email" content="info@uit.edu.vn" />
+    <meta name="og:phone_number" content="028-372-52002" />
+    <meta name="og:fax_number" content="028-372-52148" />
+    <meta
+      name="og:street-address"
+      content="Khu phố 34, Phường Linh Xuân, Thành phố Hồ Chí Minh"
+    />
+    <meta name="og:locality" content="Thành phố Hồ Chí Minh" />
+    <meta name="og:country-name" content="Vietnam" />
+    <meta
+      name="keywords"
+      content="Map, 3D, UIT 360, UIT, Trường Đại học Công nghệ thông tin, University of Information technology, ĐHQG-HCM, VNU-HCM"
+    />
+    <meta
+      name="news_keywords"
+      content="Map, 3D, UIT 360, UIT, Trường Đại học Công nghệ thông tin, University of Information technology, ĐHQG-HCM, VNU-HCM"
+    />
+    <meta
+      name="copyright"
+      content="Trường Đại học Công nghệ thông tin - ĐHQG-HCM (UIT)"
+    />
+    <meta name="language" content="VN" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,14 +81,13 @@
         display: block;
         --poster-color: transparent;
       }
-      /* Hide model-viewer default UI elements that conflict */
       model-viewer::part(default-progress-bar) {
         display: none;
       }
     </style>
   </head>
-  <body>
-    <div id="root"></div>
+  <body class="mdl-js">
+    <main id="root"></main>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

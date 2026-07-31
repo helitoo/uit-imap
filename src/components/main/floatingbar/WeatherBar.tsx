@@ -52,7 +52,7 @@ function getWeatherInfo(code: number, isDay: boolean) {
 }
 
 export default function WeatherBar({ className = "" }: { className?: string }) {
-  const { slots } = useWeather();
+  const { slots, loading } = useWeather();
   const [crowdInfo, setCrowdInfo] = useState<CrowdInfo | undefined>(undefined);
   const { getCurrentDensity } = useEvent();
 
@@ -61,6 +61,30 @@ export default function WeatherBar({ className = "" }: { className?: string }) {
     const { label, bg, text } = getLabelNColorFormDensity(density);
     setCrowdInfo({ density, label, bg, text });
   }, [getCurrentDensity]);
+
+  if (loading) {
+    return (
+      <div
+        className={cn(
+          "flex items-center justify-center gap-2 text-muted-foreground",
+          className,
+        )}
+      >
+        <div className="flex items-center shrink-0 gap-1">
+          <Skeleton className="size-8 rounded-md shrink-0" />
+          <Skeleton className="h-3 w-10 rounded" />
+        </div>
+        <div className="flex items-center shrink-0 gap-1">
+          <Skeleton className="size-8 rounded-md shrink-0" />
+          <Skeleton className="h-3 w-10 rounded" />
+        </div>
+        <div className="hidden lg:flex items-center gap-2 pl-3 shrink-0">
+          <Skeleton className="size-3 rounded-full shrink-0" />
+          <Skeleton className="h-3 w-14 rounded" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
