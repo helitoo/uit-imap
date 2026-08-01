@@ -270,3 +270,64 @@ model-viewer {
 .animate-driver-pan-dot2 {
   animation: driver-pan-right 2.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
+
+/* Driver Popover Customization matching Dialog styles */
+.driver-popover {
+  @apply border border-border bg-background p-4  shadow-lg rounded-xl text-foreground;
+  max-width: 380px;
+}
+
+.driver-popover-title {
+  @apply text-lg font-semibold leading-snug tracking-tight text-foreground mb-2;
+}
+
+.driver-popover-description {
+  @apply text-sm text-muted-foreground leading-relaxed;
+}
+
+.driver-popover-footer {
+  @apply flex items-center justify-between;
+}
+
+.driver-popover-progress-text {
+  @apply text-xs font-medium text-muted-foreground;
+}
+
+.driver-popover-navigation-btns {
+  @apply flex items-center gap-2;
+}
+
+.driver-popover-next-btn {
+  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-main text-main-foreground hover:bg-main/90 h-9 px-4 py-2 border-0 cursor-pointer shadow-sm;
+}
+
+.driver-popover-prev-btn {
+  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground h-9 px-3 py-2 cursor-pointer;
+}
+
+.driver-popover-next-btn:disabled,
+.driver-popover-prev-btn:disabled,
+.driver-popover-btn-disabled {
+  @apply opacity-50 pointer-events-none cursor-not-allowed;
+}
+
+.driver-popover-close-btn {
+  @apply absolute right-3 top-3 z-50 rounded-full w-7 h-7 flex items-center justify-center bg-white shadow-md transition-all border border-slate-400 text-slate-400 hover:text-main focus:outline-none focus:ring-2 focus:ring-main hover:bg-slate-100 cursor-pointer;
+}
+
+/* Driver Popover Arrows matching theme background */
+.driver-popover-arrow-side-top {
+  border-top-color: hsl(var(--background)) !important;
+}
+
+.driver-popover-arrow-side-bottom {
+  border-bottom-color: hsl(var(--background)) !important;
+}
+
+.driver-popover-arrow-side-left {
+  border-left-color: hsl(var(--background)) !important;
+}
+
+.driver-popover-arrow-side-right {
+  border-right-color: hsl(var(--background)) !important;
+}

@@ -12,6 +12,7 @@ import { useEvent } from "@/contexts/eventContext";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useDriver } from "@/contexts/driverContext";
 import { useWeather } from "@/contexts/weatherContext";
+import { useMode } from "@/contexts/modeContext";
 
 function NavbarLogo({
   src,
@@ -47,6 +48,7 @@ function NavbarLogo({
 export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { usingMode } = useMode();
   const { loading: eventLoading } = useEvent();
   const { loading: weatherLoading } = useWeather();
   const { start } = useDriver();
@@ -98,6 +100,7 @@ export default function Navbar() {
               className={cn(
                 "w-full h-full flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-colors",
               )}
+              disabled={usingMode === "direction"}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -131,6 +134,7 @@ export default function Navbar() {
             "w-14 h-14 md:w-16 md:h-16 aspect-square shrink-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-colors",
             isImapOpen && "bg-blue-50 text-main",
           )}
+          disabled={usingMode === "direction"}
         >
           <Info
             className={cn(
@@ -150,6 +154,7 @@ export default function Navbar() {
             "w-14 h-14 md:w-16 md:h-16 aspect-square shrink-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-colors",
             isUitOpen && "bg-blue-50 text-main",
           )}
+          disabled={usingMode === "direction"}
         >
           <School
             className={cn(
@@ -175,6 +180,7 @@ export default function Navbar() {
                 "w-full h-full flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-all",
                 isScheduleOpen && "bg-blue-50 text-main",
               )}
+              disabled={usingMode === "direction"}
             >
               <CalendarDays
                 className={cn(
@@ -196,6 +202,7 @@ export default function Navbar() {
             "w-14 h-14 md:w-16 md:h-16 aspect-square shrink-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-all",
             isTransportOpen && "bg-blue-50 text-main",
           )}
+          disabled={usingMode === "direction"}
         >
           <Bus
             className={cn(

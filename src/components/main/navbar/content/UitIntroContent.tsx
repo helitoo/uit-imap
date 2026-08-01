@@ -184,11 +184,11 @@ export default function UitIntroContent() {
             <div className="absolute -left-8 -bottom-8 w-32 h-32 bg-white/10 rounded-full blur-2xl pointer-events-none" />
 
             {/* Floating Main Icon Sticker */}
-            <div className="absolute right-4 top-4 -rotate-12 group-hover:-rotate-6 transition-transform duration-300 bg-white/20 backdrop-blur-md border border-white/30 p-2.5 rounded-2xl shadow-lg">
+            <div className="absolute left-4 top-4 -rotate-12 group-hover:-rotate-6 transition-transform duration-300 bg-white/20 backdrop-blur-md border border-white/30 p-2.5 rounded-2xl shadow-lg">
               <Album className="size-6 text-white drop-shadow-sm" />
             </div>
 
-            <div className="pr-12">
+            <div className="pl-12">
               <h2
                 id="guide-heading"
                 className="text-lg sm:text-xl font-bold tracking-tight text-white leading-snug"
@@ -233,8 +233,8 @@ export default function UitIntroContent() {
                     className={cn(
                       "relative z-10 flex-1 py-2.5 sm:py-3 bg-white hover:bg-slate-100 transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-between gap-2.5 group/card",
                       isEven
-                        ? "-ml-4 mr-10 pl-6 sm:pl-7 pr-3 sm:pr-4 rounded-r-2xl rounded-l-full"
-                        : "-mr-4 ml- pr-6 sm:pr-7 pl-3 sm:pl-4 rounded-l-2xl rounded-r-full",
+                        ? "-ml-4 pl-6 sm:pl-7 pr-3 sm:pr-4 rounded-r-2xl rounded-l-full"
+                        : "-mr-4 pr-6 sm:pr-7 pl-3 sm:pl-4 rounded-l-2xl rounded-r-full",
                     )}
                   >
                     {/* Content text */}

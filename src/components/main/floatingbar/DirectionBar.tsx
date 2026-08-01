@@ -23,14 +23,29 @@ export default function DirectionBar() {
 
   const [sourceHotspot, setSourceHotspot] = useState<Hotspot | null>(null);
   const startInputRef = useRef<HTMLInputElement>(null);
+  const destInputRef = useRef<HTMLInputElement>(null);
+  const isFirstRender = useRef(true);
 
-  // Focus the first input (Chọn điểm đầu) when entering direction mode or setting destination hotspot
+  // Auto focus control based on render and hotspot selection status
   useEffect(() => {
-    const timer = setTimeout(() => {
-      startInputRef.current?.focus();
-    }, 100);
-    return () => clearTimeout(timer);
-  }, [destHotspot]);
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      const timer = setTimeout(() => {
+        startInputRef.current?.focus();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+
+    if (destHotspot) {
+      startInputRef.current?.blur();
+      destInputRef.current?.blur();
+    } else if (sourceHotspot) {
+      const timer = setTimeout(() => {
+        destInputRef.current?.focus();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [sourceHotspot, destHotspot]);
 
   // Recalculate direction whenever start/end change
   useEffect(() => {
@@ -87,6 +102,7 @@ export default function DirectionBar() {
             <MapPin />{" "}
           </div>
           <SearchInput
+            ref={destInputRef}
             className="bg-white shadow-md rounded-full pl-4 pr-1.5 w-full md:w-80 h-10 border border-gray-100"
             placeholder="Chọn điểm đến"
             onClickRes={handleChooseDestHotspot}

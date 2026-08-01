@@ -28,7 +28,7 @@ export const steps: DriveStep[] = [
     element: "#search-input",
     popover: {
       title: "Thanh tìm kiếm",
-      description: "Tìm kiếm bất kỳ nơi nào trong khuông viên UIT tại đây.",
+      description: "Tìm kiếm bất kỳ nơi nào trong khuôn viên UIT tại đây.",
     },
   },
   {
@@ -58,6 +58,13 @@ export const steps: DriveStep[] = [
     popover: {
       title: "UIT 360",
       description: "Click vào đây để vào chế độ xem 360.",
+    },
+  },
+  {
+    element: "#driver-trigger",
+    popover: {
+      title: "Hướng dẫn",
+      description: "Kích hoạt lại hướng dẫn này khi cần.",
     },
   },
   {
@@ -96,20 +103,12 @@ export const steps: DriveStep[] = [
 export const welcomeStep: DriveStep = {
   popover: {
     title: "Chào mừng bạn đến với UIT iMap",
-    // description: "Bản",
+    description:
+      "Nhấn vào nút Tiếp theo / Quay lại (hoặc các phím mũi tên ❮ / ❯) để xem hướng dẫn.",
   },
 };
 
 const driverObj = driver({
-  showProgress: true,
-  onHighlighted(_, __, { state }) {
-    const progress = document.querySelector(".driver-popover-progress-text");
-
-    if (progress) {
-      const totalSteps = driverObj?.getConfig()?.steps?.length ?? steps.length;
-      progress.textContent = `${(state.activeIndex ?? 0) + 1} / ${totalSteps}`;
-    }
-  },
   nextBtnText: "Tiếp theo",
   prevBtnText: "Quay lại",
   doneBtnText: "Hoàn thành",
