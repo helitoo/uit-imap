@@ -107,7 +107,7 @@ export default function WeatherBar({ className = "" }: { className?: string }) {
                 <div className="flex flex-col leading-tight">
                   {" "}
                   {/* leading-tight giúp khoảng cách dòng đẹp hơn */}
-                  <span className="text-xs font-bold text-gray-800">
+                  <span className="text-[10px] lg:text-xs font-bold text-gray-800">
                     {slot.time}
                   </span>
                 </div>
@@ -117,13 +117,13 @@ export default function WeatherBar({ className = "" }: { className?: string }) {
 
           {crowdInfo && (
             <div
-              className="hidden lg:flex items-center gap-2 pl-3 shrink-0"
+              className="flex items-center gap-2 pl-3 shrink-0"
               title="Độ đông đúc"
             >
-              <div
-                className={`size-3 rounded-full animate-pulse ${crowdInfo.bg}`}
-              ></div>
-              <span className={`text-xs font-bold ${crowdInfo.text}`}>
+              <div className={`size-3 rounded-full ${crowdInfo.bg}`}></div>
+              <span
+                className={`text-[10px] lg:text-xs font-bold ${crowdInfo.text}`}
+              >
                 {crowdInfo.label}
               </span>
             </div>

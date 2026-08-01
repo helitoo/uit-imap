@@ -64,17 +64,17 @@ export default function Navbar() {
   const navItems = (
     <>
       {/* Container Logo: Giữ tỉ lệ hợp lý giữa mobile và desktop */}
-      <div className="flex md:flex-col gap-2 items-center justify-center mb-1 md:mb-2 ml-5 md:ml-0">
+      <div className="flex md:flex-col gap-1 items-center justify-center mb-1 md:mb-2 ml-5 md:ml-0">
         <NavbarLogo
           src="uit-logo.png"
           alt="UIT 20th"
-          className="h-5 md:w-12 md:h-auto object-contain rounded-lg"
+          className="h-5 md:w-12 md:h-auto object-contain"
           skeletonClassName="h-5 w-10 md:w-12 md:h-12 rounded-lg"
         />
         <NavbarLogo
           src="/logo.png"
           alt="UIT iMAP"
-          className="h-5 md:w-12 md:h-auto object-contain rounded-lg"
+          className="h-5 md:w-12 md:h-auto object-contain"
           skeletonClassName="h-5 w-10 md:w-12 md:h-12 rounded-lg"
         />
       </div>
@@ -90,10 +90,13 @@ export default function Navbar() {
             isImapOpen && "bg-blue-50 text-main",
           )}
         >
-          <Info className={cn("size-6", isImapOpen ? "text-main" : "text-slate-600")} />
-          <span className="text-[10px] md:text-xs font-medium">
-            Về iMap
-          </span>
+          <Info
+            className={cn(
+              "size-6",
+              isImapOpen ? "text-main" : "text-slate-600",
+            )}
+          />
+          <span className="text-[10px] md:text-xs font-medium">Về iMap</span>
         </Button>
 
         {/* Giới thiệu UIT */}
@@ -105,7 +108,9 @@ export default function Navbar() {
             isUitOpen && "bg-blue-50 text-main",
           )}
         >
-          <School className={cn("size-6", isUitOpen ? "text-main" : "text-slate-600")} />
+          <School
+            className={cn("size-6", isUitOpen ? "text-main" : "text-slate-600")}
+          />
           <span className="text-[10px] md:text-xs font-medium">Về UIT</span>
         </Button>
 
@@ -155,7 +160,7 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Sidebar: Căn chỉnh w-20 và gap phù hợp với icon lớn hơn */}
-      <nav className="hidden md:flex fixed right-0 top-0 h-full z-40 flex-col items-center bg-white border-l border-slate-200 w-20 py-8 gap-6 shadow-sm">
+      <nav className="hidden md:flex fixed right-0 top-0 h-full z-40 flex-col items-center bg-white border-l border-slate-200 w-20 py-8 gap-5 shadow-sm">
         {navItems}
       </nav>
 

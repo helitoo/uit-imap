@@ -1,13 +1,74 @@
 import { DialogContent } from "@/components/ui/dialog";
 import { IntroImage } from "@/components/ui/intro-image";
-import { CircleCheckBig, ExternalLink, School, Sparkles } from "lucide-react";
+import { cn } from "@/lib/utils";
+import {
+  Album,
+  CircleCheckBig,
+  CornerUpRight,
+  ExternalLink,
+  MapPin,
+  School,
+  Sparkles,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+
+const faculties: {
+  name: string;
+  img: string;
+  website: string;
+  address: string;
+  url: string;
+}[] = [
+  {
+    name: "Khoa Khoa học máy tính",
+    img: "/faculties/cs.png",
+    website: "https://khmt.uit.edu.vn/",
+    address: "Tầng 5, Tòa nhà E",
+    url: "/hotspot/E/313",
+  },
+  {
+    name: "Khoa Kỹ thuật máy tính",
+    img: "/faculties/ce.png",
+    website: "https://fce.uit.edu.vn/",
+    address: "Tầng 6, Tòa nhà E",
+    url: "/hotspot/E/314",
+  },
+  {
+    name: "Khoa Công nghệ phần mềm",
+    img: "/faculties/se.png",
+    website: "https://se.uit.edu.vn/vi/",
+    address: "Tầng 7, Tòa nhà E",
+    url: "/hotspot/E/315",
+  },
+  {
+    name: "Khoa Mạng máy tính và Truyền thông",
+    img: "/faculties/nc.png",
+    website: "https://nc.uit.edu.vn/",
+    address: "Tầng 8, Tòa nhà E",
+    url: "/hotspot/E/316",
+  },
+  {
+    name: "Khoa Hệ thống thông tin",
+    img: "/faculties/is.png",
+    website: "https://httt.uit.edu.vn/",
+    address: "Tầng 9, Tòa nhà E",
+    url: "/hotspot/E/317",
+  },
+  {
+    name: "Khoa Khoa học và Kỹ thuật thông tin",
+    img: "/faculties/ise.jpg",
+    website: "https://fit.uit.edu.vn/",
+    address: "Tầng 10, Tòa nhà E",
+    url: "/hotspot/E/318",
+  },
+];
 
 export default function UitIntroContent() {
   return (
     <DialogContent
       title="Thông tin Trường Đại học Công nghệ Thông tin - ĐHQG-HCM và Trung tâm CITD"
       visuallyHiddenTitle
-      description="Giới thiệu tổng quan về lịch sử thành lập, sứ mệnh đào tạo chất lượng cao và các kênh thông tin tuyển sinh chính thức của UIT & CITD."
+      description="Giới thiệu tổng quan về lịch sứ thành lập, sứ mệnh đào tạo chất lượng cao và các kênh thông tin tuyển sinh chính thức của UIT & CITD."
       visuallyHiddenDescription
       className="max-w-xl bg-transparent border-none shadow-none p-2 sm:p-4 max-h-[90vh] overflow-y-auto pr-1.5 sm:pr-3 scrollbar-thin focus:outline-none"
     >
@@ -112,7 +173,110 @@ export default function UitIntroContent() {
           </div>
         </section>
 
-        {/* ================= SECTION 2: LINKS ================= */}
+        {/* ================= SECTION 2: FACULTIES ================= */}
+        <section
+          aria-labelledby="guide-heading"
+          className="group transition-all duration-300"
+        >
+          {/* Header Card (Bento Banner) */}
+          <div className="card-header text-white rounded-3xl p-5 shadow-lg relative overflow-hidden rotate-1 group-hover:rotate-0 transition-transform duration-300">
+            {/* Background Glow */}
+            <div className="absolute -left-8 -bottom-8 w-32 h-32 bg-white/10 rounded-full blur-2xl pointer-events-none" />
+
+            {/* Floating Main Icon Sticker */}
+            <div className="absolute right-4 top-4 -rotate-12 group-hover:-rotate-6 transition-transform duration-300 bg-white/20 backdrop-blur-md border border-white/30 p-2.5 rounded-2xl shadow-lg">
+              <Album className="size-6 text-white drop-shadow-sm" />
+            </div>
+
+            <div className="pr-12">
+              <h2
+                id="guide-heading"
+                className="text-lg sm:text-xl font-bold tracking-tight text-white leading-snug"
+              >
+                Các khoa tại UIT
+              </h2>
+            </div>
+          </div>
+
+          {/* Body Card (Overlapping White Box) */}
+          <div className="p-4 sm:p-5 -mt-1.5 relative z-10 -rotate-[0.5deg] group-hover:rotate-0 transition-transform duration-300 space-y-3 sm:space-y-3.5">
+            {faculties.map((faculty, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <div
+                  key={faculty.name}
+                  className={cn(
+                    "flex items-center group/tab relative w-full transition-all duration-300 hover:scale-105",
+                    isEven
+                      ? "flex-row hover:-translate-x-3"
+                      : "flex-row-reverse hover:translate-x-3",
+                  )}
+                >
+                  {/* Nút tròn render logo */}
+                  <a
+                    href={faculty.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`Website ${faculty.name}`}
+                    className="relative z-20 size-12 sm:size-14 rounded-full bg-white dark:bg-slate-800 border-2 border-sky-400 dark:border-sky-500/80 shadow-md flex items-center justify-center shrink-0 p-1.5 hover:scale-110 hover:border-main transition-all duration-300"
+                  >
+                    <IntroImage
+                      src={faculty.img}
+                      alt={faculty.name}
+                      className="size-full object-contain rounded-full"
+                      skeletonClassName="size-full rounded-full"
+                    />
+                  </a>
+
+                  {/* Thẻ Tab thông tin đan xen */}
+                  <div
+                    className={cn(
+                      "relative z-10 flex-1 py-2.5 sm:py-3 bg-white hover:bg-slate-100 transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-between gap-2.5 group/card",
+                      isEven
+                        ? "-ml-4 mr-10 pl-6 sm:pl-7 pr-3 sm:pr-4 rounded-r-2xl rounded-l-full"
+                        : "-mr-4 ml- pr-6 sm:pr-7 pl-3 sm:pl-4 rounded-l-2xl rounded-r-full",
+                    )}
+                  >
+                    {/* Content text */}
+                    <div className="min-w-0 flex-1">
+                      <a
+                        href={faculty.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-100 hover:text-main transition-colors block truncate"
+                      >
+                        {faculty.name}
+                      </a>
+                      <div className="flex items-center gap-1.5 mt-0.5">
+                        <Link
+                          to={faculty.url}
+                          title={`Xem vị trí ${faculty.address} trên bản đồ`}
+                          className="inline-flex items-center gap-1 text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 hover:text-main transition-colors truncate font-medium"
+                        >
+                          <CornerUpRight className="size-3 text-sky-500 shrink-0" />
+                          <span className="truncate">{faculty.address}</span>
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* External Link button */}
+                    <a
+                      href={faculty.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`Truy cập trang web ${faculty.name}`}
+                      className="p-1.5 rounded-xl text-slate-400 hover:text-main hover:bg-white dark:hover:bg-slate-700/80 transition-all shrink-0 border border-transparent hover:border-slate-200/60 dark:hover:border-slate-600/60 shadow-none hover:shadow-sm"
+                    >
+                      <ExternalLink className="size-4" />
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* ================= SECTION 3: LINKS ================= */}
         <section
           aria-labelledby="links-heading"
           className="group transition-all duration-300"
