@@ -70,9 +70,9 @@ export default function UitIntroContent() {
       visuallyHiddenTitle
       description="Giới thiệu tổng quan về lịch sứ thành lập, sứ mệnh đào tạo chất lượng cao và các kênh thông tin tuyển sinh chính thức của UIT & CITD."
       visuallyHiddenDescription
-      className="max-w-xl bg-transparent border-none shadow-none p-2 sm:p-4 max-h-[90vh] overflow-y-auto pr-1.5 sm:pr-3 scrollbar-thin focus:outline-none"
+      className="w-[calc(100vw-1rem)] sm:w-full max-w-xl bg-transparent border-none shadow-none p-2 sm:p-4 max-h-[90vh] overflow-y-auto overflow-x-hidden pr-1.5 sm:pr-3 scrollbar-thin focus:outline-none"
     >
-      <article className="space-y-6 pt-2 pb-4">
+      <article className="space-y-6 pt-2 pb-4 overflow-x-hidden w-full">
         {/* Banner */}
         <div className="py-2 w-full flex justify-center bg-[linear-gradient(90deg,_rgba(255,255,255,0)_0%,_rgba(255,255,255,1)_40%,_rgba(255,255,255,1)_60%,_rgba(255,255,255,0)_100%)]">
           <div className="flex items-center">
