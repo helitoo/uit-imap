@@ -8,9 +8,10 @@ import { Dialog } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import WebIntroContent from "@/components/main/navbar/content/WebIntroContent";
 import UitIntroContent from "@/components/main/navbar/content/UitIntroContent";
-import SearchSheet from "@/components/main/search/SearchSheet";
 import { useEvent } from "@/contexts/eventContext";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useDriver } from "@/contexts/driverContext";
+import { useWeather } from "@/contexts/weatherContext";
 
 function NavbarLogo({
   src,
@@ -46,7 +47,9 @@ function NavbarLogo({
 export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { loading } = useEvent();
+  const { loading: eventLoading } = useEvent();
+  const { loading: weatherLoading } = useWeather();
+  const { start } = useDriver();
 
   const isImapOpen = location.pathname === "/imap";
   const isUitOpen = location.pathname === "/uit";
@@ -64,7 +67,7 @@ export default function Navbar() {
   const navItems = (
     <>
       {/* Container Logo: Giữ tỉ lệ hợp lý giữa mobile và desktop */}
-      <div className="flex md:flex-col gap-1 items-center justify-center mb-1 md:mb-2 ml-5 md:ml-0">
+      <div className="hidden sm:flex md:flex-col items-center gap-2 justify-center mb-1 md:mb-2 ml-5 md:ml-0">
         <NavbarLogo
           src="uit-logo.png"
           alt="UIT 20th"
@@ -80,92 +83,136 @@ export default function Navbar() {
       </div>
 
       {/* Các Action Buttons */}
-      <div className="flex flex-row md:flex-col items-center justify-center gap-1 md:gap-4 w-full md:w-auto">
+      <div className="flex flex-row md:flex-col items-center justify-center gap-1 md:gap-3">
+        {/* Mở hướng dẫn */}
+        <div
+          id="driver-trigger"
+          className="w-14 h-14 md:w-16 md:h-16 aspect-square shrink-0"
+        >
+          {weatherLoading ? (
+            <Skeleton className="w-full h-full rounded-xl" />
+          ) : (
+            <Button
+              variant="ghost"
+              onClick={start}
+              className={cn(
+                "w-full h-full flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-colors",
+              )}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="size-5 md:size-6 text-slate-600 mb-0.5"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                <path d="M12 17h.01" />
+              </svg>
+              <span className="text-[10px] font-medium leading-none">
+                Hướng dẫn
+              </span>
+            </Button>
+          )}
+        </div>
+
         {/* Giới thiệu iMap */}
         <Button
+          id="imap-button"
           variant="ghost"
           onClick={() => handleToggleRoute("/imap", isImapOpen)}
           className={cn(
-            "flex flex-col items-center justify-center h-auto py-2 px-3 md:w-full transition-colors",
+            "w-14 h-14 md:w-16 md:h-16 aspect-square shrink-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-colors",
             isImapOpen && "bg-blue-50 text-main",
           )}
         >
           <Info
             className={cn(
-              "size-6",
+              "size-5 md:size-6 mb-0.5",
               isImapOpen ? "text-main" : "text-slate-600",
             )}
           />
-          <span className="text-[10px] md:text-xs font-medium">Về iMap</span>
+          <span className="text-[10px] font-medium leading-none">Về iMap</span>
         </Button>
 
         {/* Giới thiệu UIT */}
         <Button
+          id="uit-button"
           variant="ghost"
           onClick={() => handleToggleRoute("/uit", isUitOpen)}
           className={cn(
-            "flex flex-col items-center justify-center h-auto py-2 px-3 md:w-full transition-colors",
+            "w-14 h-14 md:w-16 md:h-16 aspect-square shrink-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-colors",
             isUitOpen && "bg-blue-50 text-main",
           )}
         >
           <School
-            className={cn("size-6", isUitOpen ? "text-main" : "text-slate-600")}
+            className={cn(
+              "size-5 md:size-6 mb-0.5",
+              isUitOpen ? "text-main" : "text-slate-600",
+            )}
           />
-          <span className="text-[10px] md:text-xs font-medium">Về UIT</span>
+          <span className="text-[10px] font-medium leading-none">Về UIT</span>
         </Button>
 
         {/* Lịch Sự Kiện */}
-        {!loading && (
-          <Button
-            onClick={() => handleToggleRoute("/schedule", isScheduleOpen)}
-            variant="ghost"
-            className={cn(
-              "flex flex-col items-center justify-center h-auto py-2 px-3 md:w-full transition-all",
-              isScheduleOpen && "bg-blue-50 text-main",
-            )}
-          >
-            <CalendarDays
+        <div
+          id="schedule-button"
+          className="w-14 h-14 md:w-16 md:h-16 aspect-square shrink-0"
+        >
+          {eventLoading ? (
+            <Skeleton className="w-full h-full rounded-xl" />
+          ) : (
+            <Button
+              onClick={() => handleToggleRoute("/schedule", isScheduleOpen)}
+              variant="ghost"
               className={cn(
-                "size-6",
-                isScheduleOpen ? "text-main" : "text-slate-600",
+                "w-full h-full flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-all",
+                isScheduleOpen && "bg-blue-50 text-main",
               )}
-            />
-            <span className="text-[10px] md:text-xs font-medium">Lịch</span>
-          </Button>
-        )}
+            >
+              <CalendarDays
+                className={cn(
+                  "size-5 md:size-6 mb-0.5",
+                  isScheduleOpen ? "text-main" : "text-slate-600",
+                )}
+              />
+              <span className="text-[10px] font-medium leading-none">Lịch</span>
+            </Button>
+          )}
+        </div>
 
         {/* Tuyến Xe / Di Chuyển */}
-        {!loading && (
-          <Button
-            onClick={() => handleToggleRoute("/transport", isTransportOpen)}
-            variant="ghost"
+        <Button
+          id="transport-button"
+          onClick={() => handleToggleRoute("/transport", isTransportOpen)}
+          variant="ghost"
+          className={cn(
+            "w-14 h-14 md:w-16 md:h-16 aspect-square shrink-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-all",
+            isTransportOpen && "bg-blue-50 text-main",
+          )}
+        >
+          <Bus
             className={cn(
-              "flex flex-col items-center justify-center h-auto py-2 px-3 md:w-full transition-all",
-              isTransportOpen && "bg-blue-50 text-main",
+              "size-5 md:size-6 mb-0.5",
+              isTransportOpen ? "text-main" : "text-slate-600",
             )}
-          >
-            <Bus
-              className={cn(
-                "size-6",
-                isTransportOpen ? "text-main" : "text-slate-600",
-              )}
-            />
-            <span className="text-[10px] md:text-xs font-medium">Tuyến xe</span>
-          </Button>
-        )}
+          />
+          <span className="text-[10px] font-medium leading-none">Tuyến xe</span>
+        </Button>
       </div>
     </>
   );
 
   return (
     <>
-      {/* Desktop Sidebar: Căn chỉnh w-20 và gap phù hợp với icon lớn hơn */}
-      <nav className="hidden md:flex fixed right-0 top-0 h-full z-40 flex-col items-center bg-white border-l border-slate-200 w-20 py-8 gap-5 shadow-sm">
-        {navItems}
-      </nav>
-
-      {/* Mobile Bottom Bar: h-16 đủ không gian cho icon size-6 */}
-      <nav className="flex md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-slate-200 h-16 items-center justify-around px-2 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
+      {/* Navigation Bar: Responsive (Mobile Bottom Bar / Desktop Sidebar) */}
+      <nav className="fixed z-40 bg-white flex items-center bottom-0 left-0 right-0 h-16 flex-row justify-around px-2 border-t border-slate-200 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] md:top-0 md:bottom-auto md:left-auto md:right-0 md:h-full md:w-20 md:flex-col md:justify-start md:py-8 md:px-0 md:gap-6 md:border-l md:border-t-0 md:shadow-sm">
         {navItems}
       </nav>
 
@@ -192,7 +239,7 @@ export default function Navbar() {
         <UitIntroContent />
       </Dialog>
 
-      {!loading && (
+      {!eventLoading && (
         <EventSheet
           open={isScheduleOpen}
           onOpenChange={(open) => {
@@ -203,7 +250,7 @@ export default function Navbar() {
         />
       )}
 
-      {!loading && (
+      {!eventLoading && (
         <TransportSheet
           open={isTransportOpen}
           onOpenChange={(open) => {

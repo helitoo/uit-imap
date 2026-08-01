@@ -11,6 +11,7 @@ export default function ShowTourButton({
 
   return (
     <button
+      id="tour-button"
       onClick={(e) => setShowTourspots(!showTourspots)}
       className={cn(
         "flex items-center justify-center",

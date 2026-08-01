@@ -20,8 +20,9 @@ import HomePage from "@/pages/HomePage";
 import { EventProvider, useEvent } from "@/contexts/eventContext";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { WindowProvider } from "@/contexts/windowContext";
-import { WeatherProvider } from "@/contexts/weatherContext";
+import { WeatherProvider, useWeather } from "@/contexts/weatherContext";
 import { PanoProvider, usePano } from "@/contexts/tourContext";
+import { DriverProvider } from "@/contexts/driverContext";
 import TourViewer from "@/components/main/TourViewer";
 
 function AppRoutes() {
@@ -30,6 +31,7 @@ function AppRoutes() {
   const { loading: hotspotsLoading, error: hotspotsError } = useHotspots();
   const { loading: roomsLoading, error: roomsError } = useRooms();
   const { loading: eventLoading, getTodayEventsByRoomName } = useEvent();
+  const { loading: weatherLoading } = useWeather();
   const { isReady: tourReady } = usePano();
 
   useSyncRoomsWithEvents(getTodayEventsByRoomName, eventLoading);
@@ -69,33 +71,36 @@ function AppRoutes() {
     hotspotsLoading ||
     roomsLoading ||
     eventLoading ||
+    weatherLoading ||
     (isTourRoute && !tourReady);
   const hasError = hotspotsError || roomsError;
 
   return (
-    <ModeProvider>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/hotspot/:id" element={<HomePage />} />
-        <Route path="/hotspot/:id/:roomId" element={<HomePage />} />
-        <Route path="/uit" element={<HomePage />} />
-        <Route path="/imap" element={<HomePage />} />
-        <Route path="/transport" element={<HomePage />} />
-        <Route path="/schedule" element={<HomePage />} />
-        <Route path="*" element={<HomePage />} />
-      </Routes>
-      <TourViewer
-        sceneId={sceneId}
-        isOpen={isTourRoute && !isLoading && !hasError}
-        onExit={handleExitTour}
-        onSceneChange={handleSceneChange}
-      />
-      {isLoading && <LoadingScreen />}
-      {hasError && (
-        <LoadingScreen message={`Loi: ${hotspotsError} ${roomsError}`} />
-      )}
-      <Toaster position="top-center" richColors />
-    </ModeProvider>
+    <DriverProvider isLoading={isLoading}>
+      <ModeProvider>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/hotspot/:id" element={<HomePage />} />
+          <Route path="/hotspot/:id/:roomId" element={<HomePage />} />
+          <Route path="/uit" element={<HomePage />} />
+          <Route path="/imap" element={<HomePage />} />
+          <Route path="/transport" element={<HomePage />} />
+          <Route path="/schedule" element={<HomePage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
+        <TourViewer
+          sceneId={sceneId}
+          isOpen={isTourRoute && !isLoading && !hasError}
+          onExit={handleExitTour}
+          onSceneChange={handleSceneChange}
+        />
+        {isLoading && <LoadingScreen />}
+        {hasError && (
+          <LoadingScreen message={`Loi: ${hotspotsError} ${roomsError}`} />
+        )}
+        <Toaster position="top-center" richColors />
+      </ModeProvider>
+    </DriverProvider>
   );
 }
 

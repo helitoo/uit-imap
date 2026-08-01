@@ -85,6 +85,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
     return (
       <div
+        id="search-input"
         ref={containerRef}
         className={cn(
           "relative flex items-center transition-all duration-200 focus-within:border-main focus-within:ring-1 focus-within:ring-main",
@@ -123,6 +124,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
           </Button>
           {showDirectionIcon && (
             <Button
+              id="direction-button"
               type="button"
               variant="ghost"
               size="icon"

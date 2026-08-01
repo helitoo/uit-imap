@@ -131,3 +131,142 @@ model-viewer {
 .sticker-border {
   filter: url(#sticker-outline);
 }
+
+/* Driver Guide Overlay & Animations for #model-viewer */
+.driver-guide-overlay,
+.driver-guide-overlay * {
+  pointer-events: none !important;
+}
+
+.driver-guide-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transform: scale(1.25);
+  transform-origin: center;
+}
+
+.driver-guide-badge {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 16rem;
+  height: 9rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+}
+
+.driver-guide-dot {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background-color: rgba(30, 41, 59, 0.65);
+  border: 4px solid rgba(203, 213, 225, 0.9);
+}
+
+.driver-guide-dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.5);
+  animation: driver-dot-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes driver-dot-ping {
+  75%,
+  100% {
+    transform: scale(2.25);
+    opacity: 0;
+  }
+}
+
+@keyframes driver-rotate-slide {
+  0% {
+    transform: translateX(-50px);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+
+@keyframes driver-zoom-top {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-28px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes driver-zoom-bottom {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(28px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes driver-pan-left {
+  0% {
+    transform: translate(-50px, -14px);
+  }
+  50% {
+    transform: translate(50px, -14px);
+  }
+  100% {
+    transform: translate(-50px, -14px);
+  }
+}
+
+@keyframes driver-pan-right {
+  0% {
+    transform: translate(-50px, 14px);
+  }
+  50% {
+    transform: translate(50px, 14px);
+  }
+  100% {
+    transform: translate(-50px, 14px);
+  }
+}
+
+.animate-driver-rotate-dot {
+  animation: driver-rotate-slide 2.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.animate-driver-zoom-top {
+  animation: driver-zoom-top 2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.animate-driver-zoom-bottom {
+  animation: driver-zoom-bottom 2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.animate-driver-pan-dot1 {
+  animation: driver-pan-left 2.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.animate-driver-pan-dot2 {
+  animation: driver-pan-right 2.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}

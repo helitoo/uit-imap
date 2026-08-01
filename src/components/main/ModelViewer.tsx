@@ -1,4 +1,10 @@
-import { useRef, useEffect, useState, forwardRef, useImperativeHandle } from "react";
+import {
+  useRef,
+  useEffect,
+  useState,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 
 import type { Hotspot } from "@/lib/types/hotspot";
 import type { Tourspot } from "@/lib/types/pano";
@@ -103,7 +109,7 @@ const ModelViewer = forwardRef<ModelViewerHandle, ModelViewerProps>(
       : getDefaultHotspots();
 
     return (
-      <div className="relative w-full h-full overflow-hidden">
+      <div className="relative w-full h-full overflow-hidden" id="model-viewer">
         <model-viewer
           ref={mvRef}
           src="/model/map.glb"

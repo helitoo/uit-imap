@@ -70,15 +70,20 @@ export default function WeatherBar({ className = "" }: { className?: string }) {
           className,
         )}
       >
-        <div className="flex items-center shrink-0 gap-1">
-          <Skeleton className="size-8 rounded-md shrink-0" />
-          <Skeleton className="h-3 w-10 rounded" />
+        <div className="flex items-center gap-2">
+          <div className="flex items-center shrink-0 gap-1">
+            <Skeleton className="size-8 rounded-md shrink-0" />
+            <Skeleton className="h-3 w-10 rounded" />
+          </div>
+          <div className="flex items-center shrink-0 gap-1">
+            <Skeleton className="size-8 rounded-md shrink-0" />
+            <Skeleton className="h-3 w-10 rounded" />
+          </div>
         </div>
-        <div className="flex items-center shrink-0 gap-1">
-          <Skeleton className="size-8 rounded-md shrink-0" />
-          <Skeleton className="h-3 w-10 rounded" />
-        </div>
-        <div className="hidden lg:flex items-center gap-2 pl-3 shrink-0">
+        <div
+          id="crowd-bar"
+          className="hidden lg:flex items-center gap-2 pl-3 shrink-0"
+        >
           <Skeleton className="size-3 rounded-full shrink-0" />
           <Skeleton className="h-3 w-14 rounded" />
         </div>
@@ -95,28 +100,31 @@ export default function WeatherBar({ className = "" }: { className?: string }) {
             className,
           )}
         >
-          {slots.map((slot) => {
-            const info = getWeatherInfo(slot.code, slot.isDay);
-            return (
-              <div
-                key={slot.time}
-                className="flex items-center shrink-0"
-                title={info.description}
-              >
-                <WeatherItemImage src={info.image} alt={info.description} />
-                <div className="flex flex-col leading-tight">
-                  {" "}
-                  {/* leading-tight giúp khoảng cách dòng đẹp hơn */}
-                  <span className="text-[10px] lg:text-xs font-bold text-gray-800">
-                    {slot.time}
-                  </span>
+          <div id="weather-bar" className="flex items-center gap-2">
+            {slots.map((slot) => {
+              const info = getWeatherInfo(slot.code, slot.isDay);
+              return (
+                <div
+                  key={slot.time}
+                  className="flex items-center shrink-0"
+                  title={info.description}
+                >
+                  <WeatherItemImage src={info.image} alt={info.description} />
+                  <div className="flex flex-col leading-tight">
+                    {" "}
+                    {/* leading-tight giúp khoảng cách dòng đẹp hơn */}
+                    <span className="text-[10px] lg:text-xs font-bold text-gray-800">
+                      {slot.time}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
 
           {crowdInfo && (
             <div
+              id="crowd-bar"
               className="flex items-center gap-2 pl-3 shrink-0"
               title="Độ đông đúc"
             >
