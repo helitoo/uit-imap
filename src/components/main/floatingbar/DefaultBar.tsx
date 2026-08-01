@@ -21,13 +21,13 @@ export default function DefaultBar() {
   };
 
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex flex-row items-center justify-between gap-3 mx-5">
-      <div className="flex flex-col lg:flex-row gap-1 md:gap-3">
+    <div className="fixed top-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:right-auto md:w-auto z-50 flex flex-row items-center justify-between gap-2 md:gap-3">
+      <div className="flex flex-col lg:flex-row gap-1 md:gap-3 flex-1 min-w-0 md:flex-initial">
         <SearchInput
-          className="bg-white shadow-md rounded-full pl-4 pr-1.5 w-64 lg:w-80 h-10 items-center border border-gray-100 flex-shrink-0"
+          className="bg-white shadow-md rounded-full pl-4 pr-1.5 w-full lg:w-80 h-10 items-center border border-gray-100 flex-shrink-0"
           onClickRes={onClickRes}
         />
-        <WeatherBar className="bg-white shadow-md rounded-full px-5 py-2 w-64 lg:w-80 h-10 border border-gray-100 flex-shrink-0" />
+        <WeatherBar className="bg-white shadow-md rounded-full px-5 py-2 w-full lg:w-80 h-10 border border-gray-100 flex-shrink-0" />
       </div>
       <ShowTourButton />
     </div>

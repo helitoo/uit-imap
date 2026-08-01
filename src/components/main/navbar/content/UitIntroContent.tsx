@@ -243,7 +243,7 @@ export default function UitIntroContent() {
                         href={faculty.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-100 hover:text-main transition-colors block truncate"
+                        className="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-100 hover:text-main transition-colors line-clamp-2"
                       >
                         {faculty.name}
                       </a>
