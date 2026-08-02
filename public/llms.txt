@@ -11,14 +11,11 @@
 
 ## Routes & Features
 
-- [/](/): Interactive 3D campus map and main navigation hub.
-- [/uit](/uit): Introduction and overview of the University of Information Technology (UIT).
-- [/imap](/imap): Information about the UIT iMap application and its features.
-- [/transport](/transport): Transport schedule and bus routes accessing the campus.
-- [/schedule](/schedule): Event schedule and timetable for classrooms and campus locations.
-- [/hotspot/:id](/hotspot/:id): Detailed information for specific campus hotspots and buildings.
-- [/hotspot/:id/:roomId](/hotspot/:id/:roomId): Detailed information for specific rooms within campus hotspots.
-- [/scene/:sceneId](/scene/:sceneId): 360-degree panoramic virtual tour for specific campus scenes.
+- [/](https://uit-imap.vercel.app/): Interactive 3D campus map and main navigation hub.
+- [/uit](https://uit-imap.vercel.app/uit): Introduction and overview of the University of Information Technology (UIT).
+- [/imap](https://uit-imap.vercel.app/imap): Information about the UIT iMap application and its features.
+- [/transport](https://uit-imap.vercel.app/transport): Transport schedule and bus routes accessing the campus.
+- [/schedule](https://uit-imap.vercel.app/schedule): Event schedule and timetable for classrooms and campus locations.
 
 ## Contact Information
 

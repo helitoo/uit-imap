@@ -1,16 +1,18 @@
 <!doctype html>
 <html lang="vi">
   <head>
-    <meta
-      name="description"
-      content="An interactive 3D online map for the University of Information Technology (UIT) – VNU-HCM. It provides students, staff, and visitors with an intuitive way to navigate the campus, discover facilities, and find information about rooms and buildings."
-    />
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
     <title>UIT iMap</title>
     <meta property="og:title" content="UIT iMap" />
     <meta property="og:site_name" content="UIT iMap" />
-    <meta name="tweetmeme-title" content="UIT iMap" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UIT iMap" />
+    <meta name="twitter:description" content="Bản đồ 3D tương tác UIT" />
+    <meta
+      name="twitter:image"
+      content="https://uit-imap.vercel.app/og-image.png"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
@@ -24,7 +26,10 @@
       name="author"
       content="Trường Đại học Công nghệ thông tin - ĐHQG-HCM (UIT), info@uit.edu.vn"
     />
-    <meta property="og:image" content="og-image.png" />
+    <meta
+      property="og:image"
+      content="https://uit-imap.vercel.app/og-image.png"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="600" />
     <!-- <meta property="og:url" content="https://example.com" /> -->
@@ -50,7 +55,7 @@
       name="copyright"
       content="Trường Đại học Công nghệ thông tin - ĐHQG-HCM (UIT)"
     />
-    <meta name="language" content="VN" />
+    <link rel="canonical" href="https://uit-imap.vercel.app/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -85,6 +90,44 @@
         display: none;
       }
     </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Trang chủ",
+            "item": "https://uit-imap.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Giới thiệu UIT iMap",
+            "item": "https://uit-imap.vercel.app/imap"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Giới thiệu về Trường Đại học Công nghệ Thông tin",
+            "item": "https://uit-imap.vercel.app/uit"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Lịch phòng",
+            "item": "https://uit-imap.vercel.app/schedule"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Tuyến xe kết nối đến UIT",
+            "item": "https://uit-imap.vercel.app/transport"
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="mdl-js">
     <main id="root"></main>
