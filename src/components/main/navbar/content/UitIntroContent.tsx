@@ -206,10 +206,8 @@ export default function UitIntroContent() {
                 <div
                   key={faculty.name}
                   className={cn(
-                    "flex items-center group/tab relative w-full transition-all duration-300 hover:scale-105",
-                    isEven
-                      ? "flex-row hover:-translate-x-3"
-                      : "flex-row-reverse hover:translate-x-3",
+                    "flex items-center group/tab relative w-full transition-all duration-300 hover:-translate-y-1",
+                    isEven ? "flex-row" : "flex-row-reverse",
                   )}
                 >
                   {/* Nút tròn render logo */}
