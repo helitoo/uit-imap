@@ -11,17 +11,15 @@ import {
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
 import { useRooms } from "@/contexts/roomContext";
+import { share } from "@/lib/services/share";
 
 import type { Hotspot } from "@/lib/types/hotspot";
 import { Room } from "@/lib/types/room";
-import { getHotspotShareUrl } from "@/lib/utils";
 
 import { Info, Navigation, Share2 } from "lucide-react";
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-import { toast } from "sonner";
 
 interface HotspotDetailProps {
   hotspot: Hotspot;
@@ -45,15 +43,6 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
   const handleClose = () => {
     setSelectedHotspot(null);
     navigate("/", { replace: true });
-  };
-
-  const handleShare = () => {
-    const url = getHotspotShareUrl(hotspot.id);
-
-    navigator.clipboard
-      .writeText(url)
-      .then(() => toast.success("Đã sao chép đường dẫn!"))
-      .catch(() => toast.error("Không thể sao chép đường dẫn."));
   };
 
   const handleDirection = () => {
@@ -121,7 +110,7 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
             variant="outline"
             size="sm"
             className="gap-1.5"
-            onClick={handleShare}
+            onClick={() => share(`${hotspot.name || hotspot.id}.`)}
           >
             <Share2 className="w-3.5 h-3.5" />
             Chia sẻ

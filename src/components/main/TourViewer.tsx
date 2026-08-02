@@ -10,19 +10,17 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { usePano } from "@/contexts/tourContext";
-import { cn, getSceneShareUrl } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import {
   ChevronLeft,
   ChevronRight,
   ChevronUp,
   List,
-  MapPinned,
-  Minus,
-  Plus,
   Share2,
   X,
 } from "lucide-react";
 import { toast } from "sonner";
+import { share } from "@/lib/services/share";
 
 const stopTouchAndScrollEvents = (element: HTMLElement) => {
   ["touchstart", "touchmove", "touchend", "touchcancel", "wheel"].forEach(
@@ -219,15 +217,6 @@ export default function TourViewer({
     if (next) onSceneChange(next.id);
   };
 
-  const handleShare = () => {
-    const url = getSceneShareUrl(currentSceneId);
-
-    navigator.clipboard
-      .writeText(url)
-      .then(() => toast.success("Đã sao chép đường dẫn!"))
-      .catch(() => toast.error("Không thể sao chép đường dẫn."));
-  };
-
   return (
     <main
       className={cn(
@@ -262,7 +251,7 @@ export default function TourViewer({
         >
           <Button
             className="size-10 rounded-full border border-white/15 bg-slate-950/60 text-white hover:bg-slate-950/80"
-            onClick={handleShare}
+            onClick={() => share(`Cảnh 360 ${currentScene?.name}.`)}
             aria-label="Share"
             title="Chia sẻ"
           >

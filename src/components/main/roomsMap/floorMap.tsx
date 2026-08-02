@@ -13,16 +13,9 @@ import { useEvent } from "@/contexts/eventContext";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
 import { Event } from "@/lib/types/event";
-import {
-  CalendarX,
-  Clock,
-  Info,
-  Navigation,
-  Share2,
-  Users,
-} from "lucide-react";
+import { CalendarX, Clock, Navigation, Share2, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { toast } from "sonner";
+import { share } from "@/lib/services/share";
 
 export default function FloorMap({ rooms }: { rooms: Room[] }) {
   // Calc layout
@@ -90,15 +83,6 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
 
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
   const [events, setEvents] = useState<Event[]>([]);
-
-  const handleShare = () => {
-    const url = window.location.href;
-
-    navigator.clipboard
-      .writeText(url)
-      .then(() => toast.success("Đã sao chép đường dẫn!"))
-      .catch(() => toast.error("Không thể sao chép đường dẫn."));
-  };
 
   const handleDirection = () => {
     const hotspot = selectedHotspot || (id ? getHotspotById(id) : null);
@@ -378,7 +362,7 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
               variant="outline"
               size="sm"
               className="gap-1.5"
-              onClick={handleShare}
+              onClick={() => share(`${selectedRoom?.name}.`)}
             >
               <Share2 className="w-3.5 h-3.5" />
               Chia sẻ

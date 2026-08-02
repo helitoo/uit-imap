@@ -119,10 +119,10 @@ export function euclidean2D(a: [number, number], b: [number, number]): number {
 }
 
 /** Get absolute URL for sharing */
-export function getHotspotShareUrl(id: string): string {
-  return `${window.location.origin}/hotspot/${id}`;
-}
+// export function getHotspotShareUrl(id: string): string {
+//   return `${window.location.origin}/hotspot/${id}`;
+// }
 
-export function getSceneShareUrl(id: string): string {
-  return `${window.location.origin}/scene/${id}`;
-}
+// export function getSceneShareUrl(id: string): string {
+//   return `${window.location.origin}/scene/${id}`;
+// }
