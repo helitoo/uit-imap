@@ -60,8 +60,8 @@ export default function WebIntroContent() {
           </div>
 
           {/* Body Card (Overlapping White Box) */}
-          <div className="bg-white dark:bg-slate-800 rounded-3xl p-5 shadow-xl border border-slate-50 dark:border-slate-800 -mt-1.5 relative z-10 rotate-[0.5deg] group-hover:rotate-0 transition-transform duration-300 space-y-4">
-            <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-50 leading-relaxed text-justify">
+          <div className="bg-white rounded-3xl p-5 shadow-xl border border-slate-50 -mt-1.5 relative z-10 rotate-[0.5deg] group-hover:rotate-0 transition-transform duration-300 space-y-4">
+            <p className="text-xs sm:text-sm text-slate-800 leading-relaxed text-justify">
               <strong className="text-main font-semibold">UIT iMap</strong> là
               bản đồ 3D trường Đại học Công nghệ thông tin (UIT), cung cấp trải
               nghiệm khám phá không gian học thuật hiện đại, trực quan dành cho
@@ -69,12 +69,12 @@ export default function WebIntroContent() {
             </p>
 
             {/* List with Secondary Decorative CircleCheckBig Icons */}
-            <div className="bg-sky-50/60 dark:bg-slate-800/50 rounded-2xl p-4 border border-sky-100 dark:border-slate-800/60 space-y-2.5">
-              <ul className="space-y-2 text-xs sm:text-sm text-slate-800 dark:text-slate-50">
+            <div className="bg-sky-50/60 rounded-2xl p-4 border border-sky-100 space-y-2.5">
+              <ul className="space-y-2 text-xs sm:text-sm text-slate-800">
                 <li className="flex items-start gap-2">
                   <CircleCheckBig className="size-4 text-main shrink-0 mt-0.5" />
                   <span>
-                    <strong className="text-slate-800 dark:text-slate-50">
+                    <strong className="text-slate-800">
                       Mô hình 3D:
                     </strong>{" "}
                     Tái hiện chân thực toàn bộ kiến trúc campus UIT.
@@ -83,7 +83,7 @@ export default function WebIntroContent() {
                 <li className="flex items-start gap-2">
                   <CircleCheckBig className="size-4 text-main shrink-0 mt-0.5" />
                   <span>
-                    <strong className="text-slate-800 dark:text-slate-50">
+                    <strong className="text-slate-800">
                       Ảnh 360:
                     </strong>{" "}
                     Khám qua không gian UIT thông qua hệ thống ảnh 360 ngay tại
@@ -93,7 +93,7 @@ export default function WebIntroContent() {
                 <li className="flex items-start gap-2">
                   <CircleCheckBig className="size-4 text-main shrink-0 mt-0.5" />
                   <span>
-                    <strong className="text-slate-800 dark:text-slate-50">
+                    <strong className="text-slate-800">
                       Tra cứu địa điểm & dẫn đường:
                     </strong>{" "}
                     Tìm kiếm nhanh chóng các giảng đường, phòng lab, hội trường
@@ -103,7 +103,7 @@ export default function WebIntroContent() {
                 <li className="flex items-start gap-2">
                   <CircleCheckBig className="size-4 text-main shrink-0 mt-0.5" />
                   <span>
-                    <strong className="text-slate-800 dark:text-slate-50">
+                    <strong className="text-slate-800">
                       Dịch vụ hỗ trợ sinh viên:
                     </strong>{" "}
                     Tra cứu nhanh lịch phòng và các tuyến bus / metro.
@@ -138,12 +138,12 @@ export default function WebIntroContent() {
           </div>
 
           {/* Body Card */}
-          <div className="bg-white dark:bg-slate-800 rounded-3xl p-4 sm:p-5 shadow-xl border border-slate-50 dark:border-slate-800 -mt-1.5 relative z-10 rotate-[0.5deg] group-hover:rotate-0 transition-transform duration-300">
+          <div className="bg-white rounded-3xl p-4 sm:p-5 shadow-xl border border-slate-50 -mt-1.5 relative z-10 rotate-[0.5deg] group-hover:rotate-0 transition-transform duration-300">
             <nav
               aria-label="Thông tin phát triển và mã nguồn mở"
               className="grid grid-cols-1 gap-2 text-xs sm:text-sm font-medium"
             >
-              <div className="flex items-center gap-2.5 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-50/60 dark:border-slate-800/60 text-slate-800 dark:text-slate-50">
+              <div className="flex items-center gap-2.5 p-3 rounded-2xl bg-slate-50 border border-slate-50/60 text-slate-800">
                 <IntroImage
                   src="uit-logo.png"
                   alt="UIT logo icon"
@@ -158,7 +158,7 @@ export default function WebIntroContent() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Truy cập kho mã nguồn GitHub của dự án helitoo/uit-imap"
-                className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:brightness-95 text-slate-800 dark:text-slate-50 hover:text-main transition-all group/link border border-slate-50/60 dark:border-slate-800/60"
+                className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 hover:bg-sky-50 text-slate-800 hover:text-main transition-all group/link border border-slate-50/60"
               >
                 <span className="flex items-center gap-2">
                   <IntroImage
@@ -177,7 +177,7 @@ export default function WebIntroContent() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Xem mô hình 3D UIT trên Sketchfab"
-                className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:brightness-95 text-slate-800 dark:text-slate-50 hover:text-main transition-all group/link border border-slate-50/60 dark:border-slate-800/60"
+                className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 hover:bg-sky-50 text-slate-800 hover:text-main transition-all group/link border border-slate-50/60"
               >
                 <span className="flex items-center gap-2 truncate">
                   <IntroImage
