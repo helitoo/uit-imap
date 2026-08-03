@@ -251,7 +251,7 @@ export default function TourViewer({
         >
           <Button
             className="size-10 rounded-full border border-white/15 bg-slate-800/60 text-white hover:brightness-95"
-            onClick={() => share(`Cảnh 360 ${currentScene?.name}.`)}
+            onClick={() => share(`Cảnh 360 ${currentScene?.name}`)}
             aria-label="Share"
             title="Chia sẻ"
           >

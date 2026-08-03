@@ -187,7 +187,7 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
                   ${isMobile ? "text-[8px]" : "text-[11px]"}
                   ${
                     CATEGORY_COLORS[room.category] ??
-                    "bg-slate-50 text-slate-800"
+                    "bg-muted text-muted-foreground"
                   }
                 `}
                 style={{
@@ -250,7 +250,7 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
                     className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold ${
                       selectedRoom.category
                         ? CATEGORY_COLORS[selectedRoom.category]
-                        : "bg-slate-50"
+                        : "bg-muted text-muted-foreground"
                     }`}
                   >
                     {selectedRoom.category
@@ -333,7 +333,7 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
                     );
                   })
                 ) : (
-                  <div className="flex flex-col items-center justify-center py-8 border-2 border-dashed rounded-xl bg-slate-50/50">
+                  <div className="flex flex-col items-center justify-center py-8 border-2 border-dashed border-border rounded-xl bg-muted/30">
                     <CalendarX className="w-8 h-8 text-muted-foreground mb-2" />
                     <p className="text-sm text-muted-foreground">
                       Trống lịch hôm nay
@@ -362,7 +362,7 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
               variant="outline"
               size="sm"
               className="gap-1.5"
-              onClick={() => share(`${selectedRoom?.name}.`)}
+              onClick={() => share(`${selectedRoom?.name}`)}
             >
               <Share2 className="w-3.5 h-3.5" />
               Chia sẻ

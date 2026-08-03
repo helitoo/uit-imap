@@ -192,7 +192,8 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
         <div
           className="
             shrink-0
-            bg-white
+            bg-card
+            text-card-foreground
             border-b
             border-border/50
             sticky
@@ -316,9 +317,9 @@ export function EventSheet({ open, onOpenChange }: EventSheetProps) {
         </div>
 
         {/* ───────── Body ───────── */}
-        <div className="flex-1 overflow-y-auto bg-white">
+        <div className="flex-1 overflow-y-auto bg-background text-foreground">
           {isEmpty ? (
-            <div className="flex flex-col items-center justify-center py-8 border-2 border-dashed rounded-xl bg-slate-50/50">
+            <div className="flex flex-col items-center justify-center py-8 border-2 border-dashed border-border rounded-xl bg-muted/30">
               <CalendarX className="w-8 h-8 text-muted-foreground mb-2" />
               <p className="text-sm text-muted-foreground">
                 Trống lịch hôm nay

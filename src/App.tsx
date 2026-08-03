@@ -22,8 +22,9 @@ import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { WindowProvider } from "@/contexts/windowContext";
 import { WeatherProvider, useWeather } from "@/contexts/weatherContext";
 import { PanoProvider, usePano } from "@/contexts/tourContext";
-import { DriverProvider } from "@/contexts/driverContext";
+import { ScreenModeProvider } from "@/contexts/screenModeContext";
 import TourViewer from "@/components/main/TourViewer";
+import { DriverProvider } from "@/contexts/driverContext";
 
 function AppRoutes() {
   const location = useLocation();
@@ -107,21 +108,23 @@ function AppRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
-      <WindowProvider>
-        <TooltipProvider delayDuration={100}>
-          <HotspotsProvider>
-            <RoomsProvider>
-              <WeatherProvider>
-                <EventProvider>
-                  <PanoProvider>
-                    <AppRoutes />
-                  </PanoProvider>
-                </EventProvider>
-              </WeatherProvider>
-            </RoomsProvider>
-          </HotspotsProvider>
-        </TooltipProvider>
-      </WindowProvider>
+      <ScreenModeProvider>
+        <WindowProvider>
+          <TooltipProvider delayDuration={100}>
+            <HotspotsProvider>
+              <RoomsProvider>
+                <WeatherProvider>
+                  <EventProvider>
+                    <PanoProvider>
+                      <AppRoutes />
+                    </PanoProvider>
+                  </EventProvider>
+                </WeatherProvider>
+              </RoomsProvider>
+            </HotspotsProvider>
+          </TooltipProvider>
+        </WindowProvider>
+      </ScreenModeProvider>
     </BrowserRouter>
   );
 }

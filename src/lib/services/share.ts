@@ -1,16 +1,12 @@
 import { toast } from "sonner";
 
-export async function share(
-  title: string = "",
-  text: string = "Khám phá ngay tại liên kết này",
-) {
+export async function share(title: string = "") {
   const url = window.location.href;
 
   if (navigator.share) {
     try {
       await navigator.share({
         title: "UIT iMap - " + title,
-        text,
         url,
       });
     } catch (err) {

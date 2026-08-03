@@ -112,7 +112,7 @@ export default function Navbar() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="size-5 md:size-6 text-slate-800 mb-0.5"
+                className="size-5 md:size-6 text-foreground mb-0.5"
               >
                 <circle cx="12" cy="12" r="10" />
                 <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
@@ -132,14 +132,14 @@ export default function Navbar() {
           onClick={() => handleToggleRoute("/imap", isImapOpen)}
           className={cn(
             "w-14 h-14 md:w-16 md:h-16 aspect-square shrink-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-colors",
-            isImapOpen && "bg-blue-50 text-main",
+            isImapOpen && "bg-primary/10 text-primary",
           )}
           disabled={usingMode === "direction"}
         >
           <Info
             className={cn(
               "size-5 md:size-6 mb-0.5",
-              isImapOpen ? "text-main" : "text-slate-800",
+              isImapOpen ? "text-primary" : "text-foreground",
             )}
           />
           <span className="text-[10px] font-medium leading-none">Về iMap</span>
@@ -152,14 +152,14 @@ export default function Navbar() {
           onClick={() => handleToggleRoute("/uit", isUitOpen)}
           className={cn(
             "w-14 h-14 md:w-16 md:h-16 aspect-square shrink-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-colors",
-            isUitOpen && "bg-blue-50 text-main",
+            isUitOpen && "bg-primary/10 text-primary",
           )}
           disabled={usingMode === "direction"}
         >
           <School
             className={cn(
               "size-5 md:size-6 mb-0.5",
-              isUitOpen ? "text-main" : "text-slate-800",
+              isUitOpen ? "text-primary" : "text-foreground",
             )}
           />
           <span className="text-[10px] font-medium leading-none">Về UIT</span>
@@ -178,14 +178,14 @@ export default function Navbar() {
               variant="ghost"
               className={cn(
                 "w-full h-full flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-all",
-                isScheduleOpen && "bg-blue-50 text-main",
+                isScheduleOpen && "bg-primary/10 text-primary",
               )}
               disabled={usingMode === "direction"}
             >
               <CalendarDays
                 className={cn(
                   "size-5 md:size-6 mb-0.5",
-                  isScheduleOpen ? "text-main" : "text-slate-800",
+                  isScheduleOpen ? "text-primary" : "text-foreground",
                 )}
               />
               <span className="text-[10px] font-medium leading-none">Lịch</span>
@@ -200,14 +200,14 @@ export default function Navbar() {
           variant="ghost"
           className={cn(
             "w-14 h-14 md:w-16 md:h-16 aspect-square shrink-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-all",
-            isTransportOpen && "bg-blue-50 text-main",
+            isTransportOpen && "bg-primary/10 text-primary",
           )}
           disabled={usingMode === "direction"}
         >
           <Bus
             className={cn(
               "size-5 md:size-6 mb-0.5",
-              isTransportOpen ? "text-main" : "text-slate-800",
+              isTransportOpen ? "text-primary" : "text-foreground",
             )}
           />
           <span className="text-[10px] font-medium leading-none">Tuyến xe</span>
@@ -219,7 +219,7 @@ export default function Navbar() {
   return (
     <>
       {/* Navigation Bar: Responsive (Mobile Bottom Bar / Desktop Sidebar) */}
-      <nav className="fixed z-40 bg-white flex items-center bottom-0 left-0 right-0 h-16 flex-row justify-around px-2 border-t border-slate-50 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] md:top-0 md:bottom-auto md:left-auto md:right-0 md:h-full md:w-20 md:flex-col md:justify-start md:py-8 md:px-0 md:gap-6 md:border-l md:border-t-0 md:shadow-sm">
+      <nav className="fixed z-40 bg-card text-card-foreground flex items-center bottom-0 left-0 right-0 h-16 flex-row justify-around px-2 border-t border-border shadow-[0_-2px_10px_rgba(0,0,0,0.05)] md:top-0 md:bottom-auto md:left-auto md:right-0 md:h-full md:w-20 md:flex-col md:justify-start md:py-8 md:px-0 md:gap-6 md:border-l md:border-t-0 md:shadow-sm">
         {navItems}
       </nav>
 

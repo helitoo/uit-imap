@@ -60,40 +60,36 @@ export default function WebIntroContent() {
           </div>
 
           {/* Body Card (Overlapping White Box) */}
-          <div className="bg-white rounded-3xl p-5 shadow-xl border border-slate-50 -mt-1.5 relative z-10 rotate-[0.5deg] group-hover:rotate-0 transition-transform duration-300 space-y-4">
-            <p className="text-xs sm:text-sm text-slate-800 leading-relaxed text-justify">
-              <strong className="text-main font-semibold">UIT iMap</strong> là
-              bản đồ 3D trường Đại học Công nghệ thông tin (UIT), cung cấp trải
-              nghiệm khám phá không gian học thuật hiện đại, trực quan dành cho
-              học sinh, sinh viên và khách tham quan.
+          <div className="bg-card text-card-foreground rounded-3xl p-5 shadow-xl border border-border -mt-1.5 relative z-10 rotate-[0.5deg] group-hover:rotate-0 transition-transform duration-300 space-y-4">
+            <p className="text-xs sm:text-sm text-foreground leading-relaxed text-justify">
+              <strong className="text-primary font-semibold">UIT iMap</strong>{" "}
+              là bản đồ 3D trường Đại học Công nghệ thông tin (UIT), cung cấp
+              trải nghiệm khám phá không gian học thuật hiện đại, trực quan dành
+              cho học sinh, sinh viên và khách tham quan.
             </p>
 
             {/* List with Secondary Decorative CircleCheckBig Icons */}
-            <div className="bg-sky-50/60 rounded-2xl p-4 border border-sky-100 space-y-2.5">
-              <ul className="space-y-2 text-xs sm:text-sm text-slate-800">
+            <div className="bg-accent/40 rounded-2xl p-4 border border-accent space-y-2.5">
+              <ul className="space-y-2 text-xs sm:text-sm text-foreground">
                 <li className="flex items-start gap-2">
-                  <CircleCheckBig className="size-4 text-main shrink-0 mt-0.5" />
+                  <CircleCheckBig className="size-4 text-primary shrink-0 mt-0.5" />
                   <span>
-                    <strong className="text-slate-800">
-                      Mô hình 3D:
-                    </strong>{" "}
-                    Tái hiện chân thực toàn bộ kiến trúc campus UIT.
+                    <strong className="text-foreground">Mô hình 3D:</strong> Tái
+                    hiện chân thực toàn bộ kiến trúc campus UIT.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CircleCheckBig className="size-4 text-main shrink-0 mt-0.5" />
+                  <CircleCheckBig className="size-4 text-primary shrink-0 mt-0.5" />
                   <span>
-                    <strong className="text-slate-800">
-                      Ảnh 360:
-                    </strong>{" "}
-                    Khám qua không gian UIT thông qua hệ thống ảnh 360 ngay tại
-                    trình duyệt web.
+                    <strong className="text-foreground">Ảnh 360:</strong> Khám
+                    qua không gian UIT thông qua hệ thống ảnh 360 ngay tại trình
+                    duyệt web.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CircleCheckBig className="size-4 text-main shrink-0 mt-0.5" />
+                  <CircleCheckBig className="size-4 text-primary shrink-0 mt-0.5" />
                   <span>
-                    <strong className="text-slate-800">
+                    <strong className="text-foreground">
                       Tra cứu địa điểm & dẫn đường:
                     </strong>{" "}
                     Tìm kiếm nhanh chóng các giảng đường, phòng lab, hội trường
@@ -101,9 +97,9 @@ export default function WebIntroContent() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CircleCheckBig className="size-4 text-main shrink-0 mt-0.5" />
+                  <CircleCheckBig className="size-4 text-primary shrink-0 mt-0.5" />
                   <span>
-                    <strong className="text-slate-800">
+                    <strong className="text-foreground">
                       Dịch vụ hỗ trợ sinh viên:
                     </strong>{" "}
                     Tra cứu nhanh lịch phòng và các tuyến bus / metro.
@@ -138,12 +134,12 @@ export default function WebIntroContent() {
           </div>
 
           {/* Body Card */}
-          <div className="bg-white rounded-3xl p-4 sm:p-5 shadow-xl border border-slate-50 -mt-1.5 relative z-10 rotate-[0.5deg] group-hover:rotate-0 transition-transform duration-300">
+          <div className="bg-card text-card-foreground rounded-3xl p-4 sm:p-5 shadow-xl border border-border -mt-1.5 relative z-10 rotate-[0.5deg] group-hover:rotate-0 transition-transform duration-300">
             <nav
               aria-label="Thông tin phát triển và mã nguồn mở"
               className="grid grid-cols-1 gap-2 text-xs sm:text-sm font-medium"
             >
-              <div className="flex items-center gap-2.5 p-3 rounded-2xl bg-slate-50 border border-slate-50/60 text-slate-800">
+              <div className="flex items-center gap-2.5 p-3 rounded-2xl bg-muted/50 border border-border text-foreground">
                 <IntroImage
                   src="uit-logo.png"
                   alt="UIT logo icon"
@@ -158,18 +154,25 @@ export default function WebIntroContent() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Truy cập kho mã nguồn GitHub của dự án helitoo/uit-imap"
-                className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 hover:bg-sky-50 text-slate-800 hover:text-main transition-all group/link border border-slate-50/60"
+                className="flex items-center justify-between p-3 rounded-2xl bg-muted/50 hover:bg-accent text-foreground hover:text-primary transition-all group/link border border-border"
               >
                 <span className="flex items-center gap-2">
-                  <IntroImage
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                    alt="Github icon"
-                    className="size-4"
-                    skeletonClassName="size-4 rounded shrink-0"
-                  />
-                  <span>GitHub Repository: helitoo/uit-imap</span>
+                  <svg
+                    viewBox="0 0 128 128"
+                    className="text-[#181616] dark:text-white size-4 shrink-0"
+                  >
+                    <g fill="currentColor">
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                      ></path>
+                      <path d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"></path>
+                    </g>
+                  </svg>
+                  <span>GitHub Repo: helitoo/uit-imap</span>
                 </span>
-                <ExternalLink className="size-4 text-slate-800 group-hover/link:text-main group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                <ExternalLink className="size-4 text-foreground group-hover/link:text-primary group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
               </a>
 
               <a
@@ -177,7 +180,7 @@ export default function WebIntroContent() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Xem mô hình 3D UIT trên Sketchfab"
-                className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 hover:bg-sky-50 text-slate-800 hover:text-main transition-all group/link border border-slate-50/60"
+                className="flex items-center justify-between p-3 rounded-2xl bg-muted/50 hover:bg-accent text-foreground hover:text-primary transition-all group/link border border-border"
               >
                 <span className="flex items-center gap-2 truncate">
                   <IntroImage
@@ -191,7 +194,7 @@ export default function WebIntroContent() {
                     UIT
                   </span>
                 </span>
-                <ExternalLink className="size-4 text-slate-800 group-hover/link:text-main group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform shrink-0" />
+                <ExternalLink className="size-4 text-foreground group-hover/link:text-primary group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform shrink-0" />
               </a>
             </nav>
           </div>

@@ -72,18 +72,18 @@ export default function DirectionBar() {
   };
 
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 w-[90%] md:w-fit bg-white p-3 rounded-2xl shadow-lg">
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 w-[90%] md:w-fit bg-card text-card-foreground border border-border p-3 rounded-2xl shadow-lg">
       {/* Container cho 2 Inputs và Arrows */}
       <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3 flex-grow">
         {/* Input 1 + Arrow Down (Mobile) */}
         <div className="flex items-center gap-2">
-          <div className="md:hidden text-slate-800">
+          <div className="md:hidden text-foreground">
             {" "}
             <ArrowDown />{" "}
           </div>
           <SearchInput
             ref={startInputRef}
-            className="bg-white shadow-md rounded-full pl-4 pr-1.5 w-full md:w-80 h-10 border border-slate-50"
+            className="bg-card text-card-foreground shadow-md rounded-full pl-4 pr-1.5 w-full md:w-80 h-10 border border-border"
             placeholder="Chọn điểm đầu"
             onClickRes={handleChooseSourceHotspot}
             showDirectionIcon={false}
@@ -91,19 +91,19 @@ export default function DirectionBar() {
         </div>
 
         {/* Arrow Right (Chỉ hiện trên Desktop) */}
-        <div className="hidden md:block text-slate-800">
+        <div className="hidden md:block text-foreground">
           <ArrowRight />
         </div>
 
         {/* Input 2 + Arrow Down (Mobile) */}
         <div className="flex items-center gap-2">
-          <div className="md:hidden text-slate-800">
+          <div className="md:hidden text-foreground">
             {" "}
             <MapPin />{" "}
           </div>
           <SearchInput
             ref={destInputRef}
-            className="bg-white shadow-md rounded-full pl-4 pr-1.5 w-full md:w-80 h-10 border border-slate-50"
+            className="bg-card text-card-foreground shadow-md rounded-full pl-4 pr-1.5 w-full md:w-80 h-10 border border-border"
             placeholder="Chọn điểm đến"
             onClickRes={handleChooseDestHotspot}
             initText={destHotspot?.name}

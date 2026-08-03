@@ -12,17 +12,15 @@ export default function ShowTourButton({
   return (
     <button
       id="tour-button"
-      onClick={(e) => setShowTourspots(!showTourspots)}
+      onClick={() => setShowTourspots(!showTourspots)}
       className={cn(
-        "flex items-center justify-center",
-        "bg-white shadow-md rounded-full p-2 size-10 border border-slate-50 flex-shrink-0",
-        showTourspots && "bg-sky-500 text-white ring-8 ring-sky-500/20",
-        "transition-all duration-300 ease-out",
+        "btn-floating-bar",
+        showTourspots && "btn-floating-bar-active",
         className,
       )}
       title="Bật/Tắt chế độ xem 360"
     >
-      <Rotate3d />
+      <Rotate3d className="size-5" />
     </button>
   );
 }

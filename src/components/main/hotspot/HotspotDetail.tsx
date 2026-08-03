@@ -110,7 +110,7 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
             variant="outline"
             size="sm"
             className="gap-1.5"
-            onClick={() => share(`${hotspot.name || hotspot.id}.`)}
+            onClick={() => share(`${hotspot.name || hotspot.id}`)}
           >
             <Share2 className="w-3.5 h-3.5" />
             Chia sẻ

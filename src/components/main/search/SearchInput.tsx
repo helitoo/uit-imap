@@ -117,7 +117,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             type="button"
             variant="ghost"
             size="icon"
-            className="h-7 w-7 rounded-full text-slate-800 hover:text-main hover:bg-slate-50 transition-colors p-0 flex items-center justify-center shrink-0"
+            className="h-7 w-7 rounded-full text-foreground hover:text-primary hover:bg-accent transition-colors p-0 flex items-center justify-center shrink-0"
             title="Tìm kiếm"
           >
             <Search className="w-4 h-4" />
@@ -128,7 +128,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               type="button"
               variant="ghost"
               size="icon"
-              className="h-7 w-7 rounded-full text-slate-800 hover:bg-main/10 hover:text-main transition-all duration-200 p-0 flex items-center justify-center shrink-0 shadow-xs"
+              className="h-7 w-7 rounded-full text-foreground hover:bg-primary/10 hover:text-primary transition-all duration-200 p-0 flex items-center justify-center shrink-0 shadow-xs"
               title="Dẫn đường"
               onClick={() => setUsingMode("direction")}
             >
@@ -139,29 +139,29 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
         {/* Dropdown Results (Giữ nguyên logic cũ) */}
         {showDropdown && (
-          <div className="absolute top-[calc(100%+8px)] left-0 right-0 bg-white border border-slate-50 rounded-2xl shadow-xl z-50 overflow-y-auto overflow-x-hidden">
+          <div className="absolute top-[calc(100%+8px)] left-0 right-0 bg-popover text-popover-foreground border border-border rounded-2xl shadow-xl z-50 overflow-y-auto overflow-x-hidden">
             {topMatches.length > 0
               ? topMatches.map(({ r, score }) => (
                   <button
                     key={r.id}
                     onClick={() => handleSelectRoom(r)}
-                    className="w-full px-5 py-3 text-left hover:bg-slate-50 transition-colors border-b border-slate-50 last:border-b-0"
+                    className="w-full px-5 py-3 text-left hover:bg-accent transition-colors border-b border-border last:border-b-0"
                   >
-                    <div className="font-semibold text-slate-800">{r.name}</div>
+                    <div className="font-semibold text-foreground">{r.name}</div>
                     {r.description && (
-                      <div className="text-sm text-slate-800 truncate">
+                      <div className="text-sm text-muted-foreground truncate">
                         {r.description}
                       </div>
                     )}
                     {r.belongsTo && r.floor && (
-                      <div className="font-sm text-slate-800 truncate">
+                      <div className="text-xs text-muted-foreground truncate mt-0.5">
                         {getHotspotById(r.belongsTo)?.name} • Tầng {r.floor}
                       </div>
                     )}
                   </button>
                 ))
               : searchQuery.trim() && (
-                  <div className="p-4 text-center text-slate-800 text-sm">
+                  <div className="p-4 text-center text-muted-foreground text-sm">
                     Không tìm thấy kết quả
                   </div>
                 )}

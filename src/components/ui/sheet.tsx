@@ -84,7 +84,7 @@ const SheetContent = React.forwardRef<
           ref={ref}
           className={cn(
             sheetVariants({ side }),
-            "bg-white supports-[backdrop-filter]:bg-white",
+            "bg-background text-foreground",
             className,
           )}
           {...props}
@@ -101,7 +101,7 @@ const SheetContent = React.forwardRef<
               <SheetDescription>{description}</SheetDescription>
             </DescWrapper>
           )}
-          <SheetPrimitive.Close className="absolute right-3 top-3 z-50 rounded-full p-1 bg-white shadow-md transition-all border border-slate-800 text-slate-800 hover:text-main focus:ring-2 focus:ring-main focus:text-main focus:border-none hover:bg-slate-50">
+          <SheetPrimitive.Close className="absolute right-3 top-3 z-50 rounded-full p-1 bg-card text-card-foreground shadow-md transition-all border border-border hover:bg-accent hover:text-accent-foreground focus:ring-2 focus:ring-primary">
             <X className="h-4 w-4" />
             <span className="sr-only">Close</span>
           </SheetPrimitive.Close>

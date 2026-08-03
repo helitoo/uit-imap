@@ -13,6 +13,7 @@ import { useHotspots } from "@/contexts/hotspotsContext";
 import HotspotDirection from "@/components/main/hotspot/HotspotDirection";
 import TourspotButton from "@/components/main/hotspot/TourspotButton";
 import { useMode } from "@/contexts/modeContext";
+import { useScreenMode } from "@/contexts/screenModeContext";
 
 type CustomModelViewer = HTMLElement & {
   cameraOrbit: string;
@@ -49,13 +50,14 @@ interface ModelViewerProps {
   directionPath: Hotspot[];
 }
 
-const INITIAL_ORBIT = "-131deg 68.84deg 19.4m";
-const INITIAL_FOV = "13.71deg";
+const INITIAL_ORBIT = "-131.7deg 67.68deg 25.13m";
+const INITIAL_FOV = "20.11deg";
 
 const ModelViewer = forwardRef<ModelViewerHandle, ModelViewerProps>(
   ({ selectedHotspot, directionPath }, ref) => {
     const { getDefaultHotspots } = useHotspots();
     const { showTourspots } = useMode();
+    const { resolvedMode } = useScreenMode();
     const [tourspots, setTourspots] = useState<Tourspot[]>([]);
 
     useEffect(() => {
@@ -117,6 +119,9 @@ const ModelViewer = forwardRef<ModelViewerHandle, ModelViewerProps>(
           tone-mapping="neutral"
           shadow-intensity="0"
           exposure="1"
+          environment-image={
+            resolvedMode === "dark" ? "aircraft_workshop_01_1k.hdr" : undefined
+          }
           min-camera-orbit="auto 0deg auto"
           max-camera-orbit="auto 88deg auto"
           camera-orbit={INITIAL_ORBIT}
