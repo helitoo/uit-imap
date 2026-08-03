@@ -113,7 +113,7 @@ export default function WeatherBar({ className = "" }: { className?: string }) {
                   <div className="flex flex-col leading-tight">
                     {" "}
                     {/* leading-tight giúp khoảng cách dòng đẹp hơn */}
-                    <span className="text-[10px] lg:text-xs font-bold text-gray-800">
+                    <span className="text-[10px] lg:text-xs font-bold text-slate-800">
                       {slot.time}
                     </span>
                   </div>

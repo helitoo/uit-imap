@@ -111,10 +111,10 @@ export function TransportSheet({ open, onOpenChange }: TransportSheetProps) {
                 <div
                   key={idx}
                   onClick={() => handleSpotClick(item.spot)}
-                  className="group relative flex flex-col p-4 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-md hover:border-main/20 cursor-pointer transition-all duration-300 animate-fade-in"
+                  className="group relative flex flex-col p-4 bg-white border border-slate-50 rounded-xl shadow-sm hover:shadow-md hover:border-main/20 cursor-pointer transition-all duration-300 animate-fade-in"
                 >
                   <div className="flex items-start gap-3">
-                    <div className="p-2.5 bg-slate-50 text-slate-600 rounded-lg group-hover:bg-main/5 group-hover:text-main transition-colors">
+                    <div className="p-2.5 bg-slate-50 text-slate-800 rounded-lg group-hover:bg-main/5 group-hover:text-main transition-colors">
                       <TypeIcon className="w-5 h-5" />
                     </div>
 
@@ -124,7 +124,7 @@ export function TransportSheet({ open, onOpenChange }: TransportSheetProps) {
                       </h3>
 
                       <div className="flex items-center gap-1.5 mt-1 text-xs text-muted-foreground">
-                        <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                        <MapPin className="w-3.5 h-3.5 text-slate-800 shrink-0" />
                         <span className="truncate">{spotName}</span>
                       </div>
                     </div>
@@ -143,7 +143,7 @@ export function TransportSheet({ open, onOpenChange }: TransportSheetProps) {
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
                             title={info.name}
-                            className="w-7 h-7 p-1 bg-white border border-slate-100 rounded-md hover:border-main/50 hover:shadow-sm transition-all duration-200 flex items-center justify-center"
+                            className="w-7 h-7 p-1 bg-white border border-slate-50 rounded-md hover:border-main/50 hover:shadow-sm transition-all duration-200 flex items-center justify-center"
                           >
                             <TransportProviderImage
                               src={info.url}
@@ -162,7 +162,7 @@ export function TransportSheet({ open, onOpenChange }: TransportSheetProps) {
 
         {/* Note section */}
         <div className="p-4 border-t border-border/50 bg-slate-50/80 space-y-3 shrink-0">
-          <div className="flex gap-2.5 text-xs text-slate-600 leading-relaxed">
+          <div className="flex gap-2.5 text-xs text-slate-800 leading-relaxed">
             <Info className="w-4 h-4 text-main shrink-0 mt-0.5" />
             <div>
               TP.HCM miễn phí 134 tuyến xe bus nội thành. Chi tiết tại{" "}
@@ -177,7 +177,7 @@ export function TransportSheet({ open, onOpenChange }: TransportSheetProps) {
               .
             </div>
           </div>
-          <div className="flex gap-2.5 text-xs text-slate-600 leading-relaxed text-justify">
+          <div className="flex gap-2.5 text-xs text-slate-800 leading-relaxed text-justify">
             <Info className="w-4 h-4 text-main shrink-0 mt-0.5" />
             <div>
               Học sinh, sinh viên có thể nhận được ưu đãi giảm 150k khi đăng ký

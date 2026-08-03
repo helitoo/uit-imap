@@ -15,7 +15,7 @@ export default function ShowTourButton({
       onClick={(e) => setShowTourspots(!showTourspots)}
       className={cn(
         "flex items-center justify-center",
-        "bg-white shadow-md rounded-full p-2 size-10 border border-gray-100 flex-shrink-0",
+        "bg-white shadow-md rounded-full p-2 size-10 border border-slate-50 flex-shrink-0",
         showTourspots && "bg-sky-500 text-white ring-8 ring-sky-500/20",
         "transition-all duration-300 ease-out",
         className,

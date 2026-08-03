@@ -26,14 +26,14 @@ function DriverGuideAnimation({ step }: { step: number }) {
     <div className="driver-guide-overlay pointer-events-none absolute inset-0 z-30 flex items-center justify-center select-none">
       {step === 0 && (
         <div className="relative flex h-16 w-48 items-center justify-center">
-          <div className="absolute h-1 w-36 rounded-full bg-slate-400/50" />
+          <div className="absolute h-1 w-36 rounded-full bg-slate-800/50" />
           <div className="driver-guide-dot animate-driver-rotate-dot" />
         </div>
       )}
 
       {step === 1 && (
         <div className="relative flex h-24 w-24 items-center justify-center">
-          <div className="absolute h-16 w-1 rounded-full bg-slate-400/50" />
+          <div className="absolute h-16 w-1 rounded-full bg-slate-800/50" />
           <div className="driver-guide-dot animate-driver-zoom-top" />
           <div className="driver-guide-dot animate-driver-zoom-bottom" />
         </div>
@@ -41,7 +41,7 @@ function DriverGuideAnimation({ step }: { step: number }) {
 
       {step === 2 && (
         <div className="relative flex h-16 w-48 items-center justify-center">
-          <div className="absolute h-1 w-44 rounded-full bg-slate-400/50" />
+          <div className="absolute h-1 w-44 rounded-full bg-slate-800/50" />
           <div className="driver-guide-dot animate-driver-pan-dot1" />
           <div className="driver-guide-dot animate-driver-pan-dot2" />
         </div>

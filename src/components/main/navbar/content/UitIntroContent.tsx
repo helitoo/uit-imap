@@ -127,8 +127,8 @@ export default function UitIntroContent() {
           </div>
 
           {/* Body Card (Overlapping White Box) */}
-          <div className="bg-white dark:bg-slate-900 rounded-3xl p-5 shadow-xl border border-slate-100 dark:border-slate-800 -mt-1.5 relative z-10 rotate-[0.5deg] group-hover:rotate-0 transition-transform duration-300 space-y-4">
-            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed text-justify">
+          <div className="bg-white dark:bg-slate-800 rounded-3xl p-5 shadow-xl border border-slate-50 dark:border-slate-800 -mt-1.5 relative z-10 rotate-[0.5deg] group-hover:rotate-0 transition-transform duration-300 space-y-4">
+            <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-50 leading-relaxed text-justify">
               <strong className="text-main font-semibold">UIT</strong>{" "}
               <em>(University of Information Technology - VNU-HCM)</em> là
               trường đại học công lập được thành lập ngày 08/06/2006 theo quyết
@@ -137,12 +137,12 @@ export default function UitIntroContent() {
             </p>
 
             {/* List with Secondary Decorative CircleCheckBig Icons */}
-            <div className="bg-sky-50/60 dark:bg-slate-800/50 rounded-2xl p-4 border border-sky-100 dark:border-slate-700/60 space-y-2.5">
-              <ul className="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+            <div className="bg-sky-50/60 dark:bg-slate-800/50 rounded-2xl p-4 border border-sky-100 dark:border-slate-800/60 space-y-2.5">
+              <ul className="space-y-2 text-xs sm:text-sm text-slate-800 dark:text-slate-50">
                 <li className="flex items-start gap-2">
                   <CircleCheckBig className="size-4 text-main shrink-0 mt-0.5" />
                   <span>
-                    <strong className="text-slate-900 dark:text-slate-100">
+                    <strong className="text-slate-800 dark:text-slate-50">
                       Đào tạo nhân lực chất lượng cao:
                     </strong>{" "}
                     Cung cấp đội ngũ chuyên gia CNTT xuất sắc cho đất nước.
@@ -151,7 +151,7 @@ export default function UitIntroContent() {
                 <li className="flex items-start gap-2">
                   <CircleCheckBig className="size-4 text-main shrink-0 mt-0.5" />
                   <span>
-                    <strong className="text-slate-900 dark:text-slate-100">
+                    <strong className="text-slate-800 dark:text-slate-50">
                       Nghiên cứu & Chuyển giao:
                     </strong>{" "}
                     Đẩy mạnh ứng dụng CNTT tiên tiến phục vụ công nghiệp hóa,
@@ -161,7 +161,7 @@ export default function UitIntroContent() {
                 <li className="flex items-start gap-2">
                   <CircleCheckBig className="size-4 text-main shrink-0 mt-0.5" />
                   <span>
-                    <strong className="text-slate-900 dark:text-slate-100">
+                    <strong className="text-slate-800 dark:text-slate-50">
                       Hội nhập quốc tế:
                     </strong>{" "}
                     Phát triển môi trường học thuật sáng tạo, tiệm cận chuẩn thế
@@ -229,7 +229,7 @@ export default function UitIntroContent() {
                   {/* Thẻ Tab thông tin đan xen */}
                   <div
                     className={cn(
-                      "relative z-10 flex-1 py-2.5 sm:py-3 bg-white hover:bg-slate-100 transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-between gap-2.5 group/card",
+                      "relative z-10 flex-1 py-2.5 sm:py-3 bg-white hover:bg-slate-50 transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-between gap-2.5 group/card",
                       isEven
                         ? "-ml-4 pl-6 sm:pl-7 pr-3 sm:pr-4 rounded-r-2xl rounded-l-full"
                         : "-mr-4 pr-6 sm:pr-7 pl-3 sm:pl-4 rounded-l-2xl rounded-r-full",
@@ -241,7 +241,7 @@ export default function UitIntroContent() {
                         href={faculty.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-100 hover:text-main transition-colors line-clamp-2"
+                        className="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-50 hover:text-main transition-colors line-clamp-2"
                       >
                         {faculty.name}
                       </a>
@@ -249,7 +249,7 @@ export default function UitIntroContent() {
                         <Link
                           to={faculty.url}
                           title={`Xem vị trí ${faculty.address} trên bản đồ`}
-                          className="inline-flex items-center gap-1 text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 hover:text-main transition-colors truncate font-medium"
+                          className="inline-flex items-center gap-1 text-[11px] sm:text-xs text-slate-800 dark:text-slate-800 hover:text-main transition-colors truncate font-medium"
                         >
                           <CornerUpRight className="size-3 text-sky-500 shrink-0" />
                           <span className="truncate">{faculty.address}</span>
@@ -263,7 +263,7 @@ export default function UitIntroContent() {
                       target="_blank"
                       rel="noopener noreferrer"
                       title={`Truy cập trang web ${faculty.name}`}
-                      className="p-1.5 rounded-xl text-slate-400 hover:text-main hover:bg-white dark:hover:bg-slate-700/80 transition-all shrink-0 border border-transparent hover:border-slate-200/60 dark:hover:border-slate-600/60 shadow-none hover:shadow-sm"
+                      className="p-1.5 rounded-xl text-slate-800 hover:text-main hover:bg-white dark:hover:brightness-95 transition-all shrink-0 border border-transparent hover:border-slate-50/60 dark:hover:border-slate-800/60 shadow-none hover:shadow-sm"
                     >
                       <ExternalLink className="size-4" />
                     </a>
@@ -295,7 +295,7 @@ export default function UitIntroContent() {
           </div>
 
           {/* Body Card */}
-          <div className="bg-white dark:bg-slate-900 rounded-3xl p-4 sm:p-5 shadow-xl border border-slate-100 dark:border-slate-800 -mt-1.5 relative z-10 rotate-[0.5deg] group-hover:rotate-0 transition-transform duration-300">
+          <div className="bg-white dark:bg-slate-800 rounded-3xl p-4 sm:p-5 shadow-xl border border-slate-50 dark:border-slate-800 -mt-1.5 relative z-10 rotate-[0.5deg] group-hover:rotate-0 transition-transform duration-300">
             <nav
               aria-label="Liên kết chính thức UIT và CITD"
               className="grid grid-cols-1 gap-2 text-xs sm:text-sm font-medium"
@@ -305,13 +305,13 @@ export default function UitIntroContent() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Truy cập Fanpage chính thức của UIT"
-                className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 hover:text-main transition-all group/link border border-slate-200/60 dark:border-slate-700/60"
+                className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:brightness-95 text-slate-800 dark:text-slate-50 hover:text-main transition-all group/link border border-slate-50/60 dark:border-slate-800/60"
               >
                 <span className="flex items-center gap-2">
                   <CircleCheckBig className="size-4 text-main shrink-0" />
                   Fanpage chính thức của UIT
                 </span>
-                <ExternalLink className="size-4 text-slate-400 group-hover/link:text-main group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                <ExternalLink className="size-4 text-slate-800 group-hover/link:text-main group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
               </a>
 
               <a
@@ -319,13 +319,13 @@ export default function UitIntroContent() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Truy cập Trang web chính thức của UIT"
-                className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 hover:text-main transition-all group/link border border-slate-200/60 dark:border-slate-700/60"
+                className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:brightness-95 text-slate-800 dark:text-slate-50 hover:text-main transition-all group/link border border-slate-50/60 dark:border-slate-800/60"
               >
                 <span className="flex items-center gap-2">
                   <CircleCheckBig className="size-4 text-main shrink-0" />
                   Trang web chính thức của UIT
                 </span>
-                <ExternalLink className="size-4 text-slate-400 group-hover/link:text-main group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                <ExternalLink className="size-4 text-slate-800 group-hover/link:text-main group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
               </a>
 
               <a
@@ -333,13 +333,13 @@ export default function UitIntroContent() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Truy cập Thông tin tuyển sinh Đại học UIT"
-                className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 hover:text-main transition-all group/link border border-slate-200/60 dark:border-slate-700/60"
+                className="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 hover:bg-sky-50 dark:hover:brightness-95 text-slate-800 dark:text-slate-50 hover:text-main transition-all group/link border border-slate-50/60 dark:border-slate-800/60"
               >
                 <span className="flex items-center gap-2">
                   <CircleCheckBig className="size-4 text-main shrink-0" />
                   Cổng Thông tin Tuyển sinh UIT
                 </span>
-                <ExternalLink className="size-4 text-slate-400 group-hover/link:text-main group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                <ExternalLink className="size-4 text-slate-800 group-hover/link:text-main group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
               </a>
             </nav>
           </div>

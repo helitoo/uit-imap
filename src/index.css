@@ -312,7 +312,7 @@ model-viewer {
 }
 
 .driver-popover-close-btn {
-  @apply absolute right-3 top-3 z-50 rounded-full w-7 h-7 flex items-center justify-center bg-white shadow-md transition-all border border-slate-400 text-slate-400 hover:text-main focus:outline-none focus:ring-2 focus:ring-main hover:bg-slate-100 cursor-pointer;
+  @apply absolute right-3 top-3 z-50 rounded-full w-7 h-7 flex items-center justify-center bg-white shadow-md transition-all border border-slate-800 text-slate-800 hover:text-main focus:outline-none focus:ring-2 focus:ring-main hover:bg-slate-50 cursor-pointer;
 }
 
 /* Driver Popover Arrows matching theme background */

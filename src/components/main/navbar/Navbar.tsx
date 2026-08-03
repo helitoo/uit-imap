@@ -112,7 +112,7 @@ export default function Navbar() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="size-5 md:size-6 text-slate-600 mb-0.5"
+                className="size-5 md:size-6 text-slate-800 mb-0.5"
               >
                 <circle cx="12" cy="12" r="10" />
                 <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
@@ -139,7 +139,7 @@ export default function Navbar() {
           <Info
             className={cn(
               "size-5 md:size-6 mb-0.5",
-              isImapOpen ? "text-main" : "text-slate-600",
+              isImapOpen ? "text-main" : "text-slate-800",
             )}
           />
           <span className="text-[10px] font-medium leading-none">Về iMap</span>
@@ -159,7 +159,7 @@ export default function Navbar() {
           <School
             className={cn(
               "size-5 md:size-6 mb-0.5",
-              isUitOpen ? "text-main" : "text-slate-600",
+              isUitOpen ? "text-main" : "text-slate-800",
             )}
           />
           <span className="text-[10px] font-medium leading-none">Về UIT</span>
@@ -185,7 +185,7 @@ export default function Navbar() {
               <CalendarDays
                 className={cn(
                   "size-5 md:size-6 mb-0.5",
-                  isScheduleOpen ? "text-main" : "text-slate-600",
+                  isScheduleOpen ? "text-main" : "text-slate-800",
                 )}
               />
               <span className="text-[10px] font-medium leading-none">Lịch</span>
@@ -207,7 +207,7 @@ export default function Navbar() {
           <Bus
             className={cn(
               "size-5 md:size-6 mb-0.5",
-              isTransportOpen ? "text-main" : "text-slate-600",
+              isTransportOpen ? "text-main" : "text-slate-800",
             )}
           />
           <span className="text-[10px] font-medium leading-none">Tuyến xe</span>
@@ -219,7 +219,7 @@ export default function Navbar() {
   return (
     <>
       {/* Navigation Bar: Responsive (Mobile Bottom Bar / Desktop Sidebar) */}
-      <nav className="fixed z-40 bg-white flex items-center bottom-0 left-0 right-0 h-16 flex-row justify-around px-2 border-t border-slate-200 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] md:top-0 md:bottom-auto md:left-auto md:right-0 md:h-full md:w-20 md:flex-col md:justify-start md:py-8 md:px-0 md:gap-6 md:border-l md:border-t-0 md:shadow-sm">
+      <nav className="fixed z-40 bg-white flex items-center bottom-0 left-0 right-0 h-16 flex-row justify-around px-2 border-t border-slate-50 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] md:top-0 md:bottom-auto md:left-auto md:right-0 md:h-full md:w-20 md:flex-col md:justify-start md:py-8 md:px-0 md:gap-6 md:border-l md:border-t-0 md:shadow-sm">
         {navItems}
       </nav>
 

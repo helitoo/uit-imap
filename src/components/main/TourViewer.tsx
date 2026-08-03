@@ -220,7 +220,7 @@ export default function TourViewer({
   return (
     <main
       className={cn(
-        "fixed inset-0 z-50 overflow-hidden bg-slate-950 text-white transition-opacity duration-300",
+        "fixed inset-0 z-50 overflow-hidden bg-slate-800 text-white transition-opacity duration-300",
         isOpen
           ? "pointer-events-auto opacity-100"
           : "pointer-events-none opacity-0",
@@ -230,12 +230,12 @@ export default function TourViewer({
     >
       <div
         ref={panoRef}
-        className="fixed inset-0 bg-slate-950"
+        className="fixed inset-0 bg-slate-800"
         aria-label="UIT 360 panorama"
       />
 
       <header className="fixed top-0 left-0 right-0 z-10 w-full flex min-h-16 items-stretch justify-end sm:justify-between gap-3">
-        <div className="hidden sm:flex flex-1 min-w-0 flex-col justify-center px-5 sm:pr-36 bg-gradient-to-r from-slate-950/70 via-slate-950/40 to-transparent">
+        <div className="hidden sm:flex flex-1 min-w-0 flex-col justify-center px-5 sm:pr-36 bg-gradient-to-r from-slate-800/70 via-slate-800/40 to-transparent">
           <p className="text-[11px] font-semibold uppercase leading-tight text-sky-200">
             UIT 360 Tour
           </p>
@@ -250,7 +250,7 @@ export default function TourViewer({
           aria-label="Scene controls"
         >
           <Button
-            className="size-10 rounded-full border border-white/15 bg-slate-950/60 text-white hover:bg-slate-950/80"
+            className="size-10 rounded-full border border-white/15 bg-slate-800/60 text-white hover:brightness-95"
             onClick={() => share(`Cảnh 360 ${currentScene?.name}.`)}
             aria-label="Share"
             title="Chia sẻ"
@@ -258,7 +258,7 @@ export default function TourViewer({
             <Share2 />
           </Button>
           <Button
-            className="size-10 rounded-full border border-white/15 bg-slate-950/60 text-white hover:bg-slate-950/80"
+            className="size-10 rounded-full border border-white/15 bg-slate-800/60 text-white hover:brightness-95"
             onClick={() => setIsSceneMenuOpen((open) => !open)}
             aria-label="Toggle scene list"
             title="Mở/Đóng danh sách cảnh"
@@ -266,7 +266,7 @@ export default function TourViewer({
             <List />
           </Button>
           <Button
-            className="size-10 rounded-full border border-white/15 bg-slate-950/60 text-white hover:bg-slate-950/80"
+            className="size-10 rounded-full border border-white/15 bg-slate-800/60 text-white hover:brightness-95"
             onClick={() => goToAdjacentScene("prev")}
             aria-label="Previous scene"
             title="Cảnh trước đó"
@@ -274,7 +274,7 @@ export default function TourViewer({
             <ChevronLeft />
           </Button>
           <Button
-            className="size-10 rounded-full border border-white/15 bg-slate-950/60 text-white hover:bg-slate-950/80"
+            className="size-10 rounded-full border border-white/15 bg-slate-800/60 text-white hover:brightness-95"
             onClick={() => goToAdjacentScene("next")}
             aria-label="Next scene"
             title="Cảnh tiếp theo"
@@ -282,7 +282,7 @@ export default function TourViewer({
             <ChevronRight />
           </Button>
           <Button
-            className="size-10 rounded-full border border-white/15 bg-slate-950/60 text-white hover:bg-slate-950/80"
+            className="size-10 rounded-full border border-white/15 bg-slate-800/60 text-white hover:brightness-95"
             onClick={onExit}
             aria-label="Exit tour"
             title="Thoát"
@@ -294,7 +294,7 @@ export default function TourViewer({
 
       <nav
         className={cn(
-          "fixed left-0 top-1/2 z-10 w-full sm:w-64 -translate-y-1/2 max-h-[40vh] flex flex-col overflow-hidden rounded-r-lg border border-l-0 border-white/15 bg-slate-950/60 p-1.5 shadow-xl backdrop-blur-sm transition-[transform,opacity] duration-300 ease-out will-change-transform",
+          "fixed left-0 top-1/2 z-10 w-full sm:w-64 -translate-y-1/2 max-h-[40vh] flex flex-col overflow-hidden rounded-r-lg border border-l-0 border-white/15 bg-slate-800/60 p-1.5 shadow-xl backdrop-blur-sm transition-[transform,opacity] duration-300 ease-out will-change-transform",
           isSceneMenuOpen
             ? "translate-x-0 opacity-100"
             : "pointer-events-none -translate-x-full opacity-0",

@@ -187,7 +187,7 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
                   ${isMobile ? "text-[8px]" : "text-[11px]"}
                   ${
                     CATEGORY_COLORS[room.category] ??
-                    "bg-gray-100 text-gray-700"
+                    "bg-slate-50 text-slate-800"
                   }
                 `}
                 style={{
@@ -250,7 +250,7 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
                     className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold ${
                       selectedRoom.category
                         ? CATEGORY_COLORS[selectedRoom.category]
-                        : "bg-gray-100"
+                        : "bg-slate-50"
                     }`}
                   >
                     {selectedRoom.category
