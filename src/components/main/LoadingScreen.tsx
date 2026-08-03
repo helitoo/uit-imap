@@ -1,3 +1,5 @@
+import { Loader2 } from "lucide-react";
+
 interface LoadingScreenProps {
   message?: string;
 }
@@ -20,26 +22,11 @@ export default function LoadingScreen({
           <span className="absolute inset-0 rounded-2xl" />
         </div>
 
-        {/* Loading bar */}
-        <div className="w-48 h-1 bg-white/20 rounded-full overflow-hidden">
-          <div
-            className="h-full w-1/3 bg-white rounded-full"
-            style={{
-              animation: "loading 1.2s linear infinite",
-            }}
-          />
-        </div>
+        {/* Loading cycle */}
+        <Loader2 className="w-8 h-8 text-white animate-spin" />
 
         <p className="text-white/50 text-xs font-medium">{message}</p>
       </div>
-
-      <style>{`
-        @keyframes loading {
-          0% { width: 0%; margin-left: 0%; }
-          50% { width: 60%; margin-left: 20%; }
-          100% { width: 0%; margin-left: 100%; }
-        }
-      `}</style>
     </div>
   );
 }

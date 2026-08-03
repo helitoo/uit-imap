@@ -14,6 +14,7 @@ import HotspotDirection from "@/components/main/hotspot/HotspotDirection";
 import TourspotButton from "@/components/main/hotspot/TourspotButton";
 import { useMode } from "@/contexts/modeContext";
 import { useScreenMode } from "@/contexts/screenModeContext";
+import TransparentLoadingScreen from "@/components/main/TransparentLoadingScreen";
 
 type CustomModelViewer = HTMLElement & {
   cameraOrbit: string;
@@ -59,6 +60,46 @@ const ModelViewer = forwardRef<ModelViewerHandle, ModelViewerProps>(
     const { showTourspots } = useMode();
     const { resolvedMode } = useScreenMode();
     const [tourspots, setTourspots] = useState<Tourspot[]>([]);
+
+    const environmentImage =
+      resolvedMode === "dark" ? "aircraft_workshop_01_1k.hdr" : undefined;
+
+    const [isLoadingEnv, setIsLoadingEnv] = useState<boolean>(() =>
+      Boolean(environmentImage)
+    );
+    const hasLoadedEnvRef = useRef<boolean>(false);
+
+    useEffect(() => {
+      if (environmentImage && !hasLoadedEnvRef.current) {
+        setIsLoadingEnv(true);
+      }
+    }, [environmentImage]);
+
+    useEffect(() => {
+      const viewer = mvRef.current;
+      if (!viewer) return;
+
+      const onLoad = () => {
+        if (environmentImage) {
+          hasLoadedEnvRef.current = true;
+        }
+        setIsLoadingEnv(false);
+      };
+
+      const onError = () => {
+        setIsLoadingEnv(false);
+      };
+
+      viewer.addEventListener("load", onLoad);
+      viewer.addEventListener("environment-change", onLoad);
+      viewer.addEventListener("error", onError);
+
+      return () => {
+        viewer.removeEventListener("load", onLoad);
+        viewer.removeEventListener("environment-change", onLoad);
+        viewer.removeEventListener("error", onError);
+      };
+    }, [environmentImage]);
 
     useEffect(() => {
       fetch("/data/tourspots.json")
@@ -112,6 +153,7 @@ const ModelViewer = forwardRef<ModelViewerHandle, ModelViewerProps>(
 
     return (
       <div className="relative w-full h-full overflow-hidden" id="model-viewer">
+        {isLoadingEnv && <TransparentLoadingScreen />}
         <model-viewer
           ref={mvRef}
           src="/model/map.glb"
@@ -119,9 +161,7 @@ const ModelViewer = forwardRef<ModelViewerHandle, ModelViewerProps>(
           tone-mapping="neutral"
           shadow-intensity="0"
           exposure="1"
-          environment-image={
-            resolvedMode === "dark" ? "aircraft_workshop_01_1k.hdr" : undefined
-          }
+          environment-image={environmentImage}
           min-camera-orbit="auto 0deg auto"
           max-camera-orbit="auto 88deg auto"
           camera-orbit={INITIAL_ORBIT}
