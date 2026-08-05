@@ -15,6 +15,9 @@ import TourspotButton from "@/components/main/hotspot/TourspotButton";
 import { useMode } from "@/contexts/modeContext";
 import { useScreenMode } from "@/contexts/screenModeContext";
 import TransparentLoadingScreen from "@/components/main/TransparentLoadingScreen";
+import { httpClient } from "@/lib/httpClient";
+import { API_BASE_URL } from "@/lib/apiConfig";
+import { toast } from "sonner";
 
 type CustomModelViewer = HTMLElement & {
   cameraOrbit: string;
@@ -102,13 +105,13 @@ const ModelViewer = forwardRef<ModelViewerHandle, ModelViewerProps>(
     }, [environmentImage]);
 
     useEffect(() => {
-      fetch("/data/tourspots.json")
-        .then((res) => {
-          if (!res.ok) throw new Error("Failed to fetch tourspots data");
-          return res.json();
-        })
+      httpClient
+        .get<Tourspot[]>("/tourspots")
         .then((data: Tourspot[]) => setTourspots(data))
-        .catch((err) => console.error("Error loading tourspots data:", err));
+        .catch((err) => {
+          console.error("Error loading tourspots data:", err);
+          toast.error("Đã có lỗi, xin hãy thử lại");
+        });
     }, []);
 
     const mvRef = useRef<CustomModelViewer | null>(null);
@@ -156,7 +159,7 @@ const ModelViewer = forwardRef<ModelViewerHandle, ModelViewerProps>(
         {isLoadingEnv && <TransparentLoadingScreen />}
         <model-viewer
           ref={mvRef}
-          src="/model/map.glb"
+          src={`${API_BASE_URL.replace(/\/$/, "")}/map.glb`}
           camera-controls
           tone-mapping="neutral"
           shadow-intensity="0"

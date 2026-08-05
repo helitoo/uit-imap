@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { share } from "@/lib/services/share";
+import { API_BASE_URL } from "@/lib/apiConfig";
 
 const stopTouchAndScrollEvents = (element: HTMLElement) => {
   ["touchstart", "touchmove", "touchend", "touchcancel", "wheel"].forEach(
@@ -136,9 +137,10 @@ export default function TourViewer({
     tourScenes
       .filter((sceneData) => sceneData.id === sceneId)
       .forEach((sceneData) => {
+        const baseUrl = API_BASE_URL.replace(/\/$/, "");
         const source = Marzipano.ImageUrlSource.fromString(
-          `/tiles/${sceneData.id}/{z}/{f}/{y}/{x}.jpg`,
-          { cubeMapPreviewUrl: `/tiles/${sceneData.id}/preview.jpg` },
+          `${baseUrl}/tiles/${sceneData.id}/{z}/{f}/{y}/{x}.jpg`,
+          { cubeMapPreviewUrl: `${baseUrl}/tiles/${sceneData.id}/preview.jpg` },
         );
         const geometry = new Marzipano.CubeGeometry(sceneData.levels);
         const limiter = Marzipano.RectilinearView.limit.traditional(

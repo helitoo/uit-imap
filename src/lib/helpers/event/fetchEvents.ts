@@ -1,16 +1,10 @@
 import type { Event } from "@/lib/types/event";
 import { parseTabTable } from "@/lib/helpers/event/parseTabTable";
+import { httpClient } from "@/lib/httpClient";
 
 export async function fetchEvents(): Promise<Event[]> {
-  const response = await fetch("/api/uit/lichphong");
+  const html = await httpClient.get<string>("/schedule");
 
-  if (!response.ok) {
-    throw new Error(
-      `Failed to fetch event: ${response.status} ${response.statusText}`,
-    );
-  }
-
-  const html = await response.text();
   const doc = new DOMParser().parseFromString(html, "text/html");
 
   const events: Event[] = [];

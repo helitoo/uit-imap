@@ -9,7 +9,9 @@ import {
 import type { Hotspot } from "@/lib/types/hotspot";
 import { AdjacencyGraph } from "@/lib/types/adjacencyGraph";
 import { euclideanDistance } from "@/lib/helpers/math/euclideanDistance";
-import { DEFAULT_HOTSPOT_IDS } from "@/lib/consts/defaultHotspots";
+import { httpClient } from "@/lib/httpClient";
+import { toast } from "sonner";
+import { Edge } from "@/lib/types/edge";
 
 interface HotspotsContextValue {
   hotspots: Hotspot[];
@@ -50,28 +52,26 @@ export function HotspotsProvider({ children }: { children: ReactNode }) {
   const [directionPath, setDirectionPath] = useState<Hotspot[]>([]);
 
   useEffect(() => {
-    fetch("/data/hotspots.json")
-      .then((r) => {
-        if (!r.ok) throw new Error("Can't fetch hotspots data");
-        return r.json();
-      })
+    httpClient
+      .get<Hotspot[]>("/hotspots")
       .then((raw) => {
         setHotspots(raw);
       })
-      .catch((e: Error) => setError(e.message))
+      .catch((e: Error) => {
+        console.error("Error fetching hotspots data:", e);
+        toast.error("Đã có lỗi, xin hãy thử lại");
+        setError(e.message);
+      })
       .finally(() => setLoading(false));
   }, []);
 
   useEffect(() => {
     if (!hotspots.length) return;
 
-    fetch("/data/hotspot-edges.json")
-      .then((r) => {
-        if (!r.ok) throw new Error("Can't fetch hotspot edges data");
-        return r.json();
-      })
+    httpClient
+      .get<Edge[]>("/hotspot-edges")
       .then((raw) => {
-        const edges: [string, string][] = raw;
+        const edges: Edge[] = raw;
         const hotspotMap = new Map<string, Hotspot>(
           hotspots.map((h) => [h.id, h]),
         );
@@ -79,7 +79,7 @@ export function HotspotsProvider({ children }: { children: ReactNode }) {
         // Xây dựng danh sách kề: id -> [(neighborId, weight)]
         const adjacency = new Map<string, { id: string; weight: number }[]>();
 
-        for (const [aId, bId] of edges) {
+        for (const { first: aId, second: bId } of edges) {
           const a = hotspotMap.get(aId);
           const b = hotspotMap.get(bId);
           if (!a || !b) continue;
@@ -95,7 +95,11 @@ export function HotspotsProvider({ children }: { children: ReactNode }) {
 
         setAdjacencyGraph(adjacency);
       })
-      .catch((e: Error) => setError(e.message))
+      .catch((e: Error) => {
+        console.error("Error fetching hotspot edges data:", e);
+        toast.error("Đã có lỗi, xin hãy thử lại");
+        setError(e.message);
+      })
       .finally(() => setLoading(false));
   }, [hotspots]);
 
@@ -105,7 +109,7 @@ export function HotspotsProvider({ children }: { children: ReactNode }) {
   );
 
   const getDefaultHotspots = useCallback(
-    () => hotspots.filter((h) => DEFAULT_HOTSPOT_IDS.includes(h.id)),
+    () => hotspots.filter((h) => h.showInDefault),
     [hotspots],
   );
 

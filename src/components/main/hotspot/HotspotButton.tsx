@@ -5,7 +5,6 @@ import {
 } from "@/components/ui/tooltip";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
-import { DEFAULT_HOTSPOT_IDS } from "@/lib/consts/defaultHotspots";
 import type { Hotspot } from "@/lib/types/hotspot";
 import { cn } from "@/lib/utils";
 import { useNavigate } from "react-router-dom";
@@ -28,8 +27,7 @@ export default function HotspotButton({
   const handleClick = () => {
     if (usingMode === "default") {
       setSelectedHotspot(hotspot);
-      if (DEFAULT_HOTSPOT_IDS.includes(hotspot.id))
-        navigate(`/hotspot/${hotspot.id}`);
+      if (hotspot.showInDefault) navigate(`/hotspot/${hotspot.id}`);
     }
   };
 

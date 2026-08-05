@@ -9,6 +9,8 @@ import {
 } from "react";
 
 import type { MarzipanoScene, TourScene } from "@/lib/types/pano";
+import { httpClient } from "@/lib/httpClient";
+import { toast } from "sonner";
 
 interface PanoContextValue {
   currentSceneId: string;
@@ -33,11 +35,8 @@ export function PanoProvider({ children }: { children: React.ReactNode }) {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    fetch("/data/tourScenes.json")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch tour scenes data");
-        return res.json();
-      })
+    httpClient
+      .get<TourScene[]>("/tourScenes")
       .then((data: TourScene[]) => {
         setTourScenes(data);
         if (data.length > 0) {
@@ -46,6 +45,7 @@ export function PanoProvider({ children }: { children: React.ReactNode }) {
       })
       .catch((err) => {
         console.error("Error loading tour scenes data:", err);
+        toast.error("Đã có lỗi, xin hãy thử lại");
       });
   }, []);
 

@@ -9,6 +9,8 @@ import {
   type SetStateAction,
 } from "react";
 import type { Room } from "@/lib/types/room";
+import { httpClient } from "@/lib/httpClient";
+import { toast } from "sonner";
 
 interface RoomContextValue {
   rooms: Room[];
@@ -49,15 +51,16 @@ export function RoomsProvider({ children }: { children: ReactNode }) {
   );
 
   useEffect(() => {
-    fetch("/data/rooms.json")
-      .then((r) => {
-        if (!r.ok) throw new Error("Can't fetch rooms data");
-        return r.json();
-      })
+    httpClient
+      .get<Room[]>("/rooms")
       .then((raw) => {
         setRooms(raw);
       })
-      .catch((e: Error) => setError(e.message))
+      .catch((e: Error) => {
+        console.error("Error fetching rooms data:", e);
+        toast.error("Đã có lỗi, xin hãy thử lại");
+        setError(e.message);
+      })
       .finally(() => setLoading(false));
   }, []);
 
