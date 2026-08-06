@@ -22,6 +22,7 @@ import {
 import { toast } from "sonner";
 import { share } from "@/lib/services/share";
 import { API_BASE_URL } from "@/lib/apiConfig";
+import { getTileBlobUrl } from "@/lib/utils/tileRegistry";
 
 const stopTouchAndScrollEvents = (element: HTMLElement) => {
   ["touchstart", "touchmove", "touchend", "touchcancel", "wheel"].forEach(
@@ -137,11 +138,27 @@ export default function TourViewer({
     tourScenes
       .filter((sceneData) => sceneData.id === sceneId)
       .forEach((sceneData) => {
-        const baseUrl = API_BASE_URL.replace(/\/$/, "");
-        const source = Marzipano.ImageUrlSource.fromString(
-          `${baseUrl}/tiles/${sceneData.id}/{z}/{f}/{y}/{x}.jpg`,
-          { cubeMapPreviewUrl: `${baseUrl}/tiles/${sceneData.id}/preview.jpg` },
-        );
+        const apiBase = API_BASE_URL.replace(/\/$/, "");
+        const localPreview = getTileBlobUrl(`${sceneData.id}/preview.jpg`);
+        const previewUrl =
+          localPreview || `${apiBase}/tiles/${sceneData.id}/preview.jpg`;
+
+        const tileUrlFunc = (tile: any) => {
+          const face = tile.face ?? tile.f ?? "";
+          const gridKey = `${sceneData.id}/l${tile.z}/${tile.x}-${tile.y}.jpg`;
+          const cubeKey = `${sceneData.id}/${tile.z}/${face}/${tile.y}/${tile.x}.jpg`;
+          const blobUrl = getTileBlobUrl(gridKey) || getTileBlobUrl(cubeKey);
+          if (blobUrl) {
+            return { url: blobUrl };
+          }
+          return {
+            url: `${apiBase}/tiles/${sceneData.id}/${tile.z}/${face}/${tile.y}/${tile.x}.jpg`,
+          };
+        };
+
+        const source = new Marzipano.ImageUrlSource(tileUrlFunc, {
+          cubeMapPreviewUrl: previewUrl,
+        });
         const geometry = new Marzipano.CubeGeometry(sceneData.levels);
         const limiter = Marzipano.RectilinearView.limit.traditional(
           sceneData.faceSize * 2,
