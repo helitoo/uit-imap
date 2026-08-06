@@ -143,23 +143,42 @@ export default function TourViewer({
         const previewUrl =
           localPreview || `${apiBase}/tiles/${sceneData.id}/preview.jpg`;
 
+        const hasLegacy256Level = sceneData.levels.some(
+          (l) => l.size === 256 || l.tileSize === 256,
+        );
+        const validLevels = hasLegacy256Level
+          ? sceneData.levels
+              .filter((l) => l.size > 256 && l.tileSize !== 256)
+              .map((level, idx) =>
+                idx === 0 ? { ...level, fallbackOnly: true } : level,
+              )
+          : sceneData.levels;
+
         const tileUrlFunc = (tile: any) => {
           const face = tile.face ?? tile.f ?? "";
+          const serverLevelFolder = hasLegacy256Level ? tile.z + 1 : tile.z;
+
           const gridKey = `${sceneData.id}/l${tile.z}/${tile.x}-${tile.y}.jpg`;
+          const cubeKeyLegacy = `${sceneData.id}/${tile.z + 1}/${face}/${tile.y}/${tile.x}.jpg`;
           const cubeKey = `${sceneData.id}/${tile.z}/${face}/${tile.y}/${tile.x}.jpg`;
-          const blobUrl = getTileBlobUrl(gridKey) || getTileBlobUrl(cubeKey);
+
+          const blobUrl =
+            getTileBlobUrl(gridKey) ||
+            getTileBlobUrl(cubeKey) ||
+            getTileBlobUrl(cubeKeyLegacy);
+
           if (blobUrl) {
             return { url: blobUrl };
           }
           return {
-            url: `${apiBase}/tiles/${sceneData.id}/${tile.z}/${face}/${tile.y}/${tile.x}.jpg`,
+            url: `${apiBase}/tiles/${sceneData.id}/${serverLevelFolder}/${face}/${tile.y}/${tile.x}.jpg`,
           };
         };
 
         const source = new Marzipano.ImageUrlSource(tileUrlFunc, {
           cubeMapPreviewUrl: previewUrl,
         });
-        const geometry = new Marzipano.CubeGeometry(sceneData.levels);
+        const geometry = new Marzipano.CubeGeometry(validLevels);
         const limiter = Marzipano.RectilinearView.limit.traditional(
           sceneData.faceSize * 2,
           Math.PI / 2,
