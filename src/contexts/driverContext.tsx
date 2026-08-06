@@ -10,6 +10,7 @@ import {
 import { createPortal } from "react-dom";
 import driverObj, { steps, welcomeStep } from "@/lib/consts/driver";
 import { useWeather } from "@/contexts/weatherContext";
+import { useLocation } from "react-router-dom";
 
 interface DriverContextType {
   driver: typeof driverObj;
@@ -59,6 +60,7 @@ export function DriverProvider({
   isLoading?: boolean;
 }) {
   const { loading: weatherLoading } = useWeather();
+  const location = useLocation();
   const cleanupRef = useRef<(() => void) | null>(null);
   const [guideStep, setGuideStep] = useState<number | null>(null);
   const hasCheckedInitialVisit = useRef(false);
@@ -250,6 +252,10 @@ export function DriverProvider({
       return;
     }
 
+    if (location.pathname !== "/") {
+      return;
+    }
+
     hasCheckedInitialVisit.current = true;
 
     const haveVisited = localStorage.getItem("haveVisited");
@@ -273,7 +279,7 @@ export function DriverProvider({
     return () => {
       cleanupListeners();
     };
-  }, [isLoading, weatherLoading]);
+  }, [isLoading, weatherLoading, location.pathname]);
 
   const start = useMemo(() => {
     return () => {
