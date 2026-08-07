@@ -2,12 +2,11 @@ import SearchInput from "@/components/main/search/SearchInput";
 import { Button } from "@/components/ui/button";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
+import { useRooms } from "@/contexts/roomContext";
 import { getDirection } from "@/lib/services/getDirection";
-import { Hotspot } from "@/lib/types/hotspot";
 import { Room } from "@/lib/types/room";
 import { ArrowDown, ArrowRight, MapPin, X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
-import { toast } from "sonner";
 
 export default function DirectionBar() {
   const { setUsingMode } = useMode();
@@ -17,16 +16,15 @@ export default function DirectionBar() {
     adjacencyGraph,
     setDirectionPath,
     setDestHotspot,
-    destHotspot,
-    getHotspotById,
   } = useHotspots();
+  const { destRoom, setDestRoom } = useRooms();
 
-  const [sourceHotspot, setSourceHotspot] = useState<Hotspot | null>(null);
+  const [sourceRoom, setSourceRoom] = useState<Room | null>(null);
   const startInputRef = useRef<HTMLInputElement>(null);
   const destInputRef = useRef<HTMLInputElement>(null);
   const isFirstRender = useRef(true);
 
-  // Auto focus control based on render and hotspot selection status
+  // Auto focus control based on render and room selection status
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
@@ -36,39 +34,36 @@ export default function DirectionBar() {
       return () => clearTimeout(timer);
     }
 
-    if (destHotspot) {
+    if (destRoom) {
       startInputRef.current?.blur();
       destInputRef.current?.blur();
-    } else if (sourceHotspot) {
+    } else if (sourceRoom) {
       const timer = setTimeout(() => {
         destInputRef.current?.focus();
       }, 100);
       return () => clearTimeout(timer);
     }
-  }, [sourceHotspot, destHotspot]);
+  }, [sourceRoom, destRoom]);
 
   // Recalculate direction whenever start/end change
   useEffect(() => {
-    if (sourceHotspot && destHotspot) {
+    if (sourceRoom && destRoom) {
       const path = getDirection(
-        sourceHotspot,
-        destHotspot,
+        sourceRoom,
+        destRoom,
         hotspots,
         adjacencyGraph,
       );
       setDirectionPath(path);
-      if (path.length === 0) {
-        toast.error("Không tìm thấy đường đi giữa hai địa điểm này!");
-      }
     }
-  }, [sourceHotspot, destHotspot, hotspots, setDirectionPath]);
+  }, [sourceRoom, destRoom, hotspots, adjacencyGraph, setDirectionPath]);
 
-  const handleChooseSourceHotspot = (r: Room) => {
-    setSourceHotspot(getHotspotById(r?.belongsTo ?? "") ?? null);
+  const handleChooseSourceRoom = (r: Room) => {
+    setSourceRoom(r);
   };
 
-  const handleChooseDestHotspot = (r: Room) => {
-    setDestHotspot(getHotspotById(r?.belongsTo ?? "") ?? null);
+  const handleChooseDestRoom = (r: Room) => {
+    setDestRoom(r);
   };
 
   return (
@@ -78,14 +73,13 @@ export default function DirectionBar() {
         {/* Input 1 + Arrow Down (Mobile) */}
         <div className="flex items-center gap-2">
           <div className="md:hidden text-foreground">
-            {" "}
-            <ArrowDown />{" "}
+            <ArrowDown />
           </div>
           <SearchInput
             ref={startInputRef}
             className="bg-card text-card-foreground shadow-md rounded-full pl-4 pr-1.5 w-full md:w-80 h-10 border border-border"
             placeholder="Chọn điểm đầu"
-            onClickRes={handleChooseSourceHotspot}
+            onClickRes={handleChooseSourceRoom}
             showDirectionIcon={false}
           />
         </div>
@@ -98,21 +92,20 @@ export default function DirectionBar() {
         {/* Input 2 + Arrow Down (Mobile) */}
         <div className="flex items-center gap-2">
           <div className="md:hidden text-foreground">
-            {" "}
-            <MapPin />{" "}
+            <MapPin />
           </div>
           <SearchInput
             ref={destInputRef}
             className="bg-card text-card-foreground shadow-md rounded-full pl-4 pr-1.5 w-full md:w-80 h-10 border border-border"
             placeholder="Chọn điểm đến"
-            onClickRes={handleChooseDestHotspot}
-            initText={destHotspot?.name}
+            onClickRes={handleChooseDestRoom}
+            initText={destRoom?.name}
             showDirectionIcon={false}
           />
         </div>
       </div>
 
-      {/* Nút Close (X) - Luôn nằm bên phải và căn giữa theo chiều dọc của cụm input */}
+      {/* Nút Close (X) */}
       <Button
         variant="ghost"
         size="icon"
@@ -121,6 +114,7 @@ export default function DirectionBar() {
           setUsingMode("default");
           setDirectionPath([]);
           setDestHotspot(null);
+          setDestRoom(null);
         }}
         title="Thoát chế độ dẫn đường"
       >

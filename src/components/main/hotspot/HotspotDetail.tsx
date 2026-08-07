@@ -20,18 +20,16 @@ import { Info, Navigation, Share2 } from "lucide-react";
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 interface HotspotDetailProps {
   hotspot: Hotspot;
 }
 
 export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
-  const { setSelectedHotspot, setDestHotspot } = useHotspots();
-
-  const { getRoomsByBelongsTo } = useRooms();
-
+  const { setSelectedHotspot } = useHotspots();
+  const { getRoomsByBelongsTo, setDestRoom } = useRooms();
   const { setUsingMode } = useMode();
-
   const navigate = useNavigate();
 
   const [rooms, setRooms] = useState<Room[]>([]);
@@ -46,7 +44,12 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
   };
 
   const handleDirection = () => {
-    setDestHotspot(hotspot);
+    const roomWithGates = rooms.find((r) => r.gates && r.gates.length > 0);
+    if (!roomWithGates) {
+      toast.error("Không thể tìm đường!");
+      return;
+    }
+    setDestRoom(roomWithGates);
     setSelectedHotspot(null);
     setUsingMode("direction");
   };

@@ -32,18 +32,18 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     const [searchQuery, setSearchQuery] = useState(
       initText || defaultRoom?.name || "",
     );
-    const [selectedRoom, setSelectedRoom] = useState<Room | null>(defaultRoom);
     const [showDropdown, setShowDropdown] = useState(false);
     const { rooms } = useRooms();
     const { setUsingMode } = useMode();
     const containerRef = useRef<HTMLDivElement>(null);
     const { getHotspotById } = useHotspots();
 
-    // Calculate top 5 matching rooms based on search query
+    // Calculate top 5 matching rooms based on search query (only rooms with an existing belongsTo hotspot)
     const topMatches = useMemo(() => {
       if (!searchQuery.trim()) return [];
 
       const scored = rooms
+        .filter((r) => Boolean(r.belongsTo && getHotspotById(r.belongsTo)))
         .map((r) => {
           // Calculate similarity score based on name and description
           const nameScore = compareTwoStrings(searchQuery, r.name || "");
@@ -58,7 +58,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         .slice(0, 5);
 
       return scored;
-    }, [searchQuery, rooms]);
+    }, [searchQuery, rooms, getHotspotById]);
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -78,9 +78,8 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 
     const handleSelectRoom = (r: Room) => {
       setSearchQuery(r.name || "");
-      setSelectedRoom(r);
       setShowDropdown(false);
-      if (r.belongsTo) onClickRes(r);
+      onClickRes(r);
     };
 
     return (
@@ -137,11 +136,11 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
           )}
         </div>
 
-        {/* Dropdown Results (Giữ nguyên logic cũ) */}
+        {/* Dropdown Results */}
         {showDropdown && (
           <div className="absolute top-[calc(100%+8px)] left-0 right-0 bg-popover text-popover-foreground border border-border rounded-2xl shadow-xl z-50 overflow-y-auto overflow-x-hidden">
             {topMatches.length > 0
-              ? topMatches.map(({ r, score }) => (
+              ? topMatches.map(({ r }) => (
                   <button
                     key={r.id}
                     onClick={() => handleSelectRoom(r)}
@@ -153,11 +152,10 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
                         {r.description}
                       </div>
                     )}
-                    {r.belongsTo && r.floor && (
-                      <div className="text-xs text-muted-foreground truncate mt-0.5">
-                        {getHotspotById(r.belongsTo)?.name} • Tầng {r.floor}
-                      </div>
-                    )}
+                    <div className="text-xs text-muted-foreground truncate mt-0.5">
+                      {getHotspotById(r.belongsTo)?.name}
+                      {r.floor ? ` • Tầng ${r.floor}` : ""}
+                    </div>
                   </button>
                 ))
               : searchQuery.trim() && (

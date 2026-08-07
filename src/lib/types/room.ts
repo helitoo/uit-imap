@@ -5,6 +5,7 @@ export interface Room {
   name: string;
   floor?: number;
   belongsTo: string;
+  gates: string[];
   category: Category;
   description?: string;
   rows?: [number, number];

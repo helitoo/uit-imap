@@ -22,7 +22,7 @@ interface RoomContextValue {
 
   // For direction
   destRoom: Room | null;
-  setDestRoom: (room: Room) => void;
+  setDestRoom: (room: Room | null) => void;
 }
 
 const RoomsContext = createContext<RoomContextValue | null>(null);

@@ -12,6 +12,8 @@ import { useWindow } from "@/contexts/windowContext";
 import { useEvent } from "@/contexts/eventContext";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
+import { useRooms } from "@/contexts/roomContext";
+import { toast } from "sonner";
 import { Event } from "@/lib/types/event";
 import { CalendarX, Clock, Navigation, Share2, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
