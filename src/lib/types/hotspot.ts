@@ -3,6 +3,7 @@ export interface Hotspot {
   name?: string;
   showInDefault?: boolean;
   description?: string;
+  representativeRoom?: string;
   dataPosition: [number, number, number];
   dataNormal: [number, number, number];
 }

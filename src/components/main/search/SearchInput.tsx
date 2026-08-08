@@ -6,6 +6,7 @@ import { useRooms } from "@/contexts/roomContext";
 import { Room } from "@/lib/types/room";
 import { cn, compareTwoStrings } from "@/lib/utils";
 import { CornerUpRight, Search } from "lucide-react";
+import { toast } from "sonner";
 import { useEffect, useMemo, useRef, useState, forwardRef } from "react";
 
 export interface SearchInputProps {
@@ -38,12 +39,25 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     const containerRef = useRef<HTMLDivElement>(null);
     const { getHotspotById } = useHotspots();
 
-    // Calculate top 5 matching rooms based on search query (only rooms with an existing belongsTo hotspot)
+    // Sync input text when initText or defaultRoom changes
+    useEffect(() => {
+      setSearchQuery(initText || defaultRoom?.name || "");
+    }, [initText, defaultRoom]);
+
+    // Calculate top 5 matching rooms based on search query (only rooms with gates and an existing belongsTo hotspot)
     const topMatches = useMemo(() => {
       if (!searchQuery.trim()) return [];
 
       const scored = rooms
-        .filter((r) => Boolean(r.belongsTo && getHotspotById(r.belongsTo)))
+        .filter(
+          (r) =>
+            Boolean(
+              r.belongsTo &&
+                getHotspotById(r.belongsTo) &&
+                r.gates &&
+                r.gates.length > 0,
+            ),
+        )
         .map((r) => {
           // Calculate similarity score based on name and description
           const nameScore = compareTwoStrings(searchQuery, r.name || "");
@@ -77,6 +91,10 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     }, []);
 
     const handleSelectRoom = (r: Room) => {
+      if (!r.gates || r.gates.length === 0) {
+        toast.error("Phòng này chưa có thông tin cổng để dẫn đường!");
+        return;
+      }
       setSearchQuery(r.name || "");
       setShowDropdown(false);
       onClickRes(r);

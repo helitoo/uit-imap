@@ -23,10 +23,6 @@ interface HotspotsContextValue {
   selectedHotspot: Hotspot | null;
   setSelectedHotspot: (h: Hotspot | null) => void;
 
-  // For direction mode
-  destHotspot: Hotspot | null;
-  setDestHotspot: (h: Hotspot | null) => void;
-
   directionPath: Hotspot[];
   setDirectionPath: (path: Hotspot[]) => void;
 
@@ -46,8 +42,6 @@ export function HotspotsProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<string | null>(null);
 
   const [selectedHotspot, setSelectedHotspot] = useState<Hotspot | null>(null);
-
-  const [destHotspot, setDestHotspot] = useState<Hotspot | null>(null);
 
   const [directionPath, setDirectionPath] = useState<Hotspot[]>([]);
 
@@ -122,8 +116,6 @@ export function HotspotsProvider({ children }: { children: ReactNode }) {
         error,
         selectedHotspot,
         setSelectedHotspot,
-        destHotspot,
-        setDestHotspot,
         directionPath,
         setDirectionPath,
         getHotspotById,

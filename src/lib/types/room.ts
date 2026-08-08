@@ -1,7 +1,7 @@
 import type { Category } from "./category";
 
 export interface Room {
-  id: number;
+  id: string;
   name: string;
   floor?: number;
   belongsTo: string;

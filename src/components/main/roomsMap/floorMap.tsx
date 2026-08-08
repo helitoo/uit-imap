@@ -31,13 +31,12 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
 
   const targetRoomId = useMemo(() => {
     if (!roomId) return null;
-    const parsed = parseInt(roomId, 10);
-    return isNaN(parsed) ? null : parsed;
+    return roomId;
   }, [roomId]);
 
   const matchedRoom = useMemo(() => {
-    if (targetRoomId === null) return null;
-    return rooms.find((r) => r.id === targetRoomId) || null;
+    if (!targetRoomId) return null;
+    return rooms.find((r) => String(r.id) === String(targetRoomId)) || null;
   }, [rooms, targetRoomId]);
 
   if (rooms.length === 0) return null;
@@ -75,24 +74,23 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
 
   // Event
   const { loading, getTodayEventsByRoomName } = useEvent();
-  const {
-    selectedHotspot,
-    setSelectedHotspot,
-    setDestHotspot,
-    getHotspotById,
-  } = useHotspots();
+  const { setSelectedHotspot } = useHotspots();
+  const { setDestRoom } = useRooms();
   const { setUsingMode } = useMode();
 
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
   const [events, setEvents] = useState<Event[]>([]);
 
   const handleDirection = () => {
-    const hotspot = selectedHotspot || (id ? getHotspotById(id) : null);
-    if (hotspot) {
-      setDestHotspot(hotspot);
-      setSelectedHotspot(null);
-      setUsingMode("direction");
+    if (!selectedRoom) return;
+    if (!selectedRoom.gates || selectedRoom.gates.length === 0) {
+      toast.error("Phòng này chưa có thông tin cổng để dẫn đường!");
+      return;
     }
+    setDestRoom(selectedRoom);
+    setSelectedHotspot(null);
+    setSelectedRoom(null);
+    setUsingMode("direction");
   };
 
   const handleSelectRoom = (room: Room) => {

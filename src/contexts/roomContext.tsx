@@ -19,8 +19,11 @@ interface RoomContextValue {
   error: string | null;
   getRoomsByBelongsTo: (belongsTo: string) => Room[];
   getRoomByName: (name: string) => Room | null;
+  getRoomById: (id: string) => Room | null;
 
   // For direction
+  sourceRoom: Room | null;
+  setSourceRoom: (room: Room | null) => void;
   destRoom: Room | null;
   setDestRoom: (room: Room | null) => void;
 }
@@ -32,6 +35,7 @@ export function RoomsProvider({ children }: { children: ReactNode }) {
   // const [loading, setLoading] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [sourceRoom, setSourceRoom] = useState<Room | null>(null);
   const [destRoom, setDestRoom] = useState<Room | null>(null);
 
   const getRoomsByBelongsTo = useCallback(
@@ -45,7 +49,19 @@ export function RoomsProvider({ children }: { children: ReactNode }) {
   const getRoomByName = useCallback(
     (name: string): Room | null => {
       if (!rooms.length) return null;
-      return rooms.filter((r) => r.name === name)[0];
+      return rooms.find((r) => r.name === name) || null;
+    },
+    [rooms],
+  );
+
+  const getRoomById = useCallback(
+    (id: string): Room | null => {
+      if (!rooms.length) return null;
+      return (
+        rooms.find(
+          (r) => String(r.id) === String(id) || r.name === String(id),
+        ) || null
+      );
     },
     [rooms],
   );
@@ -71,6 +87,9 @@ export function RoomsProvider({ children }: { children: ReactNode }) {
         setRooms,
         getRoomsByBelongsTo,
         getRoomByName,
+        getRoomById,
+        sourceRoom,
+        setSourceRoom,
         destRoom,
         setDestRoom,
         loading,

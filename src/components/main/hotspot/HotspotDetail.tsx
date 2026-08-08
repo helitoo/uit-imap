@@ -28,7 +28,7 @@ interface HotspotDetailProps {
 
 export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
   const { setSelectedHotspot } = useHotspots();
-  const { getRoomsByBelongsTo, setDestRoom } = useRooms();
+  const { getRoomsByBelongsTo, getRoomById, setDestRoom } = useRooms();
   const { setUsingMode } = useMode();
   const navigate = useNavigate();
 
@@ -44,12 +44,22 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
   };
 
   const handleDirection = () => {
-    const roomWithGates = rooms.find((r) => r.gates && r.gates.length > 0);
-    if (!roomWithGates) {
-      toast.error("Không thể tìm đường!");
+    let targetRoom: Room | null = null;
+    if (
+      hotspot.representativeRoom !== undefined &&
+      hotspot.representativeRoom !== null
+    ) {
+      targetRoom = getRoomById(hotspot.representativeRoom);
+    }
+    if (!targetRoom) {
+      targetRoom = rooms.find((r) => r.gates && r.gates.length > 0) || null;
+    }
+
+    if (!targetRoom || !targetRoom.gates || targetRoom.gates.length === 0) {
+      toast.error("Địa điểm này không có phòng hợp lệ để dẫn đường!");
       return;
     }
-    setDestRoom(roomWithGates);
+    setDestRoom(targetRoom);
     setSelectedHotspot(null);
     setUsingMode("direction");
   };
