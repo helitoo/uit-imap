@@ -129,7 +129,12 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
             Chia sẻ
           </Button>
 
-          <Button size="sm" className="gap-1.5" onClick={handleDirection}>
+          <Button
+            size="sm"
+            className="gap-1.5"
+            onClick={handleDirection}
+            disabled={!hotspot.representativeRoom}
+          >
             <Navigation className="w-3.5 h-3.5" />
             Dẫn đường
           </Button>
