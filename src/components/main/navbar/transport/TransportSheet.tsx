@@ -11,6 +11,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Bus, TramFront, Info, MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useHotspots } from "@/contexts/hotspotsContext";
+import { httpClient } from "@/lib/httpClient";
+import { toast } from "sonner";
 import type { Transport } from "@/lib/types/transport";
 
 const getTransportInfo = (url: string): { url: string; name: string } => {
@@ -64,13 +66,13 @@ export function TransportSheet({ open, onOpenChange }: TransportSheetProps) {
   const [transports, setTransports] = useState<Transport[]>([]);
 
   useEffect(() => {
-    fetch("/data/transport.json")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch transport data");
-        return res.json();
-      })
-      .then((data: Transport[]) => setTransports(data))
-      .catch((err) => console.error("Error loading transport data:", err));
+    httpClient
+      .get<Transport[]>("/transport")
+      .then((data) => setTransports(data))
+      .catch((err: Error) => {
+        console.error("Error loading transport data:", err);
+        toast.error("Đã có lỗi, xin hãy thử lại");
+      });
   }, []);
 
   const handleSpotClick = (spotId: string) => {
