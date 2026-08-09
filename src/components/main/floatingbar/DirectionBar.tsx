@@ -4,6 +4,7 @@ import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
 import { useRooms } from "@/contexts/roomContext";
 import { getDirection } from "@/lib/services/getDirection";
+import { Hotspot } from "@/lib/types/hotspot";
 import { Room } from "@/lib/types/room";
 import { ArrowDown, ArrowRight, MapPin, X } from "lucide-react";
 import { useEffect, useRef } from "react";
@@ -48,7 +49,7 @@ export default function DirectionBar() {
   useEffect(() => {
     if (sourceRoom && destRoom) {
       if (sourceRoom.id === destRoom.id) {
-        toast.info("Điểm đầu và điểm đến là cùng một phòng!");
+        toast.info("Điểm đầu và điểm đến là cùng một địa điểm!");
         setDirectionPath([]);
         return;
       }
@@ -58,7 +59,7 @@ export default function DirectionBar() {
         !destRoom.gates ||
         destRoom.gates.length === 0
       ) {
-        toast.error("Không thể tìm đường do phòng chưa có thông tin cổng!");
+        toast.error("Không thể tìm đường do chưa có thông tin cổng!");
         setDirectionPath([]);
         return;
       }
@@ -75,12 +76,20 @@ export default function DirectionBar() {
     }
   }, [sourceRoom, destRoom, hotspots, adjacencyGraph, setDirectionPath]);
 
-  const handleChooseSourceRoom = (r: Room) => {
-    setSourceRoom(r);
+  const handleChooseSourceRoom = (item: Room | Hotspot) => {
+    if (!item.gates || item.gates.length === 0) {
+      toast.error("Địa điểm này chưa có thông tin cổng để dẫn đường!");
+      return;
+    }
+    setSourceRoom(item);
   };
 
-  const handleChooseDestRoom = (r: Room) => {
-    setDestRoom(r);
+  const handleChooseDestRoom = (item: Room | Hotspot) => {
+    if (!item.gates || item.gates.length === 0) {
+      toast.error("Địa điểm này chưa có thông tin cổng để dẫn đường!");
+      return;
+    }
+    setDestRoom(item);
   };
 
   const handleExitDirection = () => {
@@ -102,7 +111,7 @@ export default function DirectionBar() {
           <SearchInput
             ref={startInputRef}
             className="bg-card text-card-foreground shadow-md rounded-full pl-4 pr-1.5 w-full md:w-80 h-10 border border-border"
-            placeholder="Chọn điểm đầu (phòng)..."
+            placeholder="Chọn điểm đầu..."
             onClickRes={handleChooseSourceRoom}
             initText={sourceRoom?.name}
             showDirectionIcon={false}
@@ -122,7 +131,7 @@ export default function DirectionBar() {
           <SearchInput
             ref={destInputRef}
             className="bg-card text-card-foreground shadow-md rounded-full pl-4 pr-1.5 w-full md:w-80 h-10 border border-border"
-            placeholder="Chọn điểm đến (phòng)..."
+            placeholder="Chọn điểm đến..."
             onClickRes={handleChooseDestRoom}
             initText={destRoom?.name}
             showDirectionIcon={false}

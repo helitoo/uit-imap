@@ -1,6 +1,7 @@
 import WeatherBar from "@/components/main/floatingbar/WeatherBar";
 import SearchInput from "@/components/main/search/SearchInput";
 import { useHotspots } from "@/contexts/hotspotsContext";
+import { Hotspot } from "@/lib/types/hotspot";
 import { Room } from "@/lib/types/room";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
@@ -11,13 +12,17 @@ export default function DefaultBar() {
   const { getHotspotById } = useHotspots();
   const navigate = useNavigate();
 
-  const onClickRes = (room: Room) => {
-    const belongsToId = getHotspotById(room.belongsTo);
+  const onClickRes = (item: Room | Hotspot) => {
+    if ("belongsTo" in item) {
+      const belongsToId = getHotspotById(item.belongsTo);
 
-    if (!belongsToId) {
-      toast.error("Chưa có dữ liệu về địa điểm này!");
+      if (!belongsToId) {
+        toast.error("Chưa có dữ liệu về địa điểm này!");
+      } else {
+        navigate(`/hotspot/${item.belongsTo}/${item.id}`);
+      }
     } else {
-      navigate(`/hotspot/${room.belongsTo}/${room.id}`);
+      navigate(`/hotspot/${item.id}`);
     }
   };
 

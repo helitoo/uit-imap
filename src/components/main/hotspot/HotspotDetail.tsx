@@ -28,7 +28,7 @@ interface HotspotDetailProps {
 
 export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
   const { setSelectedHotspot } = useHotspots();
-  const { getRoomsByBelongsTo, getRoomById, setDestRoom } = useRooms();
+  const { getRoomsByBelongsTo, setDestRoom } = useRooms();
   const { setUsingMode } = useMode();
   const navigate = useNavigate();
 
@@ -44,22 +44,11 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
   };
 
   const handleDirection = () => {
-    let targetRoom: Room | null = null;
-    if (
-      hotspot.representativeRoom !== undefined &&
-      hotspot.representativeRoom !== null
-    ) {
-      targetRoom = getRoomById(hotspot.representativeRoom);
-    }
-    if (!targetRoom) {
-      targetRoom = rooms.find((r) => r.gates && r.gates.length > 0) || null;
-    }
-
-    if (!targetRoom || !targetRoom.gates || targetRoom.gates.length === 0) {
-      toast.error("Địa điểm này không có phòng hợp lệ để dẫn đường!");
+    if (!hotspot.gates || hotspot.gates.length === 0) {
+      toast.error("Địa điểm này chưa có thông tin cổng để dẫn đường!");
       return;
     }
-    setDestRoom(targetRoom);
+    setDestRoom(hotspot);
     setSelectedHotspot(null);
     setUsingMode("direction");
   };
@@ -91,9 +80,7 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
               <Info className="w-3.5 h-3.5 mt-[1px] shrink-0" />
 
               <p className="line-clamp-3 leading-relaxed text-justify">
-                {Array.isArray(hotspot.description)
-                  ? hotspot.description.join(" ")
-                  : hotspot.description}
+                {hotspot.description}
               </p>
             </div>
           )}
@@ -133,7 +120,7 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
             size="sm"
             className="gap-1.5"
             onClick={handleDirection}
-            disabled={!hotspot.representativeRoom}
+            disabled={!hotspot.gates || hotspot.gates.length === 0}
           >
             <Navigation className="w-3.5 h-3.5" />
             Dẫn đường

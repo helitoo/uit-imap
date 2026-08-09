@@ -79,8 +79,8 @@ function findSinglePath(
 }
 
 export function getDirection(
-  start: Room | null | undefined,
-  end: Room | null | undefined,
+  start: Room | Hotspot | null | undefined,
+  end: Room | Hotspot | null | undefined,
   hotspots: Hotspot[],
   adjacencyGraph: AdjacencyGraph,
 ): Hotspot[] {
@@ -90,7 +90,7 @@ export function getDirection(
     !end?.gates ||
     end.gates.length === 0
   ) {
-    toast.error("Không thể tìm đường!");
+    toast.error("Không thể tìm đường do chưa có thông tin cổng!");
     return [];
   }
 

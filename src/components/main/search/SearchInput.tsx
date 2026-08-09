@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { useHotspots } from "@/contexts/hotspotsContext";
 import { useMode } from "@/contexts/modeContext";
 import { useRooms } from "@/contexts/roomContext";
+import { Hotspot } from "@/lib/types/hotspot";
 import { Room } from "@/lib/types/room";
 import { cn, compareTwoStrings } from "@/lib/utils";
 import { CornerUpRight, Search } from "lucide-react";
@@ -12,8 +13,8 @@ import { useEffect, useMemo, useRef, useState, forwardRef } from "react";
 export interface SearchInputProps {
   showDirectionIcon?: boolean;
   className?: string;
-  onClickRes?: (room: Room) => void;
-  defaultRoom?: Room | null;
+  onClickRes?: (result: Room | Hotspot) => void;
+  defaultRoom?: Room | Hotspot | null;
   initText?: string;
   placeholder?: string;
 }
@@ -23,7 +24,7 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     {
       showDirectionIcon = true,
       className = "",
-      onClickRes = (room: Room) => {},
+      onClickRes = (_res: Room | Hotspot) => {},
       defaultRoom = null,
       initText = "",
       placeholder = "Tìm phòng hoặc địa điểm...",
@@ -35,20 +36,20 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
     );
     const [showDropdown, setShowDropdown] = useState(false);
     const { rooms } = useRooms();
+    const { hotspots, getHotspotById } = useHotspots();
     const { setUsingMode } = useMode();
     const containerRef = useRef<HTMLDivElement>(null);
-    const { getHotspotById } = useHotspots();
 
     // Sync input text when initText or defaultRoom changes
     useEffect(() => {
       setSearchQuery(initText || defaultRoom?.name || "");
     }, [initText, defaultRoom]);
 
-    // Calculate top 5 matching rooms based on search query (only rooms with gates and an existing belongsTo hotspot)
+    // Calculate top 5 matching rooms and hotspots based on search query
     const topMatches = useMemo(() => {
       if (!searchQuery.trim()) return [];
 
-      const scored = rooms
+      const scoredRooms = rooms
         .filter(
           (r) =>
             Boolean(
@@ -59,20 +60,33 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             ),
         )
         .map((r) => {
-          // Calculate similarity score based on name and description
           const nameScore = compareTwoStrings(searchQuery, r.name || "");
           const descScore = compareTwoStrings(searchQuery, r.description || "");
 
           const score = nameScore * 0.5 + descScore * 0.5;
 
-          return { r, score };
-        })
+          return { item: r, type: "room" as const, score };
+        });
+
+      const scoredHotspots = hotspots
+        .filter((h) => h.canBeSearch === true)
+        .map((h) => {
+          const nameScore = compareTwoStrings(searchQuery, h.name || "");
+          const descStr = h.description || "";
+          const descScore = compareTwoStrings(searchQuery, descStr);
+
+          const score = nameScore * 0.5 + descScore * 0.5;
+
+          return { item: h, type: "hotspot" as const, score };
+        });
+
+      const scored = [...scoredRooms, ...scoredHotspots]
         .filter(({ score }) => score > 0.3)
         .sort((a, b) => b.score - a.score)
         .slice(0, 5);
 
       return scored;
-    }, [searchQuery, rooms, getHotspotById]);
+    }, [searchQuery, rooms, hotspots, getHotspotById]);
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -90,14 +104,10 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    const handleSelectRoom = (r: Room) => {
-      if (!r.gates || r.gates.length === 0) {
-        toast.error("Phòng này chưa có thông tin cổng để dẫn đường!");
-        return;
-      }
-      setSearchQuery(r.name || "");
+    const handleSelectItem = (item: Room | Hotspot) => {
+      setSearchQuery(item.name || "");
       setShowDropdown(false);
-      onClickRes(r);
+      onClickRes(item);
     };
 
     return (
@@ -158,24 +168,34 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         {showDropdown && (
           <div className="absolute top-[calc(100%+8px)] left-0 right-0 bg-popover text-popover-foreground border border-border rounded-2xl shadow-xl z-50 overflow-y-auto overflow-x-hidden">
             {topMatches.length > 0
-              ? topMatches.map(({ r }) => (
-                  <button
-                    key={r.id}
-                    onClick={() => handleSelectRoom(r)}
-                    className="w-full px-5 py-3 text-left hover:bg-accent transition-colors border-b border-border last:border-b-0"
-                  >
-                    <div className="font-semibold text-foreground">{r.name}</div>
-                    {r.description && (
-                      <div className="text-sm text-muted-foreground truncate">
-                        {r.description}
+              ? topMatches.map(({ item, type }) => {
+                  const isRoom = type === "room";
+                  const room = isRoom ? (item as Room) : null;
+                  const descriptionText = item.description;
+
+                  return (
+                    <button
+                      key={`${type}-${item.id}`}
+                      onClick={() => handleSelectItem(item)}
+                      className="w-full px-5 py-3 text-left hover:bg-accent transition-colors border-b border-border last:border-b-0"
+                    >
+                      <div className="font-semibold text-foreground">
+                        {item.name || item.id}
                       </div>
-                    )}
-                    <div className="text-xs text-muted-foreground truncate mt-0.5">
-                      {getHotspotById(r.belongsTo)?.name}
-                      {r.floor ? ` • Tầng ${r.floor}` : ""}
-                    </div>
-                  </button>
-                ))
+                      {descriptionText && (
+                        <div className="text-sm text-muted-foreground truncate">
+                          {descriptionText}
+                        </div>
+                      )}
+                      {isRoom && room && (
+                        <div className="text-xs text-muted-foreground truncate mt-0.5">
+                          {getHotspotById(room.belongsTo)?.name}
+                          {room.floor ? ` • Tầng ${room.floor}` : ""}
+                        </div>
+                      )}
+                    </button>
+                  );
+                })
               : searchQuery.trim() && (
                   <div className="p-4 text-center text-muted-foreground text-sm">
                     Không tìm thấy kết quả
@@ -191,3 +211,4 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 SearchInput.displayName = "SearchInput";
 
 export default SearchInput;
+

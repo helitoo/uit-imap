@@ -8,6 +8,7 @@ import {
   type Dispatch,
   type SetStateAction,
 } from "react";
+import type { Hotspot } from "@/lib/types/hotspot";
 import type { Room } from "@/lib/types/room";
 import { httpClient } from "@/lib/httpClient";
 import { toast } from "sonner";
@@ -22,10 +23,10 @@ interface RoomContextValue {
   getRoomById: (id: string) => Room | null;
 
   // For direction
-  sourceRoom: Room | null;
-  setSourceRoom: (room: Room | null) => void;
-  destRoom: Room | null;
-  setDestRoom: (room: Room | null) => void;
+  sourceRoom: Room | Hotspot | null;
+  setSourceRoom: (room: Room | Hotspot | null) => void;
+  destRoom: Room | Hotspot | null;
+  setDestRoom: (room: Room | Hotspot | null) => void;
 }
 
 const RoomsContext = createContext<RoomContextValue | null>(null);
@@ -35,8 +36,8 @@ export function RoomsProvider({ children }: { children: ReactNode }) {
   // const [loading, setLoading] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [sourceRoom, setSourceRoom] = useState<Room | null>(null);
-  const [destRoom, setDestRoom] = useState<Room | null>(null);
+  const [sourceRoom, setSourceRoom] = useState<Room | Hotspot | null>(null);
+  const [destRoom, setDestRoom] = useState<Room | Hotspot | null>(null);
 
   const getRoomsByBelongsTo = useCallback(
     (belongsTo: string) => {
