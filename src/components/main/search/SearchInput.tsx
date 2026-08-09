@@ -45,48 +45,38 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
       setSearchQuery(initText || defaultRoom?.name || "");
     }, [initText, defaultRoom]);
 
+    // Combined searchable items: rooms having belongsTo and hotspots having canBeSearch
+    const searchableItems = useMemo(() => {
+      const validRooms: { item: Room; type: "room" }[] = rooms
+        .filter((r) => Boolean(r.belongsTo))
+        .map((r) => ({ item: r, type: "room" as const }));
+
+      const validHotspots: { item: Hotspot; type: "hotspot" }[] = hotspots
+        .filter((h) => Boolean(h.canBeSearch))
+        .map((h) => ({ item: h, type: "hotspot" as const }));
+
+      return [...validRooms, ...validHotspots];
+    }, [rooms, hotspots]);
+
     // Calculate top 5 matching rooms and hotspots based on search query
     const topMatches = useMemo(() => {
       if (!searchQuery.trim()) return [];
 
-      const scoredRooms = rooms
-        .filter(
-          (r) =>
-            Boolean(
-              r.belongsTo &&
-                getHotspotById(r.belongsTo) &&
-                r.gates &&
-                r.gates.length > 0,
-            ),
-        )
-        .map((r) => {
-          const nameScore = compareTwoStrings(searchQuery, r.name || "");
-          const descScore = compareTwoStrings(searchQuery, r.description || "");
-
+      return searchableItems
+        .map(({ item, type }) => {
+          const nameScore = compareTwoStrings(searchQuery, item.name || "");
+          const descScore = compareTwoStrings(
+            searchQuery,
+            item.description || "",
+          );
           const score = nameScore * 0.5 + descScore * 0.5;
 
-          return { item: r, type: "room" as const, score };
-        });
-
-      const scoredHotspots = hotspots
-        .filter((h) => h.canBeSearch === true)
-        .map((h) => {
-          const nameScore = compareTwoStrings(searchQuery, h.name || "");
-          const descStr = h.description || "";
-          const descScore = compareTwoStrings(searchQuery, descStr);
-
-          const score = nameScore * 0.5 + descScore * 0.5;
-
-          return { item: h, type: "hotspot" as const, score };
-        });
-
-      const scored = [...scoredRooms, ...scoredHotspots]
+          return { item, type, score };
+        })
         .filter(({ score }) => score > 0.3)
         .sort((a, b) => b.score - a.score)
         .slice(0, 5);
-
-      return scored;
-    }, [searchQuery, rooms, hotspots, getHotspotById]);
+    }, [searchQuery, searchableItems]);
 
     // Close dropdown when clicking outside
     useEffect(() => {
