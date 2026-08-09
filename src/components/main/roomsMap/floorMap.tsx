@@ -91,6 +91,7 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
     setSelectedHotspot(null);
     setSelectedRoom(null);
     setUsingMode("direction");
+    navigate("/", { replace: true });
   };
 
   const handleSelectRoom = (room: Room) => {

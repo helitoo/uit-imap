@@ -51,6 +51,7 @@ export default function HotspotDetail({ hotspot }: HotspotDetailProps) {
     setDestRoom(hotspot);
     setSelectedHotspot(null);
     setUsingMode("direction");
+    navigate("/", { replace: true });
   };
 
   return (
