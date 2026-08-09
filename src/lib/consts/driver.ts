@@ -61,6 +61,13 @@ export const steps: DriveStep[] = [
     },
   },
   {
+    element: "#toggle-screen-mode-button",
+    popover: {
+      title: "Thay đổi chế độ sáng / tối",
+      description: "Trải nghiệm UIT iMap với nhiều chế độ giao diện khác nhau!",
+    },
+  },
+  {
     element: "#driver-trigger",
     popover: {
       title: "Hướng dẫn",
