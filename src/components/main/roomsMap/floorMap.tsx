@@ -242,27 +242,24 @@ export default function FloorMap({ rooms }: { rooms: Room[] }) {
             {/* Section: Thông tin phòng */}
             {selectedRoom && (
               <div className="grid grid-cols-2 gap-4 text-sm">
-                <div className="space-y-1">
-                  <p className="text-muted-foreground font-medium">
-                    Loại phòng
-                  </p>
-                  <span
-                    className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-                      selectedRoom.category
-                        ? CATEGORY_COLORS[selectedRoom.category]
-                        : "bg-muted text-muted-foreground"
-                    }`}
-                  >
-                    {selectedRoom.category
-                      ? CATEGORY_LABELS[selectedRoom.category]
-                      : "N/A"}
-                  </span>
-                </div>
+                {selectedRoom.category && (
+                  <div className="space-y-1">
+                    <p className="text-muted-foreground font-medium">
+                      Loại phòng
+                    </p>
+                    <span
+                      className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold ${CATEGORY_COLORS[selectedRoom.category]}`}
+                    >
+                      {CATEGORY_LABELS[selectedRoom.category]}
+                    </span>
+                  </div>
+                )}
                 <div className="space-y-1">
                   <p className="text-muted-foreground font-medium">Vị trí</p>
                   <p className="font-semibold text-foreground">
-                    Tầng {selectedRoom.floor ?? "N/A"} •{" "}
-                    {selectedRoom.belongsTo}
+                    {selectedRoom.floor !== undefined && selectedRoom.floor !== null
+                      ? `Tầng ${selectedRoom.floor} • ${selectedRoom.belongsTo}`
+                      : selectedRoom.belongsTo}
                   </p>
                 </div>
               </div>
